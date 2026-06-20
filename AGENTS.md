@@ -33,7 +33,8 @@ This repository hosts the public GitHub Pages site for the travel handbook:
    * `grep -n "導航總表" index.html`
    * `grep -n "景點票券" index.html`
 4. Commit the change when complete.
-5. Final response must include:
+5. Push the completed commit to the current branch unless the user explicitly asks not to push.
+6. Final response must include:
 
    * short summary of changes
    * files changed
