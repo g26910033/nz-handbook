@@ -6,7 +6,7 @@
 
 - 網站：`http://gpt.greenparty.org.tw/nz-handbook/`
 - Repo：`g26910033/nz-handbook`
-- 主要檔案：`index.html`
+- 主要檔案：`src/sections/*.html` 與 `src/styles.css`（並由 `build.py` 生成 `index.html`）
 - 語言：台灣繁體中文（`zh-Hant`）
 - 發布方式：GitHub Pages，`.github/workflows/static.yml` 會在 `main` push 後部署整個 repository。
 - 內容目標：冬季雙島自駕手冊，包含財務、行程、票券、住宿付款、導航、安全、通訊與作戰卡。
@@ -15,7 +15,7 @@
 
 ## 核心規則
 
-1. 將 `index.html` 視為手冊內容的單一事實來源。
+1. 將 `src/sections/` 與 `src/styles.css` 視為內容的事實來源，`index.html` 僅為 build 產物，**嚴禁直接手動修改 `index.html`**。
 2. 不要把手冊拆成多頁，除非使用者明確要求。
 3. 不要把專案改成框架、bundler、React/Vue app 或 build pipeline。
 4. 維持靜態 HTML 與 inline CSS。
@@ -60,7 +60,7 @@
 ## Git 工作流程
 
 1. 除非使用者要求分支或 PR，否則在目前分支工作。
-2. 對 `g26910033/nz-handbook` 工作時，優先直接修改 `index.html`。
+2. 對 `g26910033/nz-handbook` 工作時，必須修改 `src/sections/` 內的對應檔案，並執行 `python3 build.py` 產出結果。
 3. 編輯前先檢查相關區塊，不要猜測檔案內容。
 4. 若需要 PR，必須先明確告知使用者。
 5. 修改完成後至少執行：
