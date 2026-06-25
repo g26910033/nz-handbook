@@ -1,153 +1,214 @@
 # AGENTS.md
 
-## Project
+## 專案定位
 
-This repository hosts the public GitHub Pages site for the travel handbook:
+此 repository 是公開發布的紐西蘭冬季自駕旅行手冊。
 
-* Site: http://gpt.greenparty.org.tw/nz-handbook/
-* Main file: `index.html`
-* Language: Traditional Chinese for Taiwan (`zh-Hant`)
-* Purpose: New Zealand winter self-drive travel handbook, including finance, itinerary, tickets, lodging, maps, safety, and operational cards.
+- 網站：`http://gpt.greenparty.org.tw/nz-handbook/`
+- Repo：`g26910033/nz-handbook`
+- 主要檔案：`index.html`
+- 語言：台灣繁體中文（`zh-Hant`）
+- 發布方式：GitHub Pages，`.github/workflows/static.yml` 會在 `main` push 後部署整個 repository。
+- 內容目標：冬季雙島自駕手冊，包含財務、行程、票券、住宿付款、導航、安全、通訊與作戰卡。
+- `README.md` 仍提到 `ufotime.netlify.app`；目前以 GitHub Pages 與本檔案記載為準，除非使用者另行確認。
+- `_headers` 設定 `Cache-Control: no-cache, no-store, must-revalidate`，用於避免靜態頁快取。
 
-## Core rules
+## 核心規則
 
-1. Treat `index.html` as the single source of truth.
-2. Do not split the handbook into multiple pages unless the user explicitly requests it.
-3. Do not convert the project into a framework, bundler, React/Vue app, or build pipeline.
-4. Keep the site static HTML + inline CSS only.
-5. Do not add external dependencies, npm packages, analytics scripts, trackers, or external CSS frameworks.
-6. Do not add JavaScript unless the user explicitly asks for interactive behavior.
-7. Prefer small, targeted edits over full rewrites.
-8. Preserve mobile readability and A4 print readability.
-9. Preserve Traditional Chinese wording. Use English only for foreign place names, hotels, attractions, maps, booking platforms, or card/product names where useful.
-10. Never silently remove travel-critical information such as payment dates, booking deadlines, safety warnings, emergency contacts, lodging names, or map links.
+1. 將 `index.html` 視為手冊內容的單一事實來源。
+2. 不要把手冊拆成多頁，除非使用者明確要求。
+3. 不要把專案改成框架、bundler、React/Vue app 或 build pipeline。
+4. 維持靜態 HTML 與 inline CSS。
+5. 不新增外部 dependencies、npm packages、analytics、trackers 或外部 CSS framework。
+6. 不新增 JavaScript，除非使用者明確要求互動行為。
+7. 優先做小範圍、可檢查的修改，不做整份重寫。
+8. 保留手機閱讀性與 A4 列印可讀性。
+9. 旅遊內容以台灣繁體中文為主；外國地名、飯店、景點、平台、信用卡產品可中英雙語。
+10. 不可默默移除旅行關鍵資訊，例如付款日期、訂房或取消期限、安全提醒、緊急聯絡、住宿名稱、地圖連結。
+11. 每次更新網頁時，同步更新頁面右上角的「網頁更新」時間；此標籤應不影響閱讀，且列印時隱藏。
 
-## Git workflow
+## 每次更新前的專案巡讀
 
-1. Work on the current branch unless the user asks for a branch or PR.
-2. Before editing, inspect the relevant part of `index.html`.
-3. After editing, run these checks:
+每次處理本專案更新時，都要先巡讀專案資料夾，並把新學到、對後續工作有用的資訊整理回 `AGENTS.md`。
 
-   * `git diff -- index.html`
-   * `grep -n "<title>" index.html`
-   * `grep -n "導航總表" index.html`
-   * `grep -n "景點票券" index.html`
-4. Commit the change when complete.
-5. Push the completed commit to the current branch unless the user explicitly asks not to push.
-6. Final response must include:
+1. 先查看工作樹與檔案清單：
 
-   * short summary of changes
-   * files changed
-   * commit SHA
-   * any unresolved concern
+   - `git status --short --branch --untracked-files=all`
+   - `find . -maxdepth 3 -type f | sort`
 
-## Content conventions
+2. 巡讀與任務相關的專案檔案：
 
-### Finance
+   - `AGENTS.md`
+   - `README.md`
+   - `_headers`
+   - `.github/workflows/*`
+   - `index.html` 的相關區塊
+   - `assets/` 內本次會用到或新出現的靜態資產
 
-* Keep original currency and TWD conversion visible.
-* Use the current exchange rates specified by the user.
-* If exchange rates change, recalculate:
+3. 將學到的資訊寫入 `AGENTS.md`，格式要清楚，優先更新下列區塊：
 
-  * finance summary
-  * ticket table
-  * lodging/payment table
-  * any related totals
-* Do not remove original-currency amounts.
-* Reject DCC wording should remain where payment guidance appears.
+   - `專案定位`
+   - `目前專案事實`
+   - `內容慣例`
+   - `工作流程`
+   - `已知注意事項`
 
-### Tickets and attractions
+4. 不要把短期推測、未確認資訊、私人資訊、密碼、完整電話、護照、保單、住家地址、醫療細節或信用卡資訊寫進 `AGENTS.md`。
+5. 如果工作樹已有他人或使用者留下的未提交變更，先分辨本次任務範圍；不要誤提交不屬於本次任務的檔案。
+6. 若本次有實質網頁更新，`AGENTS.md` 的專案學習更新應與本次修改一起提交；若只是檢查且沒有實質變更，回報無需提交。
 
-* Section title: `景點票券與執行時間`.
-* Ticket table columns should be:
+## Git 工作流程
 
-  * 日期／時間
-  * 項目
-  * 原幣/計算
-  * TWD
-  * 備註
-* Do not use the word `保留` as a decision label unless the user specifically requests it.
-* Use `備註` wording instead.
-* Attractions and hot springs should be shown in Chinese + English, for example:
+1. 除非使用者要求分支或 PR，否則在目前分支工作。
+2. 對 `g26910033/nz-handbook` 工作時，優先直接修改 `index.html`。
+3. 編輯前先檢查相關區塊，不要猜測檔案內容。
+4. 若需要 PR，必須先明確告知使用者。
+5. 修改完成後至少執行：
 
-  * `Hanmer Springs Thermal Pools 漢默溫泉`
-  * `Tekapo Springs Hot Pools 蒂卡波溫泉`
-  * `Steampunk HQ 蒸汽龐克總部`
-* If an attraction is cancelled, remove it from the ticket table unless the user asks to keep a cancellation record.
+   - `git diff -- index.html AGENTS.md`
+   - `grep -n "<title>" index.html`
+   - `grep -n "導航總表" index.html`
+   - `grep -n "景點票券" index.html`
+   - `git diff --check`
 
-### Navigation
+6. 完成後直接 commit 到目前分支。
+7. 除非使用者明確要求不要 push，完成 commit 後推送到目前分支的 GitHub 遠端。
+8. 若工作樹有本次無關變更，只 stage 本次任務需要的檔案。
+9. 最終回覆包含：
 
-* Lodging navigation should use multi-point route links:
+   - 修改摘要
+   - 修改檔案
+   - commit SHA
+   - 尚未解決或刻意未處理的問題
 
-  * one route for North Island lodging nodes
-  * one route for South Island lodging nodes
-* Attraction, hot spring, aurora, and free-stop navigation should use individual single-point Google Maps links.
-* In the single-point map table, do not repeat the same category on many rows. Group links by category:
+## 內容慣例
 
-  * 付費景點
-  * 溫泉
-  * 極光
-  * 免費停點
-* Lodging table may still include single-point map links, because that table is for payment and lodging execution.
+### 財務
 
-### Lodging/payment table
+- 保留原幣與 TWD 換算，不可只留台幣合計。
+- 使用使用者指定或本次查到的最新匯率。
+- 匯率變更時，重算：
 
-Keep these fields visible:
+  - 財務摘要
+  - 景點票券表
+  - 住宿付款表
+  - 相關總額
 
-* 日期
-* 地點／住宿
-* 地圖
-* 金額
-* 刷卡／執行
-* 付款／取消死線
+- 不移除原幣金額。
+- 付款建議中應保留拒絕 DCC 的提醒。
+- 已刷卡且已有 TWD 實刷值的項目，不要用新匯率覆寫實刷金額，除非使用者明確要求。
 
-Do not remove payment deadlines, card names, booking platforms, or execution dates.
+### 景點票券
 
-### Itinerary
+- 區塊標題：`景點票券與執行時間`。
+- 票券表欄位：
 
-* Keep morning / noon / afternoon / night logic when present.
-* Do not create high-risk night-driving plans.
-* Winter driving principles:
+  - 日期／時間
+  - 項目
+  - 原幣/計算
+  - TWD
+  - 備註
 
-  * avoid mountain roads early morning
-  * avoid rural/mountain driving after dark
-  * check NZTA and MetService before alpine roads
-  * delete scenic stops before sacrificing lodging arrival time
+- 除非使用者要求，不要用 `保留` 作為決策標籤；使用 `備註`。
+- 景點與溫泉名稱中英雙語，例如：
 
-### Privacy and public-site caution
+  - `Hanmer Springs Thermal Pools 漢默溫泉`
+  - `Tekapo Springs Hot Pools 蒂卡波溫泉`
+  - `Steampunk HQ 蒸汽龐克總部`
 
-This site is public. Before adding personal data, warn if it includes:
+- 若景點取消，除非使用者要求保留取消紀錄，否則從票券表移除。
 
-* passport numbers
-* policy numbers
-* full phone numbers
-* private home addresses
-* medical details
-* credit card details
+### 導航
 
-If private addresses are already intentionally included, do not remove them unless instructed, but mention the public-site risk when relevant.
+- 住宿導航使用多點路線：
 
-## Current project facts
+  - 北島住宿節點環線
+  - 南島住宿節點環線
 
-* GitHub Pages URL: `http://gpt.greenparty.org.tw/nz-handbook/`
-* Repo: `g26910033/nz-handbook`
-* Main file: `index.html`
-* Current trip style: winter self-drive, finance-controlled, low-risk driving, mostly self-catering.
-* Current exchange rates from user:
+- 景點、溫泉、極光、免費停點使用單點 Google Maps 連結。
+- 單點地圖表不要重複同一類別；按類別合併：
 
-  * 1 NZD = 18.2714699 TWD
-  * 1 MYR = 7.7100491 TWD
-  * 1 USD = 31.6883016 TWD
-* Current finance summary:
+  - 付費景點
+  - 溫泉
+  - 極光
+  - 免費停點
 
-  * 已支出：TWD 98,196
-  * 待支出：TWD 162,391
-  * 總預估：TWD 260,587
+- 住宿付款表可以保留單點地圖連結，因為該表用於付款與入住執行。
+- 若使用 `assets/maps/*.svg` 等靜態地圖資產，維持為靜態檔，不新增外部框架或 build step。
 
-## Output style
+### 住宿付款表
 
-* Respond in Taiwan Traditional Chinese.
-* Be concise but complete.
-* Do not paste huge HTML blocks in the final response.
-* Mention exact commit SHA after updating.
-* If unsure, inspect files first rather than guessing.
+住宿付款表必須保留：
+
+- 日期
+- 地點／住宿
+- 地圖
+- 金額
+- 刷卡／執行
+- 付款／取消死線
+
+不可移除付款死線、取消死線、信用卡名稱、訂房平台或執行日期。
+
+### 行程
+
+- 保留上午／中午／下午／夜間邏輯。
+- 不新增高風險夜駕計畫。
+- 冬季駕駛原則：
+
+  - 避免清晨進山路。
+  - 避免天黑後跑鄉間或山路。
+  - 高山道路出發前確認 NZTA 與 MetService。
+  - 先刪景點，不犧牲住宿抵達時間。
+
+### 公開網站與隱私
+
+本網站是公開網站。若使用者要求加入下列資訊，先提醒公開風險：
+
+- 護照號碼
+- 保單號碼
+- 完整電話
+- 私人住家地址
+- 醫療細節
+- 信用卡資訊
+
+若私人地址已被使用者有意保留，不要自行移除；但在相關修改時提醒公開風險。
+
+## 目前專案事實
+
+- 目前分支：`main`
+- GitHub Pages URL：`http://gpt.greenparty.org.tw/nz-handbook/`
+- Repo：`g26910033/nz-handbook`
+- 主檔案：`index.html`
+- 目前旅行型態：冬季自駕、財務控制、低風險駕駛、多數餐食自炊。
+- 目前頁面右上角有 `網頁更新` 標籤；桌面固定右上角，手機在頁首，列印時隱藏。
+- 目前 Mastercard 匯率基準：`06/24`
+
+  - `1 NZD = 18.0739576 TWD`
+  - `1 MYR = 7.6928310 TWD`
+  - `1 USD = 31.7867776 TWD`
+
+- 目前財務摘要：
+
+  - 已支出：`TWD 106,490`
+  - 待支出：`TWD 162,998`
+  - 總預估：`TWD 269,488`
+
+- 目前 `index.html` 中已有導航總表、景點票券與執行時間、住宿與付款總表等核心區塊。
+- 工作樹可能出現 `.DS_Store`；不要納入提交，除非使用者明確要求。
+
+## 已知注意事項
+
+- Mastercard 官方頁面可被瀏覽器開啟；本機 `curl` 或直接 API 請求可能被 Mastercard/Akamai 擋下。必要時使用瀏覽器同源查詢。
+- 匯率更新時要只在有實質匯率或換算變更時 commit。
+- 已刷卡 TWD 實刷值應優先於估算匯率。
+- 若修改導航或地圖區塊，確認住宿多點路線與景點單點連結的分工沒有被破壞。
+- 若出現未追蹤的 `assets/maps/*.svg`，先確認是否屬於本次需求，再決定是否提交。
+
+## 回覆風格
+
+- 使用台灣繁體中文。
+- 簡潔但完整。
+- 不貼整份 HTML。
+- 回報修改摘要、檔案、commit SHA、尚未解決的問題。
+- 遇到錯誤先診斷與修復，不要直接要求使用者手動處理。
+- 不確定時先檢查檔案，不要猜。
