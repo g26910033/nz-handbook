@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" role="img" aria-labelledby="title desc">
-<title id="title">基督城整備節點圖</title><desc id="desc">Upper Riccarton 基地放射：行政、看車、右駕訓練、路測與生日專案</desc>
+<title id="title">基督城整備節點圖</title>
+<desc id="desc">以 Upper Riccarton 為基地，顯示基督城市區、McLeans Island、Lyttelton/Sumner、Akaroa、Hanmer Springs 等整備節點。</desc>
 <style>
-  .bg{fill:#f8fafc}.land{fill:#e2e8f0;stroke:#94a3b8;stroke-width:2}.route{fill:none;stroke:#dc2626;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.minor{fill:none;stroke:#64748b;stroke-width:2;stroke-dasharray:5 5}.node text{font:700 13px -apple-system,BlinkMacSystemFont,'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#0f172a;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}.legend text,.caption{font:700 13px -apple-system,BlinkMacSystemFont,'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#334155}.title{font:900 22px -apple-system,BlinkMacSystemFont,'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#0f172a}.subtitle{font:600 13px -apple-system,BlinkMacSystemFont,'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#475569}.water{fill:#dbeafe}.grid{stroke:#e2e8f0;stroke-width:1}
+.bg{fill:#f8fafc}.sea{fill:#dbeafe}.land{fill:#e2e8f0;stroke:#94a3b8;stroke-width:2}.city{fill:#eef2ff;stroke:#818cf8;stroke-width:1.5}.route{fill:none;stroke:#2563eb;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.minor{fill:none;stroke:#64748b;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:7 6}.node text{font:700 13px -apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;fill:#0f172a;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}.title{font:900 22px -apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;fill:#0f172a}.subtitle,.legend text{font:700 13px -apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;fill:#334155}
 </style>
 <rect class="bg" width="760" height="520" rx="16"/>
-<text class="title" x="24" y="32">基督城整備節點圖</text><text class="subtitle" x="24" y="54">Upper Riccarton 基地放射：行政、看車、右駕訓練、路測與生日專案</text>
-<g transform="translate(0,10)">
-<rect class="water" x="24" y="62" width="712" height="414" rx="14" opacity=".62"/>
-<polygon class="land" points="226,-13 799,97 900,345 698,482 361,564 125,400 92,152"/>
-<path class="route" d="M 486 353 L 496 353 L 509 355 L 449 336 L 486 353 L 621 427 L 486 353 L 573 75 L 486 353"/>
-<path class="minor" d="M 486 353 L 543 372"/>
-<path class="minor" d="M 486 353 L 506 353"/>
-<g class="node stay"><circle cx="486" cy="353" r="5" fill="#1d4ed8" stroke="#fff" stroke-width="2"/><text x="494" y="357">Upper Riccarton</text></g>
-<g class="node poi"><circle cx="496" cy="353" r="5" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="504" y="357">Westfield</text></g>
-<g class="node poi"><circle cx="509" cy="355" r="5" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="517" y="359">Moorhouse</text></g>
-<g class="node poi"><circle cx="449" cy="336" r="5" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="457" y="340">McLeans</text></g>
-<g class="node poi"><circle cx="543" cy="372" r="5" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="551" y="376">Lyttelton/Sumner</text></g>
-<g class="node poi"><circle cx="621" cy="427" r="5" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="629" y="431">Akaroa</text></g>
-<g class="node poi"><circle cx="573" cy="75" r="5" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="581" y="79">Hanmer</text></g>
-<g class="node poi"><circle cx="506" cy="353" r="5" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="514" y="357">Riverside</text></g>
-</g>
-<g class="legend" transform="translate(24 492)"><circle cx="0" cy="-4" r="5" fill="#1d4ed8"/><text x="10" y="0">住宿/基地</text><circle cx="94" cy="-4" r="5" fill="#f59e0b"/><text x="104" y="0">景點/活動</text><line x1="194" y1="-4" x2="224" y2="-4" class="route"/><text x="232" y="0">主行車線</text></g>
+<text class="title" x="24" y="32">基督城整備節點圖</text>
+<text class="subtitle" x="24" y="54">Upper Riccarton 基地放射：市區行政、右駕練習、Akaroa 與 Hanmer 路測</text>
+<rect class="sea" x="24" y="72" width="712" height="404" rx="14" opacity=".72"/>
+<path class="land" d="M82 95 C185 82 265 96 340 132 C422 171 492 194 612 210 C690 224 730 260 719 312 C704 383 628 440 510 466 C390 492 245 478 146 432 C87 404 59 348 77 292 C93 244 98 199 79 148 Z"/>
+<path class="city" d="M279 286 C317 264 371 260 413 280 C449 297 460 334 437 364 C410 397 348 405 303 383 C259 362 247 317 279 286 Z"/>
+<path class="minor" d="M338 336 C322 320 307 302 287 280"/>
+<path class="minor" d="M338 336 C372 331 395 322 421 305"/>
+<path class="route" d="M338 336 C349 336 360 334 371 331 C392 326 406 319 421 305"/>
+<path class="route" d="M338 336 C300 303 276 278 238 245"/>
+<path class="route" d="M338 336 C426 364 475 394 537 432"/>
+<path class="route" d="M338 336 C384 292 411 270 455 253"/>
+<path class="route" d="M338 336 C402 231 455 146 515 92"/>
+<g class="node stay"><circle cx="338" cy="336" r="7" fill="#1d4ed8" stroke="#fff" stroke-width="2"/><text x="348" y="340">Upper Riccarton</text></g>
+<g class="node poi"><circle cx="354" cy="334" r="5" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="364" y="326">Westfield</text></g>
+<g class="node poi"><circle cx="389" cy="324" r="5" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="399" y="328">Moorhouse / Riverside</text></g>
+<g class="node poi"><circle cx="238" cy="245" r="6" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="126" y="249">McLeans Island</text></g>
+<g class="node poi"><circle cx="455" cy="253" r="6" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="465" y="257">Lyttelton / Sumner</text></g>
+<g class="node poi"><circle cx="537" cy="432" r="6" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="547" y="436">Akaroa</text></g>
+<g class="node poi"><circle cx="515" cy="92" r="6" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="525" y="96">Hanmer Springs</text></g>
+<g class="legend" transform="translate(28 494)"><circle cx="0" cy="-4" r="5" fill="#1d4ed8"/><text x="10" y="0">基地</text><circle cx="60" cy="-4" r="5" fill="#f59e0b"/><text x="70" y="0">整備/路測節點</text><line x1="190" y1="-4" x2="235" y2="-4" class="route"/><text x="245" y="0">主要移動</text><line x1="340" y1="-4" x2="380" y2="-4" class="minor"/><text x="390" y="0">市區短線</text></g>
 </svg>
