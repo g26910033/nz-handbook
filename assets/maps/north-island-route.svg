@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" role="img" aria-labelledby="title desc">
+<title id="title">北島節點與住宿環線</title><desc id="desc">AKL Airport → Rotorua/Taupo/Tongariro → Waitomo/Hamilton → AKL Airport</desc>
+<style>
+  .bg{fill:#f8fafc}.land{fill:#e2e8f0;stroke:#94a3b8;stroke-width:2}.route{fill:none;stroke:#dc2626;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.minor{fill:none;stroke:#64748b;stroke-width:2;stroke-dasharray:5 5}.node text{font:700 13px -apple-system,BlinkMacSystemFont,'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#0f172a;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}.legend text,.caption{font:700 13px -apple-system,BlinkMacSystemFont,'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#334155}.title{font:900 22px -apple-system,BlinkMacSystemFont,'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#0f172a}.subtitle{font:600 13px -apple-system,BlinkMacSystemFont,'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#475569}.water{fill:#dbeafe}.grid{stroke:#e2e8f0;stroke-width:1}
+</style>
+<rect class="bg" width="760" height="520" rx="16"/>
+<text class="title" x="24" y="32">北島節點與住宿環線</text><text class="subtitle" x="24" y="54">AKL Airport → Rotorua/Taupo/Tongariro → Waitomo/Hamilton → AKL Airport</text>
+<g transform="translate(0,10)">
+<rect class="water" x="24" y="62" width="712" height="414" rx="14" opacity=".62"/>
+<polygon class="land" points="149,54 355,103 584,213 652,348 538,445 355,531 172,494 104,360 149,225 81,115"/>
+<path class="route" d="M 284 153 L 403 244 L 618 291 L 579 359 L 517 395 L 424 448 L 392 382 L 337 332 L 357 306 L 440 261 L 396 249 L 369 220 L 284 153"/>
+
+<g class="node stay"><circle cx="284" cy="153" r="5" fill="#1d4ed8" stroke="#fff" stroke-width="2"/><text x="292" y="157">AKL Airport</text></g>
+<g class="node stay"><circle cx="618" cy="291" r="5" fill="#1d4ed8" stroke="#fff" stroke-width="2"/><text x="626" y="295">Rotorua</text></g>
+<g class="node stay"><circle cx="579" cy="359" r="5" fill="#1d4ed8" stroke="#fff" stroke-width="2"/><text x="587" y="363">Taupo</text></g>
+<g class="node stay"><circle cx="517" cy="395" r="5" fill="#1d4ed8" stroke="#fff" stroke-width="2"/><text x="525" y="399">Turangi</text></g>
+<g class="node stay"><circle cx="424" cy="448" r="5" fill="#1d4ed8" stroke="#fff" stroke-width="2"/><text x="432" y="452">Ohakune</text></g>
+<g class="node stay"><circle cx="337" cy="332" r="5" fill="#1d4ed8" stroke="#fff" stroke-width="2"/><text x="345" y="336">Piopio</text></g>
+<g class="node stay"><circle cx="357" cy="306" r="5" fill="#1d4ed8" stroke="#fff" stroke-width="2"/><text x="365" y="310">Waitomo</text></g>
+<g class="node stay"><circle cx="396" cy="249" r="5" fill="#1d4ed8" stroke="#fff" stroke-width="2"/><text x="404" y="253">Hamilton</text></g>
+<g class="node stay"><circle cx="369" cy="220" r="5" fill="#1d4ed8" stroke="#fff" stroke-width="2"/><text x="377" y="224">Huntly</text></g>
+<g class="node poi"><circle cx="634" cy="316" r="5" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="642" y="320">Waikite</text></g>
+<g class="node poi"><circle cx="579" cy="350" r="5" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="587" y="354">Wairakei</text></g>
+<g class="node poi"><circle cx="351" cy="306" r="5" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="359" y="310">Spellbound</text></g>
+<g class="node poi"><circle cx="403" cy="251" r="5" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="411" y="255">Hamilton Gardens</text></g>
+<g class="node poi"><circle cx="360" cy="234" r="5" fill="#f59e0b" stroke="#fff" stroke-width="2"/><text x="368" y="238">Hakarimata</text></g>
+</g>
+<g class="legend" transform="translate(24 492)"><circle cx="0" cy="-4" r="5" fill="#1d4ed8"/><text x="10" y="0">住宿/基地</text><circle cx="94" cy="-4" r="5" fill="#f59e0b"/><text x="104" y="0">景點/活動</text><line x1="194" y1="-4" x2="224" y2="-4" class="route"/><text x="232" y="0">主行車線</text></g>
+</svg>
