@@ -158,14 +158,15 @@
 - 主檔案：改以 `src/sections/` 模組化分割維護，透過 `build.py` 編譯為 `index.html`。
 - 目前旅行型態：冬季自駕、財務控制、低風險駕駛、多數餐食自炊。
 - 目前頁面右上角有 `網頁更新` 標籤；位於 `src/sections/00-cover.html` 中，桌面固定右上角，手機在頁首，列印時隱藏。
-- 目前 Mastercard 匯率基準：`07/05`
-  - `1 NZD = 18.3281616 TWD`
-  - `1 MYR = 7.8797823 TWD`
-  - `1 USD = 31.9919160 TWD`
+- 目前 Mastercard 匯率來源：`https://www.mastercard.com/global/en/personal/get-support/currency-exchange-rate-converter.html`
+- 目前 Mastercard 匯率基準：`07/06`
+  - `1 NZD = 18.3574502 TWD`
+  - `1 MYR = 7.8895534 TWD`
+  - `1 USD = 32.0710345 TWD`
 - 目前財務摘要：
   - 已支出：`TWD 117,930`
-  - 待支出：`TWD 153,284`
-  - 總預估：`TWD 271,214`
+  - 待支出：`TWD 153,522`
+  - 總預估：`TWD 271,452`
 - 目前 `src/sections/` 中已有導航總表、景點票券與執行時間、住宿與付款總表等核心區塊的源碼。
 - 2026-07-07 已結束北島行程，`src/sections/08-north.html` 已改為 Gmail 每日提醒與實際執行整併後的北島完成版；後續調整北島段時應維持實際紀錄語氣。
 - 工作樹可能出現 `.DS_Store` 或 Mac 的隱藏檔；不要納入提交，除非使用者明確要求。
@@ -173,7 +174,8 @@
 ## 已知注意事項
 
 - Mastercard 官方頁面可被瀏覽器開啟；本機 `curl` 或直接 API 請求可能被 Mastercard/Akamai 擋下。必要時使用瀏覽器同源查詢。
-- Mastercard current rate 查詢可能使用 `fxDate=0000-00-00`，應以官方回應中的 `data.fxDate` 作為手冊匯率基準日期。
+- 每日匯率更新改用 Mastercard Global converter：`https://www.mastercard.com/global/en/personal/get-support/currency-exchange-rate-converter.html`。
+- Mastercard current rate 查詢可使用頁面同源請求的 `exchange_date=0000-00-00`，應以官方回應中的 `data.fxDate` 作為手冊匯率基準日期。
 - 匯率更新時要只在有實質匯率或換算變更時 commit。
 - 已刷卡 TWD 實刷值應優先於估算匯率。
 - 北島已完成段落不要加入公開敏感資訊，例如訂房 PIN、完整訂單號、信用卡尾號或私人聯絡資訊；必要時只保留住宿/平台/付款狀態與已刷金額。
