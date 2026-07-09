@@ -63,7 +63,7 @@
 5. 修改完成後至少執行：
    - `python3 build.py`
    - `git diff -- src/ AGENTS.md build.py`
-   - `grep -n "<title>" src/sections/00-cover.html`
+   - `grep -n "<title>" build.py index.html`
    - `grep -n "導航總表" src/sections/03-nav.html`
    - `grep -n "景點票券" src/sections/02-tickets.html`
    - `git diff --check`
@@ -156,17 +156,18 @@
 - GitHub Pages URL：`http://gpt.greenparty.org.tw/nz-handbook/`
 - Repo：`g26910033/nz-handbook`
 - 主檔案：改以 `src/sections/` 模組化分割維護，透過 `build.py` 編譯為 `index.html`。
+- `<title>` 位於 `build.py` 的 HTML shell 中，並於 build 後出現在 `index.html`；`src/sections/00-cover.html` 只維護封面內容與網頁更新標籤。
 - 目前旅行型態：冬季自駕、財務控制、低風險駕駛、多數餐食自炊。
 - 目前頁面右上角有 `網頁更新` 標籤；位於 `src/sections/00-cover.html` 中，桌面固定右上角，手機在頁首，列印時隱藏。
 - 目前 Mastercard 匯率來源：`https://www.mastercard.com.cn/zh-cn/personal/get-support/convert-currency.html`
-- 目前 Mastercard 匯率基準：`07/07`
-  - `1 NZD = 18.3791 TWD`
-  - `1 MYR = 7.9157161 TWD`
-  - `1 USD = 32.1932175 TWD`
+- 目前 Mastercard 匯率基準：`07/08`
+  - `1 NZD = 18.3463 TWD`
+  - `1 MYR = 7.8861183 TWD`
+  - `1 USD = 32.0570695 TWD`
 - 目前財務摘要：
   - 已支出：`TWD 118,042`
-  - 待支出：`TWD 152,193`
-  - 總預估：`TWD 270,235`
+  - 待支出：`TWD 151,930`
+  - 總預估：`TWD 269,972`
 - 目前 `src/sections/` 中已有導航總表、景點票券與執行時間、住宿與付款總表等核心區塊的源碼。
 - 2026-07-07 已結束北島行程，`src/sections/08-north.html` 已改為 Gmail 每日提醒與實際執行整併後的北島完成版；後續調整北島段時應維持實際紀錄語氣。
 - 2026-07-08 Gmail確認回程改為律德Jetstar JQ226 2026-08-02 06:15 CHC → 07:35 AKL；08/01 Airport Westney Lodge 2 已由Agoda免費取消，退款/取消費NZD0.00；改票費NZD6.09已列入已支出交通。
@@ -179,6 +180,7 @@
 - Mastercard 官方頁面可被瀏覽器開啟；本機 `curl` 或直接 API 請求可能被 Mastercard/Akamai 擋下。必要時使用瀏覽器同源查詢。
 - 每日匯率更新可使用 Mastercard 中國 converter：`https://www.mastercard.com.cn/zh-cn/personal/get-support/convert-currency.html`。
 - Mastercard current rate 查詢可使用頁面同源請求的 `fxDate=0000-00-00`，應以官方回應中的 `data.fxDate` 作為手冊匯率基準日期。
+- 若官方 Mastercard 頁面可開但本機直接 API/JS 仍被 Akamai 或瀏覽器擴充阻擋，可用 SG Rates 的 MasterCard 同日 NZD/MYR/USD/TWD 對 SGD 匯率交叉驗證，使用前必須確認四個幣別的 MasterCard 日期一致。
 - 匯率更新時要只在有實質匯率或換算變更時 commit。
 - 已刷卡 TWD 實刷值應優先於估算匯率。
 - 北島已完成段落不要加入公開敏感資訊，例如訂房 PIN、完整訂單號、信用卡尾號或私人聯絡資訊；必要時只保留住宿/平台/付款狀態與已刷金額。
