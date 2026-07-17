@@ -183,14 +183,14 @@
 - 目前旅行型態：冬季自駕、財務控制、低風險駕駛、多數餐食自炊。
 - 目前頁面右上角有 `網頁更新` 標籤；位於 `src/sections/00-cover.html` 中，桌面固定右上角，手機在頁首，列印時隱藏。
 - 目前 Mastercard 匯率來源：`https://www.mastercard.com/global/en/personal/get-support/currency-exchange-rate-converter.html`；官方轉換器無法回傳結果時，以 SG Rates MasterCard 同日 `NZD`/`MYR`/`USD`/`TWD` 對 `SGD` 交叉換算。
-- 目前 Mastercard 匯率基準：`07/13`
-  - `1 NZD = 18.6206 TWD`
-  - `1 MYR = 7.9075527 TWD`
-  - `1 USD = 32.1600179 TWD`
+- 目前 Mastercard 匯率基準：`07/16`
+  - `1 NZD = 18.8984906 TWD`
+  - `1 MYR = 7.9391368 TWD`
+  - `1 USD = 32.2170126 TWD`
 - 目前財務摘要：
   - 已支出：`TWD 201,837`
-  - 待支出：`TWD 61,723`
-  - 總預估：`TWD 263,560`
+  - 待支出：`TWD 62,571`
+  - 總預估：`TWD 264,408`
 - 目前 `src/sections/` 中已有導航總表、景點票券與執行時間、住宿與付款總表等核心區塊的源碼。
 - 2026-07-07 已結束北島行程，`src/sections/08-north.html` 已改為 Gmail 每日提醒與實際執行整併後的北島完成版；後續調整北島段時應維持實際紀錄語氣。
 - 2026-07-08 Gmail確認回程改為律德Jetstar JQ226 2026-08-02 06:15 CHC → 07:35 AKL；改票費NZD6.09已列入已支出交通。
