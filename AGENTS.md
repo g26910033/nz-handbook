@@ -209,6 +209,7 @@
 - 2026-07-18 Gmail確認Skyline Queenstown Gondola + 3 Luge Rides皇后鎮纜車＋3次滑車雙人票由KKday以TWD3,360完成刷卡授權與款項確認，使用日07/24；KKday仍標示訂單處理中，因此公開手冊列為已支出、待出票，不公開訂單號或信用卡資訊。
 - 2026-07-19 依07/18至07/19未出帳明細新增餐飲／食品TWD1,351、購物TWD2,953、Supercheap Auto交通TWD94與MOBIL SYDENHAM油資NZD48.19（暫估TWD913）；新增交易的海外手續費以1.5%暫估TWD80另列，正式請款後須按帳單替換並避免重複。
 - 2026-07-20 Gmail確認07/27 Cozy room in Oamaru由住宿方要求取消，Booking.com已免費取消且不扣款；替代住宿為Empire Hotel Backpackers帝國背包旅舍經濟雙床房，NZD88.39尚未付款，07/25 23:59前可免費取消，07/26起取消或No-show收NZD95，19:00-20:00抵達已接受且最晚21:00辦理入住。公開手冊不放訂單號、PIN、完整地址或電話。
+- 2026-07-22 使用者確認07/23穿越Haast Pass後先入住Lake Hāwea，再往Wānaka湖岸、Kai Kikokiko外帶、New World補給與免費夜間湖岸活動；07/24改經Cromwell至Queenstown，13:00-15:30執行Skyline，黃昏走免費湖岸後到Frankton PAK'nSAVE補給，再夜駕入住Kingston。兩晚均不排酒吧、電影、攀岩或其他付費夜間活動。
 - 2026-07-08 使用者確認08/01晚上不睡，08/02 01:30二姑載律德去CHC；08/02 AKL國際線銜接MH144前會安排貴賓室，若排隊或延誤則壓縮貴賓室、不壓登機口緩衝。
 - 工作樹可能出現 `.DS_Store` 或 Mac 的隱藏檔；不要納入提交，除非使用者明確要求。
 
