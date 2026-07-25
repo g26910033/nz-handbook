@@ -188,9 +188,9 @@
   - `1 MYR = 7.9047316 TWD`
   - `1 USD = 32.2987352 TWD`
 - 目前財務摘要：
-  - 已支出：`TWD 250,164`
-  - 待支出：`TWD 25,968`
-  - 總預估：`TWD 276,132`
+  - 已支出：`TWD 253,270`
+  - 待支出：`TWD 22,844`
+  - 總預估：`TWD 276,114`
 - 目前 `src/sections/` 中已有導航總表、景點票券與執行時間、住宿與付款總表等核心區塊的源碼。
 - 2026-07-07 已結束北島行程，`src/sections/08-north.html` 已改為 Gmail 每日提醒與實際執行整併後的北島完成版；後續調整北島段時應維持實際紀錄語氣。
 - 2026-07-08 Gmail確認回程改為律德Jetstar JQ226 2026-08-02 06:15 CHC → 07:35 AKL；改票費NZD6.09已列入已支出交通。
@@ -216,6 +216,7 @@
 - 2026-07-25 Gmail逐筆核對確認：07/28 Lake Ruataniwha Holiday Park已免費取消，原待支出NZD79.11移除；較早的High Country Lodge訂單NZD121.50已取消退款，但其後另一筆High Country Lodge新訂單仍有效並已由聯邦M卡透過Booking.com付清NZD121.50，列已支出暫估TWD2,278並另估海外手續費TWD34。房型為雙人房附私人衛浴、不含餐，入住14:00-18:00、退房08:00-10:00；公開手冊不得放兩筆訂單號、PIN、地址或卡號。
 - 2026-07-25 依永豐大戶卡已入帳截圖核對07/19至07/21交易：Denny's、BurgerFuel、Kmart、Monteith's、Four Square、Hokitika Sandwich與Woolworths本金均已在先前未出帳明細納入，僅更新狀態；Challenge Greymouth由TWD865改為入帳TWD866。九筆實際海外手續費合計TWD70取代同額估算，不重複增加。Te Anau Lakeview Holiday Park NZD68.81已付，從待支出移至已支出暫估TWD1,290，另估手續費TWD19。
 - 2026-07-25 使用者確認除The Fort Timaru外所有住宿均視為已付；Wild Kea Lodge NZD68.83已由待支出移入已支出，另估海外手續費TWD19。住宿款待付只保留The Fort Timaru NZD114.51 → TWD2,147；基督城二姑家補貼NZD300尚未支付，仍併入「住」類別待支出，不得另開分類或算成已付住宿。
+- 2026-07-25 Gmail收據確認YES Rentals租金原價NZD205.20、Merchant Services Fee NZD4.11、收據總額NZD209.31；收據列訂金／折抵NZD41.04、07/20尾款NZD168.27且餘額NZD0.00。使用者先前提供的訂金實付紀錄NZD42.06 = TWD781僅作實際匯率依據，1 NZD = TWD18.568711；整筆收據換算TWD3,887。NZD250僅為可退預授權，不列支出。
 - 2026-07-08 使用者確認08/01晚上不睡，08/02 01:30二姑載律德去CHC；08/02 AKL國際線銜接MH144前會安排貴賓室，若排隊或延誤則壓縮貴賓室、不壓登機口緩衝。
 - 工作樹可能出現 `.DS_Store` 或 Mac 的隱藏檔；不要納入提交，除非使用者明確要求。
 
