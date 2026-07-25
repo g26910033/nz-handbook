@@ -189,8 +189,8 @@
   - `1 USD = 32.2987352 TWD`
 - 目前財務摘要：
   - 已支出：`TWD 245,232`
-  - 待支出：`TWD 30,033`
-  - 總預估：`TWD 275,265`
+  - 待支出：`TWD 28,550`
+  - 總預估：`TWD 273,782`
 - 目前 `src/sections/` 中已有導航總表、景點票券與執行時間、住宿與付款總表等核心區塊的源碼。
 - 2026-07-07 已結束北島行程，`src/sections/08-north.html` 已改為 Gmail 每日提醒與實際執行整併後的北島完成版；後續調整北島段時應維持實際紀錄語氣。
 - 2026-07-08 Gmail確認回程改為律德Jetstar JQ226 2026-08-02 06:15 CHC → 07:35 AKL；改票費NZD6.09已列入已支出交通。
@@ -212,6 +212,8 @@
 - 2026-07-22 使用者確認07/23穿越Haast Pass後先入住Lake Hāwea，再往Wānaka湖岸、Kai Kikokiko外帶、New World補給與免費夜間湖岸活動；07/24改經Cromwell至Queenstown，13:00-15:30執行Skyline，黃昏走免費湖岸後到Frankton PAK'nSAVE補給，再夜駕入住Kingston。兩晚均不排酒吧、電影、攀岩或其他付費夜間活動。
 - 2026-07-23 依07/20至07/22未出帳明細新增餐飲／食品約TWD3,239、購物NZD12.50（Woolworths生活用品，約TWD238）、Challenge Greymouth油資TWD865、DOC停車TWD95與Hunters Moon Agoda授權TWD1,979；新增交易海外手續費以1.5%暫估TWD96。Hunters Moon原待支出NZD103.91已移入已支出，不重複計算。
 - 2026-07-25 依07/23至07/25未出帳明細新增餐飲／食品TWD4,717、購物TWD695、MOBIL Queenstown油資TWD974、Queenstown LDC停車TWD184與Empire Hotel Backpackers Booking.com授權TWD1,676；新增交易海外手續費以1.5%暫估TWD124，MOTU TWD2列為實際手續費。07/25 Booking.com TWD2,302授權已取消，完全排除且不計入卡片回饋已用額；The Fort Timaru仍保留原訂待支出，付款狀態待確認。
+- 2026-07-25 Gmail每日提醒確認07/25改走Kingston、Five Rivers、Mossburn、Te Anau鎮區、鳥類保護區、Ivon Wilson Park與湖岸，Milford Road僅保留嚴格條件下的短程備選；07/26依序安排Dolamore Park、Gore、Titri Creek、Lake Waihola、Dunedin Railway Station、St Clair、採買、Hunters Moon與Grand Casino Dunedin。
+- 2026-07-25 Gmail確認07/28 Lake Ruataniwha Holiday Park已取消，當日新訂High Country Lodge後亦已取消並退NZD121.50，現無有效住宿。High Country授權已在帳務核對中排除，Lake Ruataniwha原待支出NZD79.11亦移除；公開手冊以Twizel／Mackenzie區域「住宿待補」表示，不公開訂單、PIN、地址或退款帳務資料。
 - 2026-07-08 使用者確認08/01晚上不睡，08/02 01:30二姑載律德去CHC；08/02 AKL國際線銜接MH144前會安排貴賓室，若排隊或延誤則壓縮貴賓室、不壓登機口緩衝。
 - 工作樹可能出現 `.DS_Store` 或 Mac 的隱藏檔；不要納入提交，除非使用者明確要求。
 

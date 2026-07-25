@@ -19,3 +19,5 @@
 - 2026-07-25 已依07/23至07/25未出帳截圖新增有效交易並去重：餐飲／食品TWD4,717、購物TWD695、交通TWD1,158、Empire Hotel Backpackers住宿TWD1,676、估算海外手續費TWD124及MOTU實際手續費TWD2。Booking.com TWD2,302授權已取消，完全排除；財務更新為已支出TWD245,232、待支出TWD30,033、總預估TWD275,265，建置、差異檢查、關鍵文字與分類加總驗證均已通過。
 - 2026-07-20 Gmail確認07/27原Cozy room in Oamaru由住宿方要求取消且Booking.com零元取消；已改訂Empire Hotel Backpackers帝國背包旅舍NZD88.39，尚未付款，07/25 23:59前免費取消，19:00-20:00抵達已接受。已同步更新住宿表、南島導航、07/27作戰卡與財務總額。
 - 2026-07-22 已依使用者確認版本重排07/23、07/24南島作戰卡：Wānaka移至07/23，加入Kai Kikokiko外帶、New World補給及免費湖岸夜間活動；07/24保留13:00-15:30 Skyline，加入Queenstown黃昏湖岸、Frankton PAK'nSAVE補給與Kingston免費湖岸夜景。兩晚不排酒吧、電影、攀岩或付費夜間活動；建置、關鍵文字與差異檢查均通過，內容已提交並推送 `bed9c1f`。
+- 2026-07-25 已依Gmail每日提醒重寫07/25、07/26南島作戰卡，加入逐段時間、里程、補給、入住與備案門檻；07/25 Milford Road降為嚴格條件下的短程備選，07/26加入Dolamore Park、Titri Creek、Lake Waihola、Dunedin市區與晚間活動。
+- 2026-07-25 Gmail確認07/28 Lake Ruataniwha與High Country訂房均已取消，目前住宿待補；住宿表、南島導航、07/28-07/29作戰卡及財務已同步更新，原待支出NZD79.11移除後待支出為TWD28,550、總預估TWD273,782。
