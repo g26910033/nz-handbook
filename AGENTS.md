@@ -188,9 +188,9 @@
   - `1 MYR = 7.9047316 TWD`
   - `1 USD = 32.2987352 TWD`
 - 目前財務摘要：
-  - 已支出：`TWD 257,594`
-  - 待支出：`TWD 18,578`
-  - 總預估：`TWD 276,172`
+  - 已支出：`TWD 260,409`
+  - 待支出：`TWD 15,889`
+  - 總預估：`TWD 276,298`
 - 目前 `src/sections/` 中已有導航總表、景點票券與執行時間、住宿與付款總表等核心區塊的源碼。
 - 2026-07-07 已結束北島行程，`src/sections/08-north.html` 已改為 Gmail 每日提醒與實際執行整併後的北島完成版；後續調整北島段時應維持實際紀錄語氣。
 - 2026-07-08 Gmail確認回程改為律德Jetstar JQ226 2026-08-02 06:15 CHC → 07:35 AKL；改票費NZD6.09已列入已支出交通。
@@ -221,6 +221,7 @@
 - 2026-07-26 Gmail確認Booking.com已收取The Fort Timaru全額NZD114.51；永豐07/25網路消費通知約當TWD2,157，依使用者指示以此TWD金額列已支出，另暫估1.5%海外交易手續費TWD32。住宿款已全數支付，待支出「住」只剩Upper Riccarton二姑家補貼NZD300。
 - 2026-07-26 依永豐未出帳截圖新增PAK'nSAVE Dunedin TWD675、KFC Gore TWD367與CALTEX Te Anau TWD37及TWD1,024；前兩筆歸餐飲／食品，CALTEX兩筆暫歸行，TWD37標記小額授權待正式入帳確認。四筆海外手續費暫估TWD32；07/25 The Fort TWD2,157僅核對既有付款，已取消Booking.com TWD2,302持續排除。永豐幣倍本期回饋額度已用TWD19,866、剩TWD134；永豐大戶本期已用TWD15,003、剩TWD997。
 - 2026-07-27 Gmail確認07/30 17:00已預訂Bullock Restaurant & Bar兩人First Table晚餐；餐點五折、每位至少點一杯飲料，兩人均須於17:15前入座。NZD15訂位費收據已收到，但尚無TWD實刷值；更新行程時不得誤寫成可折抵現場餐費。
+- 2026-07-27 依永豐與玉山未出帳截圖新增On Street Parking TWD18、Woolworths兩筆TWD396.52、Badger & Mackerel兩筆TWD385.24、Steampunk HQ TWD563.77、Moeraki Boulders Gifts TWD154.10、Mosgiel Mobil TWD973.81與First Table NZD15／TWD281.88；另估海外手續費TWD42。Woolworths與Badger & Mackerel歸餐飲／食品，Mobil與停車歸行，Steampunk HQ與Moeraki歸票券，First Table歸餐飲且不可折抵現場餐費。中信7月額度已滿；永豐幣倍剩TWD134、永豐大戶剩TWD979、聯邦M卡剩TWD49。玉山Unicard本批國外實體合格消費暫計TWD2,473.44，First Table網路訂位TWD281.88只算一般消費；以簡單選+2%上限1,000點計，剩餘可刷TWD47,526.56。
 - 2026-07-08 使用者確認08/01晚上不睡，08/02 01:30二姑載律德去CHC；08/02 AKL國際線銜接MH144前會安排貴賓室，若排隊或延誤則壓縮貴賓室、不壓登機口緩衝。
 - 工作樹可能出現 `.DS_Store` 或 Mac 的隱藏檔；不要納入提交，除非使用者明確要求。
 
