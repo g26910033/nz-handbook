@@ -29,3 +29,4 @@
 - 2026-07-26 已納入永豐最新未出帳四筆：PAK'nSAVE Dunedin TWD675與KFC Gore TWD367歸餐飲／食品，CALTEX Te Anau TWD37及TWD1,024歸行，另估海外手續費TWD32；CALTEX TWD37保留小額授權待確認。The Fort TWD2,157不重複新增，已取消Booking.com TWD2,302持續排除。財務更新為已支出TWD257,594、待支出TWD18,578、總預估TWD276,172。
 - 2026-07-27 Gmail確認07/30 17:00 Bullock Restaurant & Bar兩人First Table訂位；07/30作戰卡已改為16:30收尾、16:50前到店，並寫明餐點五折、每人至少一杯飲料及17:15前全員入座。NZD15訂位費因尚無TWD實刷值，本輪未調整財務總額。
 - 2026-07-27 已納入永豐On Street Parking TWD18與玉山Unicard八筆未出帳交易，合計本金TWD2,773.32，另估海外手續費TWD42；Steampunk HQ與First Table均以實際暫列TWD取代原估值，不重複加總。依使用者更正，Moeraki Boulders Gifts TWD154.10歸購物，Moeraki Boulders本身未收票券費。財務總額維持已支出TWD260,409、待支出TWD15,889、總預估TWD276,298；中信7月額度已滿、幣倍剩TWD134、大戶剩TWD979、聯邦M卡剩TWD49，玉山簡單選國外實體加碼額度剩TWD47,526.56。
+- 2026-07-28 每日匯率更新：Mastercard Global頁面未載入轉換器欄位，改以SG Rates四幣別同日07/27 MasterCard牌告交叉換算；已更新匯率、仍屬估算的已付款金額及全部待支出換算，財務更新為已支出TWD260,407、待支出TWD15,943、總預估TWD276,350，建置、加總與關鍵區塊驗證均已通過，待提交及推送。
