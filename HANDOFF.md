@@ -34,3 +34,4 @@
 - 2026-07-30 已將玉山07/28-07/29七筆未出帳交易及永豐07/22-07/26正式入帳資料與手冊逐筆去重；新增MGL Wanaka與PAK'nSAVE Qtwn Fuel油資，既有永豐本金只更新正式金額與狀態，實際手續費取代對應估值。財務更新為已支出TWD263,818、待支出TWD12,476、總預估TWD276,294；建置、分類加總、關鍵文字與差異檢查均已通過，commit 558e519 已推送至 origin/main。
 - 2026-07-30 每日匯率更新：Mastercard Global 轉換器顯示錯誤，改以 SG Rates 四幣別同日 07/29 MasterCard 牌告交叉換算；保留當日最新核帳結果，只更新匯率、仍屬估算的已付款金額及全部待支出換算，財務更新為已支出 TWD263,826、待支出 TWD12,530、總預估 TWD276,356，建置、加總與關鍵區塊驗證均已通過。
 - 2026-07-30 已依加油機照片將NPD Timaru由玉山預刷授權TWD3,778.58改為實際NZD80.87（29.03L）暫估TWD1,517；同批7/30餐飲、食品與Fairlie Heritage Museum雙人票均已分類納入，預刷授權完全排除。財務更新為已支出TWD267,862、待支出TWD8,930、總預估TWD276,792。
+- 2026-07-30 已依Gmail更正信重排07/31：採集入口改為Ellis Rd Beach Carpark，接續Timaru黃超買冰、Geraldine、Ashburton Museum、Rakaia及17:20回基地冷藏淡菜，18:00後與二姑在Lincoln Road晚餐；同步更新免費停點導航。08/01新增二姑請客的Fuji Buffet & Bar小火鍋及PAK'nSAVE Riccarton伴手禮採買，財務總額不變。
