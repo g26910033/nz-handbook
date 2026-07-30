@@ -188,9 +188,9 @@
   - `1 MYR = 7.9177189 TWD`
   - `1 USD = 32.3359640 TWD`
 - 目前財務摘要：
-  - 已支出：`TWD 263,826`
-  - 待支出：`TWD 12,530`
-  - 總預估：`TWD 276,356`
+  - 已支出：`TWD 267,862`
+  - 待支出：`TWD 8,930`
+  - 總預估：`TWD 276,792`
 - 目前 `src/sections/` 中已有導航總表、景點票券與執行時間、住宿與付款總表等核心區塊的源碼。
 - 2026-07-07 已結束北島行程，`src/sections/08-north.html` 已改為 Gmail 每日提醒與實際執行整併後的北島完成版；後續調整北島段時應維持實際紀錄語氣。
 - 2026-07-08 Gmail確認回程改為律德Jetstar JQ226 2026-08-02 06:15 CHC → 07:35 AKL；改票費NZD6.09已列入已支出交通。
@@ -223,6 +223,7 @@
 - 2026-07-27 Gmail確認07/30 17:00已預訂Bullock Restaurant & Bar兩人First Table晚餐；餐點五折、每位至少點一杯飲料，兩人均須於17:15前入座。NZD15訂位費收據已收到，但尚無TWD實刷值；更新行程時不得誤寫成可折抵現場餐費。
 - 2026-07-27 依永豐與玉山未出帳截圖新增On Street Parking TWD18、Woolworths兩筆TWD396.52、Badger & Mackerel兩筆TWD385.24、Steampunk HQ TWD563.77、Moeraki Boulders Gifts TWD154.10、Mosgiel Mobil TWD973.81與First Table NZD15／TWD281.88；另估海外手續費TWD42。Woolworths與Badger & Mackerel歸餐飲／食品，Mobil與停車歸行，Steampunk HQ歸票券，Moeraki Boulders Gifts歸購物，First Table歸餐飲且不可折抵現場餐費。Moeraki Boulders本身為免費景點，未列票券費。中信7月額度已滿；永豐幣倍剩TWD134、永豐大戶剩TWD979、聯邦M卡剩TWD49。玉山Unicard本批國外實體合格消費暫計TWD2,473.44，First Table網路訂位TWD281.88只算一般消費；後續確認使用任意選且紐西蘭為指定項目，應以+2.5%、月上限1,000點計算。
 - 2026-07-30 依玉山07/28-07/29未出帳與永豐07/22-07/26已入帳截圖去重：新增玉山餐飲／食品TWD1,589.42、MOBIL Twizel油資TWD468.06，新增永豐MGL Wanaka與PAK'nSAVE Qtwn Fuel油資TWD1,305；十二筆既有永豐本金僅以正式入帳更新，淨差額TWD12。永豐大戶卡新顯示的實際手續費逐筆取代估值，KFC Gore仍暫估；玉山七筆另估手續費TWD31。財務更新為已支出TWD263,818、待支出TWD12,476、總預估TWD276,294。MGL Wanaka確認為加油站；玉山Unicard任意選紐西蘭加碼累計估計115點、剩885點。
+- 2026-07-30 依玉山未出帳與加油機照片新增七筆有效消費：餐飲／食品TWD2,083.21、Fairlie Heritage Museum雙人票TWD375.58、NPD Timaru實際油資NZD80.87暫估TWD1,517，另估海外手續費TWD60。NPD顯示TWD3,778.58為預刷授權，完全排除且不得納入支出、預算或回饋額度。財務更新為已支出TWD267,862、待支出TWD8,930、總預估TWD276,792；玉山Unicard任意選紐西蘭加碼累計估計213點、剩787點。
 - 2026-07-08 使用者確認08/01晚上不睡，08/02 01:30二姑載律德去CHC；08/02 AKL國際線銜接MH144前會安排貴賓室，若排隊或延誤則壓縮貴賓室、不壓登機口緩衝。
 - 工作樹可能出現 `.DS_Store` 或 Mac 的隱藏檔；不要納入提交，除非使用者明確要求。
 
