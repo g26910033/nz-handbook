@@ -183,14 +183,14 @@
 - 目前旅行型態：冬季自駕、財務控制、低風險駕駛、多數餐食自炊。
 - 目前頁面右上角有 `網頁更新` 標籤；位於 `src/sections/00-cover.html` 中，桌面固定右上角，手機在頁首，列印時隱藏。
 - 目前 Mastercard 匯率來源：`https://www.mastercard.com/global/en/personal/get-support/currency-exchange-rate-converter.html`；官方轉換器無法回傳結果時，以 SG Rates MasterCard 同日 `NZD`/`MYR`/`USD`/`TWD` 對 `SGD` 交叉換算。
-- 目前 Mastercard 匯率基準：`07/29`
-  - `1 NZD = 18.7580890 TWD`
-  - `1 MYR = 7.9177189 TWD`
-  - `1 USD = 32.3359640 TWD`
+- 目前 Mastercard 匯率基準：`07/30`
+  - `1 NZD = 19.0251290 TWD`
+  - `1 MYR = 7.9406430 TWD`
+  - `1 USD = 32.3501760 TWD`
 - 目前財務摘要：
-  - 已支出：`TWD 267,862`
-  - 待支出：`TWD 36,725`
-  - 總預估：`TWD 304,587`
+  - 已支出：`TWD 267,966`
+  - 待支出：`TWD 37,419`
+  - 總預估：`TWD 305,385`
 - 目前 `src/sections/` 中已有導航總表、景點票券與執行時間、住宿與付款總表等核心區塊的源碼。
 - 2026-07-07 已結束北島行程，`src/sections/08-north.html` 已改為 Gmail 每日提醒與實際執行整併後的北島完成版；後續調整北島段時應維持實際紀錄語氣。
 - 2026-07-08 Gmail確認回程改為律德Jetstar JQ226 2026-08-02 06:15 CHC → 07:35 AKL；改票費NZD6.09已列入已支出交通。
@@ -228,6 +228,7 @@
 - 2026-07-30 Gmail更正07/31回基督城行程：淡菜採集改導航至Ellis Rd Beach Carpark，Marine Parade取消，Jack's Point Lighthouse只作地標；採集後依序前往PAK'nSAVE Timaru、Barker's Geraldine、Ashburton Museum、Rakaia Salmon Statue，17:20回Upper Riccarton基地冷藏淡菜，18:00後與二姑在Lincoln Road晚餐。公開手冊不得放基地私人地址。
 - 2026-07-30 使用者確認08/01中午由二姑請吃Fuji Buffet & Bar小火鍋；下午律德與佳蓉到鄰近的PAK'nSAVE Riccarton採買伴手禮，再回基地完成行李與自有車交接。請客午餐不列使用者旅費，伴手禮待實際消費後再入帳。
 - 2026-07-08 使用者確認08/01晚上不睡，08/02 01:30二姑載律德去CHC；08/02 AKL國際線銜接MH144前會安排貴賓室，若排隊或延誤則壓縮貴賓室、不壓登機口緩衝。
+- 2026-07-31 Mastercard Global轉換器仍顯示錯誤；SG Rates四幣別MasterCard牌告日一致為07/30，交叉匯率更新為NZD/TWD19.0251290、MYR/TWD7.9406430、USD/TWD32.3501760。僅重算仍屬估算的已付款與待支出項目，實刷及授權TWD金額保持不變。
 - 工作樹可能出現 `.DS_Store` 或 Mac 的隱藏檔；不要納入提交，除非使用者明確要求。
 
 ## 已知注意事項
