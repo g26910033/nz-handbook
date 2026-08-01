@@ -183,14 +183,14 @@
 - 目前旅行型態：冬季自駕、財務控制、低風險駕駛、多數餐食自炊。
 - 目前頁面右上角有 `網頁更新` 標籤；位於 `src/sections/00-cover.html` 中，桌面固定右上角，手機在頁首，列印時隱藏。
 - 目前 Mastercard 匯率來源：`https://www.mastercard.com/global/en/personal/get-support/currency-exchange-rate-converter.html`；官方轉換器無法回傳結果時，以 SG Rates MasterCard 同日 `NZD`/`MYR`/`USD`/`TWD` 對 `SGD` 交叉換算。
-- 目前 Mastercard 匯率基準：`07/30`
-  - `1 NZD = 19.0251290 TWD`
-  - `1 MYR = 7.9406430 TWD`
-  - `1 USD = 32.3501760 TWD`
+- 目前 Mastercard 匯率基準：`08/01`
+  - `1 NZD = 18.9923268 TWD`
+  - `1 MYR = 7.9323604 TWD`
+  - `1 USD = 32.2450412 TWD`
 - 目前財務摘要：
-  - 已支出：`TWD 269,652`
-  - 待支出：`TWD 36,265`
-  - 總預估：`TWD 305,917`
+  - 已支出：`TWD 269,639`
+  - 待支出：`TWD 36,180`
+  - 總預估：`TWD 305,819`
 - 目前 `src/sections/` 中已有導航總表、景點票券與執行時間、住宿與付款總表等核心區塊的源碼。
 - 2026-07-07 已結束北島行程，`src/sections/08-north.html` 已改為 Gmail 每日提醒與實際執行整併後的北島完成版；後續調整北島段時應維持實際紀錄語氣。
 - 2026-07-08 Gmail確認回程改為律德Jetstar JQ226 2026-08-02 06:15 CHC → 07:35 AKL；改票費NZD6.09已列入已支出交通。
@@ -230,6 +230,7 @@
 - 2026-07-08 使用者確認08/01晚上不睡，08/02 01:30二姑載律德去CHC；08/02 AKL國際線銜接MH144前會安排貴賓室，若排隊或延誤則壓縮貴賓室、不壓登機口緩衝。
 - 2026-07-31 Mastercard Global轉換器仍顯示錯誤；SG Rates四幣別MasterCard牌告日一致為07/30，交叉匯率更新為NZD/TWD19.0251290、MYR/TWD7.9406430、USD/TWD32.3501760。僅重算仍屬估算的已付款與待支出項目，實刷及授權TWD金額保持不變。
 - 2026-07-31 永豐07/25-07/27已請款截圖與既有紀錄去重，DITTO、5 Rivers、Fresh Choice、CALTEX、PAK'nSAVE及手續費均不重複加總，僅將On Street Parking由授權TWD18替換為入帳TWD19。玉山新增Best Wok、Netherby Fish Shop與Barker's Foodstore & Eatery餐飲／食品TWD1,153.46、The Warehouse兩筆購物TWD505.29，另估海外手續費TWD25。財務更新為已支出TWD269,652、待支出TWD36,265、總預估TWD305,917；玉山Unicard任意選紐西蘭加碼累計估計255點、剩745點。
+- 2026-08-01 Mastercard Global轉換器仍顯示錯誤；SG Rates四幣別頁面於2026-08-01 12:01同步產生最新MasterCard牌告，交叉匯率更新為NZD/TWD18.9923268、MYR/TWD7.9323604、USD/TWD32.2450412。僅重算仍屬估算的已付款與待支出項目，實刷及授權TWD金額保持不變。
 - 工作樹可能出現 `.DS_Store` 或 Mac 的隱藏檔；不要納入提交，除非使用者明確要求。
 
 ## 已知注意事項
