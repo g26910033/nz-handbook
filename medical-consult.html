@@ -232,13 +232,15 @@
         <li><strong>先說英文口說不好：</strong>說帖已要求醫師用簡單英文及文字提問。若醫師要視訊，可以短暫開啟確認身分或動作，但要求所有醫療問題繼續打字。</li>
         <li><strong>回答必須與實際情況一致：</strong>尤其是手腳無力、走路異常、胸痛、呼吸困難、腿部腫熱、發燒皮疹及大小便改變，不能為了取得處方而填「沒有」。</li>
         <li><strong>處方指定藥局：</strong>完整說帖已填入 Woolworths Pharmacy Church Corner。醫師送出電子處方後，先打電話確認收到及有庫存，再前往領藥。</li>
+        <li><strong>健保核退限制：</strong>純線上問診不要預期可申請台灣健保核退。只有改到紐西蘭實體醫院／診所就醫時，才依「健保核退文件」清單向院所索取資料。</li>
       </ol>
       <div class="actions">
         <a class="button" href="#fill">開始填寫缺漏資料</a>
         <a class="button secondary" href="#support">先問客服能否開藥</a>
+        <a class="button secondary" href="#nhi-refund">健保核退文件</a>
         <a class="button secondary" href="https://www.wellrevolution.co.nz/pricing" target="_blank" rel="noopener">查看官方價格</a>
       </div>
-      <div class="status">建議順序：客服確認（若需要）→ 填資料 → 產生英文 → 複製貼給醫師 → 收到處方後聯絡藥局。</div>
+      <div class="status">建議順序：客服確認（若需要）→ 填資料 → 產生英文 → 複製貼給醫師 → 收到處方後聯絡藥局。若改為實體就醫，再索取健保核退文件。</div>
     </section>
 
     <section class="card" id="fill">
@@ -326,8 +328,60 @@
       </details>
     </section>
 
+    <section class="card" id="nhi-refund">
+      <h2>3. 台灣健保境外自墊醫療費用核退</h2>
+      <div class="warning"><strong>純線上問診：不要當作可核退。</strong>健保署的境外核退條件是，在國外臨時發生不可預期的緊急傷病，必須到當地醫療院所立即就醫。若只有 Well Revolution 文字／視訊問診，建議視為不符合實體醫院／診所就醫要件；除非事前取得健保署針對此服務的書面確認，否則不要為了健保核退額外購買診斷書。</div>
+
+      <h3>如果後來改到實體醫院／診所</h3>
+      <p>看診結束、離開櫃檯前，向院所索取以下文件；紐西蘭文件是英文即可，不用另附中文翻譯。</p>
+      <ol class="known">
+        <li><strong>診斷書或醫療證明正本：</strong>包含護照英文姓名、出生日期、就診日期、實際症狀與發作情況、診斷或臨床判斷、治療與處方，以及醫師姓名、院所資料與簽章。</li>
+        <li><strong>已付款的醫療費用收據正本：</strong>包含病人姓名、院所名稱、日期、NZD 金額、已付款狀態與收據號碼。刷卡通知或信用卡帳單不能取代院所收據。</li>
+        <li><strong>逐項費用明細：</strong>若收據沒有列每個服務與費用，另索取 <em>itemised fee statement</em>。</li>
+        <li><strong>處方與藥局收據：</strong>保存處方副本，以及列有藥名、規格、數量、日期、NZD 金額與藥局資料的明細收據；藥費能否核退仍由健保署審查。</li>
+      </ol>
+
+      <h3>在實體院所櫃檯出示</h3>
+      <textarea id="nhiClinicText" spellcheck="false">I need documents for a Taiwan National Health Insurance overseas emergency medical reimbursement application. Before I leave, could you please provide:
+
+1. An original medical certificate or clinical summary in English showing my full legal name, date of birth, consultation date, actual symptoms and onset, diagnosis or clinical impression, treatment, prescribed medicines, and the doctor's name, clinic details and signature.
+2. An original paid itemised receipt showing my full legal name, the clinic name, consultation date, each service provided, amount and currency in NZD, payment status, and receipt number.
+3. A separate itemised fee statement if the receipt does not already list each service and fee.
+4. A copy of the prescription, if one is issued.
+
+Please document the clinical facts accurately. I am not asking you to change or overstate the diagnosis or urgency.</textarea>
+      <button type="button" class="copy-fixed" data-target="nhiClinicText">複製給實體院所櫃檯</button>
+      <details>
+        <summary>給院所文字的中文意思</summary>
+        <div class="detail">我要申請台灣健保境外緊急醫療費用核退，離開前請提供：
+
+1. 英文診斷書或臨床摘要正本，包含護照英文全名、出生日期、就診日期、實際症狀與發作、診斷或臨床判斷、治療、處方，以及醫師姓名、診所資料和簽章。
+2. 已付款的英文逐項明細收據正本，包含護照英文全名、診所名稱、就診日期、各項服務、NZD 金額與幣別、付款狀態和收據號碼。
+3. 如果收據沒有逐項列出服務與金額，另提供費用明細。
+4. 如有開藥，提供處方副本。
+
+請依臨床事實如實記錄；我不是要求改變或誇大診斷或緊急程度。</div>
+      </details>
+
+      <h3>回台送件時再準備</h3>
+      <ol class="known">
+        <li>最新版「全民健康保險自墊醫療費用核退申請書」。</li>
+        <li>上述醫療費用收據正本／電子收據及費用明細、診斷書或證明文件。</li>
+        <li>護照資料頁影本與當次出入境證明。若使用自動通關而沒有章，可依健保署指示在護照影本與申請書註明，或向移民署申請入出國日期證明。</li>
+        <li>選擇匯款時準備本人台灣存摺封面影本；若委託他人辦理，依申請書填妥委託欄位。</li>
+      </ol>
+      <div class="status"><strong>期限與金額：</strong>門診看診日起 6 個月內送達或掛號寄出。2026 年 7–9 月境外門診每次核退上限為 <strong>TWD 1,162</strong>；實際金額仍依健保署審查，且不會超過合格實付費用。診斷書費、掛號費及不在健保給付範圍的藥品等可能不退。</div>
+      <p class="hint">健保署線上系統只是在網路上登打資料；填完後仍須列印，連同證明文件郵寄或送交投保單位所在地的分區業務組。電子收據請保留原始 PDF 與付款佐證；若無法提供收據正本，申請書內有相關聲明，但是否採認仍由健保署決定。</p>
+
+      <div class="quick-links">
+        <a class="button" href="https://www.nhi.gov.tw/ch/cp-5938-d33aa-2740-1.html" target="_blank" rel="noopener">健保署規定與最新版表單</a>
+        <a class="button secondary" href="https://med.nhi.gov.tw/iwse5000/IWSE5010S03.aspx" target="_blank" rel="noopener">線上登打／查進度</a>
+        <a class="button secondary" href="https://www.nhi.gov.tw/ch/cp-20285-a92ff-3258-1.html" target="_blank" rel="noopener">2026 年第 3 季核退上限</a>
+      </div>
+    </section>
+
     <section class="card" id="support">
-      <h2>3. 付費前客服溝通</h2>
+      <h2>4. 付費前客服溝通</h2>
       <p>若平台規則、價格或可開藥範圍不清楚，先複製下面整段給客服。確認平台可以評估後再進入付費問診。</p>
       <textarea id="supportText" spellcheck="false">Hello. Before I pay for a consultation, could you please confirm the following:
 
@@ -351,7 +405,7 @@ I am not requesting an opioid, tramadol or a controlled painkiller. My spoken En
     </section>
 
     <section class="card">
-      <h2>4. 醫師要求視訊或實體看診</h2>
+      <h2>5. 醫師要求視訊或實體看診</h2>
       <h3>需要短暫視訊時</h3>
       <textarea id="videoText" spellcheck="false">I can join a brief video call if you need to confirm my identity or observe my movement, but I cannot communicate medical details well in spoken English. Please type all clinical questions and medication instructions in the chat so I can understand and answer accurately.</textarea>
       <button type="button" class="copy-fixed" data-target="videoText">複製視訊回覆</button>
@@ -362,7 +416,7 @@ I am not requesting an opioid, tramadol or a controlled painkiller. My spoken En
     </section>
 
     <section class="card">
-      <h2>5. 處方與領藥</h2>
+      <h2>6. 處方與領藥</h2>
       <p><strong>Woolworths Pharmacy Church Corner</strong><br />361 Riccarton Road, Upper Riccarton, Christchurch 8041<br />電話：03 343 2971</p>
       <div class="quick-links">
         <a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=Woolworths+Pharmacy+Church+Corner+361+Riccarton+Road+Christchurch" target="_blank" rel="noopener">開啟藥局地圖</a>
@@ -373,7 +427,7 @@ I am not requesting an opioid, tramadol or a controlled painkiller. My spoken En
       <div class="status">電子處方送出後先打電話確認藥局已收到及有庫存，再出發領藥。</div>
     </section>
 
-    <footer>問診溝通輔助，不代替醫師診斷，也不保證取得特定處方。最後更新：2026-08-05。</footer>
+    <footer>問診溝通輔助，不代替醫師診斷，也不保證取得特定處方或健保核退。最後更新：2026-08-05。</footer>
   </main>
 
   <script>
