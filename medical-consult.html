@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="佳蓉線上神經痛問診整備與英文說帖產生器" />
+  <title>佳蓉線上神經痛問診整備卡</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17202a;
+      --muted: #5b6670;
+      --paper: #f2f4f1;
+      --card: #fff;
+      --line: #d6dcd8;
+      --teal: #0f6c68;
+      --teal-dark: #094b48;
+      --teal-soft: #e3f2f0;
+      --amber-soft: #fff3d6;
+      --red: #9b2c2c;
+      --red-soft: #fff0f0;
+      --shadow: 0 12px 32px rgba(30, 42, 50, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+      line-height: 1.6;
+    }
+
+    .page {
+      width: min(860px, calc(100% - 24px));
+      margin: 0 auto;
+      padding: 18px 0 64px;
+    }
+
+    .hero,
+    .card {
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 28px;
+      color: #fff;
+      background: linear-gradient(135deg, #094d49, #148079);
+    }
+
+    .hero small {
+      color: #cae9e6;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 { line-height: 1.3; }
+    h1 { margin: 7px 0; font-size: clamp(1.8rem, 7vw, 2.8rem); }
+    h2 { margin: 0 0 8px; font-size: 1.4rem; }
+    h3 { margin: 22px 0 8px; font-size: 1.05rem; }
+    p { margin: 7px 0; }
+
+    .card {
+      margin-top: 16px;
+      padding: 24px;
+      background: var(--card);
+      border: 1px solid var(--line);
+    }
+
+    .status {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 13px;
+      background: var(--teal-soft);
+      color: var(--teal-dark);
+      font-weight: 700;
+    }
+
+    .warning {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border: 1px solid #efc2c2;
+      border-radius: 13px;
+      background: var(--red-soft);
+      color: #6f2020;
+    }
+
+    .known {
+      margin: 14px 0 0;
+      padding-left: 22px;
+    }
+
+    .known li { margin: 5px 0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+      margin-top: 16px;
+    }
+
+    .wide { grid-column: 1 / -1; }
+    label { display: block; font-weight: 750; }
+    .required { color: var(--red); }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      margin-top: 5px;
+      border: 1px solid #9ca59f;
+      border-radius: 10px;
+      background: #fffefa;
+      color: var(--ink);
+      font: inherit;
+    }
+
+    input,
+    select { min-height: 46px; padding: 9px 10px; }
+    textarea { min-height: 96px; padding: 11px; resize: vertical; line-height: 1.5; }
+    textarea.output { min-height: 680px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.91rem; }
+
+    .check {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-top: 14px;
+      padding: 13px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fafbf9;
+    }
+
+    .check input { width: 22px; min-height: 22px; margin: 2px 0 0; flex: 0 0 auto; }
+    .check label { font-weight: 650; }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    button,
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 17px;
+      border: 1px solid var(--teal);
+      border-radius: 12px;
+      background: var(--teal);
+      color: #fff;
+      font: inherit;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    button.secondary,
+    .button.secondary { background: #fff; color: var(--teal-dark); }
+    button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 3px solid #e4a934;
+      outline-offset: 2px;
+    }
+
+    .copy-result { min-height: 1.5em; margin-top: 8px; color: var(--teal-dark); font-weight: 800; }
+    .hint { color: var(--muted); font-size: 0.91rem; }
+
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fafbf9;
+    }
+
+    summary { cursor: pointer; padding: 12px 14px; color: var(--teal-dark); font-weight: 800; }
+    .detail { padding: 0 14px 14px; white-space: pre-line; }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    footer { padding: 26px 10px 0; color: var(--muted); text-align: center; font-size: 0.86rem; }
+
+    @media (max-width: 650px) {
+      .page { width: min(100% - 14px, 860px); padding-top: 7px; }
+      .hero, .card { padding: 19px 15px; border-radius: 15px; }
+      .grid, .quick-links { grid-template-columns: 1fr; }
+      .wide { grid-column: auto; }
+      button, .button { width: 100%; }
+      textarea.output { min-height: 820px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <small>Online GP preparation</small>
+      <h1>佳蓉線上神經痛問診整備卡</h1>
+      <p>已經把目前症狀與問診目標預填好。只需補完紅色星號欄位，按一下即可產生並複製完整英文說帖。</p>
+    </header>
+
+    <section class="card">
+      <h2>目前已知資料</h2>
+      <ul class="known">
+        <li>突發、全身游移性疼痛，沒有固定位置。</li>
+        <li>髖部、左大腿下方、左手手腕、右手手肘曾出現抽痛。</li>
+        <li>感覺像刀割到骨頭、抽痛或電擊痛。</li>
+        <li>不是搬重物、運動或已知受傷造成。</li>
+        <li>已使用 ibuprofen 200 mg 與 paracetamol 500 mg，效果不大。</li>
+        <li>希望評估非鴉片類神經痛處方；可接受嗜睡，但用藥後不開車、不喝酒。</li>
+        <li>因經濟因素，希望先短期處方並以線上方式追蹤。</li>
+      </ul>
+    </section>
+
+    <section class="card" id="guide">
+      <h2>線上問診準備與操作指導</h2>
+      <ol class="known">
+        <li><strong>盡量在紐西蘭時間 08:00–18:00 使用：</strong>Well Revolution 官方正常時段費用約 NZD 49–50；付款前先看清楚 App 顯示的金額。</li>
+        <li><strong>先確認平台能否開藥：</strong>如果平台規則不清楚，先跳到「付費前客服溝通」，複製客服文字詢問。客服確認能評估非鴉片神經痛藥後再開始付費問診。</li>
+        <li><strong>補完少數缺漏資料：</strong>填寫年齡、發作時間、疼痛分數、每次持續時間、實際服藥紀錄、懷孕可能性及安全警訊。</li>
+        <li><strong>產生完整英文：</strong>按「產生完整英文說帖」，檢查後按「複製完整英文」，直接貼進醫師聊天室。</li>
+        <li><strong>先說英文口說不好：</strong>說帖已要求醫師用簡單英文及文字提問。若醫師要視訊，可以短暫開啟確認身分或動作，但要求所有醫療問題繼續打字。</li>
+        <li><strong>回答必須與實際情況一致：</strong>尤其是手腳無力、走路異常、胸痛、呼吸困難、腿部腫熱、發燒皮疹及大小便改變，不能為了取得處方而填「沒有」。</li>
+        <li><strong>處方指定藥局：</strong>完整說帖已填入 Woolworths Pharmacy Church Corner。醫師送出電子處方後，先打電話確認收到及有庫存，再前往領藥。</li>
+      </ol>
+      <div class="actions">
+        <a class="button" href="#fill">開始填寫缺漏資料</a>
+        <a class="button secondary" href="#support">先問客服能否開藥</a>
+        <a class="button secondary" href="https://www.wellrevolution.co.nz/pricing" target="_blank" rel="noopener">查看官方價格</a>
+      </div>
+      <div class="status">建議順序：客服確認（若需要）→ 填資料 → 產生英文 → 複製貼給醫師 → 收到處方後聯絡藥局。</div>
+    </section>
+
+    <section class="card" id="fill">
+      <h2>1. 只補這些資料</h2>
+      <p class="hint"><span class="required">＊</span>為產生完整說帖所需。已知資料不必再重打。</p>
+
+      <div class="grid">
+        <label>年齡 <span class="required">＊</span><input id="age" inputmode="numeric" placeholder="例如：25" /></label>
+        <label>疼痛開始日期／時間 <span class="required">＊</span><input id="onset" placeholder="例如：5 Aug, around 3 pm" /></label>
+        <label>目前疼痛分數 <span class="required">＊</span><input id="currentPain" inputmode="numeric" placeholder="0–10，例如：6" /></label>
+        <label>最嚴重疼痛分數 <span class="required">＊</span><input id="worstPain" inputmode="numeric" placeholder="0–10，例如：9" /></label>
+        <label>每次持續多久 <span class="required">＊</span><input id="duration" placeholder="例如：seconds to several minutes" /></label>
+        <label>持續或間歇 <span class="required">＊</span>
+          <select id="pattern">
+            <option value="">請選擇</option>
+            <option value="intermittent">間歇發作</option>
+            <option value="constant with intermittent worsening">持續痛、偶爾加劇</option>
+            <option value="constant">持續疼痛</option>
+          </select>
+        </label>
+        <label>Ibuprofen 200 mg <span class="required">＊</span><input id="ibuprofen" placeholder="例如：1 tablet at 2 pm" /></label>
+        <label>Paracetamol 500 mg <span class="required">＊</span><input id="paracetamol" placeholder="例如：1 tablet at 5 pm" /></label>
+        <label>固定藥物／保健品<input id="regularMeds" value="None" /></label>
+        <label>藥物過敏<input id="allergies" value="None known" /></label>
+        <label>疾病與重要病史<input id="conditions" value="None known" /></label>
+        <label>懷孕可能性 <span class="required">＊</span>
+          <select id="pregnancy">
+            <option value="">請選擇</option>
+            <option value="not possible">沒有可能</option>
+            <option value="possible">有可能</option>
+            <option value="uncertain">不確定</option>
+          </select>
+        </label>
+        <label class="wide">其他已吃的藥或需要補充的情況<textarea id="other" placeholder="沒有就保留空白；若有，寫藥名、劑量、時間或其他症狀"></textarea></label>
+      </div>
+      <p class="hint">「固定藥物、藥物過敏、疾病病史」已預填 None 以減少輸入；只有確實沒有時才保留，若有任何一項請直接改掉。</p>
+
+      <div class="check">
+        <input type="checkbox" id="noRedFlags" />
+        <label for="noRedFlags"><span class="required">＊</span>我確認目前沒有：手腳無力、走路異常、說話或吞嚥困難、胸痛、呼吸困難、發燒、皮疹、單腿腫紅發熱、大小便失控、鼠蹊部或大腿內側麻木。</label>
+      </div>
+
+      <div class="warning">
+        如果上面任何一項其實存在，請不要勾選；改在「其他情況」寫清楚。這些症狀可能使線上開藥不安全，嚴重時應打 111。
+      </div>
+
+      <div class="actions">
+        <button type="button" id="generate">產生完整英文說帖</button>
+        <a class="button secondary" href="#result">跳到完整說帖</a>
+      </div>
+      <p class="copy-result" id="validation" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card" id="result">
+      <h2>2. 一次複製貼給醫師</h2>
+      <p>確認內容後按「複製完整英文」，貼進 Well Revolution 醫師聊天室即可。</p>
+      <textarea class="output" id="output" spellcheck="false" aria-label="產生的英文問診說帖"></textarea>
+      <div class="actions">
+        <button type="button" id="copy">複製完整英文</button>
+        <a class="button secondary" href="https://www.wellrevolution.co.nz/app" target="_blank" rel="noopener">開啟 Well Revolution</a>
+      </div>
+      <p class="copy-result" id="copyResult" role="status" aria-live="polite"></p>
+
+      <details>
+        <summary>中文摘要：這段英文在說什麼</summary>
+        <div class="detail">我英文口說不好，希望全程用簡單英文文字溝通。我是住在基督城的成年女性，疼痛突然開始，會在髖部、左大腿下方、左手腕、右手肘及其他部位之間游移，像刀割、抽痛或電擊，而且不是受傷或搬重物造成。
+
+我會提供疼痛分數、持續時間，以及 ibuprofen 和 paracetamol 的實際顆數與時間。這些普通止痛藥效果很少。
+
+我會如實確認有沒有神經或血栓等安全警訊，也會提供疾病、固定藥物、過敏及懷孕可能性。
+
+因疼痛特徵疑似神經痛，我希望醫師評估是否適合短期試用非鴉片類神經痛處方，例如 amitriptyline、nortriptyline、gabapentin 或 pregabalin，但不指定藥物或劑量，由醫師選擇最安全的方案。我能接受嗜睡，也知道神經痛藥可能需要數天或數週生效。
+
+因實體看診有經濟困難，希望如果臨床上安全，先取得短期處方、安全指示並線上追蹤。若開藥，請將電子處方傳到 Woolworths Pharmacy Church Corner。</div>
+      </details>
+    </section>
+
+    <section class="card" id="support">
+      <h2>3. 付費前客服溝通</h2>
+      <p>若平台規則、價格或可開藥範圍不清楚，先複製下面整段給客服。確認平台可以評估後再進入付費問診。</p>
+      <textarea id="supportText" spellcheck="false">Hello. Before I pay for a consultation, could you please confirm the following:
+
+1. Can a Well Revolution GP assess new suspected neuropathic or nerve pain through a text-based consultation?
+2. When clinically appropriate, can the GP prescribe a non-opioid neuropathic pain medicine such as amitriptyline, nortriptyline, gabapentin or pregabalin?
+3. Are any of these medicines automatically excluded by the platform's restricted-medication policy?
+4. Is the consultation fee during normal hours approximately NZD 49–50?
+5. If the platform cannot assess this condition or cannot prescribe any appropriate non-opioid neuropathic pain medicine, will I be told before a charge is made?
+
+I am not requesting an opioid, tramadol or a controlled painkiller. My spoken English is limited, so I need the consultation and instructions to be provided by text using simple English.</textarea>
+      <div class="actions">
+        <button type="button" class="copy-fixed" data-target="supportText">複製客服確認文字</button>
+        <a class="button secondary" href="https://www.wellrevolution.co.nz/support" target="_blank" rel="noopener">開啟客服</a>
+      </div>
+      <details>
+        <summary>客服文字的中文意思</summary>
+        <div class="detail">您好，付費前請確認：醫師能否用文字評估新發生、疑似神經痛的症狀；臨床上適合時能否開立 amitriptyline、nortriptyline、gabapentin 或 pregabalin 等非鴉片神經痛藥；這些藥是否被平台政策一律排除；正常時段費用是否約 NZD 49–50；如果平台無法評估或完全不能開適當神經痛藥，是否會在收費前告知。
+
+我不是要求鴉片、tramadol 或管制止痛藥。因英文口說有限，需要用簡單英文文字完成問診及接收指示。</div>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>4. 醫師要求視訊或實體看診</h2>
+      <h3>需要短暫視訊時</h3>
+      <textarea id="videoText" spellcheck="false">I can join a brief video call if you need to confirm my identity or observe my movement, but I cannot communicate medical details well in spoken English. Please type all clinical questions and medication instructions in the chat so I can understand and answer accurately.</textarea>
+      <button type="button" class="copy-fixed" data-target="videoText">複製視訊回覆</button>
+
+      <h3>直接要求實體看診時</h3>
+      <textarea id="referralText" spellcheck="false">I understand your concern. In-person care is financially difficult for me. Before referring me, could you please explain which specific finding makes an in-person examination necessary, whether any serious warning sign is present in my history, and whether a short initial trial of a non-opioid neuropathic pain medicine can be prescribed safely with online follow-up? If your first choice cannot be prescribed through this platform, please consider another non-opioid option that can be managed remotely.</textarea>
+      <button type="button" class="copy-fixed" data-target="referralText">複製實體轉診回覆</button>
+    </section>
+
+    <section class="card">
+      <h2>5. 處方與領藥</h2>
+      <p><strong>Woolworths Pharmacy Church Corner</strong><br />361 Riccarton Road, Upper Riccarton, Christchurch 8041<br />電話：03 343 2971</p>
+      <div class="quick-links">
+        <a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=Woolworths+Pharmacy+Church+Corner+361+Riccarton+Road+Christchurch" target="_blank" rel="noopener">開啟藥局地圖</a>
+        <a class="button secondary" href="tel:+6433432971">撥打藥局</a>
+        <a class="button secondary" href="https://apps.apple.com/nz/app/well-revolution/id1467439902" target="_blank" rel="noopener">下載 iPhone App</a>
+        <a class="button secondary" href="https://play.google.com/store/apps/details?id=mywell20.android" target="_blank" rel="noopener">下載 Android App</a>
+      </div>
+      <div class="status">電子處方送出後先打電話確認藥局已收到及有庫存，再出發領藥。</div>
+    </section>
+
+    <footer>問診溝通輔助，不代替醫師診斷，也不保證取得特定處方。最後更新：2026-08-05。</footer>
+  </main>
+
+  <script>
+    const byId = (id) => document.getElementById(id);
+
+    function fieldValue(id) {
+      return byId(id).value.trim();
+    }
+
+    function buildScript() {
+      const required = ["age", "onset", "currentPain", "worstPain", "duration", "pattern", "ibuprofen", "paracetamol", "pregnancy"];
+      const missing = required.filter((id) => !fieldValue(id));
+
+      if (!byId("noRedFlags").checked && !fieldValue("other")) {
+        missing.push("安全警訊確認或其他情況");
+      }
+
+      if (missing.length) {
+        byId("validation").textContent = "請先補完紅色星號欄位，以及安全警訊確認。";
+        byId("fill").scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+
+      const noRedFlags = byId("noRedFlags").checked;
+      const safety = noRedFlags
+        ? "I do not have weakness in my arms or legs, difficulty walking, difficulty speaking or swallowing, chest pain, breathing difficulty, fever, rash, swelling, redness or unusual warmth in one leg, loss of bladder or bowel control, or numbness around my groin or inner thighs."
+        : `Additional symptoms or safety concerns: ${fieldValue("other")}.`;
+
+      const additional = fieldValue("other") && noRedFlags
+        ? `\nAdditional information: ${fieldValue("other")}.`
+        : "";
+
+      const text = `Hello. My spoken English is limited, so please communicate with me by text and use simple English. I can answer detailed medical questions through the chat.
+
+I am a ${fieldValue("age")}-year-old woman currently in Christchurch. I am requesting an assessment for a non-opioid prescription medicine specifically used for neuropathic or nerve pain. I am not requesting an opioid, tramadol or a controlled painkiller.
+
+My pain began suddenly on ${fieldValue("onset")}. It moves between different parts of my body and does not remain in one location. The affected areas have included my hip, the lower part of my left thigh, my left wrist and my right elbow.
+
+The pain feels like stabbing or cutting through the bone, shooting pain and electric-shock-like pain. It is currently ${fieldValue("currentPain")} out of 10 and reaches ${fieldValue("worstPain")} out of 10 at its worst. Each episode lasts approximately ${fieldValue("duration")}, and the pain is ${fieldValue("pattern")}.
+
+There was no known injury, heavy lifting or unusual exercise before the pain started.
+
+I took ${fieldValue("ibuprofen")} and ${fieldValue("paracetamol")}. These medicines provided very little relief.
+
+${safety}${additional}
+
+My medical conditions are: ${fieldValue("conditions") || "None known"}.
+My regular medicines and supplements are: ${fieldValue("regularMeds") || "None"}.
+My medicine allergies are: ${fieldValue("allergies") || "None known"}.
+Pregnancy is ${fieldValue("pregnancy")}.
+
+Because ibuprofen and paracetamol have not worked and the pain has stabbing, shooting and electric-shock characteristics, could you please assess whether a short initial trial of a non-opioid neuropathic pain medicine is appropriate?
+
+I understand that possible options may include amitriptyline, nortriptyline, gabapentin or pregabalin, but I am not asking for a particular medicine or dose. Please select the safest appropriate option based on my history.
+
+Drowsiness would be acceptable if you consider a sedating medicine appropriate. I will not drive, operate machinery or drink alcohol if the medicine causes drowsiness.
+
+I understand that neuropathic pain medicines may take several days or weeks to work and must be taken regularly. Please also advise what I can safely use for pain while waiting for the medicine to take effect.
+
+An in-person appointment would create significant financial difficulty for me. If it is clinically safe, I strongly prefer a short initial prescription, clear safety instructions and follow-up by online consultation. I am willing to answer any additional screening questions by text. If your first-choice medicine cannot be prescribed through this platform, please consider another non-opioid neuropathic pain medicine that can be safely prescribed online before referring me for an in-person visit.
+
+If you prescribe medication, please send the electronic prescription to:
+
+Woolworths Pharmacy Church Corner
+361 Riccarton Road
+Upper Riccarton, Christchurch 8041
+Phone: 03 343 2971`;
+
+      byId("output").value = text;
+      byId("validation").textContent = "完整英文已產生，請往下確認並複製。";
+      byId("result").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    async function copyText(textarea, resultElement) {
+      try {
+        await navigator.clipboard.writeText(textarea.value);
+      } catch (error) {
+        textarea.focus();
+        textarea.select();
+        document.execCommand("copy");
+      }
+      if (resultElement) {
+        resultElement.textContent = "已複製，可以直接貼到聊天室。";
+      }
+    }
+
+    byId("generate").addEventListener("click", buildScript);
+    byId("copy").addEventListener("click", () => {
+      if (!byId("output").value.trim()) {
+        byId("copyResult").textContent = "請先按上方的「產生完整英文說帖」。";
+        return;
+      }
+      copyText(byId("output"), byId("copyResult"));
+    });
+
+    document.querySelectorAll(".copy-fixed").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const originalText = button.textContent;
+        await copyText(byId(button.dataset.target));
+        button.textContent = "已複製，可以直接貼上";
+        setTimeout(() => { button.textContent = originalText; }, 2200);
+      });
+    });
+  </script>
+</body>
+</html>
