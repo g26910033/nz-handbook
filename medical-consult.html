@@ -122,7 +122,7 @@
     input,
     select { min-height: 46px; padding: 9px 10px; }
     textarea { min-height: 96px; padding: 11px; resize: vertical; line-height: 1.5; }
-    textarea.output { min-height: 680px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.91rem; }
+    textarea.output { min-height: 520px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.91rem; }
 
     .check {
       display: flex;
@@ -189,63 +189,127 @@
       gap: 10px;
     }
 
+    .step-nav,
+    .route-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .step-nav {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 14px;
+    }
+
+    .step-nav a {
+      padding: 11px 9px;
+      border-radius: 11px;
+      background: rgba(255, 255, 255, 0.14);
+      color: #fff;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .route-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 14px; }
+
+    .route {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fafbf9;
+    }
+
+    .route.primary { border: 2px solid var(--teal); background: var(--teal-soft); }
+    .route.danger { border-color: #efc2c2; background: var(--red-soft); }
+    .route h3 { margin: 0 0 6px; }
+    .route .actions { margin-top: 12px; }
+
+    .step-label,
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 850;
+    }
+
+    .step-label { margin-bottom: 8px; padding: 5px 10px; background: var(--teal); color: #fff; }
+    .badge { margin-bottom: 7px; padding: 3px 8px; background: #e9ece9; color: #37423d; }
+    .price { color: var(--teal-dark); font-weight: 850; }
+    .compact { margin: 8px 0 0; padding-left: 20px; }
+    .compact li { margin: 3px 0; }
+
     footer { padding: 26px 10px 0; color: var(--muted); text-align: center; font-size: 0.86rem; }
 
     @media (max-width: 650px) {
       .page { width: min(100% - 14px, 860px); padding-top: 7px; }
       .hero, .card { padding: 19px 15px; border-radius: 15px; }
-      .grid, .quick-links { grid-template-columns: 1fr; }
+      .grid, .quick-links, .route-grid { grid-template-columns: 1fr; }
+      .step-nav { grid-template-columns: repeat(2, 1fr); }
       .wide { grid-column: auto; }
       button, .button { width: 100%; }
-      textarea.output { min-height: 820px; }
+      textarea.output { min-height: 620px; }
     }
   </style>
 </head>
 <body>
   <main class="page">
     <header class="hero">
-      <small>Online GP preparation</small>
-      <h1>佳蓉線上神經痛問診整備卡</h1>
-      <p>已經把目前症狀與問診目標預填好。只需補完紅色星號欄位，按一下即可產生並複製完整英文說帖。</p>
+      <small>Online GP action guide</small>
+      <h1>佳蓉線上問診行動卡</h1>
+      <p>照著步驟填資料、複製英文、選醫師、領藥；線上不行時，直接看下方備案。</p>
+      <nav class="step-nav" aria-label="頁面步驟">
+        <a href="#safety">0 先判斷</a>
+        <a href="#fill">1 填資料</a>
+        <a href="#result">2 複製英文</a>
+        <a href="#consult">3 選線上醫師</a>
+        <a href="#pharmacy">4 領藥</a>
+        <a href="#backups">備案</a>
+      </nav>
     </header>
 
-    <section class="card">
-      <h2>目前已知資料</h2>
-      <ul class="known">
-        <li>突發、全身游移性疼痛，沒有固定位置。</li>
-        <li>髖部、左大腿下方、左手手腕、右手手肘曾出現抽痛。</li>
-        <li>感覺像刀割到骨頭、抽痛或電擊痛。</li>
-        <li>不是搬重物、運動或已知受傷造成。</li>
-        <li>已使用 ibuprofen 200 mg 與 paracetamol 500 mg，效果不大。</li>
-        <li>希望評估非鴉片類神經痛處方；可接受嗜睡，但用藥後不開車、不喝酒。</li>
-        <li>因經濟因素，希望先短期處方並以線上方式追蹤。</li>
-      </ul>
+    <section class="card" id="safety">
+      <span class="step-label">先做判斷</span>
+      <h2>現在應該走哪一條？</h2>
+      <div class="route-grid">
+        <article class="route primary">
+          <h3>A｜沒有警訊</h3>
+          <p>先走線上問診，目標是讓醫師評估原因及是否適合短期處方。</p>
+          <a class="button" href="#fill">開始填資料</a>
+        </article>
+        <article class="route">
+          <h3>B｜不確定是否安全</h3>
+          <p>先打免費 Healthline，護理師會告訴你適合線上、診所或急診。</p>
+          <a class="button secondary" href="tel:0800611116">撥 0800 611 116</a>
+        </article>
+        <article class="route danger wide">
+          <h3>C｜有任何警訊</h3>
+          <p>手腳突然無力、說話／走路異常、胸痛、呼吸困難、昏倒、單腿腫紅發熱、大小便失控或鼠蹊部麻木：不要只等線上處方。</p>
+          <div class="actions">
+            <a class="button" href="tel:111">緊急時撥 111</a>
+            <a class="button secondary" href="#backups">查看實體備案</a>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section class="card" id="guide">
-      <h2>線上問診準備與操作指導</h2>
+      <h2>最快完成：只要 4 步</h2>
       <ol class="known">
-        <li><strong>盡量在紐西蘭時間 08:00–18:00 使用：</strong>Well Revolution 官方正常時段費用約 NZD 49–50；付款前先看清楚 App 顯示的金額。</li>
-        <li><strong>先確認平台能否開藥：</strong>如果平台規則不清楚，先跳到「付費前客服溝通」，複製客服文字詢問。客服確認能評估非鴉片神經痛藥後再開始付費問診。</li>
-        <li><strong>補完少數缺漏資料：</strong>年齡與懷孕狀態已填好；選擇發作時間、疼痛分數、每次持續時間，再用中文填實際服藥紀錄與補充資料。</li>
-        <li><strong>產生完整英文：</strong>按「產生完整英文說帖」，檢查後按「複製完整英文」，直接貼進醫師聊天室。</li>
-        <li><strong>先說英文口說不好：</strong>說帖已要求醫師用簡單英文及文字提問。若醫師要視訊，可以短暫開啟確認身分或動作，但要求所有醫療問題繼續打字。</li>
-        <li><strong>回答必須與實際情況一致：</strong>尤其是手腳無力、走路異常、胸痛、呼吸困難、腿部腫熱、發燒皮疹及大小便改變，不能為了取得處方而填「沒有」。</li>
-        <li><strong>處方指定藥局：</strong>完整說帖已填入 Woolworths Pharmacy Church Corner。醫師送出電子處方後，先打電話確認收到及有庫存，再前往領藥。</li>
-        <li><strong>健保核退限制：</strong>純線上問診不要預期可申請台灣健保核退。只有改到紐西蘭實體醫院／診所就醫時，才依「健保核退文件」清單向院所索取資料。</li>
+        <li><strong>填資料：</strong>補開始時間、疼痛分數、持續時間與實際服藥時間。</li>
+        <li><strong>複製英文：</strong>按一次產生完整英文，再整段貼給醫師。</li>
+        <li><strong>線上問診：</strong>優先 Well Revolution；不能處理再換 Tend 或 CareHQ。</li>
+        <li><strong>領藥：</strong>先電話確認藥局收到處方且有庫存，再出發。</li>
       </ol>
-      <div class="actions">
-        <a class="button" href="#fill">開始填寫缺漏資料</a>
-        <a class="button secondary" href="#support">先問客服能否開藥</a>
-        <a class="button secondary" href="#nhi-refund">健保核退文件</a>
-        <a class="button secondary" href="https://www.wellrevolution.co.nz/pricing" target="_blank" rel="noopener">查看官方價格</a>
-      </div>
-      <div class="status">建議順序：客服確認（若需要）→ 填資料 → 產生英文 → 複製貼給醫師 → 收到處方後聯絡藥局。若改為實體就醫，再索取健保核退文件。</div>
+      <details>
+        <summary>已預填的症狀（不用重打）</summary>
+        <div class="detail">突發全身游移性疼痛；髖部、左大腿下方、左手腕、右手肘曾抽痛；像刀割、抽痛或電擊痛；沒有已知受傷或搬重物；ibuprofen 200 mg 與 paracetamol 500 mg 效果不大；希望醫師評估疑似神經痛及非鴉片類短期處方。</div>
+      </details>
     </section>
 
     <section class="card" id="fill">
-      <h2>1. 只補這些資料</h2>
-      <p class="hint"><span class="required">＊</span>為產生完整說帖所需。已知資料不必再重打；中文自由輸入會套用常用醫療詞彙與服藥時間翻譯，產生後若仍有無法辨識的中文會顯示提醒。</p>
+      <span class="step-label">步驟 1</span>
+      <h2>補完缺少的資料</h2>
+      <p class="hint"><span class="required">＊</span>必填。可用中文輸入服藥時間與補充情況，系統會轉成英文。</p>
 
       <div class="grid">
         <label>年齡 <span class="required">＊</span><input id="age" inputmode="numeric" value="31" /></label>
@@ -286,145 +350,171 @@
         </label>
         <label class="wide">其他已吃的藥或需要補充的情況<textarea id="other" placeholder="可填中文；沒有就留白。例如：左大腿沒有腫紅發熱，但偶爾麻木"></textarea></label>
       </div>
-      <p class="hint">「固定藥物、藥物過敏、疾病病史」已預填 None 以減少輸入；只有確實沒有時才保留，若有任何一項請直接改掉。</p>
+      <p class="hint">固定藥物、過敏與病史已填「沒有」；若實際有，請直接改掉。</p>
 
       <div class="check">
         <input type="checkbox" id="noRedFlags" />
-        <label for="noRedFlags"><span class="required">＊</span>我確認目前沒有：手腳無力、走路異常、說話或吞嚥困難、胸痛、呼吸困難、發燒、皮疹、單腿腫紅發熱、大小便失控、鼠蹊部或大腿內側麻木。</label>
+        <label for="noRedFlags"><span class="required">＊</span>我確認目前沒有：手腳無力、走路／說話／吞嚥異常、胸痛、呼吸困難、發燒、皮疹、單腿腫紅發熱、大小便失控、鼠蹊部麻木。</label>
       </div>
 
       <div class="warning">
-        如果上面任何一項其實存在，請不要勾選；改在「其他情況」寫清楚。這些症狀可能使線上開藥不安全，嚴重時應打 111。
+        有任何一項就不要勾選；改走 Healthline、實體診所或 111。
       </div>
 
       <div class="actions">
-        <button type="button" id="generate">產生完整英文說帖</button>
-        <a class="button secondary" href="#result">跳到完整說帖</a>
+        <button type="button" id="generate">產生英文並前往下一步</button>
       </div>
       <p class="copy-result" id="validation" role="status" aria-live="polite"></p>
     </section>
 
     <section class="card" id="result">
-      <h2>2. 一次複製貼給醫師</h2>
-      <p>確認內容後按「複製完整英文」，貼進 Well Revolution 醫師聊天室即可。</p>
+      <span class="step-label">步驟 2</span>
+      <h2>複製整段英文</h2>
+      <p>快速檢查數字和時間，再按複製。</p>
       <textarea class="output" id="output" spellcheck="false" aria-label="產生的英文問診說帖"></textarea>
       <div class="actions">
         <button type="button" id="copy">複製完整英文</button>
-        <a class="button secondary" href="https://www.wellrevolution.co.nz/app" target="_blank" rel="noopener">開啟 Well Revolution</a>
+        <a class="button secondary" href="#consult">下一步：選線上醫師</a>
       </div>
       <p class="copy-result" id="copyResult" role="status" aria-live="polite"></p>
 
       <details>
         <summary>中文摘要：這段英文在說什麼</summary>
-        <div class="detail">我英文口說不好，希望全程用簡單英文文字溝通。我是住在基督城的成年女性，疼痛突然開始，會在髖部、左大腿下方、左手腕、右手肘及其他部位之間游移，像刀割、抽痛或電擊，而且不是受傷或搬重物造成。
-
-我會提供疼痛分數、持續時間，以及 ibuprofen 和 paracetamol 的實際顆數與時間。這些普通止痛藥效果很少。
-
-我會如實確認有沒有神經或血栓等安全警訊，也會提供疾病、固定藥物、過敏及懷孕可能性。
-
-因疼痛特徵疑似神經痛，我希望醫師評估是否適合短期試用非鴉片類神經痛處方，例如 amitriptyline、nortriptyline、gabapentin 或 pregabalin，但不指定藥物或劑量，由醫師選擇最安全的方案。我能接受嗜睡，也知道神經痛藥可能需要數天或數週生效。
-
-因實體看診有經濟困難，希望如果臨床上安全，先取得短期處方、安全指示並線上追蹤。若開藥，請將電子處方傳到 Woolworths Pharmacy Church Corner。</div>
+        <div class="detail">說明英文口說有限、症狀與疼痛分數、已吃過的藥、安全警訊、病史與過敏；請醫師評估是否為神經痛、是否適合短期非鴉片處方，以及等待藥效期間如何安全止痛。若開藥，將電子處方傳到 Woolworths Pharmacy Church Corner。</div>
       </details>
     </section>
 
-    <section class="card" id="nhi-refund">
-      <h2>3. 台灣健保境外自墊醫療費用核退</h2>
-      <div class="warning"><strong>純線上問診：不要當作可核退。</strong>健保署的境外核退條件是，在國外臨時發生不可預期的緊急傷病，必須到當地醫療院所立即就醫。若只有 Well Revolution 文字／視訊問診，建議視為不符合實體醫院／診所就醫要件；除非事前取得健保署針對此服務的書面確認，否則不要為了健保核退額外購買診斷書。</div>
-
-      <h3>如果後來改到實體醫院／診所</h3>
-      <p>看診結束、離開櫃檯前，向院所索取以下文件；紐西蘭文件是英文即可，不用另附中文翻譯。</p>
-      <ol class="known">
-        <li><strong>診斷書或醫療證明正本：</strong>包含護照英文姓名、出生日期、就診日期、實際症狀與發作情況、診斷或臨床判斷、治療與處方，以及醫師姓名、院所資料與簽章。</li>
-        <li><strong>已付款的醫療費用收據正本：</strong>包含病人姓名、院所名稱、日期、NZD 金額、已付款狀態與收據號碼。刷卡通知或信用卡帳單不能取代院所收據。</li>
-        <li><strong>逐項費用明細：</strong>若收據沒有列每個服務與費用，另索取 <em>itemised fee statement</em>。</li>
-        <li><strong>處方與藥局收據：</strong>保存處方副本，以及列有藥名、規格、數量、日期、NZD 金額與藥局資料的明細收據；藥費能否核退仍由健保署審查。</li>
-      </ol>
-
-      <h3>在實體院所櫃檯出示</h3>
-      <textarea id="nhiClinicText" spellcheck="false">I need documents for a Taiwan National Health Insurance overseas emergency medical reimbursement application. Before I leave, could you please provide:
-
-1. An original medical certificate or clinical summary in English showing my full legal name, date of birth, consultation date, actual symptoms and onset, diagnosis or clinical impression, treatment, prescribed medicines, and the doctor's name, clinic details and signature.
-2. An original paid itemised receipt showing my full legal name, the clinic name, consultation date, each service provided, amount and currency in NZD, payment status, and receipt number.
-3. A separate itemised fee statement if the receipt does not already list each service and fee.
-4. A copy of the prescription, if one is issued.
-
-Please document the clinical facts accurately. I am not asking you to change or overstate the diagnosis or urgency.</textarea>
-      <button type="button" class="copy-fixed" data-target="nhiClinicText">複製給實體院所櫃檯</button>
-      <details>
-        <summary>給院所文字的中文意思</summary>
-        <div class="detail">我要申請台灣健保境外緊急醫療費用核退，離開前請提供：
-
-1. 英文診斷書或臨床摘要正本，包含護照英文全名、出生日期、就診日期、實際症狀與發作、診斷或臨床判斷、治療、處方，以及醫師姓名、診所資料和簽章。
-2. 已付款的英文逐項明細收據正本，包含護照英文全名、診所名稱、就診日期、各項服務、NZD 金額與幣別、付款狀態和收據號碼。
-3. 如果收據沒有逐項列出服務與金額，另提供費用明細。
-4. 如有開藥，提供處方副本。
-
-請依臨床事實如實記錄；我不是要求改變或誇大診斷或緊急程度。</div>
-      </details>
-
-      <h3>回台送件時再準備</h3>
-      <ol class="known">
-        <li>最新版「全民健康保險自墊醫療費用核退申請書」。</li>
-        <li>上述醫療費用收據正本／電子收據及費用明細、診斷書或證明文件。</li>
-        <li>護照資料頁影本與當次出入境證明。若使用自動通關而沒有章，可依健保署指示在護照影本與申請書註明，或向移民署申請入出國日期證明。</li>
-        <li>選擇匯款時準備本人台灣存摺封面影本；若委託他人辦理，依申請書填妥委託欄位。</li>
-      </ol>
-      <div class="status"><strong>期限與金額：</strong>門診看診日起 6 個月內送達或掛號寄出。2026 年 7–9 月境外門診每次核退上限為 <strong>TWD 1,162</strong>；實際金額仍依健保署審查，且不會超過合格實付費用。診斷書費、掛號費及不在健保給付範圍的藥品等可能不退。</div>
-      <p class="hint">健保署線上系統只是在網路上登打資料；填完後仍須列印，連同證明文件郵寄或送交投保單位所在地的分區業務組。電子收據請保留原始 PDF 與付款佐證；若無法提供收據正本，申請書內有相關聲明，但是否採認仍由健保署決定。</p>
-
-      <div class="quick-links">
-        <a class="button" href="https://www.nhi.gov.tw/ch/cp-5938-d33aa-2740-1.html" target="_blank" rel="noopener">健保署規定與最新版表單</a>
-        <a class="button secondary" href="https://med.nhi.gov.tw/iwse5000/IWSE5010S03.aspx" target="_blank" rel="noopener">線上登打／查進度</a>
-        <a class="button secondary" href="https://www.nhi.gov.tw/ch/cp-20285-a92ff-3258-1.html" target="_blank" rel="noopener">2026 年第 3 季核退上限</a>
+    <section class="card" id="consult">
+      <span class="step-label">步驟 3</span>
+      <h2>選一個線上醫師</h2>
+      <p class="hint">價格與開藥均以付款頁及醫師判斷為準。先選 A；不能處理才換 B 或 C，避免重複付費。</p>
+      <div class="route-grid">
+        <article class="route primary">
+          <span class="badge">首選｜文字問診</span>
+          <h3>A｜Well Revolution</h3>
+          <p class="price">08:00–18:00 約 NZD 50</p>
+          <p>可直接貼上完整英文；正常時段最便宜。付款前確認畫面金額。</p>
+          <div class="actions">
+            <a class="button" href="https://www.wellrevolution.co.nz/app" target="_blank" rel="noopener">開啟問診</a>
+            <a class="button secondary" href="https://www.wellrevolution.co.nz/pricing" target="_blank" rel="noopener">官方價格</a>
+          </div>
+        </article>
+        <article class="route">
+          <span class="badge">備案｜24/7 視訊</span>
+          <h3>B｜Tend Online Now</h3>
+          <p class="price">成人 casual NZD 79.95</p>
+          <p>22:00–08:00及公眾假期加 NZD 10。可開多數短期藥物，但不保證處方。</p>
+          <a class="button secondary" href="https://www.tend.nz/medical-services/online-now" target="_blank" rel="noopener">開啟 Tend</a>
+        </article>
+        <article class="route">
+          <span class="badge">備案｜07:00–22:00</span>
+          <h3>C｜CareHQ</h3>
+          <p class="price">國際訪客 NZD 100 起</p>
+          <p>視訊／電話 GP，可提供處方；付款前會顯示確認價格。</p>
+          <a class="button secondary" href="https://carehq.co.nz/" target="_blank" rel="noopener">開啟 CareHQ</a>
+        </article>
+        <article class="route">
+          <span class="badge">免費｜不能開處方</span>
+          <h3>不確定時｜Healthline</h3>
+          <p class="price">24/7 免費</p>
+          <p>適合先判斷是否需要實體檢查；護理師提供建議，不是 GP 處方服務。</p>
+          <a class="button secondary" href="tel:0800611116">撥 0800 611 116</a>
+        </article>
       </div>
-    </section>
 
-    <section class="card" id="support">
-      <h2>4. 付費前客服溝通</h2>
-      <p>若平台規則、價格或可開藥範圍不清楚，先複製下面整段給客服。確認平台可以評估後再進入付費問診。</p>
-      <textarea id="supportText" spellcheck="false">Hello. Before I pay for a consultation, could you please confirm the following:
+      <details id="support">
+        <summary>付費前先問 Well Revolution 客服</summary>
+        <div class="detail"><textarea id="supportText" spellcheck="false">Hello. Before I pay, can a GP assess new suspected nerve pain by text and prescribe a suitable non-opioid medicine if clinically appropriate? I am not requesting an opioid or controlled painkiller. Please confirm the total fee and tell me before charging if this condition cannot be managed on the platform.</textarea>
+          <button type="button" class="copy-fixed" data-target="supportText">複製客服文字</button>
+          <a class="button secondary" href="https://www.wellrevolution.co.nz/support" target="_blank" rel="noopener">開啟客服</a>
+        </div>
+      </details>
 
-1. Can a Well Revolution GP assess new suspected neuropathic or nerve pain through a text-based consultation?
-2. When clinically appropriate, can the GP prescribe a non-opioid neuropathic pain medicine such as amitriptyline, nortriptyline, gabapentin or pregabalin?
-3. Are any of these medicines automatically excluded by the platform's restricted-medication policy?
-4. Is the consultation fee during normal hours approximately NZD 49–50?
-5. If the platform cannot assess this condition or cannot prescribe any appropriate non-opioid neuropathic pain medicine, will I be told before a charge is made?
-
-I am not requesting an opioid, tramadol or a controlled painkiller. My spoken English is limited, so I need the consultation and instructions to be provided by text using simple English.</textarea>
-      <div class="actions">
-        <button type="button" class="copy-fixed" data-target="supportText">複製客服確認文字</button>
-        <a class="button secondary" href="https://www.wellrevolution.co.nz/support" target="_blank" rel="noopener">開啟客服</a>
-      </div>
       <details>
-        <summary>客服文字的中文意思</summary>
-        <div class="detail">您好，付費前請確認：醫師能否用文字評估新發生、疑似神經痛的症狀；臨床上適合時能否開立 amitriptyline、nortriptyline、gabapentin 或 pregabalin 等非鴉片神經痛藥；這些藥是否被平台政策一律排除；正常時段費用是否約 NZD 49–50；如果平台無法評估或完全不能開適當神經痛藥，是否會在收費前告知。
+        <summary>醫師要求視訊：複製這句</summary>
+        <div class="detail"><textarea id="videoText" spellcheck="false">I can join a brief video call, but my spoken English is limited. Please type all medical questions and medication instructions in the chat so I can answer accurately.</textarea>
+          <button type="button" class="copy-fixed" data-target="videoText">複製視訊回覆</button>
+        </div>
+      </details>
 
-我不是要求鴉片、tramadol 或管制止痛藥。因英文口說有限，需要用簡單英文文字完成問診及接收指示。</div>
+      <details>
+        <summary>醫師要求實體檢查：先問原因與去處</summary>
+        <div class="detail"><textarea id="referralText" spellcheck="false">I understand. Please explain which finding requires an in-person examination, how urgently I should be seen, and which local clinic is appropriate. Please also provide a short written summary of your assessment for the next clinician.</textarea>
+          <button type="button" class="copy-fixed" data-target="referralText">複製實體轉診回覆</button>
+        </div>
       </details>
     </section>
 
-    <section class="card">
-      <h2>5. 醫師要求視訊或實體看診</h2>
-      <h3>需要短暫視訊時</h3>
-      <textarea id="videoText" spellcheck="false">I can join a brief video call if you need to confirm my identity or observe my movement, but I cannot communicate medical details well in spoken English. Please type all clinical questions and medication instructions in the chat so I can understand and answer accurately.</textarea>
-      <button type="button" class="copy-fixed" data-target="videoText">複製視訊回覆</button>
-
-      <h3>直接要求實體看診時</h3>
-      <textarea id="referralText" spellcheck="false">I understand your concern. In-person care is financially difficult for me. Before referring me, could you please explain which specific finding makes an in-person examination necessary, whether any serious warning sign is present in my history, and whether a short initial trial of a non-opioid neuropathic pain medicine can be prescribed safely with online follow-up? If your first choice cannot be prescribed through this platform, please consider another non-opioid option that can be managed remotely.</textarea>
-      <button type="button" class="copy-fixed" data-target="referralText">複製實體轉診回覆</button>
-    </section>
-
-    <section class="card">
-      <h2>6. 處方與領藥</h2>
+    <section class="card" id="pharmacy">
+      <span class="step-label">步驟 4</span>
+      <h2>確認處方，再去領藥</h2>
       <p><strong>Woolworths Pharmacy Church Corner</strong><br />361 Riccarton Road, Upper Riccarton, Christchurch 8041<br />電話：03 343 2971</p>
       <div class="quick-links">
         <a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=Woolworths+Pharmacy+Church+Corner+361+Riccarton+Road+Christchurch" target="_blank" rel="noopener">開啟藥局地圖</a>
         <a class="button secondary" href="tel:+6433432971">撥打藥局</a>
-        <a class="button secondary" href="https://apps.apple.com/nz/app/well-revolution/id1467439902" target="_blank" rel="noopener">下載 iPhone App</a>
-        <a class="button secondary" href="https://play.google.com/store/apps/details?id=mywell20.android" target="_blank" rel="noopener">下載 Android App</a>
       </div>
-      <div class="status">電子處方送出後先打電話確認藥局已收到及有庫存，再出發領藥。</div>
+      <div class="status">先問兩件事：「收到電子處方了嗎？」、「藥有現貨嗎？」兩個答案都是 Yes 再出發。</div>
+    </section>
+
+    <section class="card" id="backups">
+      <span class="step-label">線上不行時</span>
+      <h2>實體備案</h2>
+      <p class="hint">先電話確認能否看、visitor fee 與大約等候時間；到場帶護照及簽證資料。診所費用可能因公費資格差很多。</p>
+      <div class="route-grid">
+        <article class="route primary">
+          <span class="badge">最近｜每日 08:00–20:00</span>
+          <h3>Riccarton Clinic</h3>
+          <p>4 Yaldhurst Road，walk-in urgent care。成人 casual 約 NZD 97–140；若被列 non-resident，官方表為 NZD 325–375。</p>
+          <div class="actions">
+            <a class="button" href="tel:+6433433661">先打 03 343 3661</a>
+            <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Riccarton+Clinic+4+Yaldhurst+Road+Christchurch" target="_blank" rel="noopener">地圖</a>
+          </div>
+        </article>
+        <article class="route">
+          <span class="badge">全天｜24/7 walk-in</span>
+          <h3>24 Hour Surgery</h3>
+          <p>401 Madras Street。若不具公費資格，醫療問診約 NZD 231–275；檢驗與治療另計。</p>
+          <div class="actions">
+            <a class="button secondary" href="tel:+6433657777">先打 03 365 7777</a>
+            <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=24+Hour+Surgery+401+Madras+Street+Christchurch" target="_blank" rel="noopener">地圖</a>
+          </div>
+        </article>
+      </div>
+
+      <details>
+        <summary>打電話先問價格（英文）</summary>
+        <div class="detail"><textarea id="clinicFeeText" spellcheck="false">Hello. I am a 31-year-old visitor with sudden widespread pain and may need a same-day medical consultation. Before I come, could you please confirm whether you can see me, the total visitor or non-eligible consultation fee, and the current estimated wait time? I have my passport and visa details.</textarea>
+          <button type="button" class="copy-fixed" data-target="clinicFeeText">複製診所詢價文字</button>
+        </div>
+      </details>
+
+      <div class="quick-links">
+        <a class="button secondary" href="https://www.riccartonclinic.co.nz/media/i2ibqpai/riccarton-clinic-patient-fees-from-24th-september-2025.pdf" target="_blank" rel="noopener">Riccarton 官方費用</a>
+        <a class="button secondary" href="https://www.pegasus.health.nz/24-hour-surgery" target="_blank" rel="noopener">24 Hour Surgery 官方資訊</a>
+      </div>
+    </section>
+
+    <section class="card" id="nhi-refund">
+      <span class="step-label">只有實體就醫才看</span>
+      <h2>台灣健保核退文件</h2>
+      <div class="warning"><strong>純線上問診不要當作可核退。</strong>只有改到實體醫院／診所時，才向院所索取下列資料。</div>
+      <ol class="compact">
+        <li>英文診斷書或醫療證明正本。</li>
+        <li>已付款的醫療收據正本。</li>
+        <li>逐項費用明細與處方副本。</li>
+        <li>另保存藥局明細收據。</li>
+      </ol>
+      <details>
+        <summary>複製給實體院所櫃檯</summary>
+        <div class="detail"><textarea id="nhiClinicText" spellcheck="false">For my Taiwan National Health Insurance reimbursement application, please provide an original medical certificate or clinical summary, an original paid itemised receipt, a separate fee statement if needed, and a copy of any prescription. Please include my legal name, consultation date, diagnosis or clinical impression, treatment, clinic details and the doctor's signature.</textarea>
+          <button type="button" class="copy-fixed" data-target="nhiClinicText">複製核退文件文字</button>
+        </div>
+      </details>
+      <div class="status">實體門診日起 6 個月內申請。2026 年 7–9 月境外門診每次上限 TWD 1,162；實際仍由健保署審查。</div>
+      <div class="quick-links">
+        <a class="button secondary" href="https://www.nhi.gov.tw/ch/cp-5938-d33aa-2740-1.html" target="_blank" rel="noopener">規定與表單</a>
+        <a class="button secondary" href="https://med.nhi.gov.tw/iwse5000/IWSE5010S03.aspx" target="_blank" rel="noopener">線上登打／查進度</a>
+      </div>
     </section>
 
     <footer>問診溝通輔助，不代替醫師診斷，也不保證取得特定處方或健保核退。最後更新：2026-08-05。</footer>
@@ -540,34 +630,29 @@ I am not requesting an opioid, tramadol or a controlled painkiller. My spoken En
         ? `\nAdditional information: ${translated.other}.`
         : "";
 
-      const text = `Hello. My spoken English is limited, so please communicate with me by text and use simple English. I can answer detailed medical questions through the chat.
+      const text = `Hello. My spoken English is limited. Please use simple English and type all medical questions and instructions in the chat.
 
-I am a ${fieldValue("age")}-year-old woman currently in Christchurch. I am requesting an assessment for a non-opioid prescription medicine specifically used for neuropathic or nerve pain. I am not requesting an opioid, tramadol or a controlled painkiller.
+I am a ${fieldValue("age")}-year-old woman in Christchurch. My pain began suddenly on ${formatDateTime(fieldValue("onset"))}. It moves between different areas, including my hip, lower left thigh, left wrist and right elbow. It feels stabbing, cutting, shooting or like an electric shock. There was no known injury, heavy lifting or unusual exercise.
 
-My pain began suddenly on ${formatDateTime(fieldValue("onset"))}. It moves between different parts of my body and does not remain in one location. The affected areas have included my hip, the lower part of my left thigh, my left wrist and my right elbow.
+Current pain: ${fieldValue("currentPain")}/10. Worst pain: ${fieldValue("worstPain")}/10. Each episode lasts about ${fieldValue("duration")}. Pattern: ${fieldValue("pattern")}.
 
-The pain feels like stabbing or cutting through the bone, shooting pain and electric-shock-like pain. It is currently ${fieldValue("currentPain")} out of 10 and reaches ${fieldValue("worstPain")} out of 10 at its worst. Each episode lasts approximately ${fieldValue("duration")}, and the pain is ${fieldValue("pattern")}.
-
-There was no known injury, heavy lifting or unusual exercise before the pain started.
-
-I took ibuprofen 200 mg: ${translated.ibuprofen}; and paracetamol 500 mg: ${translated.paracetamol}. These medicines provided very little relief.
+Medicines already tried:
+- Ibuprofen 200 mg: ${translated.ibuprofen}.
+- Paracetamol 500 mg: ${translated.paracetamol}.
+They gave very little relief.
 
 ${safety}${additional}
 
-My medical conditions are: ${translated.conditions}.
-My regular medicines and supplements are: ${translated.regularMeds}.
-My medicine allergies are: ${translated.allergies}.
-Pregnancy is ${fieldValue("pregnancy")}.
+Medical conditions: ${translated.conditions}.
+Regular medicines or supplements: ${translated.regularMeds}.
+Medicine allergies: ${translated.allergies}.
+Pregnancy: ${fieldValue("pregnancy")}.
 
-Because ibuprofen and paracetamol have not worked and the pain has stabbing, shooting and electric-shock characteristics, could you please assess whether a short initial trial of a non-opioid neuropathic pain medicine is appropriate?
+Could you please assess the cause, whether this may be neuropathic pain, and whether a short trial of a suitable non-opioid prescription medicine is safe? I am not requesting an opioid, tramadol, a controlled painkiller, or a particular medicine or dose.
 
-I understand that possible options may include amitriptyline, nortriptyline, gabapentin or pregabalin, but I am not asking for a particular medicine or dose. Please select the safest appropriate option based on my history.
+Drowsiness is acceptable. I will not drive, operate machinery or drink alcohol if the medicine causes drowsiness. Please also tell me what I can safely use while waiting for the medicine to work, what warning signs to watch for, and when I need an in-person examination.
 
-Drowsiness would be acceptable if you consider a sedating medicine appropriate. I will not drive, operate machinery or drink alcohol if the medicine causes drowsiness.
-
-I understand that neuropathic pain medicines may take several days or weeks to work and must be taken regularly. Please also advise what I can safely use for pain while waiting for the medicine to take effect.
-
-An in-person appointment would create significant financial difficulty for me. If it is clinically safe, I strongly prefer a short initial prescription, clear safety instructions and follow-up by online consultation. I am willing to answer any additional screening questions by text. If your first-choice medicine cannot be prescribed through this platform, please consider another non-opioid neuropathic pain medicine that can be safely prescribed online before referring me for an in-person visit.
+Because cost is a concern, I prefer a short initial prescription and online follow-up if clinically safe. I understand that you may recommend an in-person examination if needed.
 
 If you prescribe medication, please send the electronic prescription to:
 
