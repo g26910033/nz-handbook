@@ -227,7 +227,7 @@
       <ol class="known">
         <li><strong>盡量在紐西蘭時間 08:00–18:00 使用：</strong>Well Revolution 官方正常時段費用約 NZD 49–50；付款前先看清楚 App 顯示的金額。</li>
         <li><strong>先確認平台能否開藥：</strong>如果平台規則不清楚，先跳到「付費前客服溝通」，複製客服文字詢問。客服確認能評估非鴉片神經痛藥後再開始付費問診。</li>
-        <li><strong>補完少數缺漏資料：</strong>填寫年齡、發作時間、疼痛分數、每次持續時間、實際服藥紀錄、懷孕可能性及安全警訊。</li>
+        <li><strong>補完少數缺漏資料：</strong>年齡與懷孕狀態已填好；選擇發作時間、疼痛分數、每次持續時間，再用中文填實際服藥紀錄與補充資料。</li>
         <li><strong>產生完整英文：</strong>按「產生完整英文說帖」，檢查後按「複製完整英文」，直接貼進醫師聊天室。</li>
         <li><strong>先說英文口說不好：</strong>說帖已要求醫師用簡單英文及文字提問。若醫師要視訊，可以短暫開啟確認身分或動作，但要求所有醫療問題繼續打字。</li>
         <li><strong>回答必須與實際情況一致：</strong>尤其是手腳無力、走路異常、胸痛、呼吸困難、腿部腫熱、發燒皮疹及大小便改變，不能為了取得處方而填「沒有」。</li>
@@ -243,14 +243,24 @@
 
     <section class="card" id="fill">
       <h2>1. 只補這些資料</h2>
-      <p class="hint"><span class="required">＊</span>為產生完整說帖所需。已知資料不必再重打。</p>
+      <p class="hint"><span class="required">＊</span>為產生完整說帖所需。已知資料不必再重打；中文自由輸入會套用常用醫療詞彙與服藥時間翻譯，產生後若仍有無法辨識的中文會顯示提醒。</p>
 
       <div class="grid">
-        <label>年齡 <span class="required">＊</span><input id="age" inputmode="numeric" placeholder="例如：25" /></label>
-        <label>疼痛開始日期／時間 <span class="required">＊</span><input id="onset" placeholder="例如：5 Aug, around 3 pm" /></label>
+        <label>年齡 <span class="required">＊</span><input id="age" inputmode="numeric" value="31" /></label>
+        <label>疼痛開始日期／時間 <span class="required">＊</span><input id="onset" type="datetime-local" /></label>
         <label>目前疼痛分數 <span class="required">＊</span><input id="currentPain" inputmode="numeric" placeholder="0–10，例如：6" /></label>
         <label>最嚴重疼痛分數 <span class="required">＊</span><input id="worstPain" inputmode="numeric" placeholder="0–10，例如：9" /></label>
-        <label>每次持續多久 <span class="required">＊</span><input id="duration" placeholder="例如：seconds to several minutes" /></label>
+        <label>每次持續多久 <span class="required">＊</span>
+          <select id="duration">
+            <option value="">請選擇</option>
+            <option value="a few seconds">幾秒</option>
+            <option value="a few minutes">幾分鐘</option>
+            <option value="10 to 30 minutes">10–30分鐘</option>
+            <option value="30 to 60 minutes">30–60分鐘</option>
+            <option value="more than one hour">超過1小時</option>
+            <option value="continuous">持續不停</option>
+          </select>
+        </label>
         <label>持續或間歇 <span class="required">＊</span>
           <select id="pattern">
             <option value="">請選擇</option>
@@ -259,20 +269,20 @@
             <option value="constant">持續疼痛</option>
           </select>
         </label>
-        <label>Ibuprofen 200 mg <span class="required">＊</span><input id="ibuprofen" placeholder="例如：1 tablet at 2 pm" /></label>
-        <label>Paracetamol 500 mg <span class="required">＊</span><input id="paracetamol" placeholder="例如：1 tablet at 5 pm" /></label>
+        <label>Ibuprofen 200 mg <span class="required">＊</span><input id="ibuprofen" placeholder="可填中文，例如：1顆，下午2點" /></label>
+        <label>Paracetamol 500 mg <span class="required">＊</span><input id="paracetamol" placeholder="可填中文，例如：1顆，下午5點" /></label>
         <label>固定藥物／保健品<input id="regularMeds" value="None" /></label>
         <label>藥物過敏<input id="allergies" value="None known" /></label>
         <label>疾病與重要病史<input id="conditions" value="None known" /></label>
         <label>懷孕可能性 <span class="required">＊</span>
           <select id="pregnancy">
             <option value="">請選擇</option>
-            <option value="not possible">沒有可能</option>
+            <option value="not possible" selected>沒有可能</option>
             <option value="possible">有可能</option>
             <option value="uncertain">不確定</option>
           </select>
         </label>
-        <label class="wide">其他已吃的藥或需要補充的情況<textarea id="other" placeholder="沒有就保留空白；若有，寫藥名、劑量、時間或其他症狀"></textarea></label>
+        <label class="wide">其他已吃的藥或需要補充的情況<textarea id="other" placeholder="可填中文；沒有就留白。例如：左大腿沒有腫紅發熱，但偶爾麻木"></textarea></label>
       </div>
       <p class="hint">「固定藥物、藥物過敏、疾病病史」已預填 None 以減少輸入；只有確實沒有時才保留，若有任何一項請直接改掉。</p>
 
@@ -373,6 +383,78 @@ I am not requesting an opioid, tramadol or a controlled painkiller. My spoken En
       return byId(id).value.trim();
     }
 
+    function formatDateTime(value) {
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return value;
+      return new Intl.DateTimeFormat("en-NZ", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true
+      }).format(date);
+    }
+
+    function translateMedicalText(value) {
+      let text = value.trim();
+      if (!text) return "";
+
+      const phrases = [
+        ["沒有已知疾病", "None known"],
+        ["沒有已知病史", "None known"],
+        ["沒有藥物過敏", "None known"],
+        ["沒有固定藥物", "None"],
+        ["沒有服用其他藥", "No other medicines taken"],
+        ["左大腿沒有腫紅發熱", "There is no swelling, redness or unusual warmth in my left thigh"],
+        ["左大腿腫紅發熱", "swelling, redness and unusual warmth in my left thigh"],
+        ["手腳無力", "weakness in my arms or legs"],
+        ["走路困難", "difficulty walking"],
+        ["吞嚥困難", "difficulty swallowing"],
+        ["說話困難", "difficulty speaking"],
+        ["呼吸困難", "difficulty breathing"],
+        ["大小便失禁", "loss of bladder or bowel control"],
+        ["鼠蹊部麻木", "numbness around my groin"],
+        ["大腿內側麻木", "numbness in my inner thighs"],
+        ["但偶爾", "but I occasionally have"],
+        ["胸痛", "chest pain"],
+        ["發燒", "fever"],
+        ["皮疹", "a rash"],
+        ["麻木", "numbness"],
+        ["灼熱", "burning pain"],
+        ["針刺", "tingling"],
+        ["抽痛", "shooting pain"],
+        ["電擊痛", "electric-shock-like pain"],
+        ["頭痛", "headache"],
+        ["暈眩", "dizziness"],
+        ["噁心", "nausea"],
+        ["嘔吐", "vomiting"],
+        ["腹瀉", "diarrhoea"],
+        ["心悸", "palpitations"],
+        ["沒有", "None"],
+        ["無", "None"]
+      ];
+
+      phrases.forEach(([zh, en]) => { text = text.split(zh).join(en); });
+
+      const chineseNumbers = { "一": "1", "二": "2", "兩": "2", "三": "3", "四": "4", "五": "5", "六": "6" };
+      Object.entries(chineseNumbers).forEach(([zh, en]) => {
+        text = text.replace(new RegExp(`${zh}\\s*顆`, "g"), `${en} tablet(s)`);
+      });
+      text = text.replace(/(\d+)\s*顆/g, "$1 tablet(s)");
+      text = text.replace(/下午\s*(\d{1,2})\s*點半/g, "at $1:30 pm");
+      text = text.replace(/下午\s*(\d{1,2})\s*點/g, "at $1:00 pm");
+      text = text.replace(/晚上\s*(\d{1,2})\s*點半/g, "at $1:30 pm");
+      text = text.replace(/晚上\s*(\d{1,2})\s*點/g, "at $1:00 pm");
+      text = text.replace(/上午\s*(\d{1,2})\s*點半/g, "at $1:30 am");
+      text = text.replace(/上午\s*(\d{1,2})\s*點/g, "at $1:00 am");
+      text = text.replace(/早上\s*(\d{1,2})\s*點半/g, "at $1:30 am");
+      text = text.replace(/早上\s*(\d{1,2})\s*點/g, "at $1:00 am");
+      text = text.replace(/中午\s*(\d{1,2})?\s*點?/g, (_, hour) => `at ${hour || "12"}:00 pm`);
+      text = text.replace(/[，、]/g, ", ").replace(/。/g, ".");
+      return text.replace(/\s+/g, " ").trim();
+    }
+
     function buildScript() {
       const required = ["age", "onset", "currentPain", "worstPain", "duration", "pattern", "ibuprofen", "paracetamol", "pregnancy"];
       const missing = required.filter((id) => !fieldValue(id));
@@ -388,31 +470,39 @@ I am not requesting an opioid, tramadol or a controlled painkiller. My spoken En
       }
 
       const noRedFlags = byId("noRedFlags").checked;
+      const translated = {
+        ibuprofen: translateMedicalText(fieldValue("ibuprofen")),
+        paracetamol: translateMedicalText(fieldValue("paracetamol")),
+        other: translateMedicalText(fieldValue("other")),
+        conditions: translateMedicalText(fieldValue("conditions")) || "None known",
+        regularMeds: translateMedicalText(fieldValue("regularMeds")) || "None",
+        allergies: translateMedicalText(fieldValue("allergies")) || "None known"
+      };
       const safety = noRedFlags
         ? "I do not have weakness in my arms or legs, difficulty walking, difficulty speaking or swallowing, chest pain, breathing difficulty, fever, rash, swelling, redness or unusual warmth in one leg, loss of bladder or bowel control, or numbness around my groin or inner thighs."
-        : `Additional symptoms or safety concerns: ${fieldValue("other")}.`;
+        : `Additional symptoms or safety concerns: ${translated.other}.`;
 
-      const additional = fieldValue("other") && noRedFlags
-        ? `\nAdditional information: ${fieldValue("other")}.`
+      const additional = translated.other && noRedFlags
+        ? `\nAdditional information: ${translated.other}.`
         : "";
 
       const text = `Hello. My spoken English is limited, so please communicate with me by text and use simple English. I can answer detailed medical questions through the chat.
 
 I am a ${fieldValue("age")}-year-old woman currently in Christchurch. I am requesting an assessment for a non-opioid prescription medicine specifically used for neuropathic or nerve pain. I am not requesting an opioid, tramadol or a controlled painkiller.
 
-My pain began suddenly on ${fieldValue("onset")}. It moves between different parts of my body and does not remain in one location. The affected areas have included my hip, the lower part of my left thigh, my left wrist and my right elbow.
+My pain began suddenly on ${formatDateTime(fieldValue("onset"))}. It moves between different parts of my body and does not remain in one location. The affected areas have included my hip, the lower part of my left thigh, my left wrist and my right elbow.
 
 The pain feels like stabbing or cutting through the bone, shooting pain and electric-shock-like pain. It is currently ${fieldValue("currentPain")} out of 10 and reaches ${fieldValue("worstPain")} out of 10 at its worst. Each episode lasts approximately ${fieldValue("duration")}, and the pain is ${fieldValue("pattern")}.
 
 There was no known injury, heavy lifting or unusual exercise before the pain started.
 
-I took ${fieldValue("ibuprofen")} and ${fieldValue("paracetamol")}. These medicines provided very little relief.
+I took ibuprofen 200 mg: ${translated.ibuprofen}; and paracetamol 500 mg: ${translated.paracetamol}. These medicines provided very little relief.
 
 ${safety}${additional}
 
-My medical conditions are: ${fieldValue("conditions") || "None known"}.
-My regular medicines and supplements are: ${fieldValue("regularMeds") || "None"}.
-My medicine allergies are: ${fieldValue("allergies") || "None known"}.
+My medical conditions are: ${translated.conditions}.
+My regular medicines and supplements are: ${translated.regularMeds}.
+My medicine allergies are: ${translated.allergies}.
 Pregnancy is ${fieldValue("pregnancy")}.
 
 Because ibuprofen and paracetamol have not worked and the pain has stabbing, shooting and electric-shock characteristics, could you please assess whether a short initial trial of a non-opioid neuropathic pain medicine is appropriate?
@@ -433,7 +523,10 @@ Upper Riccarton, Christchurch 8041
 Phone: 03 343 2971`;
 
       byId("output").value = text;
-      byId("validation").textContent = "完整英文已產生，請往下確認並複製。";
+      const untranslated = Object.values(translated).some((value) => /[\u3400-\u9fff]/.test(value));
+      byId("validation").textContent = untranslated
+        ? "英文已產生，但仍有無法辨識的中文。請在完整說帖中檢查並改成英文後再複製。"
+        : "中文內容已轉成英文；完整說帖已產生，請往下確認並複製。";
       byId("result").scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
