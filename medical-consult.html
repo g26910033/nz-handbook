@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="佳蓉線上神經痛問診整備與英文說帖產生器" />
-  <title>佳蓉線上神經痛問診整備卡</title>
+  <meta name="description" content="佳蓉神經痛就醫、線上問診與實體診所整備卡" />
+  <title>佳蓉神經痛就醫行動卡</title>
   <style>
     :root {
       color-scheme: light;
@@ -238,6 +238,42 @@
     .compact { margin: 8px 0 0; padding-left: 20px; }
     .compact li { margin: 3px 0; }
 
+    .table-wrap {
+      margin-top: 16px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .clinic-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      font-size: 0.9rem;
+    }
+
+    .clinic-table th,
+    .clinic-table td {
+      padding: 12px 11px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .clinic-table th { background: var(--teal-soft); color: var(--teal-dark); }
+    .clinic-table tr:last-child td { border-bottom: 0; }
+    .clinic-table tr.recommended td { background: #f3fbfa; }
+    .clinic-table strong { color: var(--teal-dark); }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px 10px;
+      margin-top: 6px;
+    }
+
+    .contact-links a { color: var(--teal-dark); font-weight: 750; }
+
     footer { padding: 26px 10px 0; color: var(--muted); text-align: center; font-size: 0.86rem; }
 
     @media (max-width: 650px) {
@@ -248,22 +284,45 @@
       .wide { grid-column: auto; }
       button, .button { width: 100%; }
       textarea.output { min-height: 620px; }
+
+      .table-wrap { overflow: visible; border: 0; }
+      .clinic-table, .clinic-table tbody, .clinic-table tr, .clinic-table td { display: block; width: 100%; }
+      .clinic-table thead { display: none; }
+      .clinic-table tr {
+        margin-bottom: 12px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        background: #fff;
+      }
+      .clinic-table td {
+        display: grid;
+        grid-template-columns: 5.6rem minmax(0, 1fr);
+        gap: 9px;
+        padding: 10px 12px;
+      }
+      .clinic-table td::before {
+        content: attr(data-label);
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
     }
   </style>
 </head>
 <body>
   <main class="page">
     <header class="hero">
-      <small>Online GP action guide</small>
-      <h1>佳蓉線上問診行動卡</h1>
-      <p>照著步驟填資料、複製英文、選醫師、領藥；線上不行時，直接看下方備案。</p>
+      <small>Medical visit action guide</small>
+      <h1>佳蓉神經痛就醫行動卡</h1>
+      <p>可選線上問診或實體診所；照著步驟準備症狀、英文說帖、預約與核退文件。</p>
       <nav class="step-nav" aria-label="頁面步驟">
         <a href="#safety">0 先判斷</a>
         <a href="#fill">1 填資料</a>
         <a href="#result">2 複製英文</a>
         <a href="#consult">3 選線上醫師</a>
         <a href="#pharmacy">4 領藥</a>
-        <a href="#backups">備案</a>
+        <a href="#backups">實體診所</a>
       </nav>
     </header>
 
@@ -458,40 +517,90 @@
 
     <section class="card" id="backups">
       <span class="step-label">線上不行時</span>
-      <h2>實體備案</h2>
-      <p class="hint">先電話確認能否看、visitor fee 與大約等候時間；到場帶護照及簽證資料。診所費用可能因公費資格差很多。</p>
-      <div class="route-grid">
-        <article class="route primary">
-          <span class="badge">最近｜每日 08:00–20:00</span>
-          <h3>Riccarton Clinic</h3>
-          <p>4 Yaldhurst Road，walk-in urgent care。成人 casual 約 NZD 97–140；若被列 non-resident，官方表為 NZD 325–375。</p>
-          <div class="actions">
-            <a class="button" href="tel:+6433433661">先打 03 343 3661</a>
-            <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Riccarton+Clinic+4+Yaldhurst+Road+Christchurch" target="_blank" rel="noopener">地圖</a>
-          </div>
-        </article>
-        <article class="route">
-          <span class="badge">全天｜24/7 walk-in</span>
-          <h3>24 Hour Surgery</h3>
-          <p>401 Madras Street。若不具公費資格，醫療問診約 NZD 231–275；檢驗與治療另計。</p>
-          <div class="actions">
-            <a class="button secondary" href="tel:+6433657777">先打 03 365 7777</a>
-            <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=24+Hour+Surgery+401+Madras+Street+Christchurch" target="_blank" rel="noopener">地圖</a>
-          </div>
-        </article>
+      <h2>實體診所比較與聯絡</h2>
+      <div class="status"><strong>省錢順序：</strong>先電話約 My Medical（NZD 125）；沒有當天名額，再問 Village Health（NZD 135 起）與 URMC（NZD 150）。需要不預約直接到場時，優先考慮 Moorhouse（NZD 200）。</div>
+      <p class="hint">下列是海外訪客／不具紐西蘭公費資格的看診費，不是一般居民 casual fee。費用只含基本問診；延長看診、檢驗、注射、處置及藥局領藥通常另計。</p>
+
+      <div class="table-wrap">
+        <table class="clinic-table">
+          <thead>
+            <tr>
+              <th>診所／費用</th>
+              <th>預約方式</th>
+              <th>聯絡與地址</th>
+              <th>官方連結</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="recommended">
+              <td data-label="診所／費用"><strong>首選｜My Medical</strong><br /><span class="price">NZD 125</span>／15分鐘</td>
+              <td data-label="預約方式"><strong>必須預約，不能直接 walk-in。</strong>海外 casual patient 請打電話；線上 Patient Portal 僅供已註冊病人。週一至五 08:30–18:00，週末休診。</td>
+              <td data-label="聯絡與地址">332 Blenheim Road, Upper Riccarton
+                <div class="contact-links"><a href="tel:+6433411188">03 341 1188</a><a href="mailto:admin@mymedical.co.nz">Email</a></div>
+              </td>
+              <td data-label="官方連結"><div class="contact-links"><a href="https://www.mymedical.co.nz/fees" target="_blank" rel="noopener">費用</a><a href="https://www.mymedical.co.nz/book-an-appointment" target="_blank" rel="noopener">預約說明</a><a href="https://www.google.com/maps/search/?api=1&amp;query=My+Medical+332+Blenheim+Road+Christchurch" target="_blank" rel="noopener">地圖</a></div></td>
+            </tr>
+            <tr>
+              <td data-label="診所／費用"><strong>Village Health Lincoln Road</strong><br /><span class="price">NZD 135 起</span>／15分鐘</td>
+              <td data-label="預約方式">接受海外病人，視名額預約。先電話問當天 GP，再填 casual patient form；不要只為省錢改約護理師處方門診。</td>
+              <td data-label="聯絡與地址">30 Lincoln Road, Spreydon
+                <div class="contact-links"><a href="tel:+6433388595">03 338 8595</a><a href="mailto:reception@villagehealth.net.nz">Email</a></div>
+              </td>
+              <td data-label="官方連結"><div class="contact-links"><a href="https://www.villagehealth.co.nz/fees" target="_blank" rel="noopener">費用</a><a href="https://www.villagehealth.co.nz/casual-patient-form" target="_blank" rel="noopener">Casual 表格</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Village+Health+30+Lincoln+Road+Christchurch" target="_blank" rel="noopener">地圖</a></div></td>
+            </tr>
+            <tr>
+              <td data-label="診所／費用"><strong>Upper Riccarton Medical Centre</strong><br /><span class="price">NZD 150</span></td>
+              <td data-label="預約方式">先電話確認是否收當天 international casual patient 及可看時間。週一至五 08:30–17:30，週末與國定假日休診。</td>
+              <td data-label="聯絡與地址">318 Riccarton Road, Upper Riccarton
+                <div class="contact-links"><a href="tel:+6433483074">03 348 3074</a><span>官網未列 Email</span></div>
+              </td>
+              <td data-label="官方連結"><div class="contact-links"><a href="https://urmc.co.nz/our-fees-2/" target="_blank" rel="noopener">費用</a><a href="https://urmc.co.nz/" target="_blank" rel="noopener">官網</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Upper+Riccarton+Medical+Centre+318+Riccarton+Road+Christchurch" target="_blank" rel="noopener">地圖</a></div></td>
+            </tr>
+            <tr>
+              <td data-label="診所／費用"><strong>Walk-in｜Moorhouse Medical</strong><br /><span class="price">NZD 200</span></td>
+              <td data-label="預約方式">可直接到 walk-in clinic，由護理人員先分流；週一至五約 08:00–17:00。出發前仍建議電話確認當日收診時間與等候。</td>
+              <td data-label="聯絡與地址">3 Pilgrim Place, Sydenham
+                <div class="contact-links"><a href="tel:+6433657900">03 365 7900</a><span>官網未列 Email</span></div>
+              </td>
+              <td data-label="官方連結"><div class="contact-links"><a href="https://www.moorhousemedical.co.nz/about-us/fees-and-charges/" target="_blank" rel="noopener">費用</a><a href="https://www.moorhousemedical.co.nz/accident-medical/" target="_blank" rel="noopener">Walk-in 說明</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Moorhouse+Medical+Centre+3+Pilgrim+Place+Christchurch" target="_blank" rel="noopener">地圖</a></div></td>
+            </tr>
+            <tr>
+              <td data-label="診所／費用"><strong>24/7｜24 Hour Surgery</strong><br /><span class="price">NZD 231–275</span></td>
+              <td data-label="預約方式">24/7 walk-in，不用預約；依平日、晚間、午夜／週末時段計價並按病情分流。</td>
+              <td data-label="聯絡與地址">401 Madras Street, Christchurch Central
+                <div class="contact-links"><a href="tel:+6433657777">03 365 7777</a><span>官網未列 Email</span></div>
+              </td>
+              <td data-label="官方連結"><div class="contact-links"><a href="https://www.pegasus.health.nz/24-hour-surgery" target="_blank" rel="noopener">院所資訊</a><a href="https://www.pegasus.health.nz/storage-uploads/public-documents/Patient-Fees-14-and-over-JUNE-2026.pdf" target="_blank" rel="noopener">費用 PDF</a><a href="https://www.google.com/maps/search/?api=1&amp;query=24+Hour+Surgery+401+Madras+Street+Christchurch" target="_blank" rel="noopener">地圖</a></div></td>
+            </tr>
+            <tr>
+              <td data-label="診所／費用"><strong>每日 walk-in｜Riccarton Clinic</strong><br /><span class="price">NZD 325–375</span></td>
+              <td data-label="預約方式">每日 08:00–20:00 walk-in；海外 non-resident 平日與晚間／週末價格不同，先電話問目前等候時間。</td>
+              <td data-label="聯絡與地址">4 Yaldhurst Road, Upper Riccarton
+                <div class="contact-links"><a href="tel:+6433433661">03 343 3661</a><span>官網未列 Email</span></div>
+              </td>
+              <td data-label="官方連結"><div class="contact-links"><a href="https://www.riccartonclinic.co.nz/media/i2ibqpai/riccarton-clinic-patient-fees-from-24th-september-2025.pdf" target="_blank" rel="noopener">費用 PDF</a><a href="https://www.riccartonclinic.co.nz/" target="_blank" rel="noopener">官網</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Riccarton+Clinic+4+Yaldhurst+Road+Christchurch" target="_blank" rel="noopener">地圖</a></div></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <details>
-        <summary>打電話先問價格（英文）</summary>
-        <div class="detail"><textarea id="clinicFeeText" spellcheck="false">Hello. I am a 31-year-old visitor with sudden widespread pain and may need a same-day medical consultation. Before I come, could you please confirm whether you can see me, the total visitor or non-eligible consultation fee, and the current estimated wait time? I have my passport and visa details.</textarea>
-          <button type="button" class="copy-fixed" data-target="clinicFeeText">複製診所詢價文字</button>
+        <summary>My Medical 電話預約說詞（首選）</summary>
+        <div class="detail"><textarea id="clinicFeeText" spellcheck="false">Hello. I am a 31-year-old overseas visitor and I am not enrolled with your clinic. I have sudden widespread pain and would like a face-to-face GP appointment today. Your website lists the overseas visitor fee as 125 dollars. Do you have a same-day appointment? Please confirm the total consultation fee and tell me whether any casual or overseas visitor surcharge applies before booking.</textarea>
+          <button type="button" class="copy-fixed" data-target="clinicFeeText">複製預約說詞</button>
+          <p><strong>中文意思：</strong>我是31歲海外訪客，沒有在診所註冊；突然全身不同部位疼痛，希望今天實體看 GP。網站標示海外訪客 NZD125，請確認今天有無名額、基本看診總價及是否另收 casual／visitor 費用。</p>
         </div>
       </details>
 
-      <div class="quick-links">
-        <a class="button secondary" href="https://www.riccartonclinic.co.nz/media/i2ibqpai/riccarton-clinic-patient-fees-from-24th-september-2025.pdf" target="_blank" rel="noopener">Riccarton 官方費用</a>
-        <a class="button secondary" href="https://www.pegasus.health.nz/24-hour-surgery" target="_blank" rel="noopener">24 Hour Surgery 官方資訊</a>
-      </div>
+      <h3>看診前與現場注意事項</h3>
+      <ol class="compact">
+        <li><strong>預約時：</strong>說明是 overseas visitor、要 face-to-face GP、今天能否看；再次確認總看診費。</li>
+        <li><strong>帶去：</strong>護照、簽證資料、保險資料、付款卡、已吃藥物包裝或收據，以及頁面產生的英文症狀說帖。</li>
+        <li><strong>告訴醫師：</strong>ibuprofen、paracetamol 的劑量與服用時間；不要自行把 ibuprofen、diclofenac、naproxen 等 NSAIDs 疊加服用。</li>
+        <li><strong>處方：</strong>可以說疼痛影響生活並詢問疑似神經痛的安全短期治療，但不要要求特定藥名或保證開藥。</li>
+        <li><strong>離開前：</strong>確認處方送到哪間藥局，並索取英文 clinical summary／medical certificate、已付款逐項收據及處方副本。</li>
+        <li><strong>藥費分開：</strong>診所費通常不含藥局領藥費；驗血、影像、注射、延長問診及其他處置也可能另外收費。</li>
+      </ol>
     </section>
 
     <section class="card" id="nhi-refund">
