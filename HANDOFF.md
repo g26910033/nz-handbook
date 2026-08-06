@@ -49,3 +49,4 @@
 - 2026-08-05 每日匯率更新：Mastercard Global轉換器顯示錯誤，改以SG Rates四幣別同日MasterCard 08/04牌告交叉換算；保留最新核帳，只更新仍屬估算的已付款、待支出及住宿換算。財務為已支出TWD292,779、待支出TWD14,205、總預估TWD306,984，實刷與授權TWD維持不變；建置、加總與關鍵區塊驗證均已通過。
 - 2026-08-05 依使用者確認，08/01中信Woolworths TWD975與PAK'nSAVE Hornby TWD746共TWD1,721由餐飲／食品移列購物；已支出總額不變。餐飲剩餘預算重算為約NZD65.40／TWD1,247，待支出TWD15,452、總預估TWD308,231。
 - 2026-08-05 已將獨立就醫卡的實體診所備案改為手機友善比較表，加入 My Medical、Village Health、URMC、Moorhouse、24 Hour Surgery 與 Riccarton Clinic 的海外訪客費用、預約／walk-in 差異、電話、公開 Email、地址及官方連結；另加入 My Medical 中英預約說詞與現場文件、用藥及額外費用提醒。主手冊不連動修改。
+- 2026-08-06 每日匯率更新：Mastercard Global轉換器顯示錯誤，改以SG Rates四幣別同日MasterCard 08/05牌告交叉換算；保留最新購物分類，只更新仍屬估算的已付款、待支出及住宿換算。財務為已支出TWD292,769、待支出TWD15,384、總預估TWD308,153，實刷與授權TWD維持不變；建置、加總與關鍵區塊驗證均已通過。
