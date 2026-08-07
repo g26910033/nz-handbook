@@ -182,15 +182,16 @@
 - `<title>` 位於 `build.py` 的 HTML shell 中，並於 build 後出現在 `index.html`；`src/sections/00-cover.html` 只維護封面內容與網頁更新標籤。
 - 目前旅行型態：冬季自駕、財務控制、低風險駕駛、多數餐食自炊。
 - 目前頁面右上角有 `網頁更新` 標籤；位於 `src/sections/00-cover.html` 中，桌面固定右上角，手機在頁首，列印時隱藏。
-- 目前 Mastercard 匯率來源：`https://www.mastercard.com/global/en/personal/get-support/currency-exchange-rate-converter.html`；官方轉換器無法回傳結果時，以 SG Rates MasterCard 同日 `NZD`/`MYR`/`USD`/`TWD` 對 `SGD` 交叉換算。
-- 目前 Mastercard 匯率基準：`08/05`
-  - `1 NZD = 19.0419364 TWD`
-  - `1 MYR = 7.8993929 TWD`
-  - `1 USD = 32.2690166 TWD`
+- 目前 Mastercard 匯率來源：`https://www.mastercard.com/global/en/personal/get-support/currency-exchange-rate-converter.html`；官方轉換器無法回傳結果時，以 SG Rates MasterCard 同日 `NZD`/`USD`/`TWD` 對 `SGD` 交叉換算。
+- 目前 JPY 匯率來源：永豐銀行牌告匯率的日圓即期賣出；不再維護 MYR 每日匯率，歷史 MYR 消費仍保留原幣與正式 TWD。
+- 目前匯率基準：Mastercard `08/06`、永豐 `08/06 15:30`
+  - `1 NZD = 19.0390257 TWD`
+  - `1 USD = 32.2859606 TWD`
+  - `1 JPY = 0.2062 TWD`
 - 目前財務摘要：
-  - 已支出：`TWD 292,769`
-  - 待支出：`TWD 15,384`
-  - 總預估：`TWD 308,153`
+  - 已支出：`TWD 295,155`
+  - 待支出：`TWD 15,271`
+  - 總預估：`TWD 310,426`
 - 目前 `src/sections/` 中已有導航總表、景點票券與執行時間、住宿與付款總表等核心區塊的源碼。
 - 根目錄另有獨立的 `medical-consult.html` 線上問診整備頁；此頁不連入主手冊、不由 `build.py` 組裝，並以少量中文欄位、結構化選項及本機常用醫療詞彙轉換，產生可一次複製的英文問診說帖。修改獨立頁時不得連動改寫 `index.html` 或主手冊封面更新時間，除非使用者另行要求。
 - `medical-consult.html` 另含台灣健保境外自墊醫療費用核退限制、實體院所文件清單與中英索取話術；純線上問診不得在頁面上表述為可核退，內容應以健保署現行表單、期限及當季上限為準。
@@ -243,6 +244,7 @@
 - 2026-08-06 Mastercard Global轉換器仍顯示錯誤；SG Rates四幣別頁面於2026-08-06 08:00同步產生MasterCard 08/05牌告，交叉匯率更新為NZD/TWD19.0419364、MYR/TWD7.8993929、USD/TWD32.2690166。保留最新購物分類，只重算仍屬估算的已付款與待支出項目；財務更新為已支出TWD292,769、待支出TWD15,384、總預估TWD308,153。
 - 2026-08-06 最新中信與永豐08月帳單核對：中信TWD5,092及永豐台幣帳戶TWD23,395均為既有消費正式入帳，不重複增加；永豐幣倍日圓帳戶本期淨消費與手續費¥102,670、前期餘額¥168、應繳¥102,838。日圓依永豐08/06 15:30即期賣出0.2062換算；Agoda與舊Booking.com住宿正負沖銷排除，07/18 Kmart按退款後淨額，並補入先前漏列的Mobil Yaldhurst。財務更新為已支出TWD295,226、待支出TWD15,277、總預估TWD310,503。
 - 2026-08-06 聯邦07月與08月帳單核對只採聯邦M卡的旅館／訂房平台交易，聯邦綠卡一卡通御璽卡及M卡其他消費、回饋全部排除。兩期住宿本金正式合計TWD9,704、海外交易手續費TWD145；以正式帳單取代6筆授權／估值後，財務更新為已支出TWD295,155、待支出TWD15,277、總預估TWD310,432。帳單PDF與擷取文字只存放`private/billing/`，不得提交或公開卡片資訊。
+- 2026-08-07 Mastercard Global轉換器仍未回傳可用結果；SG Rates的NZD/USD/TWD三頁MasterCard牌告日一致為08/06，交叉匯率更新為NZD/TWD19.0390257、USD/TWD32.2859606。永豐牌告於08/07 08:01查詢時，JPY即期賣出仍為08/06 15:30的0.2062。停止維護MYR每日匯率，只重算仍屬估算的NZD項目；財務更新為已支出TWD295,155、待支出TWD15,271、總預估TWD310,426。
 - 工作樹可能出現 `.DS_Store` 或 Mac 的隱藏檔；不要納入提交，除非使用者明確要求。
 
 ## 已知注意事項
@@ -250,7 +252,8 @@
 - Mastercard 官方頁面可被瀏覽器開啟；本機 `curl` 或直接 API 請求可能被 Mastercard/Akamai 擋下。必要時使用瀏覽器同源查詢。
 - 每日匯率更新以 Mastercard Global 國際版 converter 為官方入口：`https://www.mastercard.com/global/en/personal/get-support/currency-exchange-rate-converter.html`。
 - Mastercard current rate 查詢可使用頁面同源請求的 `fxDate=0000-00-00`，應以官方回應中的 `data.fxDate` 作為手冊匯率基準日期。
-- 若官方 Mastercard 頁面可開但本機直接 API/JS 仍被 Akamai 或瀏覽器擴充阻擋，可用 SG Rates 的 MasterCard 同日 NZD/MYR/USD/TWD 對 SGD 匯率交叉驗證，使用前必須確認四個幣別的 MasterCard 日期一致。
+- 若官方 Mastercard 頁面可開但本機直接 API/JS 仍被 Akamai 或瀏覽器擴充阻擋，可用 SG Rates 的 MasterCard 同日 NZD/USD/TWD 對 SGD 匯率交叉驗證，使用前必須確認三個幣別的 MasterCard 日期一致。
+- JPY每日匯率使用永豐銀行日圓即期賣出；非營業時間沿用牌告頁顯示的最新報價時間與數值，不用查詢MYR每日匯率。
 - 匯率更新時要只在有實質匯率或換算變更時 commit。
 - 已刷卡 TWD 實刷值應優先於估算匯率。
 - 北島已完成段落不要加入公開敏感資訊，例如訂房 PIN、完整訂單號、信用卡尾號或私人聯絡資訊；必要時只保留住宿/平台/付款狀態與已刷金額。
