@@ -1,42 +1,63 @@
-<section class="chapter" id="finance">
+<section class="chapter finance-dashboard" id="finance">
 <h1>1. 財務總控表</h1>
-<div class="grid2">
+<div class="grid2 finance-basis">
 <div class="box">
-<h3>萬事達與永豐匯率基準（08/06）</h3>
-<p>1 NZD = 19.0390257 TWD<br/>1 USD = 32.2859606 TWD<br/>1 JPY = 0.2062 TWD（永豐即期賣出）</p>
+<h3>匯率基準｜08/06</h3>
+<dl class="finance-rates">
+<div><dt>NZD</dt><dd>19.0390257 TWD</dd></div>
+<div><dt>USD</dt><dd>32.2859606 TWD</dd></div>
+<div><dt>JPY</dt><dd>0.2062 TWD</dd></div>
+</dl>
+<p class="mini">NZD、USD採Mastercard 08/06牌告；JPY採永豐08/06 15:30即期賣出。</p>
 </div>
 <div class="box">
-<h3>財務原則</h3>
-<p>已支出以TWD實際值列示；永豐幣倍日圓帳戶以08/06 15:30永豐即期賣出0.2062換算；待支出保留原幣與TWD估算。住宿付款、刷卡日期與死線已整併於「住宿與付款總表」。</p>
+<h3>計算口徑</h3>
+<p>已支出優先採實刷或正式帳單；尚未入帳才保留估值。待支出同列原幣與TWD，帳單應繳、回饋及退款不重複計入旅費。</p>
+<p class="mini">住宿付款日、卡別與取消期限請見「住宿與付款總表」。</p>
 </div>
 </div>
 <div class="money-total">
-<div class="box">
+<div class="box paid">
 <div class="small">已支出</div>
 <div class="big">TWD 295,156</div>
 </div>
-<div class="box">
+<div class="box pending">
 <div class="small">待支出</div>
 <div class="big">TWD 15,261</div>
 </div>
-<div class="box">
+<div class="box forecast">
 <div class="small">總預估</div>
 <div class="big">TWD 310,417</div>
 </div>
 </div>
-<h2>最新信用卡帳單核對</h2>
-<table>
-<thead><tr><th>帳單</th><th>本期應繳</th><th>核對結果</th></tr></thead>
+<h2>待辦與可用預算</h2>
+<table class="finance-action-table">
+<thead><tr><th>狀態</th><th>項目／原幣</th><th>TWD</th></tr></thead>
 <tbody>
-<tr><td>中信08月帳單</td><td>TWD5,092<br/>08/23前</td><td>本金、兩次機場貴賓室及海外交易手續費均已列入；本次只改為正式入帳，不重複增加。</td></tr>
-<tr><td>永豐08月台幣帳戶</td><td>TWD23,395<br/>08/20前</td><td>均為既有消費正式入帳；繳款、回饋與折抵不是新消費，排除於旅費。</td></tr>
-<tr><td>永豐08月日圓帳戶</td><td>¥102,838<br/>約TWD21,205<br/>08/20前</td><td>本期淨消費與手續費¥102,670（約TWD21,171），另含前期餘額¥168（約TWD35）。Agoda與舊Booking.com住宿正負沖銷為0，不列消費。</td></tr>
-<tr><td>聯邦07月帳單</td><td>TWD6,722<br/>07/18自動轉帳</td><td>僅採聯邦M卡的住宿／訂房平台交易：本金TWD4,749、海外交易手續費TWD71。M卡其他消費、回饋及聯邦綠卡整段均排除。</td></tr>
-<tr><td>聯邦08月帳單</td><td>TWD7,531<br/>08/18自動轉帳</td><td>僅採聯邦M卡的住宿／訂房平台交易：本金TWD4,955、海外交易手續費TWD74。回饋及聯邦綠卡整段均排除。</td></tr>
-<tr><td>玉山07月帳單</td><td>TWD7,777<br/>08/18前</td><td>19筆旅行消費本金正式合計TWD7,671、海外交易手續費TWD106；均已由先前未出帳截圖納入，本次只以正式金額取代估值。前期繳款不列為消費。</td></tr>
+<tr><td class="finance-state">可用</td><td><strong>餐飲預算</strong><br/><span class="small">總預算NZD1,550；已用TWD28,418.52，剩約NZD57.36。</span></td><td class="num">1,092</td></tr>
+<tr><td class="finance-state">可用</td><td><strong>油資預算</strong><br/><span class="small">南島與基督城油資上限NZD470，剩約NZD42.14。</span></td><td class="num">802</td></tr>
+<tr><td class="finance-state due">待付款</td><td><strong>佳蓉MAS自有車全險</strong><br/><span class="small">NZD552.08，已含1.75%刷卡附加費；付款後改採實刷TWD。</span></td><td class="num">10,511</td></tr>
+<tr><td class="finance-state due">待交付</td><td><strong>佳蓉預備金</strong><br/><span class="small">NZD150；交付後移入已支出。</span></td><td class="num">2,856</td></tr>
+<tr class="total"><td colspan="2">待支出合計</td><td class="num">15,261</td></tr>
 </tbody>
 </table>
-<details>
+<p class="finance-settled">票券與基本通訊費已結清；U Mobile RM10備援方案未啟用，不列基本預算。</p>
+<details class="finance-details finance-audit">
+<summary><span><strong>信用卡帳單與逐筆核對</strong><small>6份帳單；聯邦住宿、玉山與永豐日圓明細</small></span></summary>
+<div class="finance-details-body">
+<h2>信用卡帳單摘要</h2>
+<table class="finance-audit-table">
+<thead><tr><th>帳單</th><th>本期應繳</th><th>核對結果</th></tr></thead>
+<tbody>
+<tr><td>中信08月</td><td>TWD5,092<br/>08/23前</td><td>本金、兩次貴賓室與手續費均已採計；只更新入帳狀態。</td></tr>
+<tr><td>永豐08月台幣</td><td>TWD23,395<br/>08/20前</td><td>既有消費已入帳；繳款、回饋與折抵排除。</td></tr>
+<tr><td>永豐08月日圓</td><td>¥102,838<br/>約TWD21,205<br/>08/20前</td><td>旅費採計¥102,670（約TWD21,171）；前期¥168及住宿沖銷排除。</td></tr>
+<tr><td>聯邦07月</td><td>TWD6,722<br/>07/18自動轉帳</td><td>採計M卡住宿本金TWD4,749、手續費TWD71；其餘排除。</td></tr>
+<tr><td>聯邦08月</td><td>TWD7,531<br/>08/18自動轉帳</td><td>採計M卡住宿本金TWD4,955、手續費TWD74；其餘排除。</td></tr>
+<tr><td>玉山07月</td><td>TWD7,777<br/>08/18前</td><td>19筆本金TWD7,671、手續費TWD106；以正式值取代估值。</td></tr>
+</tbody>
+</table>
+<details class="finance-subdetails">
 <summary><strong>聯邦M卡住宿正式入帳明細</strong></summary>
 <table>
 <thead><tr><th>帳單／消費日</th><th>住宿／平台</th><th>原幣</th><th>正式TWD本金</th><th>海外手續費</th></tr></thead>
@@ -50,9 +71,9 @@
 <tr class="total"><td colspan="3">兩期合計</td><td class="num">9,704</td><td class="num">145</td></tr>
 </tbody>
 </table>
-<p class="note">只有上列旅館與訂房平台本金納入住類；海外交易手續費另列。聯邦綠卡一卡通御璽卡的所有交易均與本次旅行無關，未納入手冊。</p>
+<p class="note">僅上列M卡住宿本金納入住類；手續費另列。聯邦綠卡及M卡其他消費均排除。</p>
 </details>
-<details>
+<details class="finance-subdetails">
 <summary><strong>玉山07月正式入帳明細</strong></summary>
 <table>
 <thead><tr><th>消費日</th><th>商家</th><th>分類</th><th>原幣</th><th>正式TWD本金</th><th>海外手續費</th></tr></thead>
@@ -79,10 +100,10 @@
 <tr class="total"><td colspan="4">19筆合計</td><td class="num">7,671</td><td class="num">106</td></tr>
 </tbody>
 </table>
-<p class="note">本表以玉山正式帳單取代先前未出帳截圖金額，不重複增加支出。07/30 Marchwiel Takeaways、Fairlie Heritage Museum與Fairlie Bakehouse，以及07/31後交易未出現在本期帳單，仍保留既有暫列值。</p>
+<p class="note">正式帳單取代未出帳估值；07/30未入帳的3筆交易與07/31後消費維持暫列。</p>
 </details>
-<p class="note">日圓換算：<a href="https://bank.sinopac.com/mma8/bank/html/rate/bank_ExchangeRate.html">永豐銀行牌告匯率</a>08/06 15:30日圓即期賣出0.2062。財務總額僅調整先前0.196估值的匯差、補入漏列的Mobil Yaldhurst，並以退款後淨額取代07/18 Kmart原授權；不把帳單應繳額再次當成新消費。</p>
-<details>
+<p class="note">日圓採<a href="https://bank.sinopac.com/mma8/bank/html/rate/bank_ExchangeRate.html">永豐08/06 15:30牌告</a>0.2062換算；已補Mobil Yaldhurst，Kmart採退款後淨額。帳單應繳不另加進旅費。</p>
+<details class="finance-subdetails">
 <summary><strong>永豐幣倍日圓帳單逐筆明細</strong></summary>
 <table>
 <thead><tr><th>消費日</th><th>商家</th><th>分類</th><th>日圓本金＋手續費</th><th>TWD估算</th></tr></thead>
@@ -124,109 +145,69 @@
 <tr class="total"><td colspan="3">本期淨消費與海外手續費</td><td class="num">¥102,670</td><td class="num">21,171</td></tr>
 </tbody>
 </table>
-<p class="note">排除：Agoda 07/03本金與手續費正負沖銷；High Country Lodge舊Booking.com訂單本金與手續費正負沖銷。07/18 Kmart已把兩筆退款及其手續費退款併入淨額。</p>
+<p class="note">排除Agoda 07/03及High Country Lodge舊訂單的正負沖銷；Kmart採兩筆退款後淨額。</p>
 </details>
-<h2>已支出明細</h2>
-<table>
+</div>
+</details>
+<h2>已支出分類</h2>
+<table class="finance-category-table">
 <thead>
 <tr>
 <th>類別</th>
-<th>細項</th>
+<th>範圍與核帳重點</th>
 <th>TWD</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>行</td>
-<td>國際線與國內線機票、改票、機場貴賓室、租車與車險均沿用既有實付值。北島油資TWD3,824；南島與基督城交通已逐筆納入。永豐日圓帳單新增核出Mobil Yaldhurst ¥9,315＋手續費¥140 → 約TWD1,950；Mobil Sydenham正式帳列¥4,584＋手續費¥69 → 約TWD959；Motu Move、Supercheap Auto與DOC Parking均按日圓帳單更新。玉山07月帳單確認Mosgiel Mobil NZD51.82 → TWD974、Mobil Twizel NZD24.91 → TWD468、NPD Timaru NZD80.87 → TWD1,528；其餘MGL Wanaka、MOBIL Queenstown、PAK'nSAVE Qtwn Fuel、CALTEX Te Anau、Z Curletts及停車費沿用既有實付或授權值。NPD Timaru TWD3,778.58為預刷授權，不列支出。</td>
+<td>機票、改票、貴賓室、租車、RentalCover、油資、停車與車務。正式帳單已替換估值；NPD Timaru預刷TWD3,778.58排除。</td>
 <td class="num">72,596</td>
 </tr>
 <tr>
 <td>住</td>
-<td>Airport Westney 1,549；The Good Travelers Hostel MYR55.90 → 聯邦帳單TWD434；FlyingPig Backpacker 1,122；Finlay Jack's Backpackers 1,417；Tongariro River Motel NZD76.50 → 1,402；LKNZ Lodge 1,598；Fat Owl Motel, Bar & Eatery NZD114.19 → 實刷TWD2,105；Juno Hall 1,560；Microtel Lodge NZD74.52 → 聯邦帳單TWD1,366；Manor Views NZD89.71 → 聯邦帳單TWD1,689；Global Village 1,491；Wild Kea Lodge NZD68.83 → 聯邦帳單TWD1,305；Heartland Hotel Haast 2,133；The Camp - Lake Hawea 1,980；Kingston TOP 10 Holiday Park標準小屋NZD91.76（含信用卡附加費NZD1.76）→ 實刷TWD1,714；Te Anau Lakeview Holiday Park NZD68.81 → 暫估TWD1,310，Agoda已付；Mackenzie Motels NZD139.90 → 聯邦帳單TWD2,626；Hunters Moon NZD103.91 → 永豐授權TWD1,979；Empire Hotel Backpackers NZD88.39 → Booking.com授權TWD1,676；High Country Lodge, Motels & Backpackers 哈愛鄉村旅館、汽車旅館暨背包客棧NZD121.50 → 聯邦帳單TWD2,284；The Fort Timaru NZD114.51 → 永豐通知TWD2,157，Booking.com已付；Upper Riccarton二姑家住宿補貼NZD100 × 18.2275 = TWD1,822.75，加TWD3,800，合計TWD5,623，已支付。</td>
+<td>全程住宿本金及二姑家補貼TWD5,623。旅館原幣、付款日、卡別與取消期限見<a href="#stay">住宿與付款總表</a>。</td>
 <td class="num">40,974</td>
 </tr>
 <tr>
 <td>購車</td>
-<td>購車與修理、驗車合計NZD4,200：現金NZD3,000 × 18.5515 = TWD55,654.5，現金NZD200 × 18.2275 = TWD3,645.5，現金小計TWD59,300；其餘NZD1,000暫沿用原估算TWD18,621，合計TWD77,921。車險、規費與雪鏈不由本次支出負擔。</td>
+<td>購車、修理及驗車NZD4,200。現金NZD3,200依實際換匯為TWD59,300；其餘NZD1,000估TWD18,621。</td>
 <td class="num">77,921</td>
 </tr>
 <tr>
 <td>通訊／保險／簽證</td>
-<td>OPWH/OPP、短期旅平險、WHV規費、國際駕照、eSIM、NZeTA/IVL。</td>
+<td>OPWH／OPP、旅平險、WHV規費、國際駕照、eSIM及NZeTA／IVL。</td>
 <td class="num">34,708</td>
 </tr>
 <tr>
 <td>票券</td>
-<td>Spellbound螢火蟲導覽雙人；Waikite Valley Thermal Pools（NZD73.65 = USD42.91 → TWD1,357）；Craters of the Moon月球火山口（NZD20 → 367）；Wairakei Terraces（NZD35 = USD20.39 → TWD645）；Waitomo Museum of Caves懷托摩洞穴博物館現場付款雙人TWD190；Tekapo Springs Hot Pools（NZD58.80 = USD34.26 → TWD1,084）；Hanmer Springs Thermal Pools（佳蓉NZD29 = USD16.90 → TWD535、律德NZD24 = Richart TWD445，合計TWD980）；Skyline Queenstown Gondola + 3 Luge Rides皇后鎮纜車＋3次滑車雙人KKday實刷TWD3,360，款項已確認、待出票；07/27 Steampunk HQ雙人NZD30 → 玉山帳單TWD564；07/30 Fairlie Heritage Museum雙人NZD20 → 玉山暫列TWD375.58，已付待正式帳單。Moeraki Boulders為免費景點，Moeraki Boulders Gifts消費另歸購物。ether.fi刷卡匯率USD/TWD 31.63，TWD已含手續費。</td>
+<td>付費景點與溫泉；原幣、執行時間及付款狀態見<a href="#tickets">景點票券與執行時間</a>。Moeraki Boulders免費，禮品歸購物。</td>
 <td class="num">11,854</td>
 </tr>
 <tr>
 <td>餐飲／食品</td>
-<td>06/26-08/01超市、便利商店與餐廳均已逐筆納入；永豐幣倍交易改按日圓正式帳單淨額及08/06牌告換算，中信08月帳單只更新入帳狀態。玉山07月帳單內餐飲／食品本金已由截圖暫列值改為正式金額；07/30未入本期帳單及07/31後交易仍保留既有暫列值，不重複增加。合計TWD28,418.52。</td>
+<td>06/26－08/01超市、便利商店與餐廳。正式帳單取代估值，未入帳交易維持暫列；精確合計TWD28,418.52。</td>
 <td class="num">28,419</td>
 </tr>
 <tr>
 <td>購物</td>
-<td>Kmart、The Warehouse、Briscoes、藥局、BANGA LIMITED、MOBIL MANGERE、Waikite現場、Te Kuiti i-SITE、Kapa Haka、Hurunui i-SITE與Hanmer現場等均沿用既有分類。07/18 Kmart已依正式帳單扣除兩筆退款及退款手續費，不再沿用原授權總額；Moeraki Boulders Gifts改按玉山帳單TWD154，07/24、07/31及08/01既有購物均不重複增加。合計TWD14,346.54。</td>
+<td>日用品、藥局、紀念品與伴手禮。Kmart採退款後淨額；精確合計TWD14,346.54。</td>
 <td class="num">14,347</td>
 </tr>
 <tr>
 <td>海外交易手續費</td>
-<td>永豐幣倍本期正式海外交易手續費¥1,517 → 約TWD313，已取代對應暫估值；聯邦07月與08月帳單的6筆住宿手續費正式合計TWD145；玉山07月帳單19筆旅行消費手續費正式合計TWD106，均已取代對應估值。永豐台幣帳戶與中信帳單所列手續費只更新狀態、不重複增加；尚無正式帳單者仍保留既有估算。NPD Timaru預刷授權TWD3,778.58不計手續費。</td>
+<td>永豐¥1,517 → 約TWD313；聯邦TWD145；玉山TWD106。其餘未入帳手續費維持估值。</td>
 <td class="num">687</td>
 </tr>
 <tr>
 <td>寵物照護</td>
-<td>貓旅館實際支出TWD13,650。</td>
+<td>貓旅館實付。</td>
 <td class="num">13,650</td>
 </tr>
 <tr class="total">
 <td>小計</td>
 <td>已支出合計。</td>
 <td class="num">295,156</td>
-</tr>
-</tbody>
-</table>
-<h2>待支出明細（原幣 → TWD）</h2>
-<table>
-<thead>
-<tr>
-<th>類別</th>
-<th>項目明細</th>
-<th>TWD</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>食</td>
-<td>餐飲總預算NZD1,550 → TWD29,510；扣除06/26-08/01已支出TWD28,418.52後，剩餘可用約NZD57.36 → TWD1,092。後續實際支出再依帳單回收。</td>
-<td class="num">1,092</td>
-</tr>
-<tr>
-<td>行</td>
-<td>南島住宿環線加冰河、Milford Road半段與庫克山支線約2,350-2,450km，約為北島已完成約1,000-1,050km的2.3倍。原油資上限NZD470；已扣除07/19 MOBIL SYDENHAM NZD48.19、07/21 Challenge Greymouth入帳TWD866、07/23 MGL Wanaka入帳TWD360、07/24 MOBIL Queenstown入帳TWD975及PAK'nSAVE Qtwn Fuel入帳TWD945、07/26 CALTEX Te Anau兩筆入帳TWD1,061，以及玉山帳單確認的07/27 Mosgiel Mobil TWD974、07/29 Mobil Twizel TWD468、07/30 NPD Timaru TWD1,528及油資手續費，剩餘油資預算約NZD42.14 → TWD802；停車費另列已支出，不扣油資預算。NPD預刷授權TWD3,778.58不列支出。</td>
-<td class="num">802</td>
-</tr>
-<tr>
-<td>票券／通訊</td>
-<td>Malaysia eSIM：U Mobile免費旅客eSIM主方案 MYR0；RM10 ULTRA Prepaid（20GB/7天）僅作備援，不列入基本待支出。Steampunk HQ與Moeraki Boulders均已於07/27付款，已移入已支出。</td>
-<td class="num">0</td>
-</tr>
-<tr>
-<td>保險</td>
-<td>佳蓉自有車MAS全險年繳待付NZD552.08（已含1.75%刷卡附加費）→ TWD10,511；保單自07/30生效、尚未支出，付款後以信用卡實刷TWD替換。</td>
-<td class="num">10,511</td>
-</tr>
-<tr>
-<td>預備金</td>
-<td>給佳蓉的預備金NZD150 → TWD2,856，尚未交付；交付後移入已支出。</td>
-<td class="num">2,856</td>
-</tr>
-<tr class="total">
-<td>合計</td>
-<td>待支出估算。</td>
-<td class="num">15,261</td>
 </tr>
 </tbody>
 </table>
