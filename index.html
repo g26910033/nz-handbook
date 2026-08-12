@@ -12,12 +12,13 @@
 @media print{.updated-at{display:none!important}}
 /* Finance dashboard */
 .finance-dashboard{--finance-paid:#0f766e;--finance-pending:#b45309;--finance-total:#334155}.finance-basis .box{padding:10px 12px}.finance-basis h3{margin-top:0}.finance-basis p{margin:6px 0 0}.finance-rates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:6px 0 0}.finance-rates div{border-left:3px solid #94a3b8;padding-left:7px}.finance-rates dt{font-size:8pt;font-weight:900;color:#475569}.finance-rates dd{margin:0;font-size:10pt;font-weight:900;white-space:nowrap}.finance-dashboard .money-total .box{padding:8px 10px;border-top:4px solid}.finance-dashboard .money-total .paid{border-top-color:var(--finance-paid);background:#f0fdfa}.finance-dashboard .money-total .pending{border-top-color:var(--finance-pending);background:#fff7ed}.finance-dashboard .money-total .forecast{border-top-color:var(--finance-total);background:#f8fafc}.finance-dashboard .money-total .big{letter-spacing:0}.finance-action-table,.finance-category-table{table-layout:fixed}.finance-action-table th:first-child,.finance-action-table td:first-child{width:12%}.finance-action-table th:last-child,.finance-action-table td:last-child{width:15%}.finance-state{font-weight:900;color:#0f766e}.finance-state.due{color:#b45309}.finance-settled{margin:5px 0 12px;padding:6px 9px;border-left:4px solid #64748b;background:#f8fafc;color:#475569;font-size:8.7pt}.finance-details{margin:10px 0;border:1px solid var(--line);border-radius:6px;background:#fff;overflow:hidden}.finance-details>summary{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 11px;background:#f8fafc;cursor:pointer;list-style:none}.finance-details>summary::-webkit-details-marker{display:none}.finance-details>summary span{min-width:0}.finance-details>summary small{display:block;margin-top:2px;color:#64748b;font-weight:500}.finance-details>summary::after{content:"+";flex:0 0 22px;color:#334155;font-size:16pt;font-weight:500;line-height:1;text-align:center}.finance-details[open]>summary{border-bottom:1px solid var(--line)}.finance-details[open]>summary::after{content:"−"}.finance-details-body{padding:5px 10px 10px}.finance-details-body>h2{margin-top:8px}.finance-subdetails{margin:8px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.finance-subdetails>summary{padding:7px 5px;cursor:pointer;color:#334155}.finance-audit-table th:nth-child(1),.finance-audit-table td:nth-child(1){width:18%}.finance-audit-table th:nth-child(2),.finance-audit-table td:nth-child(2){width:20%}.finance-category-table th:first-child,.finance-category-table td:first-child{width:17%;font-weight:900}.finance-category-table th:last-child,.finance-category-table td:last-child{width:14%}.finance-category-table a{color:#1d4ed8;font-weight:700}.finance-category-table td{padding-top:5px;padding-bottom:5px}
-@media (max-width:720px){.finance-dashboard .money-total{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.finance-dashboard .money-total .box{padding:7px 5px}.finance-dashboard .money-total .big{font-size:11.5pt;white-space:nowrap}.finance-rates{gap:4px}.finance-rates div{padding-left:5px}.finance-rates dd{font-size:8.5pt}.finance-action-table,.finance-category-table{display:table;overflow:visible;font-size:8.2pt}.finance-action-table th,.finance-action-table td,.finance-category-table th,.finance-category-table td{min-width:0;padding:4px}.finance-action-table th:first-child,.finance-action-table td:first-child{width:17%}.finance-action-table th:last-child,.finance-action-table td:last-child{width:19%}.finance-category-table th:first-child,.finance-category-table td:first-child{width:20%}.finance-category-table th:last-child,.finance-category-table td:last-child{width:22%}.finance-details>summary{padding:8px}.finance-details-body{padding:4px 7px 8px}}
-@media print{.finance-dashboard .finance-details>summary::after{display:none}.finance-dashboard .finance-details>.finance-details-body,.finance-dashboard .finance-subdetails>p,.finance-dashboard .finance-subdetails>details{display:block!important}.finance-dashboard .finance-subdetails>table{display:table!important}.finance-dashboard .finance-details{break-inside:auto}.finance-dashboard .finance-details>summary{border-bottom:1px solid var(--line)}.finance-action-table,.finance-category-table{display:table}.finance-dashboard .money-total{grid-template-columns:repeat(3,1fr)}}
+.finance-dashboard .finance-final-total{grid-template-columns:1fr}
+@media (max-width:720px){.finance-dashboard .money-total{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.finance-dashboard .finance-final-total{grid-template-columns:1fr}.finance-dashboard .money-total .box{padding:7px 5px}.finance-dashboard .money-total .big{font-size:11.5pt;white-space:nowrap}.finance-rates{gap:4px}.finance-rates div{padding-left:5px}.finance-rates dd{font-size:8.5pt}.finance-action-table,.finance-category-table{display:table;overflow:visible;font-size:8.2pt}.finance-action-table th,.finance-action-table td,.finance-category-table th,.finance-category-table td{min-width:0;padding:4px}.finance-action-table th:first-child,.finance-action-table td:first-child{width:17%}.finance-action-table th:last-child,.finance-action-table td:last-child{width:19%}.finance-category-table th:first-child,.finance-category-table td:first-child{width:20%}.finance-category-table th:last-child,.finance-category-table td:last-child{width:22%}.finance-details>summary{padding:8px}.finance-details-body{padding:4px 7px 8px}}
+@media print{.finance-dashboard .finance-details>summary::after{display:none}.finance-dashboard .finance-details>.finance-details-body,.finance-dashboard .finance-subdetails>p,.finance-dashboard .finance-subdetails>details{display:block!important}.finance-dashboard .finance-subdetails>table{display:table!important}.finance-dashboard .finance-details{break-inside:auto}.finance-dashboard .finance-details>summary{border-bottom:1px solid var(--line)}.finance-action-table,.finance-category-table{display:table}.finance-dashboard .money-total{grid-template-columns:repeat(3,1fr)}.finance-dashboard .finance-final-total{grid-template-columns:1fr}}
 </style></head>
 <body>
 <main class="book">
-<div class="updated-at" aria-label="網頁更新時間">網頁更新：2026/08/12 12:32（台灣時間）</div>
+<div class="updated-at" aria-label="網頁更新時間">網頁更新：2026/08/12 12:44（台灣時間）</div>
 <div class="cover" id="top">
 <div class="kicker">2026冬季版｜單一HTML旅行手冊｜手機與A4列印適用</div>
 <div class="doc-title">紐西蘭冬季雙島自駕生存與財務教戰手冊</div>
@@ -55,35 +56,16 @@
 </div>
 <div class="box">
 <h3>計算口徑</h3>
-<p>已支出優先採實刷或正式帳單；尚未入帳才保留估值。待支出同列原幣與TWD，帳單應繳、回饋及退款不重複計入旅費。</p>
+<p>實際支出優先採實刷或正式帳單；尚未正式入帳者保留已確認的即時未出帳金額。帳單應繳、回饋、退款與未使用預算不重複計入支出。</p>
 <p class="mini">住宿付款日、卡別與取消期限請見「住宿與付款總表」。</p>
 </div>
 </div>
-<div class="money-total">
+<div class="money-total finance-final-total">
 <div class="box paid">
-<div class="small">已支出</div>
-<div class="big">TWD 305,489</div>
-</div>
-<div class="box pending">
-<div class="small">待支出</div>
-<div class="big">TWD 4,758</div>
-</div>
-<div class="box forecast">
-<div class="small">總預估</div>
-<div class="big">TWD 310,247</div>
+<div class="small">實際支出總額</div>
+<div class="big">TWD 305,660</div>
 </div>
 </div>
-<h2>待辦與可用預算</h2>
-<table class="finance-action-table">
-<thead><tr><th>狀態</th><th>項目／原幣</th><th>TWD</th></tr></thead>
-<tbody>
-<tr><td class="finance-state">可用</td><td><strong>餐飲預算</strong><br/><span class="small">總預算NZD1,550；已用TWD28,400.52，剩約NZD57.84。</span></td><td class="num">1,101</td></tr>
-<tr><td class="finance-state">可用</td><td><strong>油資預算</strong><br/><span class="small">南島與基督城油資上限NZD470，剩約NZD42.14。</span></td><td class="num">802</td></tr>
-<tr><td class="finance-state due">待交付</td><td><strong>佳蓉預備金</strong><br/><span class="small">NZD150；交付後移入已支出。</span></td><td class="num">2,855</td></tr>
-<tr class="total"><td colspan="2">待支出合計</td><td class="num">4,758</td></tr>
-</tbody>
-</table>
-<p class="finance-settled">票券與基本通訊費已結清；U Mobile RM10備援方案未啟用，不列基本預算。</p>
 <details class="finance-details finance-audit">
 <summary><span><strong>信用卡帳單與逐筆核對</strong><small>6份帳單；玉山及永豐非住宿明細</small></span></summary>
 <div class="finance-details-body">
@@ -172,7 +154,7 @@
 </details>
 </div>
 </details>
-<h2>已支出分類</h2>
+<h2>實際支出分類</h2>
 <table class="finance-category-table">
 <thead>
 <tr>
@@ -199,8 +181,8 @@
 </tr>
 <tr>
 <td>通訊／保險／簽證</td>
-<td>OPWH／OPP、旅平險、WHV規費、國際駕照、eSIM、NZeTA／IVL，以及佳蓉MAS自有車全險NZD552.08（已含1.75%刷卡附加費）→ 即時未出帳TWD10,500；MAS已寄付款收據。</td>
-<td class="num">45,208</td>
+<td>OPWH／OPP、旅平險、WHV規費、國際駕照、eSIM、NZeTA／IVL，以及佳蓉MAS自有車全險NZD552.08（已含1.75%刷卡附加費）→ 即時未出帳TWD10,500；Skinny Mobile通訊費NZD9 → 實刷TWD171。</td>
+<td class="num">45,379</td>
 </tr>
 <tr>
 <td>票券</td>
@@ -228,12 +210,25 @@
 <td class="num">13,650</td>
 </tr>
 <tr class="total">
-<td>小計</td>
-<td>已支出合計。</td>
-<td class="num">305,489</td>
+<td>合計</td>
+<td>實際支出合計。</td>
+<td class="num">305,660</td>
 </tr>
 </tbody>
 </table>
+<details class="finance-details finance-budget-record">
+<summary><span><strong>預算結案紀錄</strong><small>旅程已結束；未使用額不計入實際支出</small></span></summary>
+<div class="finance-details-body">
+<table>
+<thead><tr><th>項目</th><th>結案紀錄</th></tr></thead>
+<tbody>
+<tr><td><strong>餐飲／食品</strong></td><td>原預算NZD1,550；實際支出TWD28,400.52，結案未使用約NZD57.84（約TWD1,101）。</td></tr>
+<tr><td><strong>油資</strong></td><td>南島與基督城原預算上限NZD470；結案未使用約NZD42.14（約TWD802），實際油資已納入「行」類別。</td></tr>
+</tbody>
+</table>
+<p class="mini">此表僅保留原預算與執行結果，不列入財務總額。</p>
+</div>
+</details>
 </section>
 <section class="chapter" id="tickets">
 <h1>2. 景點票券與執行時間</h1>
