@@ -202,6 +202,7 @@
 - 車主後續提供保險理賠管道與案件編號時，教戰卡應將「索取對方保險資料」標為已完成，下一則訊息只需確認收到並補齊尚缺資料；對方案件資料應直接納入MAS送件及證據清單，不再重複詢問。
 - 當完整資料已傳給車主時，停車事故卡首頁只保留尚未完成的MAS線上理賠；已完成的資料交換移至後段作為紀錄與送出MAS案號後的短訊息，避免誤導使用者再次傳送。
 - 2026-08-13 使用者更正本次停車事故為佳蓉低速向前駛入車位時，以自車前角接觸停放中Mazda的右後保險桿，不是倒車事故；`parking-incident-guide.html` 的MAS與備用105事實敘述應明確使用 `driving slowly forward into a parking space`，不得改寫成倒車，也不自行加入gross negligence、reckless或deliberate等法律定性。
+- 2026-08-13 已以MAS公開線上車險表單逐頁確認本案欄位；表單分為事故、其他人、駕駛、聯絡資料與送出五段。Gallagher Onesurance的`S2378774`是對方提供的理賠案件編號，不得填入表單的「對方保單號」欄位；應在事故敘述與對話附件中提供，未知個資不得猜填。
 - `medical-consult.html` 另含台灣健保境外自墊醫療費用核退限制、實體院所文件清單與中英索取話術；純線上問診不得在頁面上表述為可核退，內容應以健保署現行表單、期限及當季上限為準。
 - `medical-consult.html` 採手機優先的「安全判斷、填資料、複製英文、選線上醫師、領藥、實體備案」行動流程；醫療平台、時段與費用屬易變資料，更新備案時須以業者或 Health New Zealand 官方頁面重查，且實體費用必須區分 casual 與 non-resident／non-eligible 資格。
 - `medical-consult.html` 的實體診所表應把「必須預約」與「可直接 walk-in」分開；目前 My Medical 對海外訪客列 NZD125，但 casual visitor 必須電話預約，Patient Portal 僅供已註冊病人使用。
