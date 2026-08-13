@@ -2,6 +2,7 @@
 
 ## 2026-08-13
 
+- MAS已寄送本案理賠副本；信中說會檢查保障範圍並於24小時內聯絡（週末／假日例外），且明示不要回覆no-reply信，問題改寄`claims@mas.co.nz`。附件第1頁事故時間誤列6:35 p.m.，第2頁英文敘述正確是2:35 pm；獨立`parking-incident-guide.html`已改為先寄Email要求更正、保存更正紀錄、再等回覆，且不把未明示性質的`326147`當作MAS claim reference傳給Gerald。主手冊不連動修改。
 - 已以MAS當日公開線上表單逐頁核對車險理賠流程，並擴充獨立`parking-incident-guide.html`的MAS段落為逐欄填寫表：正確事故類型、時間地點、對方資料、駕駛、聯絡偏好、審閱聲明、附件限制及未確定欄位處理均已列入。更正原有歧義：Gallagher Onesurance的`S2378774`是理賠案件編號，不填進「對方保單號」欄位，而在英文經過及對話截圖中交給MAS。主手冊不連動修改。
 - 已確認保單Schedule的`International Licence / Issued by Other`與MAS線上表單選項並不逐字相同；公開表單只有Full、Restricted、Learner、Overseas，教戰卡已明定本案選Overseas，駕照年數依首次取得日如實填寫。酒精、非法藥物、可能影響駕駛的處方藥、DUI與駕駛前科只有在確實不存在時才各選No。
 - 使用者更正碰撞方向為佳蓉低速向前駛入車位時，以自車前角接觸停放中Mazda的右後保險桿，不是倒車。獨立教戰卡的MAS及備用105英文經過已統一改為明確的`driving slowly forward into a parking space`，並提醒事故敘述不得自行加入gross negligence、reckless或deliberate等法律定性；主手冊不連動修改。
