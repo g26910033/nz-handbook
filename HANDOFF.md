@@ -2,6 +2,8 @@
 
 ## 2026-08-13
 
+- Gmail已確認事故時間更正信於18:23 NZST寄至MAS Claims，收件人、主旨及內文均正確；尚無MAS更正回覆。獨立`parking-incident-guide.html`已把狀態改為「已寄、更正等待中」，明定8月14日18:30 NZST前不重寄或打電話、屆時未有書面回覆才Email追蹤。第3節改為中英並列的保存、轉交與不自行決定規則，並為所有車主／MAS回覆話術附中文翻譯。主手冊不連動修改。
+- 「一眼確認進度」已移到目前狀態後方，改為最先可見的Now／Next／Do not三欄；同步移除舊版「立即送MAS」與未獲明示案件編號即通知Gerald的指示。
 - MAS已寄送本案理賠副本；信中說會檢查保障範圍並於24小時內聯絡（週末／假日例外），且明示不要回覆no-reply信，問題改寄`claims@mas.co.nz`。附件第1頁事故時間誤列6:35 p.m.，第2頁英文敘述正確是2:35 pm；獨立`parking-incident-guide.html`已改為先寄Email要求更正、保存更正紀錄、再等回覆，且不把未明示性質的`326147`當作MAS claim reference傳給Gerald。主手冊不連動修改。
 - 已以MAS當日公開線上表單逐頁核對車險理賠流程，並擴充獨立`parking-incident-guide.html`的MAS段落為逐欄填寫表：正確事故類型、時間地點、對方資料、駕駛、聯絡偏好、審閱聲明、附件限制及未確定欄位處理均已列入。更正原有歧義：Gallagher Onesurance的`S2378774`是理賠案件編號，不填進「對方保單號」欄位，而在英文經過及對話截圖中交給MAS。主手冊不連動修改。
 - 已確認保單Schedule的`International Licence / Issued by Other`與MAS線上表單選項並不逐字相同；公開表單只有Full、Restricted、Learner、Overseas，教戰卡已明定本案選Overseas，駕照年數依首次取得日如實填寫。酒精、非法藥物、可能影響駕駛的處方藥、DUI與駕駛前科只有在確實不存在時才各選No。
