@@ -85,3 +85,4 @@
 - 2026-08-13 已把MAS「Is your vehicle still at the scene?」選No後的填值由原則改成使用者確認的實際車輛位置；僅更新獨立停車事故卡。待本次驗證與提交推送。
 - 2026-08-13 已在獨立停車事故卡頁首同步加入台北與紐西蘭更新時間；九碼版本號依紐西蘭時間產生，格式為MMDDHHmmN，最後一碼為同分鐘更新序號。待本次驗證與提交推送。
 - 2026-08-13 使用者將本案事故時間確認為2:35 pm；已同步更新MAS填值、英文事故敘述與中文核對版。待本次驗證與提交推送。
+- 2026-08-13 使用者確認事故地點為53 Peterborough Street, Christchurch Central City, Christchurch 8013, New Zealand，並提供Gerald Dwyer電話；已將兩者填入獨立停車事故卡的MAS欄位說明。待本次驗證與提交推送。
