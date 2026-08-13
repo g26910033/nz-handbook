@@ -210,6 +210,7 @@
 - 本案MAS「Is your vehicle still at the scene?」選No後的現時車輛位置，依使用者確認填入獨立停車事故卡既有的地址資料；不得擴散至主手冊。
 - 本案事故時間依使用者最新確認為2026-08-12 2:35 pm（紐西蘭當地時間）；停車事故卡的MAS填值、英文事故敘述與中文核對版必須一致。
 - 本案事故地點依使用者確認為53 Peterborough Street, Christchurch Central City, Christchurch 8013, New Zealand；對方Gerald Dwyer的電話已由使用者提供，可填MAS其他涉案人資料，僅限獨立停車事故卡。
+- 2026-08-13 本案MAS線上理賠已送出，確認頁承諾寄摘要Email並於兩個工作天內聯絡；停車事故卡當前順序改為保存確認／案號、將MAS案號書面提供Gerald、等待及書面補件，不得再顯示為需要送件。
 - `parking-incident-guide.html`頁首必須同步顯示台北與紐西蘭更新時間；九碼版本號只依紐西蘭時間產生，格式為`MMDDHHmmN`，前八碼為月日時分，最後一碼為同分鐘更新序號。
 - `medical-consult.html` 另含台灣健保境外自墊醫療費用核退限制、實體院所文件清單與中英索取話術；純線上問診不得在頁面上表述為可核退，內容應以健保署現行表單、期限及當季上限為準。
 - `medical-consult.html` 採手機優先的「安全判斷、填資料、複製英文、選線上醫師、領藥、實體備案」行動流程；醫療平台、時段與費用屬易變資料，更新備案時須以業者或 Health New Zealand 官方頁面重查，且實體費用必須區分 casual 與 non-resident／non-eligible 資格。
