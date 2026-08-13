@@ -204,7 +204,7 @@
 - 2026-08-13 使用者更正本次停車事故為佳蓉低速向前駛入車位時，以自車前角接觸停放中Mazda的右後保險桿，不是倒車事故；`parking-incident-guide.html` 的MAS與備用105事實敘述應明確使用 `driving slowly forward into a parking space`，不得改寫成倒車，也不自行加入gross negligence、reckless或deliberate等法律定性。
 - 2026-08-13 已以MAS公開線上車險表單逐頁確認本案欄位；表單分為事故、其他人、駕駛、聯絡資料與送出五段。Gallagher Onesurance的`S2378774`是對方提供的理賠案件編號，不得填入表單的「對方保單號」欄位；應在事故敘述與對話附件中提供，未知個資不得猜填。
 - 已簽發的MAS報價／Schedule只列`Full Licence / Issued by Other`，不顯示駕照持有年數；MAS一般線上投保報價頁只要求駕照類型與簽發國，只有回答曾被停牌、取消或有特別條件時才追問總持照年數。理賠表另有Years held欄位。MAS後續書面確認已把有效保單的海外／國際駕照資料更正。公開理賠表單的可選類型為Full、Restricted、Learner、Overseas，沒有International；理賠表應選Overseas，年數欄依首次取得日如實填寫，不可猜測。現行Schedule額外自負額未列持照年數項目。留存的早期MV971912 PDF曾誤列New Zealand，不能作為更正後駕照資料的依據。
-- 本案駕駛資料在停車事故卡採「英文欄位＋中文翻譯＋直接填值」的短句格式：Me、Overseas、1年；酒精／藥物／DUI／定罪題僅在確認全為否時統一填No。不得將持照年數本身表述為額外自負額原因。
+- 本案駕駛資料在停車事故卡採「英文欄位＋完整中文問題＋直接填值」的短句格式：Me、Overseas、1年；酒精、非法藥物、影響駕駛的處方藥、DUI檢測與駕駛定罪拆成五題，各自附中文說明。不得將持照年數本身表述為額外自負額原因。
 - `medical-consult.html` 另含台灣健保境外自墊醫療費用核退限制、實體院所文件清單與中英索取話術；純線上問診不得在頁面上表述為可核退，內容應以健保署現行表單、期限及當季上限為準。
 - `medical-consult.html` 採手機優先的「安全判斷、填資料、複製英文、選線上醫師、領藥、實體備案」行動流程；醫療平台、時段與費用屬易變資料，更新備案時須以業者或 Health New Zealand 官方頁面重查，且實體費用必須區分 casual 與 non-resident／non-eligible 資格。
 - `medical-consult.html` 的實體診所表應把「必須預約」與「可直接 walk-in」分開；目前 My Medical 對海外訪客列 NZD125，但 casual visitor 必須電話預約，Patient Portal 僅供已註冊病人使用。
