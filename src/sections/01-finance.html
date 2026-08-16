@@ -2,19 +2,20 @@
 <h1>1. 財務總控表</h1>
 <div class="grid2 finance-basis">
 <div class="box">
-<h3>匯率基準｜08/13</h3>
+<h3>匯率／實際成本基準｜結案</h3>
 <dl class="finance-rates">
 <div><dt>NZD</dt><dd>18.8347111 TWD</dd></div>
 <div><dt>USD</dt><dd>32.0700146 TWD</dd></div>
-<div><dt>JPY</dt><dd>0.2036 TWD</dd></div>
+<div><dt>JPY｜6月帳單實際換匯成本</dt><dd>0.19701 TWD</dd></div>
+<div><dt>JPY｜7月帳單實際換匯成本</dt><dd>0.20094 TWD</dd></div>
 <div><dt>USDC｜ether.fi平均成本</dt><dd>31.77059595 TWD</dd></div>
 </dl>
-<p class="mini">NZD、USD採Mastercard 08/13同日牌告；JPY採永豐08/13 15:30即期賣出。ether.fi依9筆USDC/TWD換匯，以TWD33,041.10208 ÷ USDC1,039.99計算加權平均成本31.77059595 TWD/USDC。</p>
+<p class="mini">NZD、USD沿用Mastercard 08/13結案基準；日圓不再使用08/13即期賣出0.2036估值，改採實際帳單資金成本：6月JPY/TWD 0.19701、7月JPY/TWD 0.20094。日圓卡每筆TWD成本以「帳單JPY本金 × 對應月份實際換匯成本」計算；海外交易手續費維持獨立支付成本，不重複塞回商戶本金。ether.fi依9筆USDC/TWD換匯，以TWD33,041.10208 ÷ USDC1,039.99計算加權平均成本31.77059595 TWD/USDC。</p>
 </div>
 <div class="box">
 <h3>計算口徑</h3>
 <p>總帳維持「實際支出」口徑；第二階段另做管理會計歸屬，把39日旅行、佳蓉長住與資產／長期持有分開。旅行誘發支出雖不是目的地消費，但因本次出國才發生，因此納入39日旅行成本並保留子分類標籤。退款、回饋與應繳帳單不重複計入。</p>
-<p class="mini">全年保險與365日通訊只把39/365分配到本次39日；其餘移至佳蓉長住。這是期間歸屬，不改變實際付款總額。</p>
+<p class="mini">全年保險與365日通訊只把39/365分配到本次39日；其餘移至佳蓉長住。混合收據若同時含旅行與長住用品，先以品項原幣比例拆分，再回到該筆信用卡實際帳單本金與實際換匯成本分攤TWD；不再用單一結案匯率直接乘NZD品項。</p>
 </div>
 <div class="box">
 <h3>航空口徑｜佳蓉單程列旅行</h3>
@@ -24,34 +25,35 @@
 <div class="box">
 <h3>保守歸類原則</h3>
 <p>只在用途可由帳單、保單、收據或使用者確認時跨期間搬移。現已取得部分PAK'nSAVE、Woolworths、Kmart、The Warehouse與藥局品項收據，確認其中NZD271.05為長住用品；其餘無品項證據的購物仍留在39日旅行，避免假精確。</p>
-<p class="mini">CarJam、Trade Me及兩筆MBIE共TWD140可明確判定為自有車建置／行政成本，因此自地面交通移至資產／長期持有。</p>
+<p class="mini">收據長住部分先前以NZD271.05 × 18.8347111估成TWD5,105，該算法自本版起停用；TWD轉列額改按各筆實際帳單成本逐筆核回。CarJam、Trade Me及兩筆MBIE共TWD140可明確判定為自有車建置／行政成本，因此自地面交通移至資產／長期持有。</p>
 </div>
 </div>
 
 <div class="money-total finance-final-total">
 <div class="box paid">
-<div class="small">實際支出總額</div>
+<div class="small">現行帳面支出總額</div>
 <div class="big">TWD 305,781</div>
-<div class="mini">所有已採計現金流；第二階段只重新歸屬、不改總額</div>
+<div class="mini">目前分類檢查點；日圓成本基準已更正，待逐筆帳單成本回填後再更新最終TWD總額</div>
 </div>
 <div class="box trip-net">
-<div class="small">39日兩人旅行成本</div>
+<div class="small">39日兩人旅行成本｜暫定</div>
 <div class="big">TWD 189,529</div>
-<div class="mini">核心直接成本175,879＋旅行誘發／貓旅館13,650；不含長住與資產</div>
+<div class="mini">目前仍含舊TWD5,105收據轉列結果；已停用舊算法，待帳單成本逐筆核回後更新</div>
 </div>
 </div>
+<p class="note">日圓成本更正：已知永豐日圓批次旅費採計¥102,670；若依7月帳單實際換匯成本0.20094計算，成本約TWD20,631，而不是用08/13即期0.2036估出的TWD20,904，差約TWD273。此差額以及收據長住用品的TWD分攤會在逐筆帳單核回後寫回三層分類，避免把部分更正硬塞進單一類別。</p>
 
 <h2>第二階段完成版｜三層成本歸屬</h2>
 <table class="finance-category-table">
 <thead><tr><th>成本層</th><th>內容</th><th>TWD</th></tr></thead>
 <tbody>
-<tr><td><strong>39日旅行成本</strong></td><td>核心直接旅行成本TWD175,879，加上因本次出國才發生的旅行誘發成本／貓旅館TWD13,650；佳蓉單程機票全額列入。</td><td class="num">189,529</td></tr>
-<tr><td><strong>佳蓉長住成本</strong></td><td>Working Holiday Visa、全年Working Holiday保險39日以外326日、365日通訊39日以外326日，以及收據確認的保暖衣物、家用品、藥品、清潔衛生用品與車輛小工具。</td><td class="num">27,691</td></tr>
+<tr><td><strong>39日旅行成本｜暫定</strong></td><td>核心直接旅行成本TWD175,879，加上因本次出國才發生的旅行誘發成本／貓旅館TWD13,650；佳蓉單程機票全額列入。收據長住用品與日圓實際成本完成逐筆核回後再更新。</td><td class="num">189,529</td></tr>
+<tr><td><strong>佳蓉長住成本｜暫定</strong></td><td>Working Holiday Visa、全年Working Holiday保險39日以外326日、365日通訊39日以外326日，以及收據確認的保暖衣物、家用品、藥品、清潔衛生用品與車輛小工具。收據用品TWD改採實際帳單成本，舊TWD5,105只保留為歷史估值。</td><td class="num">27,691</td></tr>
 <tr><td><strong>資產／長期持有</strong></td><td>購車／修理／驗車TWD77,921、MAS自有車全險TWD10,500，以及CarJam／Trade Me／MBIE自有車行政TWD140。</td><td class="num">88,561</td></tr>
-<tr class="total"><td colspan="2">實際支出總額</td><td class="num">305,781</td></tr>
+<tr class="total"><td colspan="2">現行帳面支出總額</td><td class="num">305,781</td></tr>
 </tbody>
 </table>
-<p class="note">核對式：189,529＋27,691＋88,561＝305,781。旅行誘發成本保留為分析子分類，但已包含在39日旅行成本內。舊「旅行淨支出TWD217,360」停止作為39日成本結論，只保留歷史核帳意義。</p>
+<p class="note">目前三層數字仍是更正日圓成本前的分類檢查點。自本版起停止使用「NZD271.05 × 結案NZD匯率＝TWD5,105」作為長住實際成本；最終核對改以信用卡帳單原始幣別與實際資金成本為準。舊「旅行淨支出TWD217,360」僅保留歷史核帳意義。</p>
 
 <h2>39日旅行成本｜用途細分</h2>
 <table class="finance-category-table">
@@ -69,7 +71,7 @@
 <tr><td>餐飲／食品</td><td>超市、食材、便利商店、咖啡廳與餐廳；現有帳面精確合計TWD28,391.29，總表取整數</td><td class="num">28,391</td></tr>
 <tr><td>景點／體驗</td><td>Spellbound、溫泉、Skyline、Steampunk HQ、Kapa Haka等付費體驗；免費景點不列成本</td><td class="num">12,256</td></tr>
 <tr><td>購物／生活用品</td><td>日用品、藥局、紀念品與伴手禮。未取得品項級證據前不把特定商家消費主觀移往長住成本</td><td class="num">13,879</td></tr>
-<tr><td>收據重分類</td><td>已確認長住用品NZD271.05，以結案匯率估列TWD5,105並自39日旅行轉出；不改實際支出總額</td><td class="num">−5,105</td></tr>
+<tr><td>收據重分類｜待帳單成本核回</td><td>已確認長住用品NZD271.05；TWD轉列不再使用結案NZD匯率。實際分攤公式為「該筆帳單實際本金成本 × 長住品項原幣 ÷ 該張收據原幣總額」。舊TWD5,105僅為歷史估值，已停用作最終值。</td><td class="num">待核回</td></tr>
 <tr><td rowspan="5">保險</td><td>律德OrbitProtect 39日方案：舊總帳分拆值TWD3,957；ether.fi實際成本TWD3,960.52另作支付稽核，不重複改總帳</td><td class="num">3,957</td></tr>
 <tr><td>律德台灣短期旅平險</td><td class="num">1,877</td></tr>
 <tr><td>佳蓉台灣短期旅平險</td><td class="num">811</td></tr>
@@ -84,7 +86,7 @@
 <tr class="category-subtotal"><td>入境／文件小計</td><td class="num">2,694</td></tr>
 <tr><td>支付成本</td><td>永豐、聯邦、玉山及其他已採計海外交易服務費；已併入特定票價／租車者不再重複</td><td class="num">683</td></tr>
 <tr><td>旅行誘發／寵物照護</td><td>貓旅館；雖非目的地消費，但因本次39日出國才發生，因此納入旅行成本</td><td class="num">13,650</td></tr>
-<tr class="travel-net-total"><td colspan="2">39日旅行成本</td><td class="num">189,529</td></tr>
+<tr class="travel-net-total"><td colspan="2">39日旅行成本｜目前分類檢查點</td><td class="num">189,529</td></tr>
 </tbody>
 </table>
 
@@ -95,8 +97,8 @@
 <tr><td>佳蓉Working Holiday Visa／資格</td><td>沿用先前對話確認並寫入舊總帳的歷史核帳值；不以目前新制價格回溯重算</td><td class="num">7,169</td></tr>
 <tr><td>Working Holiday年度保險剩餘期間</td><td>TWD12,331 − 39日分攤TWD1,318＝326日長住部分</td><td class="num">11,013</td></tr>
 <tr><td>365日通訊剩餘期間</td><td>TWD4,931 − 39日分攤TWD527＝326日長住部分</td><td class="num">4,404</td></tr>
-<tr><td>收據確認的長住用品</td><td>NZD271.05 × 18.8347111 ≈ TWD5,105；品項拆分見下表</td><td class="num">5,105</td></tr>
-<tr class="category-subtotal"><td colspan="2">佳蓉長住成本小計</td><td class="num">27,691</td></tr>
+<tr><td>收據確認的長住用品</td><td>NZD271.05為品項原幣合計；TWD不再以18.8347111直接換算。改按各筆卡片帳單實際本金成本分攤；日圓帳單使用6月0.19701、7月0.20094的實際JPY/TWD資金成本。</td><td class="num">待逐筆核回</td></tr>
+<tr class="category-subtotal"><td colspan="2">佳蓉長住成本小計｜目前分類檢查點</td><td class="num">27,691</td></tr>
 </tbody>
 </table>
 <p class="note">佳蓉TPE－KUL－AKL單程TWD12,970依指定口徑列在39日航空，不放入長住成本。MAS自有車保險是車輛長期持有成本，亦不與Working Holiday旅行保險混合。</p>
@@ -133,7 +135,7 @@
 <tr class="total"><td>原合併類別最終帳面</td><td class="num">34,879</td><td>39日12,293＋長住22,586</td></tr>
 </tbody>
 </table>
-<p class="note">39日保險7,963＋39日通訊1,636＋39日入境／文件2,694＝TWD12,293；原合併項目分出的長住部分仍為TWD22,586。另有收據用品TWD5,105由原旅行購物／食品轉列長住，不屬原TWD34,708合併項目。</p>
+<p class="note">39日保險7,963＋39日通訊1,636＋39日入境／文件2,694＝TWD12,293；原合併項目分出的長住部分仍為TWD22,586。收據用品已確認NZD271.05屬長住，但TWD轉列額改採各筆實際帳單成本，舊TWD5,105估值不再作最終值。</p>
 </div>
 </details>
 
@@ -155,10 +157,10 @@
 <tr><td>Kmart Te Rapa</td><td class="num">NZD41.00</td><td class="num">—</td><td class="num">NZD41.00</td><td>護唇膏、保暖褲、水壺及吹風機</td></tr>
 <tr><td>Kmart保暖褲</td><td class="num">NZD18.00</td><td class="num">—</td><td class="num">NZD18.00</td><td>使用者確認為保暖褲</td></tr>
 <tr><td>其他全數長住收據</td><td class="num">NZD62.93</td><td class="num">—</td><td class="num">NZD62.93</td><td>毛帽、鞋子、喉糖、車用小工具及三張藥局收據</td></tr>
-<tr class="total"><td>收據合計</td><td class="num">NZD497.27</td><td class="num">NZD226.22</td><td class="num">NZD271.05</td><td>長住部分依結案匯率估列TWD5,105</td></tr>
+<tr class="total"><td>收據合計</td><td class="num">NZD497.27</td><td class="num">NZD226.22</td><td class="num">NZD271.05</td><td>TWD改按各筆實際帳單成本分攤；舊結案匯率TWD5,105估值停用</td></tr>
 </tbody>
 </table>
-<p class="note">收據影像只存於本機私人資料夾，不發布至GitHub Pages。原幣拆分用於管理會計歸屬；各卡正式TWD本金與海外交易手續費仍以帳單核對區為準。</p>
+<p class="note">收據影像只存於本機私人資料夾，不發布至GitHub Pages。原幣拆分只決定用途比例；真正TWD成本回到支付來源：TWD帳單採正式本金、JPY帳單採帳單JPY本金乘實際換匯成本、ether.fi採實際USD／USDC成本。海外交易手續費仍留在支付成本，避免重複計入品項。</p>
 </div>
 </details>
 
@@ -174,7 +176,8 @@
 <tr><td>台新07月</td><td>Bookme NZD24／TWD438、Golden Crust NZD31.81／TWD575。</td></tr>
 <tr><td>台新08月</td><td>COVER GENIUS NZD149.12／TWD2,741、Lime NZD4.15／TWD77、PayMyPark NZD1.70／TWD32。</td></tr>
 <tr><td>玉山07月</td><td>19筆正式本金TWD7,671＋海外費TWD106；正式值取代未出帳估值。</td></tr>
-<tr><td>永豐08月日圓</td><td>旅費採計¥102,670，依08/13匯率約TWD20,904；住宿沖銷與前期項目排除。</td></tr>
+<tr><td>永豐日圓實際成本基準</td><td>使用者確認6月帳單JPY/TWD實際換匯成本0.19701、7月帳單0.20094；不再以08/13牌告0.2036回推歷史消費。</td></tr>
+<tr><td>永豐日圓旅費批次</td><td>旅費採計¥102,670；按7月帳單實際成本0.20094約TWD20,631。舊以0.2036估列TWD20,904的算法停用；住宿沖銷與前期項目仍排除。</td></tr>
 <tr><td>聯邦07／08月</td><td>住宿本金與手續費依正式帳單核對；其他非旅程消費排除。</td></tr>
 <tr><td>中信08月</td><td>兩次貴賓室等既有旅費已採計；帳單應繳本身不另列支出。</td></tr>
 </tbody>
