@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="佳蓉停車擦撞後的 Police 105、MAS 線上理賠與車主文字聯絡教戰卡" />
+  <meta name="description" content="佳蓉停車擦撞後的 MAS 理賠、估價、第三方責任與 Police 105 線上處理卡" />
   <title>佳蓉停車擦撞線上處理卡</title>
   <style>
     :root {
@@ -24,7 +24,6 @@
       --line: #d6dde4;
       --shadow: 0 12px 30px rgba(17, 46, 78, 0.08);
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -34,9 +33,8 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
       line-height: 1.65;
     }
-
     a { color: var(--blue); }
-    .page { width: min(880px, calc(100% - 24px)); margin: 0 auto; padding: 16px 0 64px; }
+    .page { width: min(900px, calc(100% - 24px)); margin: 0 auto; padding: 16px 0 64px; }
     .hero, .card { border-radius: 20px; box-shadow: var(--shadow); }
     .hero {
       padding: 26px;
@@ -47,11 +45,10 @@
     h1, h2, h3 { line-height: 1.3; }
     h1 { margin: 6px 0 8px; font-size: clamp(1.9rem, 7vw, 2.8rem); }
     h2 { margin: 0 0 10px; font-size: 1.45rem; }
-    h3 { margin: 22px 0 7px; font-size: 1.08rem; }
+    h3 { margin: 20px 0 7px; font-size: 1.08rem; }
     p { margin: 7px 0; }
     ul, ol { margin: 8px 0; padding-left: 24px; }
     li { margin: 5px 0; }
-
     .nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 17px; }
     .nav a {
       padding: 10px 6px;
@@ -63,7 +60,6 @@
       text-align: center;
       text-decoration: none;
     }
-
     .card { margin-top: 16px; padding: 24px; background: var(--card); border: 1px solid var(--line); }
     .status, .note, .warning, .danger { margin-top: 12px; padding: 14px 16px; border-radius: 13px; }
     .status { background: var(--green-soft); color: #0d4e3b; }
@@ -71,69 +67,6 @@
     .warning { background: var(--amber-soft); color: #694500; }
     .danger { background: var(--red-soft); color: #6d2222; border: 1px solid #efc7c7; }
     .status strong, .note strong, .warning strong, .danger strong { display: block; margin-bottom: 3px; }
-
-    .steps { counter-reset: step; display: grid; gap: 12px; margin-top: 15px; }
-    .step { position: relative; padding: 16px 16px 16px 56px; border: 1px solid var(--line); border-radius: 14px; background: #fbfcfd; }
-    .step::before {
-      counter-increment: step;
-      content: counter(step);
-      position: absolute;
-      top: 14px;
-      left: 15px;
-      display: grid;
-      width: 30px;
-      height: 30px;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--blue);
-      color: #fff;
-      font-weight: 900;
-    }
-    .step h3 { margin: 0 0 4px; }
-
-    .button-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
-    .button {
-      display: inline-flex;
-      min-height: 47px;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 16px;
-      border: 1px solid var(--blue);
-      border-radius: 12px;
-      background: var(--blue);
-      color: #fff;
-      font-weight: 850;
-      text-align: center;
-      text-decoration: none;
-    }
-    .button.secondary { background: #fff; color: var(--blue); }
-
-    .script {
-      margin-top: 10px;
-      padding: 14px;
-      border: 1px solid #bdc9d4;
-      border-radius: 12px;
-      background: #fbfcfe;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: .91rem;
-      line-height: 1.55;
-      white-space: pre-wrap;
-      overflow-wrap: anywhere;
-      user-select: all;
-    }
-    .translation { margin-top: 8px; color: var(--muted); font-size: .93rem; }
-    .tag { display: inline-block; padding: 3px 9px; border-radius: 999px; background: #e7edf2; color: #344554; font-size: .8rem; font-weight: 850; }
-    .flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
-    .flow div { padding: 13px; border-radius: 12px; background: var(--blue-soft); color: #173e61; font-weight: 750; text-align: center; }
-    .checklist { list-style: none; padding-left: 0; }
-    .checklist li { position: relative; padding-left: 29px; }
-    .checklist li::before { content: "□"; position: absolute; left: 2px; color: var(--green); font-weight: 900; }
-    details { margin-top: 12px; border: 1px solid var(--line); border-radius: 12px; background: #fbfcfd; }
-    summary { cursor: pointer; padding: 12px 14px; color: var(--navy); font-weight: 850; }
-    .detail { padding: 0 14px 14px; }
-    .source-list { font-size: .91rem; color: var(--muted); }
-    .privacy { font-size: .88rem; color: var(--muted); }
-    .updated { margin-top: 16px; color: #d8ebf9; font-size: .82rem; }
     .priority {
       display: inline-block;
       margin-bottom: 7px;
@@ -156,23 +89,55 @@
     .action.complete h3::before { content: "✓ "; color: var(--green); }
     .action h3, .summary-box h3 { margin: 0 0 6px; }
     .action p, .summary-box p { margin: 0; }
-    .script.primary { border: 2px solid #75a9d1; background: #f4f9fd; }
-    .micro { color: var(--muted); font-size: .87rem; }
-    .tight { margin-top: 4px; margin-bottom: 4px; }
     .do-now { border-top: 4px solid var(--blue); }
     .do-later { border-top: 4px solid var(--green); }
     .do-not { border-top: 4px solid var(--red); }
-
+    .script {
+      margin-top: 10px;
+      padding: 14px;
+      border: 1px solid #bdc9d4;
+      border-radius: 12px;
+      background: #fbfcfe;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .91rem;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      user-select: all;
+    }
+    .script.primary { border: 2px solid #75a9d1; background: #f4f9fd; }
+    .translation { margin-top: 8px; color: var(--muted); font-size: .93rem; }
+    .updated { margin-top: 16px; color: #d8ebf9; font-size: .82rem; }
+    .source-list, .privacy, .micro { color: var(--muted); font-size: .88rem; }
+    .checklist { list-style: none; padding-left: 0; }
+    .checklist li { position: relative; padding-left: 29px; }
+    .checklist li::before { content: "□"; position: absolute; left: 2px; color: var(--green); font-weight: 900; }
+    details { margin-top: 12px; border: 1px solid var(--line); border-radius: 12px; background: #fbfcfd; }
+    summary { cursor: pointer; padding: 12px 14px; color: var(--navy); font-weight: 850; }
+    .detail { padding: 0 14px 14px; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .button {
+      display: inline-flex;
+      min-height: 47px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border: 1px solid var(--blue);
+      border-radius: 12px;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 850;
+      text-align: center;
+      text-decoration: none;
+    }
+    .button.secondary { background: #fff; color: var(--blue); }
+    code { overflow-wrap: anywhere; }
     @media (max-width: 640px) {
-      .hero, .card { border-radius: 16px; }
-      .hero, .card { padding: 19px; }
+      .hero, .card { border-radius: 16px; padding: 19px; }
       .nav { grid-template-columns: repeat(2, 1fr); }
-      .flow { grid-template-columns: 1fr; }
       .action-grid, .summary-grid { grid-template-columns: 1fr; }
       .button { width: 100%; }
-      .step { padding-left: 50px; }
     }
-
     @media print {
       body { background: #fff; }
       .page { width: 100%; padding: 0; }
@@ -186,377 +151,243 @@
 <body>
   <main class="page">
     <header class="hero">
-      <small>CHIA-JUNG · 全程可用文字完成</small>
+      <small>CHIA-JUNG · CLAIM 801516 · 全程可用文字完成</small>
       <h1>停車擦撞線上處理卡</h1>
-      <p>MAS估價安排Email已寄出；MAS案號也已由WhatsApp傳給Gerald並顯示已讀。現在等待MAS書面回覆。</p>
+      <p>MAS已確認：檢查、照片與估價由MAS支付；只有決定修自己的車才需支付一次NZD 500自負額。現在只等MAS提供Upper Riccarton／Peer Street附近的維修廠。</p>
       <nav class="nav" aria-label="頁面導覽">
-        <a href="#now">目前狀態</a>
-        <a href="#repair">估價與維修</a>
-        <a href="#evidence">等待與補件</a>
+        <a href="#now">現在做什麼</a>
+        <a href="#repair">估價與決策</a>
+        <a href="#owner">對方車主</a>
         <a href="#police">105判斷</a>
       </nav>
-      <div class="updated">更新時間：台北 2026-08-14 17:47 · 紐西蘭 2026-08-14 21:47（NZST）<br />版本：081421471（依紐西蘭時間）<br />進度更新：MAS估價安排Email已寄出；MAS正式案件編號801516已透過WhatsApp傳給Gerald並顯示已讀、尚未回覆 · 下一步：不重傳、不追問Gerald，等待MAS書面回覆後才安排實車檢查與估價 · 本頁不屬於旅行主手冊</div>
+      <div class="updated">更新時間：台北 2026-08-17 11:38 · 紐西蘭 2026-08-17 15:38（NZST）<br />版本：081715381（依紐西蘭時間）<br />最新進度：MAS於09:44書面確認估價／檢查費由MAS負擔；不修自車、只處理第三方責任時不收自負額；修自車才收一次NZD 500 · Matthew將與Internal Motor Assessing team確認附近維修廠後再聯絡 · 本頁不屬於旅行主手冊</div>
     </header>
 
     <section class="card" id="now">
       <span class="priority">現在進度</span>
-      <h2>0｜目前狀態：對外通知已完成，等待MAS回覆</h2>
+      <h2>0｜目前狀態：費用與自負額已釐清，只等維修廠</h2>
+
       <div class="status">
-        <strong>Gerald已收到必要資料與MAS正式案件編號</strong>
-        Gerald已透過Gallagher Onesurance提出理賠，案件編號為S2378774。佳蓉先前已提供完整必要資料，現在又以WhatsApp補傳MAS正式案件編號801516；訊息顯示已讀、尚未回覆。<strong>不需要重傳或追問。</strong>
+        <strong>MAS已書面確認三件關鍵事</strong>
+        ① Inspection、photographs、quotation由MAS支付，即使最後不修車也一樣，佳蓉不需支付assessment fee。<br />
+        ② 若決定修自己的Nissan Tiida，只需支付<strong>一次NZD 500 excess</strong>。<br />
+        ③ 若不修自己的車，只由MAS處理第三方費用，則<strong>不收任何excess</strong>；若自車維修經濟上不值得，案件可改以<strong>liability only</strong>處理，MAS支付第三方保險公司的費用，佳蓉仍無自負額。
       </div>
-      <div class="status">
-        <strong>MAS正式案件編號：801516</strong>
-        MAS於8月14日14:26（紐西蘭時間）書面確認：本案已接受、事故時間已更正為2:35 pm、自負額為<strong>NZD 500</strong>，且不影響續保保費。MAS正接手與對方及其保險公司的聯絡。
-      </div>
+
       <div class="action-grid" aria-label="目前優先工作">
+        <div class="action urgent">
+          <span class="priority">現在等</span>
+          <h3>等待MAS提供維修廠</h3>
+          <p>Matthew會先和Internal Motor Assessing team確認Upper Riccarton／Peer Street一帶適合的repairer，再主動聯絡。現在不需要再寄同一封Email。</p>
+        </div>
         <div class="action complete">
           <span class="priority done">已完成</span>
           <h3>Gerald通知已完成</h3>
-          <p>完整必要資料與MAS案號801516都已傳送；WhatsApp顯示已讀。保存畫面即可，已讀不代表Gerald已轉交Gallagher，也不需要為此追問。</p>
-        </div>
-        <div class="action urgent">
-          <span class="priority">現在等</span>
-          <h3>等待MAS書面回覆</h3>
-          <p>21:39 NZST已寄出估價安排Email；現在不重寄。等MAS確認認可維修廠、檢查／估價費用與NZD 500自負額適用方式後，再安排實車檢查。</p>
+          <p>完整必要資料與MAS正式案號801516均已透過文字提供；WhatsApp案號訊息顯示已讀、尚未回覆。不重傳、不催促。</p>
         </div>
       </div>
-      <div class="warning">
-        <strong>照片結論</strong>
-        目前較像保險桿表面刮傷與漆料轉移，頭燈、上水箱護罩與保險桿外形沒有明顯脫落；但下方開口旁疑似有裂紋或卡扣受力，照片無法確認內部固定座。建議<strong>一定先檢查估價，但尚看不出需要立即停駛或一定要修</strong>。
-      </div>
+
       <div class="danger">
-        <strong>現在不要做</strong>
-        未取得MAS書面回覆與核准前，不重寄相同要求、不開工、不先付NZD 500、不答應修車金額；也不要因Gerald已讀但未回覆而再次追傳案號。是否已轉交Gallagher目前未知，不作推定。
+        <strong>目前不要做</strong>
+        不自行找維修廠開工、不先付NZD 500、不授權任何repair、不因Gerald已讀未回而追傳。MAS指定／推薦維修廠後，第一階段只做inspection、photographs、quotation。
       </div>
     </section>
 
     <section class="card" id="quick-status">
       <h2>一眼確認進度｜Quick status</h2>
-      <p class="translation"><strong>中文：</strong>只依下列三欄行動；不需要再填表、打電話或主動談賠償。</p>
       <div class="summary-grid">
         <div class="summary-box do-now">
           <h3>現在｜Now</h3>
-          <ul class="checklist tight">
-            <li>完整資料已傳給Gerald。</li>
-            <li>MAS案號801516已用WhatsApp傳給Gerald，顯示已讀、尚未回覆；不追問。</li>
-            <li>21:39 NZST已寄估價安排Email；現在等MAS書面確認維修廠、檢查／估價費與自負額適用方式。</li>
+          <ul class="checklist">
+            <li>等MAS提供附近維修廠。</li>
+            <li>保存MAS 8/17回信與Gerald WhatsApp已讀畫面。</li>
+            <li>維持Email／文字聯絡，不必打電話追。</li>
           </ul>
         </div>
         <div class="summary-box do-later">
-          <h3>MAS回覆後｜Next</h3>
-          <ul class="checklist tight">
-            <li>MAS安排／推薦維修廠後，只約實車檢查、照片與估價，不授權開工。</li>
-            <li>由維修廠把估價與照片交MAS，等待書面核准。</li>
-            <li>確認車損與自負額後，再決定是否修自車。</li>
+          <h3>維修廠確定後｜Next</h3>
+          <ul class="checklist">
+            <li>只預約檢查、拍照、估價。</li>
+            <li>要求估價與照片送MAS審核。</li>
+            <li>取得結果後再決定修不修自己的車。</li>
           </ul>
         </div>
         <div class="summary-box do-not">
           <h3>不要｜Do not</h3>
-          <ul class="checklist tight">
-            <li>不重寄MAS Email，也不因WhatsApp已讀未回而追傳Gerald。</li>
-            <li>不先付款、答應估價或承認全部法律責任。</li>
-            <li>不把照片判斷當成正式安全檢查。</li>
+          <ul class="checklist">
+            <li>不要先授權開工。</li>
+            <li>不要先付NZD 500。</li>
+            <li>不要自行和Gerald／Gallagher談賠償金額。</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="card" id="repair">
-      <span class="priority done">已寄出</span>
-      <h2>1｜MAS估價安排Email已寄出：現在等書面回覆</h2>
-      <p>2026年8月14日21:39（紐西蘭時間）已寄至 <a href="mailto:assessors@mas.co.nz">assessors@mas.co.nz</a>，副本 <a href="mailto:claims@mas.co.nz">claims@mas.co.nz</a>。<strong>不需要重寄。</strong>現在等MAS書面確認：認可維修廠／Request for a Quote、檢查與估價費用由誰負擔，以及同一事故NZD 500自負額在不修自車時如何處理。</p>
-      <div class="note"><strong>寄出時間：</strong>2026-08-14 21:39（NZST）<br /><strong>主旨：</strong>Claim 801516 — repairer and assessment</div>
-      <div class="note"><strong>收件人：</strong>assessors@mas.co.nz<br /><strong>副本：</strong>claims@mas.co.nz</div>
-      <h3>已寄出的Email（保存用）</h3>
-      <div class="script primary">Hello Lene and Matthew,
+      <span class="priority">下一階段</span>
+      <h2>1｜免費檢查估價後，再決定是否修自己的車</h2>
 
-Thank you for confirming that my claim has been accepted and that the incident time has been corrected to 2:35 pm.
+      <div class="status">
+        <strong>估價本身沒有自付成本</strong>
+        MAS已明確表示，inspection、photographs、quote由MAS支付，無論最後是否進行repair；因此沒有必要為了怕assessment fee而跳過檢查。
+      </div>
 
-I do not have a preferred repairer. Could MAS please recommend or arrange an approved repairer in Christchurch, preferably near the Upper Riccarton / Peer Street area, and send them the Request for a Quote?
-
-At this stage, I authorise an inspection, photographs and quotation only. Please do not authorise repairs until MAS has received the estimate and photographs and confirmed approval.
-
-Before arranging the assessment, please confirm in writing whether MAS will meet the inspection and quotation cost, and that I will not be charged a separate assessment or quotation fee in addition to the NZD 500 excess.
-
-Please also confirm in writing that the NZD 500 excess applies once to this single incident, including the third-party claim and any repair to my vehicle, and whether it is payable if I decide not to repair my own vehicle.
-
-Please communicate with me by email wherever possible, as my spoken English is limited.
-
-Kind regards,
-Chia-Jung Chen</div>
-      <p class="translation"><strong>中文：</strong>這封信已寄出，不重寄。內容是請MAS安排或推薦靠近Upper Riccarton／Peer Street的認可維修廠，只同意檢查、照片與估價，尚未同意開工；同時要求MAS先書面確認檢查／估價費是否另計，以及NZD 500同一事故自負額在第三方求償與不修自車時的適用方式。收到MAS回覆後，再依其安排約實車檢查。</p>
-
-      <h3>照片評估：是否需要維修？</h3>
       <div class="summary-grid">
-        <div class="summary-box do-now"><h3>需要做</h3><p>等MAS指定／確認維修廠後，安排實車檢查與估價，確認下方開口旁是否裂開、卡扣／固定座是否鬆脫。</p></div>
-        <div class="summary-box do-later"><h3>可等估價再決定</h3><p>若保險桿牢固、無尖銳邊緣，燈具、轉向、輪胎與冷卻均正常，外觀刮傷可暫緩修復。</p></div>
-        <div class="summary-box do-not"><h3>立即停駛條件</h3><p>保險桿鬆垂或磨輪胎、出現尖銳裂片、燈具失效、漏液、過熱、警示燈、方向跑偏或異常聲響。</p></div>
-      </div>
-      <div class="warning"><strong>費用判斷</strong>若只看佳蓉自己的車損，估價不高於NZD 500時，通常沒有超過自負額的自車理賠利益；若高於NZD 500或查到裂痕／固定座損壞，再評估是否值得修。但第三方求償仍在進行，自負額如何收取必須以MAS書面答覆為準。</div>
-    </section>
-
-    <details class="card" id="mas">
-      <summary>已完成紀錄：MAS送件、事故時間更正與原始欄位</summary>
-      <span class="priority done">已完成</span>
-      <h2>歷史紀錄｜MAS時間更正Email已寄出</h2>
-      <p><strong>不需要重送理賠。</strong>更正信已寄至 <a href="mailto:claims@mas.co.nz">claims@mas.co.nz</a>；MAS原信要求不要回覆no-reply寄件地址。寄出紀錄只證明信已送出，仍須等待MAS確認已更正。</p>
-      <h3>已寄出的Email（保存用）</h3>
-      <div class="note"><strong>收件人：</strong>claims@mas.co.nz<br /><strong>主旨：</strong>Correction to submitted Motor Vehicle claim — incident time</div>
-      <div class="script primary">Hello MAS Claims,
-
-I submitted a Motor Vehicle claim for policy MV971912, vehicle MFY228, on 13 August 2026.
-
-The PDF copy of my submission shows the incident time as 6:35 p.m. on page 1. This is incorrect. The correct incident time is approximately 2:35 p.m. on 12 August 2026.
-
-The description on page 2 correctly states 2:35 pm. Please update the claim record to 2:35 p.m. and confirm the correction by email.
-
-Kind regards,
-Chia-Jung Chen</div>
-      <div class="note"><strong>中文：</strong>我於8月13日就保單MV971912、車牌MFY228提出車險理賠。副本第1頁把事故時間寫成晚上6:35，這是錯誤；正確是8月12日下午約2:35。第2頁敘述已正確寫2:35 pm，請更正理賠紀錄並以Email確認。</div>
-      <p class="translation"><strong>歷史狀態：</strong>時間更正信不必重寄。MAS目前已提供正式案件編號；第1節估價安排Email也已寄出，現在等待MAS回覆。正式案件編號801516亦已透過WhatsApp傳給Gerald並顯示已讀。</p>
-      <h3>MAS信件與附件翻譯</h3>
-      <ul class="checklist">
-        <li><strong>MAS信件：</strong>附件是本次理賠送出副本；MAS會檢查是否在保單保障範圍內，並在<strong>24小時內</strong>聯絡。若在星期五、週末或假日送件，會於下週初回覆。不要回覆這封信；問題請用上方Email。</li>
-        <li><strong>附件第1頁：</strong>保單MV971912、車牌MFY228、事故地點53 Peterborough Street、備註Casino car park, Christchurch；唯事故時間錯列為6:35 p.m.。</li>
-        <li><strong>附件第2頁：</strong>英文事故經過、兩車資料、照片及無人受傷的紀錄，時間正確寫為2:35 pm。</li>
-        <li><strong>附件其餘資料：</strong>對方車、Gerald、Gallagher案件S2378774、未報105、Overseas駕照／1年，以及酒精、藥物、DUI與駕駛定罪均為No，均依本次送件內容列示。</li>
-        <li><strong>326147：</strong>這是副本標題旁顯示的識別碼，但附件沒有明確稱它為MAS claim reference；暫時不要把它當成MAS案件編號傳給Gerald。</li>
-      </ul>
-      <div class="button-row">
-        <a class="button" href="https://www.mas.co.nz/claims/app/" target="_blank" rel="noopener">開啟MAS線上理賠</a>
-        <a class="button secondary" href="https://www.mas.co.nz/make-a-claim/" target="_blank" rel="noopener">查看MAS理賠流程</a>
+        <div class="summary-box do-now">
+          <h3>A｜先檢查</h3>
+          <p>確認前保險桿表面刮傷、疑似裂紋、卡扣與固定座有沒有實際結構性損傷。照片不能取代實車檢查。</p>
+        </div>
+        <div class="summary-box do-later">
+          <h3>B｜拿估價</h3>
+          <p>讓repairer把照片與quotation交MAS。此階段仍不代表同意維修。</p>
+        </div>
+        <div class="summary-box do-not">
+          <h3>C｜最後才決定</h3>
+          <p>若決定修自車，支付一次NZD 500；若不修自車，案件可維持第三方責任處理，NZD 0 excess。</p>
+        </div>
       </div>
 
-      <p class="muted">以下保留已送出的欄位紀錄，供MAS要求補件時核對；不要自行重送或改寫事故經過。</p>
-
-      <h3>MAS資料</h3>
       <div class="note">
-        被保險人／駕駛：Chia-Jung Chen<br />
-        出生日期：30 July 1995<br />
-        地址：2/32A Peer Street, Upper Riccarton, Christchurch 8041<br />
-        保單號：MV971912<br />
-        受保車：黑色2008 Nissan Tiida，MFY228<br />
-        對方車：香檳色2026 Mazda CX-5，RPR348<br />
-        對方理賠管道：Gallagher Onesurance<br />
-        對方案件編號：S2378774<br />
-        聯絡電話：029 045 19919<br />
-        Email：vesperchen0730@gmail.com
+        <strong>實務上的判斷方式</strong>
+        若只是美容性刮傷且固定結構、安全性正常，可以選擇不修；若查到裂痕、固定座或其他實際損傷，再依估價、車況與使用需求決定是否值得支付NZD 500進行自車理賠。若MAS認為維修在經濟上不值得，Matthew已表示會把案件作liability only處理。
       </div>
-      <h3>已送出紀錄：Section 1｜Tell us what happened（第一部分｜說明發生什麼事）</h3>
-      <ol>
-        <li><strong>What’s the vehicle registration?（這台車的車牌號碼？）</strong>：填 <code>MFY228</code>。</li>
-        <li><strong>Select the policy for this claim（選擇本次理賠使用的保單）</strong>：登入後若看到本車保單，選 <code>MV971912</code>；若只顯示 <strong>Other（其他）</strong>，選 Other，後續仍填 <code>MFY228</code>。</li>
-        <li><strong>What happened?（發生了哪一種事故？）</strong>：選 <strong>Vehicle accident（車輛事故）</strong>。</li>
-        <li><strong>Do you know when the accident happened?（你知道事故發生時間嗎？）</strong>：選 <strong>Yes（是）</strong>；日期填 <code>12/08/2026</code>、時間填 <code>2:35 pm</code>。</li>
-        <li><strong>Where did the accident happen?（事故發生在哪裡？）</strong>：填 <code>53 Peterborough Street, Christchurch Central City, Christchurch 8013, New Zealand</code>（基督城賭場停車場）。</li>
-        <li><strong>Were any other vehicles involved?（是否有其他車輛涉及？）</strong>：選 <strong>Yes（是）</strong>。</li>
-        <li><strong>Is your vehicle still at the scene?（你的車仍在事故現場嗎？）</strong>：選 <strong>No（否）</strong>；下一欄填車輛目前位置：<code>2/32A Peer Street, Upper Riccarton, Christchurch 8041</code>。</li>
-        <li><strong>Do you need help arranging a tow?（需要協助安排拖車嗎？）</strong>：選 <strong>No（否）</strong>。</li>
-        <li><strong>How did the accident happen?（事故是如何發生的？）</strong>：貼下方英文事實敘述。</li>
-        <li><strong>Photos（照片）</strong>：最多10張；限JPG／PNG，每張不超過20MB。依下方清單上傳。</li>
-      </ol>
-      <h3>How did the accident happen?（事故經過）貼這段</h3>
-      <div class="script primary">At approximately 2:35 pm on 12 August 2026, I was driving my insured black 2008 Nissan Tiida, registration MFY228, slowly forward into a parking space in the Christchurch Casino car park. The front corner of my vehicle made contact with the right rear bumper area of an unattended champagne 2026 Mazda CX-5, registration RPR348. My vehicle has visible scuffs and paint transfer on its front bumper area.
 
-I stopped and took photographs showing both vehicles, their positions, registration plates, the visible areas of contact, and the note placed under the other vehicle's windscreen wiper. No one was injured.
+      <h3>到維修廠時只授權這些</h3>
+      <div class="script primary">MAS has asked me to arrange an inspection, photographs and quotation for claim 801516.
 
-On 13 August 2026, the owner, Gerald Dwyer, contacted me and advised that he had submitted a claim through Gallagher Onesurance, reference S2378774. I acknowledged the reference in writing and provided my contact, vehicle and insurer details. I have not yet received a repair quotation or damage assessment.
+At this stage, I authorise inspection, photographs and a quotation only. Please send the estimate and photographs to MAS for assessment.
 
-No Police 105 report has been submitted. The owner contacted me within 48 hours and I have been able to communicate directly with him.
+Please do not begin any repairs until MAS has approved the estimate and I have confirmed that I want to proceed.</div>
+      <p class="translation"><strong>中文：</strong>MAS請我就案件801516安排檢查、拍照與估價。目前我只同意這三項，請將估價與照片交MAS評估；在MAS核准且我確認要修之前，請不要開始維修。</p>
 
-I have not agreed to any repair cost or private payment. Please assess the circumstances and any reasonable third-party loss. Please communicate with me by email wherever possible, as I have difficulty communicating by telephone.</div>
+      <h3>若維修廠要求先付估價費</h3>
+      <div class="script">MAS has confirmed in writing that they will pay for the inspection, photographs and quotation regardless of whether the repair proceeds, and that I do not need to pay an assessment fee. Could you please confirm the billing arrangement with MAS before charging me?</div>
+      <p class="translation"><strong>中文：</strong>MAS已書面確認，無論最後修不修，檢查、照片與估價都由MAS支付，我不需支付assessment fee。若現場要求付款，先請維修廠跟MAS確認計費安排，不要直接刷卡。</p>
 
-      <div class="note"><strong>中文核對（不要貼入英文欄）</strong><br />
-      2026年8月12日下午2:35左右，我駕駛黑色Tiida緩慢向前停入基督城賭場停車場車位時，自車前角接觸停放Mazda的右後保險桿；雙方車輛已拍照，無人受傷，並已留紙條。<br />
-      8月13日車主Gerald聯絡，表示已向Gallagher Onesurance提出案件S2378774。我已書面提供聯絡、車輛及保險資料，尚未收到估價。<br />
-      尚未報105；車主在48小時內聯絡。我未同意修車金額或私下付款，請MAS評估合理的第三人損失，並盡量以Email聯絡。</div>
-
-      <h3>已送出紀錄：Section 2｜Other people involved（第二部分｜其他涉及人士）</h3>
-      <ol>
-        <li><strong>Was someone else responsible?（是否有其他人應負責？）</strong>：選 <strong>No</strong>。</li>
-        <li><strong>Do you have details for the other party involved?（是否有對方資料？）</strong>：選 <strong>Yes</strong>。填：<strong>first name（名）</strong> Gerald、<strong>surname（姓）</strong> Dwyer、<strong>vehicle registration（車牌）</strong> RPR348、<strong>vehicle make/model/colour（廠牌／型號／顏色）</strong> 2026 Mazda CX-5, champagne、<strong>phone（電話）</strong> 027 244 2073、<strong>insurance company（保險公司）</strong> Gallagher Onesurance。</li>
-        <li><strong>Physical address / driver licence number / date of birth / email（住址／駕照號碼／生日／Email）</strong>：未知就留白。</li>
-        <li><strong>Their insurance policy number（對方保單號）</strong>：留白。<code>S2378774</code> 是<strong>案件編號</strong>，不是保單號。</li>
-        <li><strong>Did anyone see the accident?（有人目擊事故嗎？）</strong>：選 <strong>No</strong>。</li>
-        <li><strong>Have the police been involved?（警方是否已介入？）</strong>：選 <strong>No</strong>；目前沒有105案件編號。</li>
-      </ol>
-
-      <h3>已送出紀錄：Section 3｜Driver information（第三部分｜駕駛資料）</h3>
-      <ol>
-        <li><strong>Who was driving?（事故當時是誰在開車？）</strong>：選 <strong>Me（我本人／佳蓉）</strong>。</li>
-        <li><strong>What’s your licence type?（你的駕照屬於哪一類？）</strong>：選 <strong>Overseas（海外簽發的駕照）</strong>。</li>
-        <li><strong>Approximately how many years have you held this licence?（這張駕照大約持有多久？）</strong>：填 <strong>1（約1年）</strong>。這不是問在紐西蘭住多久。</li>
-        <li><strong>Alcohol（事故前是否喝酒？）</strong>：選 <strong>No（否）</strong>。</li>
-        <li><strong>Illegal drugs（事故前是否使用非法藥物？）</strong>：選 <strong>No（否）</strong>。</li>
-        <li><strong>Medication（事故前是否服用可能影響駕駛能力的處方藥？）</strong>：選 <strong>No（否）</strong>。</li>
-        <li><strong>DUI test（是否做過酒駕／藥駕檢測？）</strong>：選 <strong>No（否）</strong>。</li>
-        <li><strong>Driving convictions（是否有扣點或刑事駕駛定罪紀錄？）</strong>：選 <strong>No（否）</strong>。</li>
-      </ol>
-      <div class="note"><strong>簡短確認</strong>：上列No都以佳蓉確認屬實為前提；若任一題不是No，改選Yes並如實補充。持照1年不會增加本保單的自負額；本案仍為NZD 500。</div>
-
-      <h3>已送出紀錄：Section 4、5｜Your details → Review and submit（第四、五部分｜你的資料 → 核對送出）</h3>
-      <ol>
-        <li><strong>Full name / phone / email（姓名／電話／Email）</strong>：填頁面上方MAS資料。</li>
-        <li><strong>How would you like us to contact you?（希望MAS如何聯絡？）</strong>：選 <strong>Email（電子郵件）</strong>。</li>
-        <li><strong>Would you like someone else to manage this claim?（要由他人代管此案嗎？）</strong>：選 <strong>No</strong>。</li>
-        <li><strong>Summary of your claim（理賠摘要）</strong>：核對車牌、時間、地點、事故英文、對方與駕駛資料；有誤按 <strong>Edit（修改）</strong>。</li>
-        <li><strong>Declaration（聲明）</strong>：確認內容屬實後勾選；同意MAS為理賠取得／分享必要資料後按 <strong>Submit claim（送出理賠）</strong>。</li>
-      </ol>
-
-      <h3>這次先上傳</h3>
-      <ul class="checklist">
-        <li>兩車相對位置、兩車車牌及整體照片。</li>
-        <li>Mazda右後保險桿與Tiida左前保險桿近照。</li>
-        <li>紙條放在雨刷下的照片。</li>
-        <li>Gerald原始訊息、第一封回覆、Gallagher案件編號回覆及補充資料訊息的完整截圖。</li>
-        <li>Gerald已提供Gallagher Onesurance案件編號S2378774；把完整訊息截圖一併上傳。</li>
-        <li>尚未取得估價或損害診斷，照實註明待補。</li>
-        <li>未報105，照實說明車主已在48小時內聯絡且可直接交換資料。</li>
-      </ul>
-
-      <h3>送出後（已完成）</h3>
-      <ol>
-        <li>保存確認頁、MAS PDF副本、時間更正Email及MAS後續回信。</li>
-        <li>本次MAS Email寫的是<strong>24小時內</strong>回覆；星期五、週末或假日送件則於下週初回覆。完整結案沒有固定天數。</li>
-        <li>附件的<code>326147</code>不是本案正式理賠編號；MAS後續已明確提供正式案件編號<code>801516</code>。</li>
-        <li>未經MAS同意，不答應金額、不授權維修、不私下付款。</li>
-      </ol>
-    </details>
+      <div class="warning">
+        <strong>立即停駛條件仍不變</strong>
+        若保險桿鬆垂或磨到輪胎、出現尖銳裂片、燈具失效、漏液、過熱、警示燈、方向跑偏或異常聲響，停止一般行駛並改以安全檢查為優先。
+      </div>
+    </section>
 
     <section class="card" id="owner">
       <span class="priority done">已完成</span>
-      <h2>2｜MAS正式案件編號已傳給Gerald</h2>
+      <h2>2｜Gerald：資料與MAS案號均已送達</h2>
       <div class="status">
-        <strong>WhatsApp已送達且已讀，尚未回覆</strong>
-        MAS正式案件編號801516已透過WhatsApp傳給Gerald，請他轉交Gallagher對應案件S2378774。訊息目前顯示已讀，但尚未收到回覆。<strong>不需要重傳或催促。</strong>已讀只代表訊息已被查看，不代表Gerald已經轉交Gallagher或表示同意。
+        <strong>WhatsApp案號訊息已讀、尚未回覆</strong>
+        Gerald已透過Gallagher Onesurance提出案件S2378774；MAS正式案件編號801516亦已傳給他，供其轉交Gallagher。已讀只表示訊息被查看，不推定他已完成轉交。
       </div>
+      <div class="note"><strong>現在的處理：</strong>沒有新實質訊息就不再主動聯絡Gerald。第三方求償由MAS接手處理。</div>
       <details>
-        <summary>已傳出的訊息（保存用）</summary>
+        <summary>已傳出的MAS案號訊息</summary>
         <div class="detail">
-          <div class="script primary">Hello Gerald,
+          <div class="script">Hello Gerald,
 
 MAS has now assigned claim number 801516.
 
 Please provide this reference to Gallagher for their claim S2378774. Thank you.
 
 Chia-Jung</div>
-          <p class="translation"><strong>中文：</strong>MAS已提供案件編號801516，請Gerald把這個編號交給Gallagher，對應他們的案件S2378774。</p>
-        </div>
-      </details>
-      <div class="note"><strong>現在的處理：</strong>保留WhatsApp已讀畫面即可。除非Gerald、Gallagher或MAS出現新的實質訊息，否則不再主動傳送同一案號。</div>
-      <details>
-        <summary>對方來電／未接電話：只用這兩句</summary>
-        <div class="detail">
-          <p><strong>接起來：</strong></p>
-          <div class="script">Hi Gerald. My spoken English is limited. Please text or email me so I can respond accurately. Thank you.</div>
-          <p><strong>未接後回覆：</strong></p>
-          <div class="script">Hi Gerald, this is Chia-Jung. I missed your call. My spoken English is limited, so please text or email me. Thank you.</div>
         </div>
       </details>
       <details>
-        <summary>較早已完成訊息的紀錄用途</summary>
+        <summary>Gerald若直接要求金額或付款</summary>
         <div class="detail">
-          <p>較早訊息已書面提供姓名、住址、Email、車牌、事故時間及地點，並確認Gallagher Onesurance案件編號S2378774；最新WhatsApp再補上MAS正式案件編號801516。兩者都只需保存，不需再次寄送。</p>
+          <div class="script">Thank you. The matter is being handled by MAS under claim 801516. Please send any repair quotation or supporting information through your insurer, or provide it to me in writing so it can be forwarded to MAS.</div>
+          <p class="translation"><strong>中文：</strong>本案已由MAS案件801516處理。任何報價或佐證請透過你的保險公司處理，或用文字提供，我會交給MAS。</p>
         </div>
       </details>
     </section>
 
     <section class="card" id="evidence">
       <span class="priority">等待中</span>
-      <h2>3｜先等MAS回覆，再進入估價與核准</h2>
-      <p class="translation"><strong>English guide:</strong> The assessment request has been sent. Wait for MAS to confirm the repairer, assessment cost and excess position before arranging the inspection. <strong>中文：</strong>估價安排Email已寄出；現在先等MAS確認維修廠、檢查／估價費與自負額，再安排實車檢查。之後仍由維修廠把估價與照片交MAS核准。</p>
-      <div class="summary-grid">
-        <div class="summary-box do-now"><h3>Wait / 現在等待</h3><p><strong>English:</strong> Keep the sent email and wait for MAS's written reply. Do not resend the same request.<br /><strong>中文：</strong>保存21:39寄件紀錄，等待MAS書面回覆，不重寄同一要求。Gerald已讀MAS案號亦不需追問。</p></div>
-        <div class="summary-box do-later"><h3>Assess / MAS回覆後</h3><p><strong>English:</strong> Arrange inspection, photographs and quotation only; the repairer then sends the quote to MAS.<br /><strong>中文：</strong>收到維修廠安排後只做檢查、照片與估價，再由維修廠交MAS審核。</p></div>
-        <div class="summary-box do-not"><h3>Do not decide / 不自行決定</h3><p><strong>English:</strong> Do not authorise repairs or agree on liability, amount or sensor damage.<br /><strong>中文：</strong>不授權開工，也不自行同意責任、金額或感測器損害。</p></div>
-      </div>
-      <h3>收到新資料時回覆｜Reply when new information arrives</h3>
-      <div class="script">Thank you. I have received the information and will forward it to MAS for assessment. Please continue to communicate with me in writing.</div>
-      <p class="translation"><strong>中文：</strong>謝謝，我已收到資料，會轉給MAS評估。請繼續以文字或Email和我聯絡。</p>
-      <h3>MAS若來電｜If MAS calls</h3>
-      <div class="script">Hi, my spoken English is limited. Please email your questions to vesperchen0730@gmail.com so I can respond accurately. Thank you.</div>
-      <p class="translation"><strong>中文：</strong>你好，我的英文口說有限。請將問題寄到我的Email，我才能正確回覆，謝謝。</p>
+      <h2>3｜後續收到資料時怎麼處理</h2>
+      <p>現在的核心不是再補送舊資料，而是等待MAS的repairer安排與估價結果。新資訊都保留書面紀錄即可。</p>
 
-      <details>
-        <summary>Gerald直接開價或要求付款</summary>
-        <div class="detail"><div class="script">Thank you. I cannot personally approve or agree to this amount. Please send the itemised repair quotation and supporting photographs. I will forward them to MAS for assessment.</div><p class="translation"><strong>中文：</strong>謝謝。我不能個人核准或同意這個金額。請提供逐項修車報價與佐證照片，我會轉給MAS評估。</p></div>
-      </details>
-      <details>
-        <summary>Gerald說感測器也壞了</summary>
-        <div class="detail"><div class="script">Please send the repairer's diagnostic report and itemised quotation so MAS can assess whether the claimed damage is related to this incident.</div><p class="translation"><strong>中文：</strong>請提供維修廠診斷報告與逐項報價，讓MAS評估該損害是否與本事故有關。</p></div>
-      </details>
-      <details>
-        <summary>Gerald問是不是佳蓉撞的</summary>
-        <div class="detail"><div class="script">My vehicle made contact with the right rear bumper area of your parked vehicle. I have retained the photographs and provided the incident information to MAS for assessment.</div><p class="translation"><strong>中文：</strong>我的車輛曾接觸你停放車輛的右後保險桿區域。我已保存照片並把事故資料交給MAS評估。</p></div>
-      </details>
-      <details>
-        <summary>Gerald生氣、施壓或威脅</summary>
-        <div class="detail"><div class="script">I understand your concern. The matter has been referred to MAS. Please send any further information in writing.</div><p class="translation"><strong>中文：</strong>我理解你的擔憂。本案已交由MAS處理；請以文字提供任何後續資料。</p></div>
-      </details>
-      <details>
-        <summary>Gerald改口表示不追究</summary>
-        <div class="detail"><div class="script">Thank you. To make sure I understand correctly, please confirm in writing that you do not intend to make an insurance claim or seek payment from me regarding this incident.</div><p class="translation"><strong>中文：</strong>謝謝。為確認我理解正確，請以文字確認你不打算就本事故申請保險理賠或向我求償。</p></div>
-      </details>
+      <h3>MAS若提供維修廠</h3>
+      <div class="script">Thank you. I will contact the repairer to arrange an inspection, photographs and quotation only. I will not authorise repairs until MAS has assessed the estimate and I have confirmed that I want to proceed.</div>
+      <p class="translation"><strong>中文：</strong>收到維修廠後，我會只安排檢查、照片與估價；等MAS審核估價且我決定要修後才會授權維修。</p>
+
+      <h3>MAS若來電</h3>
+      <div class="script">Hi, my spoken English is limited. Please email your questions to vesperchen0730@gmail.com so I can respond accurately. Thank you.</div>
+      <p class="translation"><strong>中文：</strong>我的英文口說有限，請把問題寄Email，我才能正確回覆。</p>
+
+      <h3>Gerald／Gallagher有新資料</h3>
+      <div class="script">Thank you. I have received the information. The matter is being handled by MAS under claim 801516, and I will provide the information to MAS if required.</div>
+      <p class="translation"><strong>中文：</strong>已收到資料。本案由MAS案件801516處理，如有需要我會把資料交給MAS。</p>
     </section>
 
     <section class="card" id="police">
       <span class="priority optional">條件式處理</span>
-      <h2>4｜Police 105目前不是前置步驟</h2>
-      <p>Gerald已在48小時內聯絡。佳蓉完成姓名、住址、Email、MFY228及事故地點的書面補充後，本案通常不需因「找不到車主」另報105。Police也明確說明，非傷亡事故可自願使用線上表單。</p>
+      <h2>4｜Police 105目前仍不是前置步驟</h2>
+      <p>Gerald已在48小時內聯絡，雙方已交換必要資料，MAS亦已正式受理案件。現階段沒有新的MAS要求顯示必須先取得Police 105 reference。</p>
       <div class="action-grid">
-        <div class="action"><h3>目前不用先報</h3><p>無人受傷、車主已聯絡、可交換資料，而且MAS保單沒有把一般擦撞的105編號列為送件前提。</p></div>
-        <div class="action"><h3>這些情況再報</h3><p>MAS明確要求Police reference、懷疑犯罪、出現威脅或爭議需要警方紀錄，或佳蓉選擇自願留存紀錄。</p></div>
+        <div class="action"><h3>目前不用先報</h3><p>無人受傷、車主已聯絡、保險資料已交換、MAS案件已建立並進入評估流程。</p></div>
+        <div class="action"><h3>這些情況再處理</h3><p>MAS明確要求Police reference、出現犯罪疑慮、威脅或爭議需要警方紀錄，或佳蓉自行選擇留存警方紀錄。</p></div>
       </div>
       <div class="button-row">
         <a class="button secondary" href="https://webforms.police.govt.nz/en/form/traffic-crash-report" target="_blank" rel="noopener">需要時開啟105事故表單</a>
         <a class="button secondary" href="https://www.police.govt.nz/use-105/traffic-crash-report" target="_blank" rel="noopener">Police官方說明</a>
       </div>
-      <details>
-        <summary>需要報105時的英文經過</summary>
+    </section>
+
+    <section class="card" id="history">
+      <span class="priority optional">保存紀錄</span>
+      <h2>5｜案件歷史與已確認事實</h2>
+      <details open>
+        <summary>2026-08-17｜MAS最新回覆</summary>
         <div class="detail">
-          <div class="script">At approximately 2:35 pm on 12 August 2026, I was driving my black 2008 Nissan Tiida, registration MFY228, slowly forward into a parking space in the Christchurch Casino car park. The front corner of my vehicle made contact with the right rear bumper area of an unattended champagne 2026 Mazda CX-5, registration RPR348.
-
-No one was injured. I stopped, photographed both vehicles, their registration plates, the visible areas of contact and the surrounding location. I left a written note under the other vehicle's windscreen wiper.
-
-On 13 August 2026, the owner, Gerald Dwyer, contacted me and later confirmed that he had submitted a claim through Gallagher Onesurance, reference S2378774. I provided my contact and vehicle details to him in writing.</div>
+          <ul>
+            <li>Matthew Lineham會與Internal Motor Assessing team討論Upper Riccarton／Peer Street附近適合的repairer，之後再聯絡。</li>
+            <li>Inspection、photographs、quotation由MAS支付，不論最後repair是否進行；佳蓉不需支付assessment fee。</li>
+            <li>只有決定修自己的車時才需要一次NZD 500 excess。</li>
+            <li>若不修自車，只理賠第三方費用，MAS不收excess。</li>
+            <li>若自車維修經濟上不值得，MAS可把案件作liability only處理，支付第三方保險公司的費用，沒有適用的excess。</li>
+          </ul>
         </div>
       </details>
-      <div class="danger">
-        <strong>改用111</strong>
-        只有人在危險中、有人受傷、需要Police／Fire／Ambulance立即到場，或現場安全受到威脅時使用111。
-      </div>
+      <details>
+        <summary>2026-08-14｜案件接受與事故時間更正</summary>
+        <div class="detail">
+          <p>MAS正式案件編號：<code>801516</code>。MAS已接受案件，事故時間已更正為2026-08-12 2:35 pm，並書面表示本案不影響續保保費。</p>
+        </div>
+      </details>
+      <details>
+        <summary>事故與第三方基本資料</summary>
+        <div class="detail">
+          <p>2026-08-12約2:35 pm，佳蓉駕駛黑色2008 Nissan Tiida（MFY228）低速向前駛入Christchurch Casino停車場車位時，自車前角接觸停放中的香檳色2026 Mazda CX-5（RPR348）右後保險桿。無人受傷。</p>
+          <p>Gerald Dwyer已透過Gallagher Onesurance提出案件<code>S2378774</code>。佳蓉未同意任何私人付款、修車金額或全面法律責任。</p>
+        </div>
+      </details>
+      <details>
+        <summary>MAS基本資料（本頁既有公開資料）</summary>
+        <div class="detail">
+          <p>被保險人／駕駛：Chia-Jung Chen<br />出生日期：30 July 1995<br />地址：2/32A Peer Street, Upper Riccarton, Christchurch 8041<br />保單號：MV971912<br />受保車：黑色2008 Nissan Tiida，MFY228<br />Email：vesperchen0730@gmail.com</p>
+        </div>
+      </details>
     </section>
 
     <section class="card" id="cost">
       <span class="priority optional">交由保險處理</span>
-      <h2>5｜金額與責任不要自行談</h2>
-      <p>若對方有保險，通常由對方保險公司先評估或安排維修，再向MAS追償。對方說的金額、修車廠估價與MAS最後認可的合理損失可能不同。</p>
+      <h2>6｜金額與責任不要自行談</h2>
       <ul>
-        <li>合理項目可能包含必要修復、鈑噴、拆裝、零件、耗材及GST。</li>
-        <li>既有損傷、無關部位、無證據的感測器更換及不必要升級，可交由MAS審核。</li>
-        <li>佳蓉自車是否維修與對方第三方求償是兩個問題；不修自車不代表第三方案件或自負額必然消失。</li>
-        <li>事故經過只陳述「低速向前駛入車位時，我車前角接觸對方右後保險桿」；不要自行加上gross negligence、reckless或deliberate等法律定性。</li>
-        <li>佳蓉不要自行與對方議價，也不要先付現。</li>
-        <li>自負額與額外自負額以私人保單Schedule及MAS書面確認為準，不在公開頁揭露。</li>
+        <li>第三方車損由MAS與Gallagher／對方保險公司處理。</li>
+        <li>不要自行承諾Gerald的repair quotation、sensor damage或其他金額。</li>
+        <li>不要寫「I accept full responsibility」或「I will pay for everything」。只陳述客觀碰撞事實。</li>
+        <li>自車是否維修現在已可獨立決定：不修自車不產生NZD 500 excess；修自車才收一次NZD 500。</li>
       </ul>
-      <div class="danger">
-        <strong>不要寫或承諾</strong>
-        “It was entirely my fault.”／“I accept full responsibility.”／“I will pay for everything.”／“Go ahead and replace the whole bumper.”／“The sensor is definitely fine.”／“I agree with your quotation.”
-      </div>
+      <div class="danger"><strong>不要自行付款</strong>若任何人要求佳蓉直接支付第三方修車費或assessment fee，先停止付款並以書面交給MAS確認。</div>
     </section>
 
     <section class="card">
-      <h3>官方來源</h3>
+      <h3>官方來源與聯絡入口</h3>
       <ul class="source-list">
-        <li><a href="https://www.legislation.govt.nz/act/public/1998/0110/latest/versions.aspx" target="_blank" rel="noopener">New Zealand Legislation：Land Transport Act 1998第22條</a></li>
+        <li><a href="https://www.mas.co.nz/make-a-claim/" target="_blank" rel="noopener">MAS：Make a claim</a></li>
+        <li><a href="https://www.mas.co.nz/documents/1346/Motor_Vehicle_Insurance_Policy_1_July_2026.pdf" target="_blank" rel="noopener">MAS：Motor Vehicle Insurance Policy（1 July 2026）</a></li>
         <li><a href="https://www.police.govt.nz/use-105/traffic-crash-report" target="_blank" rel="noopener">New Zealand Police：Traffic crash report</a></li>
         <li><a href="https://webforms.police.govt.nz/en/form/traffic-crash-report" target="_blank" rel="noopener">New Zealand Police：105線上事故表單</a></li>
-        <li><a href="https://www.mas.co.nz/make-a-claim/" target="_blank" rel="noopener">MAS：Make a claim與處理流程</a></li>
-        <li><a href="https://www.mas.co.nz/documents/1346/Motor_Vehicle_Insurance_Policy_1_July_2026.pdf" target="_blank" rel="noopener">MAS：Motor Vehicle Insurance Policy（1 July 2026）</a></li>
-        <li><a href="https://vehicleinspection.nzta.govt.nz/virms/in-service-wof-and-cof/unclassified-vehicles/vehicle-exterior/external-projections" target="_blank" rel="noopener">NZTA Vehicle Inspection：損壞車身、突出物與固定要求</a></li>
       </ul>
-      <p class="privacy">本頁是公開操作卡，依使用者明確指示載有本案姓名、出生日期、住址、電話、Email、保單號與車牌，任何取得網址的人都可能讀取、保存或轉傳。實際送件以Police、MAS表單及保單Schedule為準。</p>
+      <p class="privacy">本頁是公開操作卡，依使用者明確指示載有本案姓名、出生日期、住址、Email、保單號與車牌等資料；任何取得網址的人都可能讀取、保存或轉傳。實際案件處理以MAS最新書面指示為準。</p>
     </section>
   </main>
 </body>
