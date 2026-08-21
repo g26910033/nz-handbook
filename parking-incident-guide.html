@@ -47,7 +47,7 @@
     h2 { margin: 0 0 10px; font-size: 1.45rem; }
     h3 { margin: 18px 0 7px; font-size: 1.08rem; }
     p { margin: 7px 0; }
-    ul, ol { margin: 8px 0; padding-left: 24px; }
+    ul { margin: 8px 0; padding-left: 24px; }
     li { margin: 5px 0; }
     .nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 17px; }
     .nav a {
@@ -76,19 +76,12 @@
       color: #164f7d;
       font-size: .78rem;
       font-weight: 900;
-      letter-spacing: .03em;
     }
     .priority.done { background: #dff3e9; color: #126047; }
     .priority.optional { background: #eceff2; color: #4d5963; }
-    .action-grid, .summary-grid { display: grid; gap: 12px; margin-top: 14px; }
-    .action-grid { grid-template-columns: repeat(2, 1fr); }
-    .summary-grid { grid-template-columns: repeat(3, 1fr); }
-    .action, .summary-box { padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: #fbfcfd; }
-    .action.urgent { border-color: #9fc8e8; background: #f2f8fd; }
-    .action.complete { border-color: #9ed2b9; background: #f1faf5; }
-    .action.complete h3::before { content: "✓ "; color: var(--green); }
-    .action h3, .summary-box h3 { margin: 0 0 6px; }
-    .action p, .summary-box p { margin: 0; }
+    .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+    .summary-box { padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: #fbfcfd; }
+    .summary-box h3 { margin: 0 0 6px; }
     .do-now { border-top: 4px solid var(--blue); }
     .do-later { border-top: 4px solid var(--green); }
     .do-not { border-top: 4px solid var(--red); }
@@ -105,13 +98,9 @@
       overflow-wrap: anywhere;
       user-select: all;
     }
-    .script.primary { border: 2px solid #75a9d1; background: #f4f9fd; }
     .translation { margin-top: 8px; color: var(--muted); font-size: .93rem; }
     .updated { margin-top: 16px; color: #d8ebf9; font-size: .82rem; }
     .source-list, .privacy { color: var(--muted); font-size: .88rem; }
-    .checklist { list-style: none; padding-left: 0; }
-    .checklist li { position: relative; padding-left: 29px; }
-    .checklist li::before { content: "□"; position: absolute; left: 2px; color: var(--green); font-weight: 900; }
     details { margin-top: 12px; border: 1px solid var(--line); border-radius: 12px; background: #fbfcfd; }
     summary { cursor: pointer; padding: 12px 14px; color: var(--navy); font-weight: 850; }
     .detail { padding: 0 14px 14px; }
@@ -131,11 +120,10 @@
       text-decoration: none;
     }
     .button.secondary { background: #fff; color: var(--blue); }
-    code { overflow-wrap: anywhere; }
     @media (max-width: 640px) {
       .hero, .card { border-radius: 16px; padding: 19px; }
       .nav { grid-template-columns: repeat(2, 1fr); }
-      .action-grid, .summary-grid { grid-template-columns: 1fr; }
+      .summary-grid { grid-template-columns: 1fr; }
       .button { width: 100%; }
     }
     @media print {
@@ -153,208 +141,173 @@
     <header class="hero">
       <small>CHIA-JUNG · 理賠案件 801516 · 可全程用文字處理</small>
       <h1>車險處理卡</h1>
-      <p>MAS 已和 IAG／NZI 確認第三方責任，後續由兩家保險公司直接處理。現在唯一要主動處理的是自車評估：Rosiez Sockburn 有上門評估，但需先確認 MAS 是否核准，以及是否有額外上門費。</p>
+      <p>MAS 車輛評估團隊已把估價與照片要求直接送給 Rosiez Collision Repairs - Sockburn，並書面確認評估費由 MAS 支付，即使最後不修自己的車也不用付評估費。現在不用再追問 MAS；等 Rosiez 聯絡安排評估即可。</p>
       <nav class="nav" aria-label="頁面導覽">
         <a href="#now">現在要做</a>
-        <a href="#mobile">上門評估</a>
-        <a href="#repairers">維修廠</a>
+        <a href="#assessment">評估與費用</a>
+        <a href="#third-party">第三方責任</a>
         <a href="#history">案件紀錄</a>
       </nav>
-      <div class="updated">更新時間：台北 2026-08-18 15:58 · 紐西蘭 2026-08-18 19:58（紐西蘭標準時間）<br />版本：081819581（依紐西蘭時間）<br />最新進度：8/18 最新回信只署名 Matt／MAS Claims，不能假定與 8/17 完整署名的 Matthew Lineham 是同一人。後續回信一律使用「MAS Claims Team」團隊稱呼。Rosiez Sockburn 可申請上門評估；目前先向 MAS 確認核准、額外上門費及自負額三件事。</div>
+      <div class="updated">更新時間：台北 2026-08-21 18:00 · 紐西蘭 2026-08-21 22:00（紐西蘭標準時間）<br />版本：082122001（依紐西蘭時間）<br />最新進度：8/21 Bonnie Saunders 代表 MAS 車輛評估團隊回信，確認估價與照片要求已轉給 Rosiez Collision Repairs - Sockburn，MAS 會負擔評估費，即使最後不繼續自車維修亦同。信中寫「可能進行 onsite assessment」，此處先保守譯為「現場評估」，不直接等同「到佳蓉住處上門評估」。</div>
     </header>
 
     <section class="card" id="now">
       <span class="priority">目前重點</span>
-      <h2>0｜現在只做一件事：先問 MAS，再決定上門或到店</h2>
-
+      <h2>0｜現在不用再寄信給 MAS，等 Rosiez 聯絡</h2>
       <div class="summary-grid">
         <div class="summary-box do-now">
           <h3>現在</h3>
-          <p>回覆 MAS，確認上門評估是否核准、是否有額外費用，以及只做評估是否仍不會產生 500 紐幣自負額。</p>
+          <p>等 Rosiez 聯絡安排評估。若對方直接提出上門評估，確認時間、地點，以及佳蓉現場不需支付任何費用。</p>
         </div>
         <div class="summary-box do-later">
-          <h3>MAS 回覆後</h3>
-          <p>若上門免費且核准，就選 Rosiez 上門評估；否則改約 Rosiez Sockburn 到店評估。</p>
+          <h3>評估時</h3>
+          <p>只同意檢查、拍照與估價。讓 Rosiez 把估價與照片送給 MAS，由 MAS 審核。</p>
         </div>
         <div class="summary-box do-not">
           <h3>先不要</h3>
-          <p>不要授權維修、不要先付評估費、上門費或自負額，也不用再自行和 IAG／NZI 談第三方求償。</p>
+          <p>不要授權正式維修、不要先付 500 紐幣自負額，也不用再自行和 IAG／NZI 處理第三方求償。</p>
         </div>
       </div>
-
       <div class="status">
-        <strong>第三方部分已交給 MAS</strong>
-        MAS 已表示已和第三方保險公司確認責任，之後由對方直接聯絡 MAS。因此佳蓉目前不需要自行談責任、金額或付款。
+        <strong>MAS 已主動把案件送到 Rosiez</strong>
+        Bonnie Saunders 8/21 明確表示，估價與照片要求已轉交 Rosiez Collision Repairs - Sockburn。這代表評估流程已由 MAS 端啟動，不需要佳蓉再另外把同一份要求送一次。
       </div>
     </section>
 
-    <section class="card" id="mobile">
-      <span class="priority">先確認再預約</span>
-      <h2>1｜Rosiez 上門評估：最關鍵是「核准」和「費用」</h2>
-
-      <div class="action-grid">
-        <div class="action complete">
-          <h3>已經確定</h3>
-          <p>一般的檢查、拍照與估價由 MAS 支付，不論最後修不修自己的車，都不需要另付評估費。</p>
-        </div>
-        <div class="action urgent">
-          <h3>還沒確定</h3>
-          <p>上門評估是否屬於 MAS 已核准的服務，以及 Rosiez 若有額外上門費，是否也由 MAS 全額負擔。</p>
-        </div>
+    <section class="card" id="assessment">
+      <span class="priority done">費用已有新確認</span>
+      <h2>1｜評估費確定由 MAS 支付；上門地點仍要等 Rosiez 確認</h2>
+      <div class="status">
+        <strong>評估費：確定 0 紐幣</strong>
+        MAS 8/21 再次書面確認：即使佳蓉最後不繼續自己的車輛維修，MAS 仍會負擔評估費。這與 8/17「檢查、照片與估價由 MAS 支付」的回覆一致。
       </div>
-
       <div class="note">
-        <strong>自負額判斷</strong>
-        依 Matthew Lineham 8/17 的書面回覆，500 紐幣自負額只有在佳蓉最後決定正式修自己的 Tiida 時才會產生。單純做檢查、拍照與估價，不應觸發自負額。這次再問 MAS，是要把「上門評估」也明確納入書面確認。
+        <strong>「onsite assessment」不要過度解讀</strong>
+        Bonnie Saunders 原文是「I understand they may be doing an onsite assessment」。最穩妥的中文是「我了解他們可能會進行現場評估」。信中沒有明寫「at your home／at your address」，也沒有直接使用 Rosiez 網站上的「Mobile Assessment」名稱，因此目前不能只憑這一句認定一定會到住處上門。等 Rosiez 聯絡時確認實際地點即可。
       </div>
-
       <div class="warning">
-        <strong>上門費和自負額是不同概念</strong>
-        即使上門評估不會產生 500 紐幣自負額，仍可能有額外上門服務費。Rosiez 公開預約頁沒有列出費用，因此不要先假設一定免費。
+        <strong>額外上門費仍保留一個小問號</strong>
+        MAS 已明確承擔「評估費」，但這封信仍沒有另外寫「若 Rosiez 有獨立上門／出勤費也全部由 MAS 支付」。實務上若 Rosiez 安排現場評估且完全沒有向佳蓉收費，就不用再追問；若 Rosiez 提到任何額外上門費，先不要付款，把該費用交回 MAS 書面確認。
+      </div>
+      <div class="note">
+        <strong>500 紐幣自負額仍不會因評估而產生</strong>
+        8/17 Matthew Lineham 已書面確認，只有佳蓉最後決定正式修自己的 Tiida，才需要支付一次 500 紐幣自負額。8/21 這封信只是安排估價與照片，沒有改變這個規則。
       </div>
 
-      <h3>直接回覆 MAS 的英文信</h3>
-      <div class="script primary">Subject: Claim 801516 — Rosiez mobile assessment approval
+      <h3>Rosiez 聯絡時可直接回覆的英文</h3>
+      <div class="script">Hello,
 
-Hello MAS Claims Team,
+Thank you. MAS has asked Rosiez to arrange an assessment, photographs and a repair estimate for claim 801516.
 
-Thank you for the repairer options.
+At this stage, I only authorise the assessment, photographs and estimate. I am not authorising repairs yet.
 
-Rosiez Sockburn offers a mobile assessment for pre-approved insurance repairs. Before I arrange this, could you please confirm:
-
-1. whether MAS approves a mobile assessment for claim 801516;
-2. whether MAS will cover any mobile or call-out fee in addition to the inspection, photographs and quotation; and
-3. that arranging a mobile assessment only, with no repairs authorised, will not trigger the $500 excess.
-
-If the mobile option is not approved or involves any cost to me, I will book an onsite assessment instead.
-
-Please also let me know if MAS needs to pre-authorise the mobile assessment directly with Rosiez.
-
-Please continue to communicate with me by email wherever possible.
+Could you please confirm whether the assessment will be at my address or at your workshop, and that I do not need to pay any assessment or call-out fee?
 
 Kind regards,
 Chia-Jung Chen</div>
-      <p class="translation"><strong>完整中文翻譯：</strong>主旨：理賠案件 801516—Rosiez 上門評估核准。MAS 理賠團隊您好，謝謝提供維修廠選項。Rosiez Sockburn 對事先核准的保險維修案件提供上門評估。在安排之前，請協助確認：① MAS 是否核准案件 801516 使用上門評估；② 除了檢查、拍照與估價外，如有任何上門或出勤費，是否也由 MAS 負擔；③ 只安排上門評估、沒有授權任何維修，不會觸發 500 紐幣自負額。如果上門方案未獲核准或需要我自行負擔任何費用，我會改約到店評估。另外也請告知是否需要 MAS 直接向 Rosiez 完成上門評估的事前核准。若可以，請繼續以電子郵件與我聯絡。敬上，Chia-Jung Chen。</p>
-
-      <div class="danger">
-        <strong>MAS 回覆前不要先叫上門評估</strong>
-        到店評估的費用已經有 MAS 書面確認；上門評估則多了一個尚未確認的服務方式與可能費用。先拿到書面答案最穩妥。
-      </div>
-    </section>
-
-    <section class="card" id="repairers">
-      <span class="priority">維修廠選擇</span>
-      <h2>2｜三家怎麼選：Rosiez Sockburn 仍是首選</h2>
-
-      <div class="summary-grid">
-        <div class="summary-box do-now">
-          <h3>① Rosiez Sockburn｜首選</h3>
-          <p><strong>25 Lunns Road, Middleton</strong><br />MAS 推薦，可線上預約 30 分鐘到店評估，也提供上門評估。最符合「近、評價高、可網路處理」的需求。</p>
-        </div>
-        <div class="summary-box do-later">
-          <h3>② Perfect Auto Body｜第二</h3>
-          <p><strong>175 Main South Road, Sockburn</strong><br />可直接線上預約 30 分鐘車輛評估。若 Rosiez 時段不合適，可改這家。</p>
-        </div>
-        <div class="summary-box do-not">
-          <h3>③ Paul Hussey Panelbeaters｜最近</h3>
-          <p><strong>345 Blenheim Road, Upper Riccarton</strong><br />位置最接近 Peer Street 一帶、評價樣本也多；但目前未查到可直接選時段的線上預約。</p>
-        </div>
-      </div>
+      <p class="translation"><strong>完整中文翻譯：</strong>您好，謝謝。MAS 已請 Rosiez 就理賠案件 801516 安排評估、拍照與維修估價。目前我只同意評估、拍照與估價，尚未授權正式維修。請協助確認評估是在我的住處還是你們的維修廠進行，以及我是否完全不需要支付任何評估費或上門費。敬上，Chia-Jung Chen。</p>
 
       <div class="button-row">
         <a class="button" href="https://rosiezsockburn.youcanbook.me/" target="_blank" rel="noopener">Rosiez Sockburn 預約頁</a>
-        <a class="button secondary" href="https://www.perfectautobody.co.nz/service-page/vehicle-assessment-appointment" target="_blank" rel="noopener">Perfect Auto Body 評估預約</a>
+        <a class="button secondary" href="https://www.rosiez.co.nz/contact-us" target="_blank" rel="noopener">Rosiez 官方聯絡頁</a>
       </div>
+    </section>
 
-      <h3>真正預約評估時的英文備註</h3>
-      <div class="script">MAS insurance claim 801516. MAS has asked me to arrange an assessment, photographs and quotation only. Please do not begin any repairs at this stage.</div>
-      <p class="translation"><strong>完整中文翻譯：</strong>MAS 保險理賠案件 801516。MAS 請我目前只安排評估、拍照及估價；現階段請不要開始任何維修。</p>
+    <section class="card" id="mas-reply">
+      <span class="priority optional">8/21 最新回信</span>
+      <h2>2｜Bonnie Saunders 回信翻譯與解讀</h2>
+      <details open>
+        <summary>英文原文與完整中文翻譯</summary>
+        <div class="detail">
+          <div class="script">Hi Chia-Jung,
 
-      <div class="warning">
-        <strong>安全優先</strong>
-        若保險桿鬆垂或磨到輪胎、出現尖銳裂片、燈具失效、漏液、過熱、警示燈、方向跑偏或異常聲響，停止一般行駛，先做安全檢查。
+A request for an estimate and images has been forwarded to your repairer Rosiez Collision Repairs - Sockburn.
+
+I understand they may be doing an onsite assessment. This email confirms that MAS will cover the assessment fee even if you do not proceed with the claim.
+
+We will revert back to you as soon as we have received, assessed and authorised their repair quote and supporting images.
+
+Kind regards
+
+Bonnie Saunders</div>
+          <p class="translation"><strong>完整中文翻譯：</strong>Chia-Jung 您好：我們已將「提供維修估價與照片」的要求轉交給您的維修廠 Rosiez Collision Repairs - Sockburn。我了解他們可能會進行現場評估。這封電子郵件確認，即使您最後不繼續這項自車理賠／維修，MAS 仍會負擔評估費。我們收到 Rosiez 的維修估價與相關照片後，會進行審核並核准估價，之後會儘快再回覆您。敬上，Bonnie Saunders。</p>
+        </div>
+      </details>
+      <div class="note">
+        <strong>「MAS 核准估價」不等於「佳蓉授權維修」</strong>
+        MAS 說會審核並核准 Rosiez 的維修估價，這只是保險公司確認哪些修理內容可以納入理賠。佳蓉仍可等估價出來後，再自行決定是否真的要修自己的車並支付 500 紐幣自負額。
       </div>
     </section>
 
     <section class="card" id="third-party">
       <span class="priority done">已交由保險公司處理</span>
       <h2>3｜第三方求償：佳蓉目前不用再處理</h2>
-
-      <div class="status">
-        <strong>MAS 已和 IAG／NZI 確認責任</strong>
-        8/18 回信表示，寄件人前一日已聯絡第三方保險公司並確認責任，之後第三方保險公司會直接聯絡該 MAS 理賠窗口。IAG／NZI 案號為 C1314708，MAS 案號為 801516。
-      </div>
-
-      <div class="note">
-        <strong>人員身分保持保守</strong>
-        8/17 回信完整署名為 Matthew Lineham；8/18 回信只署名 Matt／MAS Claims。現有資料不足以證明兩者是同一人，因此本卡不做這項假定，後續一律以 MAS Claims Team 稱呼整個理賠團隊。
-      </div>
-
-      <details>
-        <summary>8/18 MAS 回信英文原文與中文翻譯</summary>
-        <div class="detail">
-          <div class="script">I contacted the third-party insurer yesterday and we have confirmed liability so you can get rid of that letter if you wish. They will contact me from here going forwards.</div>
-          <p class="translation"><strong>完整中文翻譯：</strong>我昨天已經聯絡第三方保險公司，我們已確認責任，所以如果你願意，那封信可以處理掉。從現在開始，他們會直接聯絡我。<br /><strong>署名：</strong>Matt／MAS Claims。基於現有信件資訊，無法確認是否就是 Matthew Lineham。</p>
-        </div>
-      </details>
-
+      <p>MAS 已和 IAG／NZI 確認第三方責任，後續由兩家保險公司直接處理。IAG／NZI 案號為 C1314708，MAS 案號為 801516。依 8/17 書面確認，如果佳蓉不修自己的 Tiida，只處理第三方責任，MAS 不收 500 紐幣自負額。</p>
       <div class="warning">
-        <strong>不要延伸解讀</strong>
-        這封信只確認第三方責任已由保險公司對接，沒有寫明是否適用「互不追償／各自理賠協議（KFK）」，因此仍不能說 KFK 已確定啟動。
+        <strong>仍不假定 KFK 已正式啟動</strong>
+        目前信件沒有明寫「互不追償／各自理賠協議（KFK）」已適用，因此保留原本的保守判斷。
       </div>
-    </section>
-
-    <section class="card" id="documents">
-      <span class="priority optional">保存紀錄</span>
-      <h2>4｜需要保留的文件</h2>
-      <ul>
-        <li>IAG／NZI 紙本信：MAS 說可以丟，但建議至少保留照片或電子檔直到案件正式結案。</li>
-        <li>8/17 MAS 回信：完整署名 Matthew Lineham，內容確認評估費、自車維修與自負額規則。</li>
-        <li>8/18 MAS 回信：只署名 Matt／MAS Claims，內容確認第三方已交接並提供三家維修廠。</li>
-        <li>Rosiez 上門評估頁面截圖：保留作為上門服務條件的依據。</li>
-        <li>之後 MAS 對上門評估的書面答覆：收到後保留至案件結束。</li>
-      </ul>
-      <div class="danger"><strong>不要自行付款</strong>任何第三方費用、評估費、上門費或維修費若直接向佳蓉收取，先不要付款，交由 MAS 書面確認。</div>
-    </section>
-
-    <section class="card" id="police">
-      <span class="priority optional">目前非必要</span>
-      <h2>5｜紐西蘭警方 105：目前仍不用先報</h2>
-      <p>Gerald Dwyer 已聯絡、資料已交換，MAS 與 IAG／NZI 都已建立案件並直接對接。MAS 最新回信也沒有要求警方報案編號，因此目前沒有理由把 105 改成必做。</p>
-      <div class="note"><strong>只有以下情況再處理：</strong>MAS 明確要求警方報案編號、出現犯罪疑慮、威脅或重大爭議需要警方紀錄，或佳蓉自行決定留存警方紀錄。</div>
     </section>
 
     <section class="card" id="cost">
       <span class="priority">費用一眼看懂</span>
-      <h2>6｜目前各項自付成本</h2>
+      <h2>4｜目前佳蓉可能需要支付什麼？</h2>
       <div class="summary-grid">
         <div class="summary-box do-now">
-          <h3>一般評估</h3>
-          <p><strong>0 紐幣</strong><br />檢查、拍照、估價由 MAS 支付。</p>
+          <h3>檢查、拍照、估價</h3>
+          <p><strong>0 紐幣</strong><br />MAS 已於 8/17、8/21 兩次書面確認由 MAS 支付。</p>
         </div>
         <div class="summary-box do-later">
           <h3>不修自己的車</h3>
-          <p><strong>0 紐幣自負額</strong><br />依 8/17 書面確認，只處理第三方責任時不收自負額。</p>
+          <p><strong>0 紐幣自負額</strong><br />第三方責任由 MAS 處理。</p>
         </div>
         <div class="summary-box do-not">
-          <h3>決定修自己的車</h3>
+          <h3>最後決定修 Tiida</h3>
           <p><strong>500 紐幣自負額</strong><br />只有正式進行自車維修才收一次。</p>
         </div>
       </div>
-      <div class="warning"><strong>上門評估費仍待確認</strong>若 Rosiez 有額外上門費，目前尚未有 MAS 書面確認是否全額承擔；這筆費用和 500 紐幣自負額是兩回事。</div>
+      <div class="warning"><strong>唯一未完全書面拆開的費用：</strong>如果 Rosiez 對上門另列「獨立上門／出勤費」，8/21 信只寫 MAS 負擔評估費，未逐字提及這種獨立費目。若真的出現，先不要付，交 MAS 確認。</div>
+    </section>
+
+    <section class="card" id="documents">
+      <span class="priority optional">保存紀錄</span>
+      <h2>5｜需要保留的文件</h2>
+      <ul>
+        <li>8/17 Matthew Lineham 回信：確認一般評估費、自車維修與 500 紐幣自負額規則。</li>
+        <li>8/18 Matt／MAS Claims 回信：確認第三方已交接並提供三家維修廠；不假定 Matt 與 Matthew Lineham 是同一人。</li>
+        <li>8/21 Bonnie Saunders 回信：確認估價與照片要求已送 Rosiez，且 MAS 負擔評估費。</li>
+        <li>IAG／NZI 紙本信與電子副本：至少保存到案件結束。</li>
+        <li>之後 Rosiez 的預約、估價、照片與 MAS 核准結果。</li>
+      </ul>
+    </section>
+
+    <section class="card" id="police">
+      <span class="priority optional">目前非必要</span>
+      <h2>6｜紐西蘭警方 105：目前仍不用先報</h2>
+      <p>第三方已和 MAS 對接，MAS 也已啟動自車評估流程；最新回信仍沒有要求警方報案編號。因此目前沒有新的理由把警方 105 改成必做。</p>
     </section>
 
     <section class="card" id="history">
       <span class="priority optional">案件時間軸</span>
       <h2>7｜案件紀錄</h2>
       <details open>
+        <summary>2026-08-21｜Bonnie Saunders 確認 Rosiez 評估流程與費用</summary>
+        <div class="detail">
+          <ul>
+            <li>MAS 已將估價與照片要求轉給 Rosiez Collision Repairs - Sockburn。</li>
+            <li>MAS 表示 Rosiez「可能進行現場評估」；尚不能僅憑此句確定一定到住處上門。</li>
+            <li>MAS 明確確認評估費由 MAS 支付，即使最後不繼續自車維修亦同。</li>
+            <li>MAS 會等 Rosiez 回傳維修估價與照片，完成審核並核准估價後再聯絡佳蓉。</li>
+          </ul>
+        </div>
+      </details>
+      <details>
         <summary>2026-08-18｜MAS 確認第三方責任並提供三家維修廠</summary>
         <div class="detail">
           <ul>
             <li>回信只署名 Matt／MAS Claims，不假定其與 Matthew Lineham 為同一人。</li>
             <li>MAS 表示已和第三方保險公司確認責任，後續由對方直接聯絡 MAS。</li>
             <li>MAS 推薦 Paul Hussey Panelbeaters、Rosiez Collision Repairs、Perfect Auto Body。</li>
-            <li>Rosiez Sockburn 另有上門評估；目前先詢問 MAS 是否核准及是否有額外費用。</li>
           </ul>
         </div>
       </details>
@@ -362,10 +315,9 @@ Chia-Jung Chen</div>
         <summary>2026-08-17｜Matthew Lineham 確認評估費與自負額</summary>
         <div class="detail">
           <ul>
-            <li>檢查、拍照、估價由 MAS 支付，不論最後修不修自車。</li>
+            <li>檢查、拍照、估價由 MAS 支付，不論最後修不修自己的車。</li>
             <li>只有決定修自己的車時，才需要支付一次 500 紐幣自負額。</li>
             <li>若不修自己的車，只處理第三方費用，MAS 不收自負額。</li>
-            <li>若自車維修在經濟上不值得，MAS 可只處理第三方責任，仍不收自負額。</li>
           </ul>
         </div>
       </details>
@@ -380,15 +332,13 @@ Chia-Jung Chen</div>
     </section>
 
     <section class="card">
-      <h3>官方與查核來源</h3>
+      <h3>官方與案件來源</h3>
       <ul class="source-list">
-        <li>MAS：2026-08-17 與 2026-08-18 理賠回信，案件 801516。</li>
-        <li>Rosiez Sockburn 官方預約頁：到店評估與上門評估選項。</li>
-        <li><a href="https://www.rosiez.co.nz/contact-us" target="_blank" rel="noopener">Rosiez 官方聯絡頁</a></li>
-        <li><a href="https://www.perfectautobody.co.nz/service-page/vehicle-assessment-appointment" target="_blank" rel="noopener">Perfect Auto Body 車輛評估預約</a></li>
+        <li>MAS：2026-08-17、2026-08-18、2026-08-21 理賠／車輛評估回信，案件 801516。</li>
+        <li>Rosiez Sockburn 官方預約與聯絡頁。</li>
         <li><a href="https://www.mas.co.nz/documents/1346/Motor_Vehicle_Insurance_Policy_1_July_2026.pdf" target="_blank" rel="noopener">MAS 汽車保險條款（2026 年 7 月 1 日版）</a></li>
       </ul>
-      <p class="privacy">本頁是公開車險處理卡，依使用者明確指示載有本案姓名、保單／理賠資訊、車牌等案件資料；任何取得網址的人都可能讀取、保存或轉傳。實際案件處理以 MAS 最新書面指示為準。</p>
+      <p class="privacy">本頁是公開車險處理卡，載有本案姓名、保單／理賠資訊與車牌等案件資料；任何取得網址的人都可能讀取、保存或轉傳。實際案件處理以 MAS 最新書面指示為準。</p>
     </section>
   </main>
 </body>
