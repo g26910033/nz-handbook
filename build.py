@@ -17,7 +17,7 @@ def build():
         styles_html += f"<style>\n{block.strip()}\n</style>"
         
     html = [
-        '<!DOCTYPE html>\n<html lang="zh-Hant">\n<head>\n<meta charset="utf-8" />\n<meta name="viewport" content="width=device-width, initial-scale=1" />\n<title>紐西蘭冬季雙島自駕生存與財務教戰手冊｜2026冬季版</title>',
+        '<!DOCTYPE html>\n<html lang="zh-Hant">\n<head>\n<meta charset="utf-8" />\n<meta name="viewport" content="width=device-width, initial-scale=1" />\n<title>紐西蘭冬季雙島自駕實戰與財務結案手冊｜2026完賽版</title>',
         styles_html + '</head>\n<body>\n<main class="book">'
     ]
     
