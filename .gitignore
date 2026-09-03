@@ -2,3 +2,25 @@
 /private/insurance/
 /private/billing/
 /private/receipts/
+
+# macOS 系統檔與本機暫存資料
+.DS_Store
+/tmp/
+/tmp_*.html
+
+# 本機查信、修補與遷移輔助腳本
+/fetch_all_gmail.py
+/fetch_emails.py
+/fetch_emails_fast.py
+/fetch_emails_gmail.py
+/fetch_real.py
+/fix_chch.py
+/fix_formatting.py
+/migrate.py
+/patch_south.py
+/patch_south2.py
+/read_0729.py
+
+# 僅供本機核對的身分與簽證文件
+/NZ_Working_Holiday_Visa_page3_employer_copy_watermarked.pdf
+/Passport_employment_verification_watermarked_ID_redacted.png
