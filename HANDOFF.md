@@ -3,7 +3,7 @@
 ## 2026-09-17
 
 - Gmail已確認Rosiez Frikkie於9/17 08:14 NZST回覆：看過照片後仍需到現場檢查，才能提供準確維修估價，並請佳蓉提供合適日期與時間。
-- 使用者進一步界定案件卡範圍：`parking-incident-guide.html`不再放內部iOS訊息或傳送按鈕；使用者可另以本機訊息提醒佳蓉，訊息內容採用案件卡內「下一步 Email」的完整信件文字。佳蓉則以原Email信串回覆Rosiez；案件卡聚焦於等待班表、安排現場評估、取得估價、MAS核准及是否授權維修。主手冊不連動修改。
+- 使用者進一步界定案件卡範圍：`parking-incident-guide.html`不再放內部iOS訊息或傳送按鈕；使用者可另以本機訊息提醒佳蓉，訊息內容採用案件卡內「下一步 Email」的完整信件文字。該Email指定2/32A Peer Street, Upper Riccarton, Christchurch 8041為評估地址，並要求先書面確認assessment、call-out、travel及其他現場費用；佳蓉則以原Email信串回覆Rosiez。案件卡聚焦於等待班表、安排現場評估、取得估價、MAS核准及是否授權維修。主手冊不連動修改。
 
 ## 2026-09-16
 
