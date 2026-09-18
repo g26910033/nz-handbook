@@ -227,6 +227,7 @@
 - `medical-consult.html` 另含台灣健保境外自墊醫療費用核退限制、實體院所文件清單與中英索取話術；純線上問診不得在頁面上表述為可核退，內容應以健保署現行表單、期限及當季上限為準。
 - `medical-consult.html` 採手機優先的「安全判斷、填資料、複製英文、選線上醫師、領藥、實體備案」行動流程；醫療平台、時段與費用屬易變資料，更新備案時須以業者或 Health New Zealand 官方頁面重查，且實體費用必須區分 casual 與 non-resident／non-eligible 資格。
 - `medical-consult.html` 的實體診所表應把「必須預約」與「可直接 walk-in」分開；目前 My Medical 對海外訪客列 NZD125，但 casual visitor 必須電話預約，Patient Portal 僅供已註冊病人使用。
+- 2026-09-18 PageShare 醫療續藥指南的最新決策：佳蓉身分是 New Zealand Working Holiday visa；操作順序固定為先走 Well Revolution 文字 GP，醫師確認適合並送出 ePrescription 後，才處理藥局。門市取貨固定使用 Chemist Warehouse Westfield Riccarton，已依基督城二姑家起點比較確認為最近的實際取貨門市；不安排配送，也不要求佳蓉自行比價。工作簽證公費資格依 Health NZ 官方「工作簽證及符合條件的前段簽證合計是否允許連續停留至少兩年」規則核對，頁面先以未補助病人的私費總額詢價；英文話術均緊接中文翻譯。
 - 2026-07-07 已結束北島行程，`src/sections/08-north.html` 已改為 Gmail 每日提醒與實際執行整併後的北島完成版；後續調整北島段時應維持實際紀錄語氣。
 - 2026-07-08 Gmail確認回程改為律德Jetstar JQ226 2026-08-02 06:15 CHC → 07:35 AKL；改票費NZD6.09已列入已支出交通。
 - 2026-07-08 使用者確認車子是給佳蓉後續使用，不賣車；回程段落應避免「賣車、出售、上架」語氣。

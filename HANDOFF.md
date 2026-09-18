@@ -1,5 +1,11 @@
 # HANDOFF
 
+## 2026-09-18
+
+- PageShare 醫療續藥指南已依最新確認更新：佳蓉是 New Zealand Working Holiday visa 持有人，流程改為先完成 Well Revolution 文字 GP，再由醫師判斷並送出 ePrescription，最後才處理藥局。
+- 已用基督城二姑家地址核對取貨動線，固定門市改為 Chemist Warehouse Westfield Riccarton（Shop S412A, Westfield Riccarton, 129 Riccarton Road）；佳蓉只到店取貨，不安排配送，也不再要求比價。頁面已加入起點到門市的地圖路線、門市官方頁與門市取貨模擬對話。
+- Health NZ 工作簽證公費資格規則已寫入頁面背景；在資格未被服務端確認前，操作指南採未補助病人的私費總額詢價。PageShare 頁面內所有英文操作訊息均保留緊接中文翻譯。
+
 ## 2026-09-17
 
 - Gmail已確認Rosiez Frikkie於9/17 08:14 NZST回覆：看過照片後仍需到現場檢查，才能提供準確維修估價，並請佳蓉提供合適日期與時間。
