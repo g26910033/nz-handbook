@@ -299,6 +299,8 @@
 
 ## 已知注意事項
 
+- 2026-09-22 獨立停車事故卡改為兩個可切換分頁，預設顯示 9/22 BMW 新案，8/12 Mazda 舊案保留原估價與信件；頁面只加入切換所需的原生 JavaScript，保留舊錨點連結與停用 JavaScript 時的全文閱讀。新案使用者確認為「向前停車、自車左前接觸對方後保險桿中央下方」，不得沿用早期右前說法。留紙條、車主聯絡、警方通報及保險通知為四個獨立狀態；舊案費用確認不得自動套新案。新舊損傷須比較事故前後照片並分開評估。新增案件個資僅限獨立事故卡，不擴散至主手冊或本檔；主手冊與封面時間不連動。
+
 - Mastercard 官方頁面可被瀏覽器開啟；本機 `curl` 或直接 API 請求可能被 Mastercard/Akamai 擋下。必要時使用瀏覽器同源查詢。
 - 每日匯率更新以 Mastercard Global 國際版 converter 為官方入口：`https://www.mastercard.com/global/en/personal/get-support/currency-exchange-rate-converter.html`。
 - Mastercard current rate 查詢可使用頁面同源請求的 `fxDate=0000-00-00`，應以官方回應中的 `data.fxDate` 作為手冊匯率基準日期。
