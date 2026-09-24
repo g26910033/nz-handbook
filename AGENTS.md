@@ -228,6 +228,7 @@
 - `medical-consult.html` 採手機優先的「安全判斷、填資料、複製英文、選線上醫師、領藥、實體備案」行動流程；醫療平台、時段與費用屬易變資料，更新備案時須以業者或 Health New Zealand 官方頁面重查，且實體費用必須區分 casual 與 non-resident／non-eligible 資格。
 - `medical-consult.html` 的實體診所表應把「必須預約」與「可直接 walk-in」分開；目前 My Medical 對海外訪客列 NZD125，但 casual visitor 必須電話預約，Patient Portal 僅供已註冊病人使用。
 - 2026-09-18 PageShare 醫療續藥指南的最新決策：佳蓉身分是 New Zealand Working Holiday visa；操作順序固定為先走 Well Revolution 文字 GP，醫師確認適合並送出 ePrescription 後，才處理藥局。門市取貨固定使用 Chemist Warehouse Westfield Riccarton，已依基督城二姑家起點比較確認為最近的實際取貨門市；不安排配送，也不要求佳蓉自行比價。工作簽證公費資格依 Health NZ 官方「工作簽證及符合條件的前段簽證合計是否允許連續停留至少兩年」規則核對，頁面先以未補助病人的私費總額詢價；英文話術均緊接中文翻譯。
+- 2026-09-22 MAS Assessing 就舊案 801516／Rosiez estimate 14867 詢問左前葉子板是否屬於 8/12 事故，因其依事故描述與照片認為本案相關損傷看似限於左前保險桿。轉寄原信顯示時間為 9/22 10:08，早於同日 16:10 的 BMW 新事故；該新事故與 9/21 已送審的舊估價不得混為一談。回覆須先由駕駛核對事故當時記憶與同期照片；資訊不足時清楚說明無法確認，不得臆測，也不可把 MAS 的初步判斷說成當事人已確認的事實。
 - 2026-07-07 已結束北島行程，`src/sections/08-north.html` 已改為 Gmail 每日提醒與實際執行整併後的北島完成版；後續調整北島段時應維持實際紀錄語氣。
 - 2026-07-08 Gmail確認回程改為律德Jetstar JQ226 2026-08-02 06:15 CHC → 07:35 AKL；改票費NZD6.09已列入已支出交通。
 - 2026-07-08 使用者確認車子是給佳蓉後續使用，不賣車；回程段落應避免「賣車、出售、上架」語氣。
