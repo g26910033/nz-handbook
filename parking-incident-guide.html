@@ -132,6 +132,10 @@
     .facts { display: grid; grid-template-columns: 6em minmax(0, 1fr); gap: 8px 14px; margin: 16px 0 0; }
     .facts dt { font-weight: 800; color: var(--navy); }
     .facts dd { margin: 0; overflow-wrap: anywhere; }
+    .estimate-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    .estimate-table th, .estimate-table td { padding: 10px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .estimate-table th:last-child, .estimate-table td:last-child { text-align: right; white-space: nowrap; }
+    .estimate-table tfoot { font-weight: 800; }
     section[id] { scroll-margin-top: 12px; }
     @media (max-width: 640px) {
       .hero, .card { border-radius: 16px; padding: 19px; }
@@ -157,7 +161,7 @@
       <small>CHIA-JUNG · 兩案分開處理</small>
       <h1>車險處理卡</h1>
       <p>點選日期切換事故；通報、估價與費用分案記錄。</p>
-      <div class="updated">更新：台北 2026-09-24 10:35<br />紐西蘭 2026-09-24 14:35（NZST）<br />版本：092414351（依紐西蘭時間）</div>
+      <div class="updated">更新：台北 2026-09-24 14:56<br />紐西蘭 2026-09-24 18:56（NZST）<br />版本：092418561（依紐西蘭時間）</div>
     </header>
 
     <div class="incident-tabs" role="tablist" aria-label="選擇事故" hidden>
@@ -328,13 +332,13 @@ Insurer: MAS</div>
     <header class="hero">
       <small>CHIA-JUNG · 理賠案件 801516 · 可全程用文字處理</small>
       <h2 class="case-heading">8/12 · Mazda 舊案</h2>
-      <p><strong>目前狀態：MAS 要確認照片估價中的左前葉子板是否屬於 8/12 舊案</strong><br>Rosiez estimate 14867 是依照片製作，佳蓉尚未安排現場檢查；她因工作安排尚未約時間。MAS 來信原信顯示 9/22 10:08：事故描述與照片看來僅支持左前保險桿損傷，但估價另列左前葉子板，請佳蓉確認是否與事故相關。這是損傷範圍查證，不是已確認的理賠拒絕。</p>
+      <p><strong>目前狀態：已取得 NZD 3,018.98 照片初估；MAS 要確認左前葉子板是否屬於 8/12 舊案</strong><br>Rosiez estimate 14867 依現有照片與資料製作，佳蓉尚未安排現場檢查；她因工作安排尚未約時間。MAS 來信原信顯示 9/22 10:08：事故描述與照片看來僅支持左前保險桿損傷，但估價另列左前葉子板，請佳蓉確認是否與事故相關。Rosiez 9/24 確認目前沒有維修核准或施工安排。</p>
       <nav class="nav" aria-label="頁面導覽">
         <a href="#action">現在要做</a>
+        <a href="#estimate">估價明細</a>
         <a href="#email">下一封 Email</a>
         <a href="#spoken-qa">現場口語 QA</a>
         <a href="#roadmap">案件進度</a>
-        <a href="#history">歷史與原件</a>
       </nav>
     </header>
 
@@ -369,6 +373,34 @@ Insurer: MAS</div>
         <strong>案件時間紀錄</strong>
         Rosiez 於 9/21 通知 estimate 14867 已送出；MAS 原信顯示於 9/22 10:08，請佳蓉確認左前葉子板是否與本案相關。
       </div>
+    </section>
+
+    <section class="card" id="estimate">
+      <span class="priority optional">Rosiez estimate 14867｜8/12 Mazda 案</span>
+      <h2>已取得照片初估：NZD 3,018.98（含 GST）</h2>
+      <p>車廠列入的範圍超過前保險桿，還包括左前葉子板與車門；這是送 MAS 審核的估價範圍，不代表 MAS 已認定每項都屬於 8/12 事故。尚未實車檢查，也未核准或開始維修。</p>
+      <table class="estimate-table">
+        <thead><tr><th scope="col">估價部位與工作</th><th scope="col">未稅 NZD</th></tr></thead>
+        <tbody>
+          <tr><td><strong>前保險桿周邊</strong>：拆裝水箱護罩、保險桿、下緣飾件、左側固定座與左大燈；檢查隱藏損傷；修復並烤漆前保險桿；另列左側固定座零件。</td><td>826.80</td></tr>
+          <tr><td><strong>左前葉子板（LF guard）</strong>：拆裝附件、修復、烤漆。</td><td>740.00</td></tr>
+          <tr><td><strong>左前車門（LF door）</strong>：拆裝附件與後視鏡、修復、烤漆。</td><td>644.00</td></tr>
+          <tr><td><strong>左後車門（LR door）</strong>：拆裝附件、相鄰車門調色銜接（blend）；未列直接修復。</td><td>210.00</td></tr>
+          <tr><td><strong>共通費用</strong>：車輛掃描 135.00、材料 59.40、環境處理 10.00。</td><td>204.40</td></tr>
+        </tbody>
+        <tfoot><tr><td>未稅合計</td><td>2,625.20</td></tr><tr><td>GST</td><td>393.78</td></tr><tr><td>估價總額</td><td>3,018.98</td></tr></tfoot>
+      </table>
+      <details>
+        <summary>展開原估價逐項金額（均為未稅 NZD）</summary>
+        <div class="detail">
+          <p><strong>拆卸與裝回，合計 583.00：</strong>水箱護罩 27.50；前保險桿 110.00；保險桿下緣飾件 55.00；左側固定座 16.50；左大燈拆裝／檢查隱藏損傷 55.00；左前葉子板附件 55.00；左前車門附件 137.50；左前車門後視鏡 16.50；左後車門附件 110.00。</p>
+          <p><strong>修復，合計 605.00：</strong>前保險桿 110.00；左前葉子板 385.00；左前車門 110.00。</p>
+          <p><strong>烤漆與調色，合計 1,180.00：</strong>前保險桿 400.00；左前葉子板 300.00；左前車門 380.00；左後車門調色銜接 100.00。</p>
+          <p><strong>零件與其他，合計 257.20：</strong>左前保險桿固定座零件 52.80；車輛掃描 135.00；材料 59.40；環境處理 10.00。另列快速清潔，免費。</p>
+        </div>
+      </details>
+      <div class="note"><strong>估價單上的付款欄位怎麼看</strong>文件另列自負額 NZD 500，並將總額扣除 500 後寫為「Total Due NZD 2,518.98」。這個 2,518.98 不是要求佳蓉支付的金額；依 MAS 既有書面說明，只有決定正式修自己的車時，才需處理自車維修的 NZD 500 自負額。實際核准範圍與付款方式仍以 MAS 後續書面通知為準。</div>
+      <div class="warning"><strong>目前最需要釐清的估價項目</strong>MAS 已詢問左前葉子板與 8/12 事故的關聯；估價另有左前車門修復、左後車門調色，亦應請車廠說明依據。左後門調色不等於左後門被撞。車廠 9/24 回信確認這只是依現有資料製作的初估，現場檢查及拆卸後金額可能變動，任何追加項目須再經 MAS 審核。</div>
     </section>
 
     <section class="card" id="email">
@@ -555,6 +587,13 @@ Insurer: MAS</div>
       <p>以下依時間倒序保留重要信件與案件紀錄：</p>
 
       <details open>
+        <summary>9/24 Rosiez 寄送 estimate 14867 詳細估價單並確認尚未核准維修</summary>
+        <div class="detail">
+          <p>Rosiez 書面確認：估價是依目前可取得資料製作並送保險公司審查，尚未授權、安排或開始維修；實車檢查後可能調整，若拆卸後發現隱藏損傷，追加估價仍需 MAS 審核。原 PDF 含個人及車輛識別資料，保存在私人資料夾，本公開頁只列維修項目與費用。</p>
+        </div>
+      </details>
+
+      <details open>
         <summary>9/22 10:08 Dylan Mcginnity（MAS Assessing）詢問左前葉子板是否屬於 8/12 事故</summary>
         <div class="detail">
           <div class="script">Hi Chia-Jung,<br><br>I hope you are doing well.<br><br>I am reaching out as I have now received the repair estimate for your vehicle and would like to confirm the damages related to this claim.<br><br>Based on the incident description and the images you provided, the claim-related damage appears to be limited to the left front bumper. However, the repair estimate received from Rosiez Collision Repairs - Sockburn also includes repairs to the left front guard.<br><br>After reviewing the damage to both your vehicle and the third-party vehicle, it does not appear that the damage to the left front guard is related to this incident. The damage to the guard appears consistent with a direct impact and does not appear to have resulted from the damage sustained to the front bumper.<br><br>Could you please confirm whether the left front guard damage is related to this claim? If so, could you please provide some further information on how this damage occurred as part of the incident?<br><br>Thanks,<br>Dylan<br><br>Sent from Clear21 on behalf of the MAS Motor Assessing Team<br>Assessors@mas.co.nz</div>
@@ -633,6 +672,7 @@ Insurer: MAS</div>
         <summary>案件完整時間軸</summary>
         <div class="detail">
           <ul>
+            <li><strong>2026-09-24</strong>：Rosiez 寄送 estimate 14867 詳細 PDF，含稅初估 NZD 3,018.98；確認尚未現場檢查、核准或施工。</li>
             <li><strong>2026-09-22 10:08（原信顯示）</strong>：MAS Dylan 詢問 estimate 14867 中左前葉子板項目是否與 8/12 事故有關，等待佳蓉核對同期記憶及照片後回覆。</li>
             <li><strong>2026-09-21</strong>：Rosiez 通知 estimate 14867 已完成並送保險公司處理／審核；信件沒有說現場評估已完成，也沒有約定日期與時間。</li>
             <li><strong>2026-09-17</strong>：Rosiez 看過照片後確認仍需現場評估，請佳蓉提供合適日期與時間。</li>
@@ -654,7 +694,7 @@ Insurer: MAS</div>
         <summary>官方與案件來源</summary>
         <div class="detail">
           <ul class="source-list">
-            <li>Rosiez Collision Repairs - Sockburn：2026-08-31、2026-09-04、2026-09-16、2026-09-17、2026-09-21 電子郵件；佳蓉另確認 estimate 14867 只依照片製作，尚未做現場檢查。</li>
+            <li>Rosiez Collision Repairs - Sockburn：2026-08-31、2026-09-04、2026-09-16、2026-09-17、2026-09-21、2026-09-24 電子郵件及 estimate 14867 PDF；車廠確認估價只是依現有資料製作，尚未做現場檢查或授權維修。</li>
             <li>MAS：2026-08-17、2026-08-18、2026-08-21、2026-09-03、2026-09-22 理賠／車輛評估回信，案件 801516。</li>
             <li><a href="https://www.mas.co.nz/resources/claims-information/claims-guide/" target="_blank" rel="noopener">MAS 理賠流程指南</a>與<a href="https://www.mas.co.nz/resources/claims-information/claims-photo-guide/" target="_blank" rel="noopener">MAS 理賠照片指南</a>。</li>
             <li><a href="https://www.mas.co.nz/documents/1346/Motor_Vehicle_Insurance_Policy_1_July_2026.pdf" target="_blank" rel="noopener">MAS 汽車保險條款（2026 年 7 月 1 日版）</a></li>
