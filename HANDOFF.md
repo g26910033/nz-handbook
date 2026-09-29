@@ -1,5 +1,10 @@
 # HANDOFF
 
+## 2026-09-29
+
+- 已將現行基督城 Escitalopram 續藥指南移入獨立 `escitalopram-renewal-guide.html`，保留原有簡潔步驟、可複製英文訊息及 Arataki GP 姓名欄位處理方式，移除 PageShare 浮水印；此頁不併入旅遊手冊首頁或 `build.py`。
+- 預定公開網址：`https://gpt.greenparty.org.tw/nz-handbook/escitalopram-renewal-guide.html`。待推送後核對 GitHub Pages 部署與實際頁面。
+
 ## 2026-09-26
 
 - 使用者要求車險處理卡的更正與後續操作建議預設每次同步寫入 `parking-incident-guide.html`，不可只在對話提出；只有明確說「純討論／不修改」時例外。本次已據此修正 8/12 舊案 MAS 回信策略，未代寄 Email。
