@@ -2,8 +2,8 @@
 
 ## 2026-09-29
 
-- 已將現行基督城 Escitalopram 續藥指南移入獨立 `escitalopram-renewal-guide.html`，保留原有簡潔步驟、可複製英文訊息及 Arataki GP 姓名欄位處理方式，移除 PageShare 浮水印；此頁不併入旅遊手冊首頁或 `build.py`。
-- 預定公開網址：`https://gpt.greenparty.org.tw/nz-handbook/escitalopram-renewal-guide.html`。待推送後核對 GitHub Pages 部署與實際頁面。
+- 基督城 Escitalopram 續藥指南以獨立 `escitalopram-renewal-guide.html` 發布，不併入旅遊手冊首頁或 `build.py`。後續維護須保留能實際指導操作的內容；簡潔以步驟排序、分區和清楚標題達成，不刪除藥局／藥師中英 Q&A、詢價及取藥文字，也不加入未採用的替代服務或表單。
+- 公開網址：`https://gpt.greenparty.org.tw/nz-handbook/escitalopram-renewal-guide.html`；2026-09-29 已確認頁面可公開開啟。藥局流程以醫師開出 ePrescription 後為起點，先確認指定門市取貨、總價與費用，再依藥局流程提交，收到備妥通知後才出發。
 
 ## 2026-09-26
 
