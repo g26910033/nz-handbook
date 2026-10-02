@@ -161,7 +161,7 @@
       <small>CHIA-JUNG · 兩案分開處理</small>
       <h1>車險處理卡</h1>
       <p>點選日期切換事故；通報、估價與費用分案記錄。</p>
-      <div class="updated">更新：台北 2026-10-02 17:41<br />紐西蘭 2026-10-02 22:41（NZDT）<br />版本：100222411（依紐西蘭時間）</div>
+      <div class="updated">更新：台北 2026-10-02 19:30<br />紐西蘭 2026-10-03 00:30（NZDT）<br />版本：100300301（依紐西蘭時間）</div>
     </header>
 
     <div class="incident-tabs" role="tablist" aria-label="選擇事故" hidden>
@@ -182,13 +182,13 @@
 
       <section class="card" id="bmw-action">
         <span class="priority">一眼確認進度</span>
-        <h2>新案已受理｜回報對方案號，再安排估價</h2>
+        <h2>新案先估價｜比較只付一筆自負額的方案</h2>
         <div class="summary-grid">
           <div class="summary-box do-later"><h3>已完成</h3><p>MAS 已受理案 803286（自負額 NZD 500）；估價要求已轉 Rosiez；事故時間更正完成（佳蓉確認）。</p></div>
-          <div class="summary-box do-now"><h3>現在處理</h3><p>回覆 MAS 案 803286 原信串，告知已收到對方 AMI 車損案號（勿開新案）；再核對法定資料是否已補齊，並依排班書面約 Rosiez，先確認地點與費用。</p></div>
+          <div class="summary-box do-now"><h3>現在處理</h3><p>書面約 Rosiez 實車估價，分清新增損傷、舊案已列工項與額外費用。若尚未回報 AMI 案號，補到 MAS 案 803286 原信串。</p></div>
           <div class="summary-box do-not"><h3>暫不施工</h3><p>只同意檢查、拍照及估價。收到 MAS 書面核准範圍與金額後，再決定是否維修。自負額通常於維修完成時支付；若提前要求，先向 MAS 書面確認。</p></div>
         </div>
-        <div class="note"><strong>受理不等於核准：</strong>MAS 接受申請不代表已裁定責任、核准估價或同意施工。若新案只處理 BMW、不修 Tiida，先書面確認本案自負額；8/12 舊案條件不適用於新案。</div>
+        <div class="note"><strong>目標：爭取只收一筆 NZD 500</strong>比較「舊案純第三方＋新案修自車」及反向方案，先不放棄任一案自車選擇。舊案純第三方免自負額已有書面確認；新案能否同樣免收仍待確認。<a href="#deductible-options">看成立條件與可能額外費用</a>。</div>
         <details>
           <summary>照片可見損傷與檢查重點</summary>
           <div class="detail">
@@ -197,7 +197,7 @@
             <p><strong>新案評估要區分舊損：</strong>8/12 前保險桿擦痕尚未修復，到了 9/22 已是事發前損傷；依 <a href="https://www.mas.co.nz/documents/1346/Motor_Vehicle_Insurance_Policy_1_July_2026.pdf" target="_blank" rel="noopener">MAS 條款</a>，既有車損不屬新案事故損害，MAS 可能將原有擦痕列為既有損傷。但這不表示 9/22 新增的位移／脫開也必然是舊傷。提供 8/12、9/22 前後日期照片及舊估價 14867，請 Rosiez／MAS 分列兩次事故的損傷與費用，勿重複計算或預判成因。若保險桿鬆垂、碰胎或有脫落風險，先停駛檢查。</p>
           </div>
         </details>
-        <p class="note">8/12 舊案已收到新版逐項評估：含前保險桿、左前葉子板及左前車門，現金結算未核准。先保留舊案維修選擇，等本案實車估價後比較費用；勿重複申領相同工作。</p>
+        <p class="note">舊案已列保險桿修復與左側固定座，但不代表已證明本次脫落塑膠件就是該零件。由 Rosiez 核對新案需追加的工程，再請 MAS 書面確認自負額與其他自付費用；不得重複申領。</p>
       </section>
 
       <section class="card" id="bmw-mas">
@@ -381,7 +381,7 @@ The other vehicle was unoccupied. No one was injured. I took photographs and lef
       <p><strong>目前狀態：</strong>Dylan 最新信確認含前保險桿、左前葉子板及左前車門；目前評估 NZD 2,650.69（含 GST），扣自負額 500 後 MAS 負擔 2,150.69。本案不核准現金結算；金額仍可能調整，尚未授權施工。</p>
       <nav class="nav" aria-label="頁面導覽">
         <a href="#old-current">目前進度</a>
-        <a href="#old-message">回覆 MAS</a>
+        <a href="#deductible-options">一次自負額</a>
         <a href="#estimate">估價項目</a>
         <a href="#old-archive">歷史資料</a>
       </nav>
@@ -389,37 +389,39 @@ The other vehicle was unoccupied. No one was injured. I took photographs and lef
 
     <section class="card" id="old-current">
       <span class="priority">一眼確認進度</span>
-      <h2>先簡短回覆｜保留維修選擇，暫不開工</h2>
+      <h2>先保留舊案｜新案估價後選一筆自負額方案</h2>
       <div class="summary-grid">
         <div class="summary-box do-later"><h3>已確認</h3><p>含保險桿、葉子板及左前車門。新版明細解釋降價；另列分攤款目前為 0。MAS 明確不核准現金結算。</p></div>
-        <div class="summary-box do-now"><h3>現在處理</h3><p>簡短回 Dylan 最新附估價信：保留評估範圍、暫不授權；確認第三方處理繼續，以及若只處理第三方是否仍不收自負額。</p></div>
+        <div class="summary-box do-now"><h3>現在處理</h3><p>先完成新案實車估價，比較由哪一案處理自車較有利。10/2 最新信未列回覆期限，現在不必為等估價另寄一封；若收到催覆或期限，再簡短回覆。</p></div>
         <div class="summary-box do-not"><h3>暫不做</h3><p>不回覆「同意進行」、不要求立即開工，也不先放棄舊案自車理賠。新案完成實車估價後，再比較兩案費用並決定。</p></div>
       </div>
       <div class="status"><strong>2,150.69 是 MAS 目前維修負擔額，不是可領現金</strong>最新信已明確拒絕本案現金結算。<a href="https://www.mas.co.nz/documents/1346/Motor_Vehicle_Insurance_Policy_1_July_2026.pdf" target="_blank" rel="noopener">MAS 條款第 27 頁</a>將維修或依評估費用給付的選擇權交給 MAS；不能把估價單的「Total Payable Amount」當作佳蓉現金收入。</div>
-      <details>
-        <summary>為何先等新案估價？兩案自負額與選擇</summary>
+      <details id="deductible-options">
+        <summary>什麼情況能只付一次？三種方案與成立條件</summary>
         <div class="detail">
+          <p><strong>確定的基準：</strong>MAS 8/17 已書面確認舊案只處理第三方、不修自車時免自負額；新案 9/28 受理信列 NZD 500，但未說明新案純第三方是否免收。依 <a href="https://www.mas.co.nz/documents/1346/Motor_Vehicle_Insurance_Policy_1_July_2026.pdf" target="_blank" rel="noopener">條款第 13 頁</a>，同一事故一筆、不同事故分別適用；同一保險桿或同次進廠不會自動合併。</p>
           <ol>
-            <li><strong>現在回信，不必等才回：</strong>表示已收到明細、尚未決定維修，請保留目前範圍並暫緩授權。不要重問已回答的現金選項或是否含葉子板。</li>
-            <li><strong>等的是施工決定：</strong>先安排新案 803286 實車估價。保留有日期照片，請 Rosiez／MAS 分列兩次事故及重疊工作；新案保險桿的處理方式仍未知，不能預設一定換新或只收一次自負額。</li>
-            <li><strong>不要先放棄舊案：</strong>左前葉子板與左前車門目前合計 NZD 1,528.35（含 GST；不含共通費），並非只有保險桿。若最後兩案都修自車，依每事故自負額規則，可能共付 NZD 1,000；若舊案只處理第三方、新案修自車，依舊案既有書面說明，基準可能為新案 NZD 500，但重疊舊損費用仍須確認。這些是選項比較，不是最終帳單。</li>
-            <li><strong>書面列清後再選：</strong>比較只修新案與兩案都修的範圍、自負額及其他自付額。即使同一車廠、同次進廠，也不會自動把兩起事故合成一次。若最終決定不修舊案，只停止自車維修，不撤銷第三方處理。</li>
+            <li><strong>舊案純第三方 0＋新案自車 500：</strong>目前書面依據最明確。新案須確認承保的新增修復範圍；舊案葉子板、車門不會因此自動轉入新案。若新事故本身已足以需要整支更換，可據實爭取該必要工程由新案負擔；是否需換、是否有舊損分攤，尚待評估。</li>
+            <li><strong>舊案自車 500＋新案純第三方 0：</strong>值得優先核對，可能保留較完整的舊案修復範圍。條件是舊案已認列工程經實車檢查及 MAS 確認可照該範圍處理，而新案沒有另需申領的自車工程，且 MAS 書面同意新案僅處理 BMW 時免自負額。舊估價已有左側固定座，不等於新損可算入舊案；新增工程須分清。若新增費用少而選擇自付，仍只有一筆自負額，但總支出會高於 500。</li>
+            <li><strong>兩案都賠自車，MAS 特別減免其中一筆：</strong>若兩案確有不同必要工程，通常依條款分別適用，目前兩案列示合計為 1,000。可提出同次修理、避免重複拆裝與烤漆的整合估價，請 MAS 酌情減免一筆；這是協商，並非重疊工項就有免收權利。</li>
           </ol>
+          <p><strong>下一步只查三件事：</strong>Rosiez 確認本次脫落零件及必要修法；分列舊案既有工程、新案新增工程與重複工項；MAS 確認所選方案的兩案自負額及其他自付費用總額，再授權施工。</p>
+          <p class="warning"><strong>只收一次 ≠ 總共只花 500</strong>若要連總支出也限於 500，還須沒有另付的舊損、新增工程、分攤或未承保費用。不要為省第二筆自負額而預先放棄舊案，也不能把新損寫成舊損；檢查後再選。</p>
         </div>
       </details>
       <details id="old-message">
-        <summary>目前回覆草稿｜回最新附估價信，尚未寄出</summary>
+        <summary>只有 MAS 催覆時才用｜暫緩施工短回覆，尚未寄出</summary>
         <div class="detail">
-          <p><strong>寄送方式：</strong>回覆 Dylan 最新的 <span lang="en">Assessed Estimate - Claim: 801516 Reg: MFY228</span> 原信；不用另回 9/29、9/30。下方只確認收到並保留選擇，不是同意開工或放棄自車理賠。</p>
-          <div class="script">Subject: Re: Assessed Estimate - Claim: 801516 Reg: MFY228<br><br>Hi Dylan,<br><br>Thank you for the breakdown and for confirming that the front bumper, left front guard and left front door are included. I understand that cash settlement is not approved.<br><br>I have not yet decided whether to proceed with my vehicle repairs. Please retain the assessed repair scope on record and hold repair authorisation until I confirm my decision.<br><br>Please confirm that MAS will continue handling the third-party claim while my repair decision is pending, and that no excess will apply under claim 801516 if I choose not to repair my own vehicle and MAS handles only the third-party claim costs, as previously advised.<br><br>Kind regards,<br>Chia-Jung Chen</div>
-          <p class="translation"><strong>完整中文翻譯：</strong>主旨：回覆：評估估價——理賠案 801516／車牌 MFY228。Dylan 您好，謝謝提供明細，也謝謝確認前保險桿、左前葉子板及左前車門都包含在內。我了解現金結算未獲核准。我尚未決定是否維修自己的車；請在案件紀錄保留目前評估的維修範圍，並在我確認決定前暫緩施工授權。請確認在我決定維修與否期間，MAS 仍會繼續處理第三方理賠；也請確認，若我最後選擇不修自己的車、MAS 只處理第三方理賠費用，案件 801516 是否如先前告知不收自負額。敬上，Chia-Jung Chen。</p>
-          <p class="note"><strong>為何這樣回：</strong>不先接受施工，也不撤回保險桿、葉子板或車門的評估範圍；第三方處理與自車決定分開。此信不用重述 BMW 事故，但新案評估涉及同一保險桿時，仍須依日期資料如實區分，不能隱瞞或重複申領。</p>
+          <p><strong>目前不用寄：</strong>最新信未列回覆期限，先取得新案估價。若 MAS 催覆或要求限期決定，再回覆 Dylan 原信；不用重問已回答的現金結算、修復範圍或舊案純第三方自負額。</p>
+          <div class="script">Subject: Re: Assessed Estimate - Claim: 801516 Reg: MFY228<br><br>Hi Dylan,<br><br>Thank you for the breakdown. I am still reviewing the repair options. Please hold repair authorisation until I confirm how I wish to proceed.<br><br>Kind regards,<br>Chia-Jung Chen</div>
+          <p class="translation"><strong>完整中文翻譯：</strong>主旨：回覆：評估估價——理賠案 801516／車牌 MFY228。Dylan 您好，謝謝提供明細。我仍在考慮維修選項；請在我確認處理方式前暫緩施工授權。敬上，Chia-Jung Chen。</p>
+          <p class="note">這封只暫緩施工，不放棄自車理賠，也不接受較小的維修範圍。涉及重疊工程的正式估價及理賠決定，仍須以兩案日期、照片與檢查結果如實區分。</p>
         </div>
       </details>
     </section>
 
     <details id="old-archive">
-      <summary>舊案估價、往返信件與流程（歷史備查；最新回覆草稿見上方）</summary>
+      <summary>舊案估價、往返信件與流程（歷史備查；目前策略見上方）</summary>
       <div class="detail">
     <section class="card" id="action">
       <span class="priority done">前一封舊案說明已寄</span>
@@ -435,7 +437,7 @@ The other vehicle was unoccupied. No one was injured. I took photographs and lef
         </div>
         <div class="summary-box do-not">
           <h3>目前狀態</h3>
-          <p>未做實車檢查。先簡短確認收到、保留維修選擇，等新案估價後比較；未授權施工。</p>
+          <p>未做實車檢查；保留舊案維修選擇，取得新案估價後比較一筆自負額方案。未授權施工。</p>
         </div>
       </div>
       <div class="status">
@@ -495,7 +497,7 @@ The other vehicle was unoccupied. No one was injured. I took photographs and lef
         </div>
       </details>
       <div class="note"><strong>9/30 舊版已被更新</strong>assessment 10931 當時列 NZD 2,955.73，扣 500 後為 2,455.73；現以 10/2 新版為準，不能當成另一筆可領款。</div>
-      <div class="note"><strong>自負額與分攤</strong>10/2 明確列自車維修自負額 NZD 500、另列分攤款 0；這不是兩案總費用保證。8/17 MAS 曾確認本案若不修自車、僅處理第三方，不收自負額；目前草稿請 MAS 再確認。現金結算已被明確拒絕。</div>
+      <div class="note"><strong>自負額與分攤</strong>10/2 列自車維修自負額 NZD 500、另列分攤款 0；這不是兩案總費用保證。8/17 MAS 已書面確認本案若不修自車、僅處理第三方，不收自負額，不必重複詢問。新案純第三方能否同樣免收仍待確認。現金結算已被明確拒絕。</div>
       <div class="note"><strong>評估與施工分開</strong>新版仍為 Desktop／Assessed Without Prejudice，金額尚未授權且可能變動。新增或 Report On 項目應由車廠提出、MAS 審核，不等於佳蓉已同意自費；新案重疊工作須另行區分。</div>
     </section>
 
@@ -642,7 +644,7 @@ The other vehicle was unoccupied. No one was injured. I took photographs and lef
         <li>✅ <strong>步驟六：</strong> 9/21 estimate 14867 已送 MAS 審核；佳蓉已確認該估價是依照片製作，沒有現場檢查。</li>
         <li>✅ <strong>步驟七：</strong> 佳蓉已回覆 MAS 先前的葉子板問題；實際寄送時間與內容以原始 Email 為準。</li>
         <li>📩 <strong>最新進度：</strong> MAS 9/29 願把左前葉子板納入本案；9/30 提供桌面估價 NZD 2,955.73；10/2 Dylan 另通知目前評估 NZD 2,650.69，等佳蓉同意才送車廠維修授權。</li>
-        <li>⏸️ <strong>目前待決：</strong> 回覆 10/2 原信詢問明細、差額與不修車給付選項；待新案評估釐清重疊工項後再決定。施工尚未授權。</li>
+        <li>⏸️ <strong>目前待決：</strong> 先取得新案實車估價，比較只收一筆自負額的成立條件；最新信未列回覆期限，暫不另寄信或授權施工。</li>
       </ul>
       <div class="warning">
         <strong>桌面評估不等於最終核准或可直接施工</strong>
@@ -654,8 +656,8 @@ The other vehicle was unoccupied. No one was injured. I took photographs and lef
       <span class="priority optional">已確認事項</span>
       <h2>目前已確認與仍待書面確認的費用／責任</h2>
       <div class="status">
-        <strong>目前優先回覆 10/2；9/29、9/30 不必另回</strong><br>
-        10/2 Dylan 告知目前評估 NZD 2,650.69（含 GST），與 9/30 桌面評估差 NZD 305.04。先問明細、葉子板、自負額與現金給付選項；不要在回信中同意車廠開工。
+        <strong>10/2 明細已收；目前先比較一筆自負額方案</strong><br>
+        最新評估 NZD 2,650.69（含 GST），含前保險桿、左前葉子板及左前車門；調整明細與拒絕現金結算均已說明。先取得新案實車估價，不必再問已回答事項；9/29、9/30 無須另回，未授權施工。
       </div>
       <div class="status">
         <strong>estimate 14867 已確認是照片估價，尚無現場檢查</strong><br>
