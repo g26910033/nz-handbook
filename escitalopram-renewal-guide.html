@@ -22,7 +22,7 @@
       color: var(--ink);
       font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
     }
-    main { max-width: 760px; margin: 0 auto; padding: 18px; }
+    main { max-width: 740px; margin: 0 auto; padding: 18px; }
     header {
       margin: 4px 0 14px;
       padding: 24px 22px;
@@ -77,6 +77,7 @@
       display: inline-block;
       margin: 4px 4px 4px 0;
       padding: 10px 14px;
+      min-height: 44px;
       border: 0;
       border-radius: 9px;
       background: var(--teal);
@@ -103,7 +104,38 @@
     .qa-item .translation { color: var(--muted); font-size: 14px; }
     .copyrow { display: flex; justify-content: flex-end; }
     details { margin-top: 10px; }
-    summary { color: #24596a; font-weight: 700; cursor: pointer; }
+    summary {
+      min-height: 44px;
+      padding: 9px 0;
+      color: #24596a;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .jump-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+    .jump-nav a {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .status-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .status-box { min-width: 0; padding: 12px; border: 1px solid var(--line); border-radius: 11px; background: #f8fbfc; }
+    .status-box p { margin: 5px 0 0; font-size: 14px; }
+    .status-label { display: block; margin-bottom: 4px; color: var(--muted); font-size: 13px; }
+    .status-box strong { display: block; line-height: 1.45; }
+    .assessment-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .assessment-grid .status-box { border-top: 3px solid var(--teal); }
+    .assessment-grid h3 { margin: 4px 0; font-size: 17px; line-height: 1.45; }
+    .next-action { margin-top: 12px; padding: 12px 14px; border-left: 4px solid var(--teal); border-radius: 8px; background: var(--pale); }
+    .faq-group { margin: 10px 0; padding: 0 12px; border: 1px solid var(--line); border-radius: 11px; background: #fff; }
+    .faq-group[open] > summary { border-bottom: 1px solid var(--line); }
+    .faq-group .qa-item:first-of-type { border-top: 0; }
+    a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #f0bd36; outline-offset: 2px; }
     footer { padding: 14px 4px 26px; color: var(--muted); font-size: 13px; }
     @media (max-width: 520px) {
       main { padding: 12px; }
@@ -111,6 +143,24 @@
       h1 { font-size: 23px; }
       .card { padding: 15px; }
       .step { gap: 8px; }
+      .status-grid { grid-template-columns: 1fr; gap: 8px; }
+      .assessment-grid { grid-template-columns: 1fr; }
+      .jump-nav a { flex: 1 1 auto; justify-content: center; }
+    }
+    @media print {
+      @page { size: A4; margin: 14mm; }
+      body { background: #fff; font-size: 10.5pt; line-height: 1.45; }
+      main { max-width: none; padding: 0; }
+      header { padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); }
+      header .small { color: var(--muted); }
+      h1 { font-size: 19pt; }
+      h2 { font-size: 14pt; }
+      .card { margin: 8px 0; padding: 12px; border-radius: 8px; }
+      .status-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+      .assessment-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+      .status-box { padding: 8px; }
+      .jump-nav, .btn, button, .copyrow { display: none !important; }
+      a { color: inherit; }
     }
   </style>
 </head>
@@ -118,86 +168,92 @@
 <main>
   <header>
     <h1>佳蓉｜基督城 Escitalopram 續藥指南</h1>
-    <p>佳蓉沒有 GP。照下面順序，先用文字向紐西蘭醫師申請評估。</p>
+    <p>先看目前進度，再照順序處理；英文話術附中文，方便核對。</p>
     <p class="small">更新：2026 年 10 月 3 日｜費用與流程以官方頁面及醫師訊息為準</p>
   </header>
 
-  <section class="card">
-    <h2>目前進度｜已付款，等待三家藥局報價</h2>
-    <p>Well Revolution 的 <b>NZ$80 Limited Treatment Plan 已付款</b>；Wiles 醫師已開立 escitalopram 10 mg、90 天處方。已向三家藥局詢問私費總價，目前都還沒有回覆。處方暫由 Well Revolution 保留，等你比價選定藥局後才會寄出。</p>
-    <ol>
-      <li><b>現在做：</b>等三家藥局以 Email 回覆 90 天藥量的總價及可供應的學名藥。</li>
-      <li><b>比價後：</b>選定一家，回覆 Well Revolution 請他們把處方寄到該藥局。</li>
-      <li><b>之後：</b>向選定藥局確認調劑及取藥方式，等「藥已備妥」通知。</li>
-    </ol>
-    <p class="small">詢價內容包括藥品、調劑及其他藥局費用；目前尚無任何藥局報價。另已向 Well Revolution 索取付款明細及問診文件，等待回覆。10 月 2 日回報當天有服藥，當時手邊還有 1–2 顆。</p>
-    <p><a href="#pharmacy">查看三家藥局詢價內容</a> · <a href="#price-and-payment-record">查看最新付款與寄送紀錄</a></p>
-  </section>
-
-  <section class="card">
-    <h2>先看流程</h2>
-    <div class="steps">
-      <div class="step"><span class="num">1</span><div><b>準備用藥資料</b><br>拍清楚 2026 年 6 月 24 日的藥袋。</div></div>
-      <div class="step"><span class="num">2</span><div><b>Well Revolution 已完成評估與開方</b><br>NZ$80 Limited Treatment Plan 已付款，醫師已開立 90 天處方。</div></div>
-      <div class="step"><span class="num">3</span><div><b>等待三家藥局報價</b><br>收到完整總價後比較，再選定處方要寄送的藥局。</div></div>
-      <div class="step"><span class="num">4</span><div><b>告知 Well Revolution 選定的藥局</b><br>客服確認收到藥局名稱後，才會把處方寄出。</div></div>
-      <div class="step"><span class="num">5</span><div><b>依藥局指示送出處方，再等取藥通知</b><br>收到「已備妥」的文字或 Email 通知後才出發。</div></div>
+  <section class="card" aria-labelledby="current-status-title">
+    <h2 id="current-status-title">目前進度</h2>
+    <div class="status-grid">
+      <div class="status-box">
+        <span class="status-label">Well Revolution</span>
+        <strong>NZ$80 問診方案費已付</strong>
+        <p>醫師已開立 escitalopram 10 mg、90 天處方；目前暫留平台。</p>
+      </div>
+      <div class="status-box">
+        <span class="status-label">藥局報價</span>
+        <strong>已詢問 3 家・都還沒回覆</strong>
+        <p>目前沒有藥局報價，還不能比價或決定寄送處。</p>
+      </div>
+      <div class="status-box">
+        <span class="status-label">付款與問診文件</span>
+        <strong>等待 Well Revolution 回覆</strong>
+        <p>已索取付款明細及問診文件，供台灣海外醫療費用申請。</p>
+      </div>
     </div>
-    <div class="caution"><b>已付款：</b>Well Revolution 收據確認 NZ$80 Limited Treatment Plan 已付款；客服說此方案涵蓋本次 90 天處方。<b>藥局費用：</b>藥品私費價格及調劑等費用尚未取得，等三家藥局報價後再比較。</div>
+    <div class="next-action"><b>現在只要做一件事：</b>等三家藥局用 Email 回覆 90 天藥量的完整私費總價。</div>
+  </section>
+
+  <nav class="jump-nav" aria-label="快速導覽">
+    <a href="#next-steps">接下來怎麼做</a>
+    <a href="#pharmacy">藥局詢價與問答</a>
+    <a href="#reimbursement">健保／保險評估</a>
+    <a href="#doctor-chat-record">醫師問診紀錄</a>
+  </nav>
+
+  <section class="card" id="next-steps">
+    <h2>接下來照這個順序</h2>
+    <div class="steps">
+      <div class="step"><span class="num">1</span><div><b>等書面報價</b><br>三家藥局目前都尚未回覆；現在只是詢價，還沒有請藥局調劑或備藥。</div></div>
+      <div class="step"><span class="num">2</span><div><b>收到後比較總價</b><br>確認 90 天藥量的藥價、所有藥局費、學名藥品牌，以及能否一次供應。</div></div>
+      <div class="step"><span class="num">3</span><div><b>選定一家，再通知 Well Revolution</b><br>客服收到藥局名稱後才會寄出電子處方；之後依藥局指示辦理，等收到「藥已備妥」通知再取藥。</div></div>
+    </div>
+    <div class="caution"><b>重要：</b>目前處方仍由 Well Revolution 保留。先不要要求寄出或請藥局備藥；等報價到齊、選定藥局後再通知平台。</div>
   </section>
 
   <section class="card">
-    <h2>1｜先準備這些資料</h2>
-    <ul>
-      <li>2026 年 6 月 24 日的藥袋清晰照片，讓藥名、劑量、開藥機構及日期看得清楚。</li>
-    </ul>
-    <p class="small">若上傳的檔案看不到，改用手機直接拍清楚，再傳進官方問診聊天。若醫師要求身分確認，只在官方安全聊天內上傳證件；不要把證件、完整姓名、生日、電話或住址放到公開頁面。</p>
-  </section>
-
-  <section class="card">
-    <h2>2｜開啟 Well Revolution</h2>
-    <p>佳蓉沒有 GP，可以直接向 Well Revolution 的紐西蘭 GP 開啟線上問診，不必先加入診所。問診可用文字傳訊息與上傳文件。</p>
-    <a class="btn" href="https://www.wellrevolution.co.nz/treatment/prescription-renewal" target="_blank" rel="noopener">開啟 Prescription Renewal</a>
-    <p class="small">本次選擇 NZ$80 Limited Treatment Plan 並已付款；Well Revolution 確認 Wiles 醫師已開立 90 天處方。藥品由所選藥局調劑，價格尚待詢價。</p>
-  </section>
-
-  <section class="card">
-    <h2>3｜等待三家藥局報價，再決定處方寄送處</h2>
-    <p>你已寄出 90 天 Escitalopram 10 mg 的私費詢價，三家藥局都尚未回覆。收到報價後比較完整總額及學名藥供應情況，再把選定藥局告知 Well Revolution。</p>
-    <p>你也已向 Well Revolution 索取付款項目明細及問診文件，供台灣海外醫療費用申請使用；目前仍待團隊回覆。</p>
     <details>
-      <summary>本次 90 天處方與 NZ$80 方案</summary>
-      <p>Well Revolution Priority Care 確認 Wiles 醫師已開立 90 天的 escitalopram 處方，並由已付款的 NZ$80 Limited Treatment Plan 涵蓋。Well Revolution 會等你選定藥局後才寄出處方。</p>
-      <p>NZ$80 是 Well Revolution 方案費；藥品及藥局調劑等私費仍要看藥局報價。三家藥局目前都還沒回覆，因此暫時沒有可以比較的藥價。</p>
-      <p>紐西蘭自 2026 年 2 月 1 日起，適合的長期用藥處方可由醫師評估開到最多 12 個月；一次供藥仍通常最多三個月。因此，更長期間的處方可能需要分次領藥，不代表一次拿到全部藥量。</p>
+      <summary>初次申請流程（本次已完成）</summary>
+      <p>佳蓉沒有 GP，本次透過 Well Revolution 以文字問診；醫師已評估並開立 90 天處方。之後若要查平台入口，可用以下連結。</p>
+      <a class="btn" href="https://www.wellrevolution.co.nz/treatment/prescription-renewal" target="_blank" rel="noopener">Well Revolution Prescription Renewal</a>
+      <p><b>用藥資料：</b>準備 2026 年 6 月 24 日藥袋的清晰照片，讓藥名、劑量、開藥機構及日期可辨識。若附件無法讀取，改用手機直接拍照，傳進官方安全聊天。證件只在醫師要求時上傳至官方聊天，不放到公開頁面。</p>
+      <p><b>費用：</b>NZ$80 Limited Treatment Plan 已付款，客服確認涵蓋本次 90 天處方；藥品與藥局調劑等費用另計，仍待藥局報價。</p>
+      <p>紐西蘭自 2026 年 2 月 1 日起，適合的長期用藥處方可由醫師評估開到最多 12 個月；一次供藥通常最多三個月。因此，較長期間的處方可能需要分次領藥。</p>
       <p class="small">官方來源：<a href="https://www.health.govt.nz/strategies-initiatives/programmes-and-initiatives/primary-and-community-health-care/increasing-prescribing-lengths" target="_blank" rel="noopener">紐西蘭衛生部處方期間說明</a>（2026 年 8 月 20 日更新；2026 年 10 月 1 日查核）。</p>
     </details>
-    <p><a href="#doctor-chat-record">查看本次 Well Revolution 文字問診完整紀錄</a></p>
-    <div class="caution">如果等待期間焦慮明顯加重，依 GP 指示立刻在同一個聊天告知。接下來的劑量、是否續方及處方數量由 GP 評估決定；不要自行改藥量。</div>
   </section>
 
   <section class="card" id="pharmacy">
-    <h2>4｜三家藥局報價：收到後比價，再選處方寄送處</h2>
-    <p>三家藥局目前都尚未回覆。報價寄到後，比較 90 天供藥的完整私費總額、可供應的學名藥與供藥方式；選定一家後，再在 Well Revolution 聊天告知。<b>目前處方暫由 Well Revolution 保留。</b></p>
-    <p><b>先前考慮的門市（若最後選這家）：</b>Chemist Warehouse at Westfield Riccarton，129 Riccarton Road, Christchurch 8041，Level 1、Rotherham Street 外側，靠近 Drexels；電話：03 667 0901。最終藥局仍待比價決定。</p>
-    <ol>
-      <li><b>比總價：</b>詢價要求報 90 天藥量的自付總額，包含藥品、調劑／私人處方等費用；若有續領，另確認每次費用。</li>
-      <li><b>確認藥品：</b>優先詢問 Ipca-Escitalopram 10 mg 是否有貨；其他 escitalopram 10 mg 學名藥也可以。</li>
-      <li><b>決定藥局：</b>確認總價及能否依醫師處方一次調劑，再回 Well Revolution 指定寄送藥局。</li>
-      <li><b>收到處方後：</b>依所選藥局的電子處方流程操作，等文字或 Email 通知備妥再取藥；實際數量以醫師處方為準。</li>
-    </ol>
-    <a class="btn" href="https://www.chemistwarehouse.co.nz/contactus" target="_blank" rel="noopener">開啟官方詢問表單</a>
-    <a class="btn secondary" href="https://www.chemistwarehouse.co.nz/prescription" target="_blank" rel="noopener">查看電子處方流程</a>
-    <a class="btn secondary" href="https://www.chemistwarehouse.co.nz/aboutus/click-and-collect" target="_blank" rel="noopener">查看到店取貨說明</a>
-    <a class="btn secondary" href="https://www.westfield.co.nz/riccarton/store/188VohKEdgnDunuy0cGZJG/chemist-warehouse-nz" target="_blank" rel="noopener">查看該門市資訊</a>
-
+    <h2>藥局報價與取藥</h2>
+    <p>收到三家報價後，先按下列項目比價；選定一家後，再通知 Well Revolution 寄出處方。</p>
+    <ul>
+      <li><b>完整總價：</b>90 天藥量的藥價，加上調劑、私人處方及其他所有藥局費用。</li>
+      <li><b>藥品：</b>優先詢問 Ipca-Escitalopram 10 mg；若沒有，其他同成分、同劑量學名藥也可以。</li>
+      <li><b>供藥方式：</b>確認能否一次供應 90 天；若需分次領藥，確認每次費用及領藥時間。</li>
+      <li><b>處方流程：</b>確認能否接收 Well Revolution 電子處方，以及收到處方後要如何下單、取藥。</li>
+    </ul>
     <details>
       <summary>已寄出的詢價內容重點｜三家藥局尚未回覆</summary>
-      <p>寄件內容詢問：90 天 escitalopram 10 mg（一日一錠）的私費總額，包含藥品與藥局費用；優先詢問 Ipca-Escitalopram 10 mg，若沒有，其他同成分、同劑量學名藥也可以；並確認 90 天藥量可否一次調劑、藥局能否接收 Well Revolution 電子處方。這只是比價，等選定藥局後才寄處方，尚未請藥局調劑。</p>
-      <p class="translation"><b>中文整理：</b>已向三家藥局詢問 90 天供藥的私費總價及各項藥局費，並詢問 Ipca 學名藥庫存、其他可接受的學名藥、一次供應方式與接收 Well Revolution 電子處方的流程。目前都還沒有收到報價。</p>
+      <ul>
+        <li>詢問 90 天 escitalopram 10 mg（一日一錠）的私費總額，包含藥品與所有藥局費用。</li>
+        <li>優先詢問 Ipca-Escitalopram 10 mg；若沒有，其他同成分、同劑量學名藥也可以。</li>
+        <li>確認能否一次供應 90 天，以及能否接收 Well Revolution 電子處方。</li>
+      </ul>
+      <p class="small">這是比價詢問，尚未請藥局調劑或備藥；三家目前都沒有回覆。</p>
     </details>
 
-    <h3>藥局可能會問什麼｜中英 Q&amp;A</h3>
+    <details class="faq-group">
+      <summary>若最後選 Chemist Warehouse Westfield Riccarton</summary>
+      <p>地址：129 Riccarton Road, Christchurch 8041；Level 1、Rotherham Street 外側，靠近 Drexels；電話：03 667 0901。</p>
+      <a class="btn" href="https://www.chemistwarehouse.co.nz/contactus" target="_blank" rel="noopener">官方詢問表單</a>
+      <a class="btn secondary" href="https://www.chemistwarehouse.co.nz/prescription" target="_blank" rel="noopener">電子處方流程</a>
+      <a class="btn secondary" href="https://www.chemistwarehouse.co.nz/aboutus/click-and-collect" target="_blank" rel="noopener">到店取貨說明</a>
+      <a class="btn secondary" href="https://www.westfield.co.nz/riccarton/store/188VohKEdgnDunuy0cGZJG/chemist-warehouse-nz" target="_blank" rel="noopener">門市資訊</a>
+    </details>
+
+    <h3>藥局常見問題｜中英回答</h3>
+    <details class="faq-group">
+      <summary>詢價、處方與費用（5 題）</summary>
     <div class="qa-item">
       <p class="question">Pharmacy: Are you eligible for funded medicines in New Zealand?</p>
       <p class="translation">藥局：你符合紐西蘭補助藥品資格嗎？</p>
@@ -228,6 +284,10 @@
       <p class="english"><b>可回答：</b>Thank you. Could you please tell me the final total, including every fee, before I place the order?</p>
       <p class="translation">謝謝。下單前，請告訴我包含所有費用後的最終總額。</p>
     </div>
+    </details>
+
+    <details class="faq-group">
+      <summary>供藥、續領與取藥（3 題）</summary>
     <div class="qa-item">
       <p class="question">Pharmacy: We can only dispense 28 tablets today / this quantity is not in stock.</p>
       <p class="translation">藥局：今天只能調劑 28 錠／目前沒有足夠庫存。</p>
@@ -254,8 +314,10 @@ I find spoken English difficult. Could you please communicate in writing if you 
 Please confirm the total amount before I pay. Thank you.</div>
     <div class="copyrow"><button type="button" onclick="copyText('pickup-message',this)">複製取藥英文</button></div>
     <p class="small"><b>中文意思（只供佳蓉理解）：</b>您好，我來領取處方上的 escitalopram。我的訂單號碼或電子處方參考號是［有的話填入］。我不擅長口語英文，需要資料時請用文字告訴我。付款前也請先確認總金額。</p>
+    </details>
 
-    <h3>藥師可能會問什麼｜中英 Q&amp;A</h3>
+    <details class="faq-group">
+      <summary>藥師用藥問答（3 題）</summary>
     <div class="qa-item">
       <p class="question">Pharmacist: May I see your photo ID and order confirmation?</p>
       <p class="translation">藥師：可以看一下你的照片身分證件和訂單確認嗎？</p>
@@ -274,12 +336,89 @@ Please confirm the total amount before I pay. Thank you.</div>
       <p class="english"><b>可回答：</b>Yes, please. I find spoken English difficult. Could you explain in writing how to follow the label, what to do if I miss a dose, the important side effects or interactions, and who I should contact if I have a concern?</p>
       <p class="translation">需要，謝謝。我不擅長口語英文。請用文字說明如何依藥袋指示服用、漏服時怎麼辦、重要副作用或交互作用，以及有疑問時該聯絡誰。</p>
     </div>
+    </details>
     <div class="caution">如果藥名、劑量、藥袋指示或價格和預期不同，先請藥師用文字說明；不要自行改劑量、換藥或多領數量。任何不確定處，請藥師先向開方醫師確認。</div>
+  </section>
+
+  <section class="card" id="reimbursement">
+    <h2>台灣健保核退與 OPWHV 保險評估</h2>
+    <p class="small">依目前問診內容、已知付款資料及保單證明做初步評估；不是健保署或保險公司的核定。查核日期：2026 年 10 月 3 日。</p>
+    <div class="assessment-grid">
+      <div class="status-box">
+        <span class="status-label">台灣健保｜海外自墊醫療費用核退</span>
+        <h3>目前核退可能性偏低，不宜先預期會通過</h3>
+        <p>健保署規定的核心條件是人在國外臨時發生「不可預期的緊急傷病」，而且必須在當地醫療院所立即就醫。本次已知內容是延續多年使用的 escitalopram、申請續方；目前紀錄沒有顯示這次是不可預期且必須立即處理的急症。官方說明也沒有明確回答海外視訊問診是否符合，因此還需向健保署確認。</p>
+      </div>
+      <div class="status-box">
+        <span class="status-label">OrbitProtect Working Holiday（OPWHV）</span>
+        <h3>理賠可能性很低，且 NZ$80 單筆費用低於自負額</h3>
+        <p>保單證明的保障期間涵蓋 2026 年 10 月，但未列入既往症加保；焦慮症在投保前已存在，且這次是例行續方／維持治療。保單排除既往症及其持續維持治療；即使另行核准既往症保障，官方說明也僅可能承保急性發作。一般理賠另有 NZ$100 自負額，單看 NZ$80 方案費低於自負額。正式認定仍由保險公司作成。</p>
+      </div>
+    </div>
+
+    <h3>建議照這個順序處理</h3>
+    <ol>
+      <li><b>先拿齊 Well Revolution 文件：</b>NZ$80 付款證明及逐項收據、問診摘要、處方副本；請收據分列問診方案、處方或文件費及其他費用。</li>
+      <li><b>先向健保署所屬分區確認：</b>先確認問診當日仍是有效健保保險對象；再如實說明這是海外 GP 文字／視訊問診、長期用藥續方，詢問是否符合「不可預期緊急傷病」及當地醫療院所條件。若仍要申請，官方要求申請書、醫療費用收據正本與明細、診斷書或證明、當次出入境證明；須在門診／急診治療日或出院日起 6 個月內提出。核退依健保給付規定及就醫當季上限審查，不等於退回實際全額。</li>
+      <li><b>同時向 OPWHV 索取書面判定：</b>逐項詢問 NZ$80 方案費、處方費，以及日後實際購藥費是否受既往症／維持治療除外條款影響；不要只問「保單有沒有醫療保障」。保單要求可能理賠事件盡快通知，最遲 21 日；若仍考慮申請，建議現在就書面詢問，不要等健保結果。</li>
+      <li><b>兩邊都如實申報：</b>告知各方是否向另一制度申請及已核退金額。OPWHV 條款有其他保險、醫療制度或其他來源的抵扣規定；不得把同一筆費用重複申領。</li>
+    </ol>
+    <div class="caution"><b>重要：</b>不要請醫師把例行續方寫成「急症」；請醫師只記載實際症狀、評估及臨床判斷。現有 NZ$80 是 Well Revolution 方案費，之後的藥品及藥局費尚未發生且仍在詢價，應分開保留收據與金額。</div>
+
+    <details>
+      <summary>複製訊息：向健保署確認這次是否符合資格</summary>
+      <div id="nhi-eligibility-query" class="copybox">您好，我目前在紐西蘭，於［實際問診日期］透過 Well Revolution 的 GP 文字／視訊問診，支付 NZ$80 Limited Treatment Plan 費用，並取得 escitalopram 續方。這是既有焦慮症的長期用藥續方評估。
+
+想請教：
+1. 我在問診日是否為有效健保保險對象？海外 GP 文字／視訊問診是否符合「在當地醫療院所就醫」的申請條件？
+2. 既有疾病的例行續方是否可能符合「不可預期的緊急傷病」核退條件？
+3. 若可提出申請，NZ$80 方案費需要哪些逐項明細或醫療證明？
+4. 6 個月申請期限是從實際問診日計算嗎？
+
+我會依實際問診及醫療紀錄申請，不會把例行續方描述成急症。謝謝。</div>
+      <div class="copyrow"><button type="button" onclick="copyText('nhi-eligibility-query',this)">複製中文</button></div>
+      <p class="small"><b>中文意思：</b>說明在紐西蘭接受 Well Revolution GP 文字／視訊問診、支付 NZ$80 並取得既有焦慮症續方，請健保署確認遠距就醫資格、例行續方是否符合急症核退、費用證明和六個月期限；並表明會如實陳述醫療情況。</p>
+    </details>
+
+    <details>
+      <summary>複製訊息：向 Well Revolution 索取健保／保險文件</summary>
+      <div id="claim-doc-request" class="copybox">Hello, I am gathering documents so Taiwan National Health Insurance and my travel insurer can assess the costs of this consultation. Could you please provide:
+1. An itemised receipt showing the consultation date and what the NZ$80 Limited Treatment Plan fee covered;
+2. proof of payment;
+3. the consultation summary and a copy of the prescription; and
+4. if available, a medical certificate stating the provider details, consultation date, diagnosis, symptoms assessed and treatment provided, and whether the consultation was medically urgent based on the clinician’s assessment.
+Please list the consultation fee, prescription or document fees, and any other charges separately. Thank you.</div>
+      <div class="copyrow"><button type="button" onclick="copyText('claim-doc-request',this)">複製英文</button></div>
+      <p class="small"><b>中文意思：</b>我正在準備資料，供台灣健保與旅行保險公司評估這次問診費用。請提供列明問診日期及 NZ$80 方案費用途的明細收據、付款證明、問診摘要與處方副本；如可提供，也請附上醫療證明，列明醫療人員資料、日期、診斷、評估症狀與處置，並依醫師臨床判斷說明是否屬醫療急迫情況。請分列問診費、處方／文件費及其他費用。</p>
+    </details>
+
+    <details>
+      <summary>複製訊息：向 OrbitProtect 詢問書面理賠判定</summary>
+      <div id="opwhv-claim-query" class="copybox">Hello, I hold an OrbitProtect Working Holiday policy. I have a long-standing anxiety condition treated with regular escitalopram, and my Certificate of Insurance does not include pre-existing-condition cover. I paid NZ$80 for a Well Revolution telehealth GP review and repeat prescription; I have not yet paid a pharmacy for the medicine.
+
+Could you please confirm in writing:
+1. Whether any part of the NZ$80 plan/consultation fee or prescription fee could be considered;
+2. Whether the pre-existing-condition and ongoing-maintenance-treatment exclusions apply to this review and prescription;
+3. Whether the NZ$100 excess applies to this event;
+4. Whether you require notification or a claim within a particular deadline; and
+5. What documents you need, and how to disclose any Taiwan NHI claim or reimbursement.
+
+I can provide the itemised receipt, proof of payment, consultation summary, prescription and Certificate of Insurance. Thank you.</div>
+      <div class="copyrow"><button type="button" onclick="copyText('opwhv-claim-query',this)">複製英文</button></div>
+      <p class="small"><b>中文意思：</b>我有 OrbitProtect Working Holiday 保單，長期有焦慮症並固定使用 escitalopram；保單證明未列既往症保障。我已付 NZ$80 給 Well Revolution 做 GP 遠距評估及續方，尚未向藥局付藥費。請書面確認方案／問診費或處方費是否可能理賠、既往症與持續維持治療除外是否適用、NZ$100 自負額是否適用、通知／申請期限，以及所需文件和台灣健保核退的申報方式。我可提供明細收據、付款證明、問診摘要、處方及保單證明。</p>
+    </details>
+
+    <p class="small">官方依據：
+      <a href="https://www.nhi.gov.tw/ch/cp-5938-d33aa-2740-1.html" target="_blank" rel="noopener">健保署海外自墊醫療費用核退說明與表單</a> ·
+      <a href="https://www.nhi.gov.tw/ch/cp-5183-4df08-2742-1.html?projectId=Q1VTMDM5NQ%3D%3D" target="_blank" rel="noopener">健保署海外核退每季上限</a> ·
+      <a href="https://orbitprotect.com/our-insurance/working-holiday-insurance/" target="_blank" rel="noopener">OrbitProtect Working Holiday 說明</a> ·
+      <a href="https://orbitprotect.com/wp-content/uploads/2024/06/OP-WorkingHoliday-01March24.pdf" target="_blank" rel="noopener">Working Holiday 保單條款</a>
+    </p>
   </section>
 
   <section class="card" id="doctor-chat-record">
     <h2>本次 Well Revolution 文字問診完整紀錄</h2>
-    <p class="small">最初向 Well Revolution 傳送的訊息、後續追問與回覆都屬於同一串文字問診，以下按問診進程整理。較早內容保留為歷史，不代表目前已核准的剩餘藥量。最新進度見本紀錄下方：90 天處方已開立、NZ$80 方案已付款，正在等三家藥局報價及確認寄送處。公開版省略姓名、電話、個人住址、出生日期及證件內容；不公開原始醫療附件。</p>
+    <p class="small">以下依對話順序保留本次 Well Revolution 文字問診。最新進度以上方卡片為準；此處為歷史紀錄，已省略姓名、電話、住址、生日及證件內容，也不公開原始附件。</p>
     <details>
       <summary>展開完整問診紀錄</summary>
 
