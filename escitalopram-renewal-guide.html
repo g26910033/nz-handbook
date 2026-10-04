@@ -132,6 +132,13 @@
     .assessment-grid .status-box { border-top: 3px solid var(--teal); }
     .assessment-grid h3 { margin: 4px 0; font-size: 17px; line-height: 1.45; }
     .next-action { margin-top: 12px; padding: 12px 14px; border-left: 4px solid var(--teal); border-radius: 8px; background: var(--pale); }
+    .action-list { margin: 0; padding-left: 24px; }
+    .action-list > li { padding: 12px 0; border-top: 1px solid var(--line); }
+    .action-list > li:first-child { border-top: 0; }
+    .action-list h3 { margin: 0 0 7px; font-size: 18px; line-height: 1.45; }
+    .reference-fold { margin: 14px 0; padding: 10px 16px; border: 1px solid var(--line); border-radius: 15px; background: #edf2f3; }
+    .reference-fold > summary { font-size: 17px; }
+    .reference-links { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 8px 0 14px; }
     .faq-group { margin: 10px 0; padding: 0 12px; border: 1px solid var(--line); border-radius: 11px; background: #fff; }
     .faq-group[open] > summary { border-bottom: 1px solid var(--line); }
     .faq-group .qa-item:first-of-type { border-top: 0; }
@@ -146,6 +153,7 @@
       .status-grid { grid-template-columns: 1fr; gap: 8px; }
       .assessment-grid { grid-template-columns: 1fr; }
       .jump-nav a { flex: 1 1 auto; justify-content: center; }
+      .reference-fold { padding: 8px 12px; }
     }
     @media print {
       @page { size: A4; margin: 14mm; }
@@ -168,49 +176,65 @@
 <main>
   <header>
     <h1>佳蓉｜基督城 Escitalopram 續藥指南</h1>
-    <p>先看目前進度，再照順序處理；英文話術附中文，方便核對。</p>
+    <p>先寄信確認處方；收到藥局「已備妥」通知後再去領。</p>
     <p class="small">更新：2026 年 10 月 5 日｜費用與流程以官方頁面及醫師訊息為準</p>
   </header>
 
-  <section class="card" aria-labelledby="current-status-title">
-    <h2 id="current-status-title">目前進度</h2>
-    <div class="status-grid">
-      <div class="status-box">
-        <span class="status-label">Well Revolution</span>
-        <strong>90 天處方已開｜10/5 已寄至 Woolworths</strong>
-        <p>藥局尚待確認收到電子處方、備藥時間及總價；處方副本未列續領次數。</p>
-      </div>
-      <div class="status-box">
-        <span class="status-label">藥局選擇</span>
-        <strong>已選 Woolworths Church Corner</strong>
-      <p>藥局回信稱 90 錠 $12.10、可一次供應；幣別及是否另收費仍待確認。</p>
-      </div>
-      <div class="status-box">
-        <span class="status-label">Well 文件</span>
-        <strong>治療摘要、處方副本、付款收據已收到</strong>
-        <p>收據列 10/3 GP consultation NZ$80；未逐項拆分費用，未確認另有醫療證明。</p>
-      </div>
-    </div>
-    <div class="next-action"><b>現在先做：</b>先寄 Email 給 Church Corner 門市，確認收到處方、最終總價及可領時間，也順便問是否要約時間；不要寄到 Te Rapa 門市信箱。</div>
+  <section class="card" id="next-steps" aria-labelledby="next-steps-title">
+    <h2 id="next-steps-title">接下來只要照這三步</h2>
+    <div class="callout"><b>目前狀態：</b>Well Revolution 的 Wiles 醫師已於 10 月 5 日開立 escitalopram 10 mg、90 錠，並寄到 Woolworths Pharmacy Church Corner。藥局還沒確認收到或備妥，<b>先寄信，不要先出發。</b></div>
+    <ol class="action-list">
+      <li>
+        <h3>先寄信給正確的藥局</h3>
+        <p><b>收件者：</b><a href="mailto:churchcorner.pharmacy@woolworths.co.nz">churchcorner.pharmacy@woolworths.co.nz</a><br><b>主旨：</b>ePrescription check – Chia-Jung Chen – escitalopram 10 mg</p>
+        <p class="small">這是尚未寄出的草稿。複製下方英文內文，貼到 Email 內文；收件者和主旨已列在上方。</p>
+        <div id="pharmacy-check-message" class="copybox">Hello,
+
+My full name as shown on the prescription is Chia-Jung Chen. Dr Anton Wiles at Well Revolution issued an ePrescription for me on 5 October 2026:
+Medicine: escitalopram 10 mg
+Directions: one tablet once daily
+Quantity: 90 tablets
+
+The ePrescription was sent to Woolworths Pharmacy Church Corner at about 7:15 am on 5 October 2026 from rx@wellrevolution.co.nz. Could you please check whether it has arrived for me under this name, including your junk or promotions folder?
+
+Your earlier email quoted $12.10 for 90 tablets. Could you please confirm the currency and the final total, including any additional pharmacy fees, and whether all 90 tablets can be supplied at once?
+
+Please let me know when it will be ready for collection and whether I need to book a collection time. If you need another identifier to locate the prescription, please let me know and I can provide it privately.
+
+I find spoken English difficult, so please reply by email. Thank you.</div>
+        <div class="copyrow"><button type="button" onclick="copyText('pharmacy-check-message',this)">複製英文信</button></div>
+        <p class="translation"><b>中文意思：</b>處方上的全名是 Chia-Jung Chen。Well Revolution 的 Anton Wiles 醫師於 2026 年 10 月 5 日替我開立 escitalopram 10 mg、每日一錠、共 90 錠的電子處方，並於當天早上約 7:15 從 rx@wellrevolution.co.nz 寄到 Church Corner。請藥局用這個姓名查收件匣及垃圾郵件／促銷郵件，確認是否收到。之前報價為 90 錠 $12.10，請確認幣別、含所有費用的總價，以及是否能一次供應 90 錠；並告知何時可領、是否須預約。若還需要其他資料才能找到處方，請先告知，我可以私下提供。請用 Email 回覆。</p>
+      </li>
+      <li>
+        <h3>等藥局回信，確認三件事</h3>
+        <ul>
+          <li>已收到這張開在 Chia-Jung Chen 名下的電子處方。</li>
+          <li>最終價格、幣別及是否含所有藥局費。</li>
+          <li>藥何時備妥、是否要預約取藥。</li>
+        </ul>
+        <p>如果藥局找不到，請它查 10 月 5 日早上約 7:15、寄件者為 <code>rx@wellrevolution.co.nz</code> 的郵件；仍找不到時，再請藥局或 Well Revolution 確認傳送狀態。</p>
+        <p class="caution"><b>收到「已備妥／可以領」的回覆後再出發。</b>目前沒有確認一定要預約，所以信中先問清楚。</p>
+      </li>
+      <li>
+        <h3>藥局確認備妥後再去領</h3>
+        <p><b>地點：</b>Woolworths Pharmacy Church Corner，361 Riccarton Road, Christchurch。<a href="https://hivpepsie.healthpoint.co.nz/pharmacy/pharmacy/woolworths-pharmacy-church-corner/" target="_blank" rel="noopener">查看門市位置與營業資訊</a></p>
+        <p>帶手機上的處方副本和藥局回信；身分證件備查，藥局要求時再出示。付款前確認總價；領取前核對姓名、escitalopram 10 mg、每日一錠及 90 錠。若藥袋或價格不符，先停下來請藥師確認。</p>
+        <div class="copybox">Hello, my name is Chia-Jung Chen. I am here to collect my ePrescription for escitalopram. Could you please confirm the final price and check the label with me?</div>
+        <p class="translation"><b>中文：</b>您好，我叫 Chia-Jung Chen，來領 escitalopram 的電子處方。可以請您先確認總價，並和我一起核對藥袋標示嗎？</p>
+      </li>
+    </ol>
+    <p class="small">處方副本沒有列續領次數（repeats），這次只按醫師開立的 90 錠處理；不要先假設還能續領。處方副本不是藥局已收件或已備妥的證明。</p>
   </section>
 
-  <nav class="jump-nav" aria-label="快速導覽">
-    <a href="#next-steps">接下來怎麼做</a>
-    <a href="#pharmacy">藥局詢價與問答</a>
-    <a href="#pickup-steps">到店領藥步驟</a>
-    <a href="#reimbursement">健保／保險評估</a>
-    <a href="#doctor-chat-record">醫師問診紀錄</a>
-  </nav>
-
-  <section class="card" id="next-steps">
-    <h2>接下來照這個順序</h2>
-    <div class="steps">
-      <div class="step"><span class="num">1</span><div><b>先 Email Church Corner 藥局</b><br>請確認已收到 Well 於 10 月 5 日寄出的電子處方，並詢問是否需要預約取藥時間。請用下方列出的 Church Corner 信箱，不要寄給 Te Rapa。</div></div>
-      <div class="step"><span class="num">2</span><div><b>確認總價與何時可領</b><br>藥局曾報 90 錠 $12.10，表示可一次供應；信件未標幣別，也未清楚說明是否另有費用。請確認最終總額、備藥時間，以及是否可直接在營業時間內取藥。</div></div>
-      <div class="step"><span class="num">3</span><div><b>到店出示資料、核對藥袋</b><br>帶手機上的 Well 處方副本，必要時出示身分證件。領藥前核對 escitalopram 10 mg、每日一錠、90 錠和藥袋標示；副本未列 repeats。</div></div>
-    </div>
-    <div class="caution"><b>重要：</b>Well 已確認寄出處方，但藥局尚未確認收件、備妥或可領；處方副本也沒有列出 repeats，不要先假設可續領。不要把處方副本當成藥已備妥的通知。</div>
-  </section>
+  <details class="reference-fold">
+    <summary>其他背景與完整紀錄（領藥時不用先看）</summary>
+    <p class="small">上方三步就是目前要做的事。以下保留藥局詢價、Well 回覆、問診紀錄及健保／保險評估，只有需要查資料時再展開。</p>
+    <nav class="reference-links" aria-label="背景資料導覽">
+      <a href="#pharmacy">藥局詢價紀錄</a>
+      <a href="#well-treatment-summary">Well 三封回覆</a>
+      <a href="#reimbursement">健保／保險評估</a>
+      <a href="#doctor-chat-record">Well 問診紀錄</a>
+    </nav>
 
   <section class="card">
     <details>
@@ -241,23 +265,6 @@
         <li><b>Chemist Warehouse Westfield Riccarton：</b>只收到自動確認已收到詢問，尚無報價。</li>
       </ul>
       <p class="small"><b>尚待確認：</b>Woolworths 信中未標明 $12.10 的幣別，也未說明是否另有調劑、私人處方或其他藥局費；雖表示可收紐西蘭醫師 Email 處方，仍須確認已收到 Well 寄件。付款前先確認最終總額。Tower 的 $22.10 也未明確說明是否含全部費用。</p>
-    </div>
-    <div class="callout" id="pharmacy-check-email">
-      <h3>先寄信確認｜不要先當作已預約</h3>
-      <p>目前藥局回信沒有要求固定預約；Healthpoint 門市資料列「Contact us, Walk in」。但這不代表處方已備妥，也不能保證不需約時段。建議先 Email 確認處方已到、最終價格、何時備妥及是否要預約，再出發。請寄到 <a href="mailto:churchcorner.pharmacy@woolworths.co.nz">churchcorner.pharmacy@woolworths.co.nz</a>，不是 Te Rapa。</p>
-      <p><b>主旨：</b>Prescription arrival and collection – escitalopram</p>
-      <div id="pharmacy-check-message" class="copybox">Hello,
-
-Well Revolution told me that my ePrescription for escitalopram 10 mg, 90 tablets, was sent to Woolworths Pharmacy Church Corner on 5 October 2026.
-
-Could you please confirm whether you have received it? Your email quoted $12.10 for 90 tablets. Please confirm the final total, including any additional pharmacy fees, and whether all 90 tablets can be supplied at once.
-
-Could you also let me know when it will be ready for collection and whether I need to book a specific collection time, or may come in once it is ready?
-
-I find spoken English difficult, so please reply by email. Thank you.</div>
-      <div class="copyrow"><button type="button" onclick="copyText('pharmacy-check-message',this)">複製英文信</button></div>
-      <p class="translation"><b>中文意思：</b>Well Revolution 告知已於 2026 年 10 月 5 日把 escitalopram 10 mg、90 錠的電子處方寄到 Church Corner。請確認是否收到；藥局先前報 90 錠 $12.10，請確認含所有額外藥局費後的最終總額，以及能否一次供應 90 錠。也請告知何時可領、是否需要預約固定取藥時間，或收到備妥通知後直接前往即可。我不擅長口語英文，請用 Email 回覆。</p>
-      <p class="small">這是草稿，尚未寄出。若藥局回覆已備妥且不用預約，再依營業時間前往；若尚未收到處方，請藥師查找約早上 7:15、寄件者為 <code>rx@wellrevolution.co.nz</code> 的垃圾郵件／促銷郵件，並請 Well 與藥局確認傳送狀態。</p>
     </div>
     <details class="faq-group" id="well-treatment-summary">
       <summary>Well Revolution 三封回覆｜治療摘要、收據、處方（2026 年 10 月 5 日）</summary>
@@ -429,7 +436,7 @@ Woolworths Pharmacy Church Corner</div>
       <p class="translation">請用簡訊或 Email 通知我藥已備妥；收到確認後，我再前往選定的藥局。</p>
     </div>
 
-    <p class="small">到店時的詳細步驟、可直接出示的英文及中文翻譯，請看下方「到店領藥｜手機看著一步步做」。</p>
+    <p class="small">上方「接下來只要照這三步」就是本次領藥流程；以下問答留作需要時查閱。</p>
     </details>
 
     <details class="faq-group">
@@ -453,41 +460,6 @@ Woolworths Pharmacy Church Corner</div>
       <p class="translation">需要，謝謝。我不擅長口語英文。請用文字說明如何依藥袋指示服用、漏服時怎麼辦、重要副作用或交互作用，以及有疑問時該聯絡誰。</p>
     </div>
     </details>
-    <section class="card" id="pickup-steps" aria-labelledby="pickup-steps-title">
-      <h2 id="pickup-steps-title">到店領藥｜手機看著一步步做</h2>
-      <p>先收到藥局「已備妥」或「可以領取」的回信再出發。資料用手機私下出示給藥師，不要把含個資的處方 PDF 上傳到公開網站。</p>
-      <ol>
-        <li><b>出門前準備：</b>手機先開好 Well 的處方副本 Email／PDF；帶護照或有照片的身分證件備查（藥局要求時才出示）。處方內容是 escitalopram 10 mg，每日一錠，共 90 錠；處方副本未列 repeats。</li>
-        <li><b>到櫃檯確認處方是否已到：</b>請藥師查電子郵件和垃圾郵件。Well 說處方約於 10 月 5 日早上 7:15 寄出，寄件者為 <code>rx@wellrevolution.co.nz</code>。手機 PDF 是病人副本，只供核對；若系統找不到電子處方，請藥局聯絡 Well 確認，不要假設 PDF 就代表藥已可調劑。</li>
-        <li><b>調劑前問清楚：</b>報價為 $12.10／90 錠，但幣別及是否另有費用仍待確認。若藥局提出不同總額，先請對方寫下藥品費、調劑費等項目，再決定是否繼續。</li>
-        <li><b>藥備好後核對：</b>領取前核對藥袋姓名、藥名 escitalopram、每錠 10 mg、每日一錠、數量和有效期限；請藥師用文字說明漏服方式、重要副作用／交互作用及有疑問時的聯絡方式。若藥袋和處方不一致，先請藥師向 Well 確認。</li>
-      </ol>
-      <div class="qa-item">
-        <p class="question">第一句｜詢問處方與備藥狀態</p>
-        <div id="pickup-check-message" class="copybox">Hello. I have an ePrescription from Well Revolution for escitalopram. Could you please check whether it has arrived and whether it is ready for collection? I have a patient copy on my phone if that helps.</div>
-        <div class="copyrow"><button type="button" onclick="copyText('pickup-check-message',this)">複製英文</button></div>
-        <p class="translation">您好，我有一張 Well Revolution 寄出的 escitalopram 電子處方。請問你們是否已收到、藥是否已備妥可領？如果有幫助，我手機裡有病人用的處方副本。</p>
-      </div>
-      <div class="qa-item">
-        <p class="question">如果藥局找不到處方</p>
-        <div id="pickup-missing-message" class="copybox">The prescription email may have been sent at about 7:15 am on 5 October from rx@wellrevolution.co.nz. Could you please check your junk or promotions folder? If it is not there, could you contact Well Revolution to confirm the ePrescription status?</div>
-        <div class="copyrow"><button type="button" onclick="copyText('pickup-missing-message',this)">複製英文</button></div>
-        <p class="translation">處方信可能是在 10 月 5 日早上約 7:15 由 rx@wellrevolution.co.nz 寄出。請檢查垃圾郵件或促銷郵件；如果沒有，請聯絡 Well Revolution 確認電子處方狀態。</p>
-      </div>
-      <div class="qa-item">
-        <p class="question">確認最終價格與預約方式</p>
-        <div id="pickup-price-message" class="copybox">Before you dispense it, could you please confirm the final total, including any additional fees? Do I need to book a collection time, or can I come in during pharmacy opening hours once you tell me it is ready?</div>
-        <div class="copyrow"><button type="button" onclick="copyText('pickup-price-message',this)">複製英文</button></div>
-        <p class="translation">調劑前請確認包含所有額外費用的最終總額。請問我需要預約取藥時間，還是你們通知備妥後，我在藥局營業時間內直接前來即可？</p>
-      </div>
-      <div class="qa-item">
-        <p class="question">藥師用藥說明｜請以文字回覆</p>
-        <div id="pickup-counselling-message" class="copybox">I find spoken English difficult. Could you please write down how to take this medicine, what to do if I miss a dose, any important side effects or interactions, and who I should contact if I have a concern?</div>
-        <div class="copyrow"><button type="button" onclick="copyText('pickup-counselling-message',this)">複製英文</button></div>
-        <p class="translation">我不擅長口語英文。請用文字寫下這個藥怎麼吃、漏服時怎麼辦、重要副作用或交互作用，以及有疑問時應聯絡誰。</p>
-      </div>
-    </section>
-    <div class="caution">如果藥名、劑量、藥袋指示或價格和預期不同，先請藥師用文字說明；不要自行改劑量、換藥或多領數量。任何不確定處，請藥師先向開方醫師確認。</div>
   </section>
 
   <section class="card" id="reimbursement">
@@ -759,6 +731,8 @@ Thank you.</div>
       <div class="caution">若之後出現立即自傷或傷人危險，請打紐西蘭 111；需要情緒支持時，可免費致電或傳簡訊 1737。<a href="https://www.1737.org.nz/" target="_blank" rel="noopener">1737 官方網站</a></div>
     </details>
   </section>
+
+  </details>
 
   <footer>
     本指南只協助整理操作步驟。是否續方、劑量與處方數量，由紐西蘭醫師依佳蓉的實際情況決定。<br>
