@@ -230,3 +230,4 @@
 - 因舊事故頁的未寄出 WoF 詢問草稿留有過期日期，同步更正該草稿及摘要中的 WoF 日期與目前車色，沒有把 rego 流程併入事故頁。
 - 依佳蓉要求補入最低價驗車廠：截至 2026-10-08 可核對到 Street Auto（Sydenham）GrabOne $40 WoF 優惠，可兌換至 12/18；官網表示 WoF 預約需電話，指南先提供 Email 確認方式及簡短電話備案。另列住家區域較順、提供網頁 Book A Job 表單的 Mozita Automotive（Hornby）$45 書面聯絡備選，並保留 Papanui 工作區地圖搜尋。指南標明價格查詢日、店家條件及政府來源；非固定價格須在預約前重新確認。
 - 依新增條件重查高評分、約 $45、住家附近且可網路預約的 WoF 店家。未找到四項都可核實的同一店家：AutoEase（Riccarton）Google Maps 4.8、Birdeye 收錄 80 則 Google 評論，僅有網路預約詢問表且 WoF 價格／承作狀態未由官網明示；The WOF Shop 4.8/225、可直接選時段，但平日 $70、位於 Sydenham；Mozita $45、Google Maps 4.2/172、Hornby，只有線上預約需求表；Bridgestone Riccarton 平日 $55、Google Maps 4.1，可線上選時段。指南新增比較、Google Maps／評價來源及 AutoEase 可直接貼入網頁表單的英文詢價文字；未提交任何表單或代佳蓉聯絡店家。
+- 依佳蓉最新指定，完整重整獨立車輛續辦頁，店家只保留 Mozita Automotive（$45）、Bridgestone Select Riccarton（平日 $55）、The WOF Shop（平日 $70／週六 $75）。頁面重排為期限與建議、三步操作、店家預約方式、住家／暫定工作區交通、rego 標籤及來源；加入 8 個月牌照起訖、預繳起算、7／8 個月選擇理由、標籤郵寄與 2027 年規則資訊。費用及預約資訊標註 2026-10-08 查詢日；沒有代佳蓉預約或聯絡店家。
