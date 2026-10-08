@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="依車輛到期日整理紐西蘭 rego 與 WoF 續辦順序、書面預約方式及住家和工作地區安排。" />
+  <meta name="theme-color" content="#12355b" />
+  <title>車輛續牌與 WoF 處理指南</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #12355b;
+      --blue: #1f5f99;
+      --blue-soft: #eaf3fb;
+      --green: #176b52;
+      --green-soft: #e9f6f0;
+      --amber: #8a5a00;
+      --amber-soft: #fff5d9;
+      --red: #8d2d2d;
+      --red-soft: #fff0f0;
+      --ink: #17202a;
+      --muted: #596773;
+      --paper: #f4f6f8;
+      --line: #d6dde4;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: var(--blue); text-underline-offset: .16em; }
+    a:focus-visible { outline: 3px solid #d88900; outline-offset: 3px; }
+    .page { width: min(880px, calc(100% - 24px)); margin: 0 auto; padding: 16px 0 56px; }
+    .hero, .card { border-radius: 18px; }
+    .hero { padding: 24px; color: #fff; background: linear-gradient(140deg, #12355b, #1f699b); }
+    .hero small { color: #d8ebf9; font-weight: 800; letter-spacing: .05em; }
+    h1, h2, h3 { line-height: 1.3; }
+    h1 { margin: 5px 0 8px; font-size: clamp(1.85rem, 6vw, 2.65rem); }
+    h2 { margin: 0 0 10px; color: var(--navy); font-size: 1.4rem; }
+    h3 { margin: 18px 0 7px; font-size: 1.05rem; }
+    p { margin: 7px 0; }
+    ul, ol { margin: 8px 0; padding-left: 24px; }
+    li { margin: 6px 0; }
+    .updated { margin-top: 14px; color: #d8ebf9; font-size: .84rem; }
+    .nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 17px; }
+    .nav a { padding: 9px 7px; border-radius: 10px; background: rgba(255,255,255,.14); color: #fff; font-size: .9rem; font-weight: 800; text-align: center; text-decoration: none; }
+    .card { margin-top: 15px; padding: 22px; background: #fff; border: 1px solid var(--line); box-shadow: 0 10px 26px rgba(17,46,78,.06); }
+    .vehicle, .deadline-grid, .location-grid, .steps-grid { display: grid; gap: 11px; }
+    .vehicle { grid-template-columns: repeat(3, 1fr); margin-top: 14px; }
+    .deadline-grid { grid-template-columns: 1fr 1fr; margin-top: 14px; }
+    .location-grid { grid-template-columns: 1fr 1fr; margin-top: 12px; }
+    .steps-grid { grid-template-columns: repeat(2, 1fr); margin-top: 12px; }
+    .tile { padding: 14px; border: 1px solid var(--line); border-radius: 13px; background: #fbfcfd; }
+    .tile strong, .tile span { display: block; }
+    .tile strong { color: var(--navy); }
+    .deadline { padding: 16px; border-radius: 14px; }
+    .deadline.rego { background: var(--amber-soft); border: 1px solid #ecd899; }
+    .deadline.wof { background: var(--green-soft); border: 1px solid #b9dfcd; }
+    .deadline .date { margin: 3px 0; font-size: clamp(1.35rem, 5vw, 1.75rem); font-weight: 900; line-height: 1.25; }
+    .status, .note, .warning, .danger { margin-top: 12px; padding: 13px 15px; border-radius: 12px; }
+    .status { background: var(--green-soft); color: #0d4e3b; }
+    .note { background: var(--blue-soft); color: #163f65; }
+    .warning { background: var(--amber-soft); color: #694500; }
+    .danger { background: var(--red-soft); color: #6d2222; border: 1px solid #efc7c7; }
+    .status strong, .note strong, .warning strong, .danger strong { display: block; margin-bottom: 3px; }
+    .sequence { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: 8px; margin-top: 13px; }
+    .sequence div { min-height: 76px; display: grid; align-content: center; padding: 11px; border: 1px solid var(--line); border-radius: 12px; background: #fbfcfd; text-align: center; }
+    .arrow { color: var(--blue); font-size: 1.25rem; font-weight: 900; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 11px; }
+    .button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 9px 14px; border: 1px solid var(--blue); border-radius: 11px; background: var(--blue); color: #fff; font-weight: 800; text-align: center; text-decoration: none; }
+    .button.secondary { background: #fff; color: var(--blue); }
+    .script { margin-top: 11px; padding: 14px; border: 1px solid #bdc9d4; border-radius: 12px; background: #fbfcfe; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .91rem; line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere; user-select: all; }
+    .translation, .small, .source-list, .privacy { color: var(--muted); font-size: .91rem; }
+    .source-list { padding-left: 20px; }
+    .source-list li { margin: 5px 0; }
+    section[id] { scroll-margin-top: 12px; }
+    @media (max-width: 640px) {
+      .hero, .card { padding: 18px; border-radius: 15px; }
+      .nav { grid-template-columns: repeat(2, 1fr); }
+      .vehicle { grid-template-columns: 1fr; }
+      .deadline-grid, .location-grid, .steps-grid { grid-template-columns: 1fr; }
+      .sequence { grid-template-columns: 1fr; }
+      .arrow { transform: rotate(90deg); text-align: center; line-height: 1; }
+      .button { width: 100%; }
+    }
+    @media print {
+      body { background: #fff; font-size: 10.5pt; }
+      .page { width: 100%; padding: 0; }
+      .hero, .card { box-shadow: none; break-inside: avoid; }
+      .hero { color: #000; background: #fff; border: 2px solid #000; }
+      .hero small, .updated { color: #333; }
+      .nav, .button-row { display: none; }
+      a { color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <small>紐西蘭車輛行政｜可手機閱讀，也可列印</small>
+      <h1>車輛續牌與 WoF 處理指南</h1>
+      <p>先續 rego，再安排 WoF。照目前兩個到期日，不需要申請延期。</p>
+      <div class="updated">資料更新：2026 年 10 月 8 日（紐西蘭時間）<br />到期日依本次提供的 NZTA 車輛查詢結果。</div>
+      <nav class="nav" aria-label="頁面導覽">
+        <a href="#dates">車輛與期限</a><a href="#plan">處理順序</a><a href="#location">住家與工作</a><a href="#failure">未通過時</a>
+      </nav>
+    </header>
+
+    <section class="card" id="dates">
+      <h2>車輛與到期日</h2>
+      <div class="vehicle">
+        <div class="tile"><strong>車牌</strong><span>MFY228</span></div>
+        <div class="tile"><strong>車款</strong><span>2008 NISSAN TIIDA</span></div>
+        <div class="tile"><strong>車色</strong><span>BLUE（藍色）</span></div>
+      </div>
+      <div class="deadline-grid">
+        <div class="deadline rego"><strong>rego｜車輛牌照</strong><div class="date">2026 年 11 月 2 日</div><span>在到期前完成續辦。建議現在就線上繳費。</span></div>
+        <div class="deadline wof"><strong>WoF｜車輛檢驗</strong><div class="date">2026 年 11 月 17 日</div><span>目前有效至此日。建議預約 11 月 3–10 日，留出修理與複檢時間。</span></div>
+      </div>
+      <div class="status"><strong>兩個期限可以分開處理</strong>現有 WoF 到 11 月 17 日，晚於 rego 到期日；因此可先在 11 月 2 日前續 rego，再於 11 月安排 WoF。不要等到 11 月 17 日才開始找時段。</div>
+    </section>
+
+    <section class="card" id="plan">
+      <h2>照這個順序處理</h2>
+      <div class="sequence" aria-label="續辦順序">
+        <div><strong>現在</strong><span>線上續 rego</span></div><span class="arrow" aria-hidden="true">→</span>
+        <div><strong>預約 WoF</strong><span>首選 11 月 3–10 日</span></div><span class="arrow" aria-hidden="true">→</span>
+        <div><strong>最遲 11 月 17 日</strong><span>通過 WoF 並確認新標籤日期</span></div>
+      </div>
+      <ol>
+        <li><strong>先續 rego：</strong>使用 NZTA 官方線上服務。填車牌 MFY228，檢查車輛資料及新牌照期限，完成付款並保存確認畫面或收據。續牌時需要有效 WoF；現有 WoF 到 11 月 17 日，涵蓋 11 月 2 日前的續牌。</li>
+        <li><strong>用書面方式預約 WoF：</strong>優先選有網路預約、Email 或文字訊息的驗車站。首選 11 月 3–10 日；若沒有時段，11 月 11–17 日仍在到期前 14 天內，但修理複檢的緩衝時間較少。</li>
+        <li><strong>預約時確認費用與接送：</strong>先問檢查費、檢查大約多久、未通過時的複檢安排、可否在上班前交車／下班後取車，以及是否提供代步或接送。取得書面回覆後再確認預約。</li>
+        <li><strong>檢查後保存結果：</strong>通過時核對新 WoF 標籤上的到期日並拍照留存。若未通過，先取得缺失項目清單及書面報價，再決定是否授權維修。</li>
+      </ol>
+      <div class="note"><strong>為何選 11 月 3 日起？</strong>在目前 WoF 到期日前 14 天內通過檢驗，通常可沿用現有的到期週期。11 月 3–17 日是這個 14 天窗口；2008 年車輛仍按年度 WoF 規則辦理。實際新日期以驗車站發出的標籤為準。</div>
+      <div class="button-row">
+        <a class="button" href="https://transact.nzta.govt.nz/transactions/CheckExpiry/entry" target="_blank" rel="noopener">開啟 NZTA 車輛期限查詢</a>
+        <a class="button secondary" href="https://www.nzta.govt.nz/vehicles/licensing-rego/getting-your-vehicle-licence-rego" target="_blank" rel="noopener">查看 rego 續辦方式</a>
+      </div>
+    </section>
+
+    <section class="card" id="location">
+      <h2>依住家與工作地安排驗車</h2>
+      <div class="location-grid">
+        <div class="tile">
+          <strong>住家附近：Upper Riccarton／Peer Street 一帶</strong>
+          <p>適合排在休假日，或先確認能否搭公車、請人接送。地圖只搜尋附近驗車站，不顯示完整住址。</p>
+          <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=WoF+inspection+near+Peer+Street%2C+Upper+Riccarton%2C+Christchurch" target="_blank" rel="noopener">搜尋住家附近 WoF 驗車站</a>
+        </div>
+        <div class="tile">
+          <strong>工作附近：Papanui／Main North Road 一帶</strong>
+          <p>工作店址目前未能從紀錄確認；這是暫用的區域搜尋。預約前先核對佳蓉目前的上班店址，並確認店家可否配合交車與取車時間。</p>
+          <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=WoF+inspection+Papanui%2C+Christchurch" target="_blank" rel="noopener">搜尋 Papanui 附近 WoF 驗車站</a>
+        </div>
+      </div>
+      <div class="warning"><strong>選店原則</strong>若在工作日驗車，先確認能否於上班前交車、下班後取車及安全停車；若時間對不上，改約休假日並安排其他交通。驗車站位置要以實際上班店址和當天班表為準。不要把車留到 WoF 到期日才檢查。</div>
+    </section>
+
+    <section class="card" id="booking">
+      <h2>可直接複製的書面預約訊息</h2>
+      <p>把方括號中的日期換成可到場日期，透過驗車站的網頁表單、Email 或文字訊息送出。這段訊息會先詢價與詢問時段，收到回覆後再確認預約。</p>
+      <div class="script" lang="en">Subject: WoF booking enquiry – MFY228
+
+Hello,
+
+I would like to arrange a WoF inspection for my 2008 Nissan Tiida, registration MFY228. Its current WoF expires on 17 November 2026.
+
+Do you have an appointment between 3 and 10 November? If not, please let me know your available times before 17 November. Please confirm the inspection fee, how long the inspection usually takes, and your recheck arrangements if the vehicle does not pass.
+
+Could you also confirm whether I can drop the car off before work and collect it after work, and whether you have a secure place to leave it? Please reply by email or text. Do not carry out repairs without first sending me a written report and quote and receiving my written approval.
+
+Thank you.</div>
+      <p class="translation"><strong>中文核對：</strong>為 2008 Nissan Tiida（MFY228）預約 WoF，現有 WoF 於 2026 年 11 月 17 日到期；先詢問 11 月 3–10 日時段，並索取檢查費、所需時間及未通過時的複檢方式；另確認上班前交車、下班後取車及安全停車。要求以 Email 或文字回覆，未取得書面報告、報價及本人書面同意前，不得施工。</p>
+    </section>
+
+    <section class="card" id="failure">
+      <h2>如果遇到延誤或 WoF 未通過</h2>
+      <div class="steps-grid">
+        <div class="tile">
+          <strong>rego 11 月 2 日到期</strong>
+          <p>沒有一般性的自動延期。若到期後仍未續牌，不可把車開上道路；補續時牌照費可能從前一個到期日計算。若確定連續至少 3 個月不會上路，可在目前牌照到期前向 NZTA 申請把 rego 暫停；暫停期間不能開車。</p>
+        </div>
+        <div class="tile">
+          <strong>WoF 11 月 17 日到期</strong>
+          <p>沒有一般性的檢驗延期或到期寬限。若 11 月 17 日後仍無有效 WoF，只有在車輛安全且行程純粹為修理或重新檢驗時，才可開上道路；不能通勤或辦一般事務。</p>
+        </div>
+      </div>
+      <div class="danger"><strong>WoF 未通過後，不要把 28 天複檢期當作開車寬限期</strong>28 天只關係到同一驗車機構的複檢費用，不代表可以照常使用車輛。若在現有 WoF 到期前檢查卻未通過，也要先修到符合要求，才能恢復一般行駛；若有安全疑慮，安排拖車或詢問驗車站如何安全送修。</div>
+      <p>若只是想把未來的 rego 到期月份改到較方便的日期，可向 NZTA 代理人詢問 MR27「更改車輛牌照到期日」；這是更改日期的申請，不會讓已到期的 rego 或 WoF 自動延長。</p>
+      <div class="button-row">
+        <a class="button secondary" href="https://www.nzta.govt.nz/vehicles/warrants-and-certificates/warrant-of-fitness" target="_blank" rel="noopener">NZTA：WoF 規定</a>
+        <a class="button secondary" href="https://vehicleinspection.nzta.govt.nz/virms/in-service-wof-and-cof/introduction/inspection-and-certification-process/operating-a-vehicle-without-a-current-wof-or-cof?print-friendly=1" target="_blank" rel="noopener">NZTA：沒有有效 WoF 時的行車規則</a>
+        <a class="button secondary" href="https://www.nzta.govt.nz/vehicles/licensing-rego/exemptions/put-your-licence-rego-on-hold" target="_blank" rel="noopener">NZTA：rego 暫停（至少 3 個月不用車）</a>
+        <a class="button secondary" href="https://vehicleinspection.nzta.govt.nz/news/changes-to-light-vehicle-inspections-from-1-november-2026" target="_blank" rel="noopener">NZTA：2026 年 11 月 WoF 規則更新</a>
+      </div>
+    </section>
+
+    <section class="card" id="sources">
+      <h2>官方來源與核對</h2>
+      <ul class="source-list">
+        <li><a href="https://transact.nzta.govt.nz/transactions/CheckExpiry/entry" target="_blank" rel="noopener">NZTA 車輛期限查詢</a>：可重新核對 MFY228 的 WoF 與 rego 日期。</li>
+        <li><a href="https://www.nzta.govt.nz/vehicles/licensing-rego/getting-your-vehicle-licence-rego" target="_blank" rel="noopener">NZTA 續辦 vehicle licence（rego）</a>：續牌及更改到期日資訊。</li>
+        <li><a href="https://vehicleinspection.nzta.govt.nz/virms/in-service-wof-and-cof/introduction/inspection-and-certification-process/issuing-the-wof-or-cof-label-evidence-of-vehicle?print-friendly=1" target="_blank" rel="noopener">NZTA WoF 標籤與到期日計算</a>：包含到期日前 14 天內通過檢驗的規則。</li>
+        <li><a href="https://vehicleinspection.nzta.govt.nz/virms/in-service-wof-and-cof/introduction/inspection-and-certification-process/rechecks" target="_blank" rel="noopener">NZTA WoF 複檢規則</a>：複檢期限與費用條件。</li>
+      </ul>
+      <p class="privacy">本頁只列住家與工作區域，不列完整住址。工作地圖區域仍需依佳蓉目前的實際店址核對。</p>
+    </section>
+  </main>
+</body>
+</html>
