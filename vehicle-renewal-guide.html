@@ -46,7 +46,7 @@
     ul, ol { margin: 8px 0; padding-left: 24px; }
     li { margin: 6px 0; }
     .updated { margin-top: 14px; color: #d8ebf9; font-size: .84rem; }
-    .nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 17px; }
+    .nav { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 17px; }
     .nav a { padding: 9px 7px; border-radius: 10px; background: rgba(255,255,255,.14); color: #fff; font-size: .9rem; font-weight: 800; text-align: center; text-decoration: none; }
     .card { margin-top: 15px; padding: 22px; background: #fff; border: 1px solid var(--line); box-shadow: 0 10px 26px rgba(17,46,78,.06); }
     .vehicle, .deadline-grid, .location-grid, .steps-grid { display: grid; gap: 11px; }
@@ -106,7 +106,7 @@
       <p>先續 rego，再安排 WoF。照目前兩個到期日，不需要申請延期。</p>
       <div class="updated">資料更新：2026 年 10 月 8 日（紐西蘭時間）<br />到期日依本次提供的 NZTA 車輛查詢結果。</div>
       <nav class="nav" aria-label="頁面導覽">
-        <a href="#dates">車輛與期限</a><a href="#plan">處理順序</a><a href="#location">住家與工作</a><a href="#failure">未通過時</a>
+        <a href="#dates">車輛與期限</a><a href="#prices">驗車廠與價格</a><a href="#plan">處理順序</a><a href="#location">住家與工作</a><a href="#failure">未通過時</a>
       </nav>
     </header>
 
@@ -122,6 +122,35 @@
         <div class="deadline wof"><strong>WoF｜車輛檢驗</strong><div class="date">2026 年 11 月 17 日</div><span>目前有效至此日。建議預約 11 月 3–10 日，留出修理與複檢時間。</span></div>
       </div>
       <div class="status"><strong>兩個期限可以分開處理</strong>現有 WoF 到 11 月 17 日，晚於 rego 到期日；因此可先在 11 月 2 日前續 rego，再於 11 月安排 WoF。不要等到 11 月 17 日才開始找時段。</div>
+    </section>
+
+    <section class="card" id="prices">
+      <h2>最低價驗車廠建議</h2>
+      <div class="status"><strong>目前核對到的基督城最低公開價：Street Auto，NZ$40</strong>截至 2026 年 10 月 8 日，GrabOne 上的 WoF 檢查及電池測試優惠為 $40（標示原價 $65），可兌換至 2026 年 12 月 18 日。需預約並視名額供應；適用汽油／柴油車，排除商用車、卡車及露營車；取消須至少提前 24 小時，否則優惠券作廢。價格與名額可能變動；購券前先確認車款適用及店家預約流程。</div>
+      <div class="location-grid">
+        <div class="tile">
+          <strong>最低價：Street Auto｜Sydenham</strong>
+          <p><strong>地址：</strong>3 Sandyford Street, Sydenham, Christchurch。</p>
+          <p>此店在 Sydenham，與住家 Upper Riccarton／Peer Street 及暫定工作區 Papanui 都不在同一區；先確認通勤路線或接送安排。店家官網寫明 WoF 預約需電話聯絡（03 374 3559）；可先寄 Email 詢問能否用書面完成預約。</p>
+          <p class="small">先用 Email 確認車款適用、預約流程及 11 月 3–10 日是否有位；依店家回覆完成預約後，再按 GrabOne 流程購券及提交券號。優惠可兌換至 12 月 18 日，足以安排在建議檢驗日期內。</p>
+          <div class="button-row">
+            <a class="button" href="https://new.grabone.co.nz/automotive/warrant-of-fitness-wof/p/street-auto-35" target="_blank" rel="noopener">查看 NZ$40 優惠與條件</a>
+            <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Street+Auto%2C+3+Sandyford+Street%2C+Sydenham%2C+Christchurch" target="_blank" rel="noopener">查看 Street Auto 地圖</a>
+            <a class="button secondary" href="mailto:info@streetauto.nz?subject=Written%20WoF%20booking%20enquiry%20%E2%80%93%20MFY228">先用 Email 詢問預約</a>
+            <a class="button secondary" href="tel:+6433743559">必要時電話確認</a>
+          </div>
+        </div>
+        <div class="tile">
+          <strong>住家區域較順、可用網頁表單：Mozita Automotive｜Hornby</strong>
+          <p><strong>地址：</strong>101 Springs Road, Hornby, Christchurch。官網公開牌價為 WoF NZ$45，並提供「Book A Job」網頁表單及 Email。</p>
+          <p>Hornby 比 Sydenham 更接近 Upper Riccarton 住家區方向。官網表單可先送出預約需求，並可要求以 Email 回覆；比 $40 優惠多 $5，若交通或 Street Auto 預約方式不便，這是較合適的備選。</p>
+          <div class="button-row">
+            <a class="button" href="https://mozita.co.nz/" target="_blank" rel="noopener">開啟 Mozita 預約表單與官網</a>
+            <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Mozita+Automotive%2C+101+Springs+Road%2C+Hornby%2C+Christchurch" target="_blank" rel="noopener">查看 Mozita 地圖</a>
+          </div>
+        </div>
+      </div>
+      <div class="note"><strong>依住家與工作地決定</strong>想付目前最低價：先向 Street Auto 書面確認 MFY228 適用、11 月 3–10 日是否有位及預約流程，再依店家指示買 $40 券並確認預約。若需配合 Papanui 工作班表、住家接送不方便或不想電話預約，可先用 Mozita 網頁表單送出需求，費用多 $5；並在表單要求 Email 回覆。也可用下方 Papanui 地圖詢問工作附近店家是否有更方便的書面報價。價格及優惠以預約當日店家回覆為準。</div>
     </section>
 
     <section class="card" id="plan">
@@ -163,19 +192,33 @@
 
     <section class="card" id="booking">
       <h2>可直接複製的書面預約訊息</h2>
-      <p>把方括號中的日期換成可到場日期，透過驗車站的網頁表單、Email 或文字訊息送出。這段訊息會先詢價與詢問時段，收到回覆後再確認預約。</p>
-      <div class="script" lang="en">Subject: WoF booking enquiry – MFY228
+      <p>第一段只寄給 Street Auto：先用 Email 問 $40 優惠是否適用、預約流程及能否書面預約。若改選 Mozita，使用第二段填入官網 Book A Job 表單。</p>
+      <div class="script" lang="en">Subject: Written WoF booking enquiry and voucher check – MFY228
 
-Hello,
+Hello Street Auto,
 
-I would like to arrange a WoF inspection for my 2008 Nissan Tiida, registration MFY228. Its current WoF expires on 17 November 2026.
+I am considering the current NZ$40 GrabOne WoF inspection with battery test voucher, which expires on 18 December 2026. Before I buy it, please confirm that it applies to my 2008 Nissan Tiida, registration MFY228, and whether you have an appointment between 3 and 10 November 2026.
 
-Do you have an appointment between 3 and 10 November? If not, please let me know your available times before 17 November. Please confirm the inspection fee, how long the inspection usually takes, and your recheck arrangements if the vehicle does not pass.
+My current WoF expires on 17 November 2026.
 
-Could you also confirm whether I can drop the car off before work and collect it after work, and whether you have a secure place to leave it? Please reply by email or text. Do not carry out repairs without first sending me a written report and quote and receiving my written approval.
+I would prefer to arrange the booking by email. Please confirm the total inspection fee using the voucher, how long the inspection usually takes, and your recheck arrangements if the vehicle does not pass.
+
+Could I drop the car off before work and collect it after work, and do you have a secure place to leave it? Please reply by email. Do not carry out repairs without first sending me a written report and quote and receiving my written approval.
 
 Thank you.</div>
-      <p class="translation"><strong>中文核對：</strong>為 2008 Nissan Tiida（MFY228）預約 WoF，現有 WoF 於 2026 年 11 月 17 日到期；先詢問 11 月 3–10 日時段，並索取檢查費、所需時間及未通過時的複檢方式；另確認上班前交車、下班後取車及安全停車。要求以 Email 或文字回覆，未取得書面報告、報價及本人書面同意前，不得施工。</p>
+      <p class="translation"><strong>中文核對：</strong>先詢問目前 $40 GrabOne 券是否適用於 MFY228，以及 11 月 3–10 日是否有位、能否全程以 Email 預約；並索取使用優惠後的總檢查費、所需時間、複檢方式及交車取車安排。收到書面確認後再買券及確認預約。未取得書面報告、報價及本人書面同意前，不得施工。</p>
+      <div class="note"><strong>若 Street Auto 回覆 WoF 只能電話預約，可用這一句</strong><span lang="en">“Hi, I have a 2008 Nissan Tiida, rego MFY228. I plan to use the NZ$40 GrabOne WoF voucher. Do you have a booking between 3 and 10 November, and can you email the booking details to me?”</span></div>
+      <h3>Mozita Automotive 網頁表單訊息</h3>
+      <div class="script" lang="en">Subject: WoF booking enquiry – MFY228
+
+Hello Mozita,
+
+Your website lists the WoF inspection price at NZ$45. I would like to book a WoF for my 2008 Nissan Tiida, registration MFY228. Its current WoF expires on 17 November 2026. Do you have an appointment between 3 and 10 November?
+
+Please confirm the total inspection fee, how long the inspection usually takes, your recheck arrangements, and whether I can drop the car off before work and collect it after work. Please reply by email. Do not carry out repairs without first sending me a written report and quote and receiving my written approval.
+
+Thank you.</div>
+      <p class="translation"><strong>中文核對：</strong>透過 Mozita 網頁表單詢問官網公布的 $45 是否適用於 MFY228、11 月 3–10 日是否有位、完整檢查費及交車取車安排，並要求 Email 回覆。未取得書面報告、報價及本人書面同意前，不得施工。</p>
     </section>
 
     <section class="card" id="failure">
@@ -205,6 +248,10 @@ Thank you.</div>
       <ul class="source-list">
         <li><a href="https://transact.nzta.govt.nz/transactions/CheckExpiry/entry" target="_blank" rel="noopener">NZTA 車輛期限查詢</a>：可重新核對 MFY228 的 WoF 與 rego 日期。</li>
         <li><a href="https://www.nzta.govt.nz/vehicles/licensing-rego/getting-your-vehicle-licence-rego" target="_blank" rel="noopener">NZTA 續辦 vehicle licence（rego）</a>：續牌及更改到期日資訊。</li>
+        <li><a href="https://new.grabone.co.nz/automotive/warrant-of-fitness-wof/p/street-auto-35" target="_blank" rel="noopener">Street Auto／GrabOne $40 WoF 優惠</a>：價格、兌換期限、預約及適用車輛條件（價格查詢日：2026 年 10 月 8 日）。</li>
+        <li><a href="https://streetauto.co.nz/" target="_blank" rel="noopener">Street Auto 官網</a>：Sydenham 地址、Email 聯絡方式及 WoF 預約方式。</li>
+        <li><a href="https://mozita.co.nz/" target="_blank" rel="noopener">Mozita Automotive 官網</a>：Hornby 地址、$45 公開牌價及 Book A Job 表單。</li>
+        <li><a href="https://www.govt.nz/browse/transport/keeping-a-vehicle-on-the-road/get-a-warrant-of-fitness-or-certificate-of-fitness/" target="_blank" rel="noopener">紐西蘭政府：WoF 續辦、費用與複檢</a>：WoF 沒有固定價格；可供比較的基本輕型車檢查費通常為 $50–90，且到期日前 14 天內續驗可沿用舊到期日。</li>
         <li><a href="https://vehicleinspection.nzta.govt.nz/virms/in-service-wof-and-cof/introduction/inspection-and-certification-process/issuing-the-wof-or-cof-label-evidence-of-vehicle?print-friendly=1" target="_blank" rel="noopener">NZTA WoF 標籤與到期日計算</a>：包含到期日前 14 天內通過檢驗的規則。</li>
         <li><a href="https://vehicleinspection.nzta.govt.nz/virms/in-service-wof-and-cof/introduction/inspection-and-certification-process/rechecks" target="_blank" rel="noopener">NZTA WoF 複檢規則</a>：複檢期限與費用條件。</li>
       </ul>
