@@ -136,6 +136,8 @@
     .estimate-table th, .estimate-table td { padding: 10px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
     .estimate-table th:last-child, .estimate-table td:last-child { text-align: right; white-space: nowrap; }
     .estimate-table tfoot { font-weight: 800; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .estimate-table.wide { min-width: 720px; }
     section[id] { scroll-margin-top: 12px; }
     @media (max-width: 640px) {
       .hero, .card { border-radius: 16px; padding: 19px; }
@@ -158,14 +160,14 @@
 <body>
   <main class="page">
     <header class="hero masthead">
-      <small>CHIA-JUNG · 維修授權與預約</small>
+      <small>CHIA-JUNG · 已授權，待預約</small>
       <h1>車險處理卡</h1>
-      <p>MAS 同意維修信已寄；現在向車廠確認安排，週六再告知時段。</p>
-      <div class="updated">更新：2026-10-22 · 詢問免費代步車到府換車；註明未加購租車補助<br />版本：1022-loan-car-delivery</div>
+      <p>MAS 已正式授權 801516 維修；金額與工項不變，現在向 Rosiez 安排進廠。</p>
+      <div class="updated">更新：2026-10-23 · 授權估價單已核對；改列可預約維修<br />版本：1023-repair-authority</div>
     </header>
 
     <div class="incident-tabs" role="tablist" aria-label="選擇事故" hidden>
-      <button class="incident-tab" id="tab-mazda" type="button" role="tab" aria-controls="incident-mazda" aria-selected="true"><strong>8/12 · Mazda 維修案</strong><span>801516 · 自負額 500 · 同意信已寄</span></button>
+      <button class="incident-tab" id="tab-mazda" type="button" role="tab" aria-controls="incident-mazda" aria-selected="true"><strong>8/12 · Mazda 維修案</strong><span>801516 · 已授權 · 自負額 500</span></button>
       <button class="incident-tab" id="tab-bmw" type="button" role="tab" aria-controls="incident-bmw" aria-selected="false" tabindex="-1"><strong>9/22 · BMW 新案</strong><span>803286 · 純第三方 · 自負額已免</span></button>
     </div>
     <noscript><p class="note">瀏覽器未啟用 JavaScript，以下會依序顯示兩案全文。</p></noscript>
@@ -185,8 +187,8 @@
         <h2>新案自負額 0；改由 801516 安排修車</h2>
         <div class="summary-grid">
           <div class="summary-box do-later"><h3>已確認</h3><p>MAS 已處理與 AMI 的責任問題；10/22 再確認 803286 免自負額，改為純第三方責任理賠。</p></div>
-          <div class="summary-box do-now"><h3>現在處理</h3><p>同意維修信已寄 MAS。<a href="#shop-repair-booking">向 Frikkie 確認維修安排</a>，週六再告知時段；車廠草稿待寄。</p></div>
-          <div class="summary-box do-not"><h3>不用再做</h3><p>不重問新案自負額、不重做新案估價，也不用取消新案。修車日期與 MAS 施工授權仍待確認。</p></div>
+          <div class="summary-box do-now"><h3>現在處理</h3><p>801516 已獲授權。<a href="#shop-repair-booking">向 Frikkie 安排維修</a>，10/24（六）確認排班後告知希望時段。</p></div>
+          <div class="summary-box do-not"><h3>不用再做</h3><p>不重問新案自負額、不重做新案估價，也不用取消新案。只剩車廠預約及服務費用待確認。</p></div>
         </div>
         <div class="note"><strong>目前自負額安排已明確</strong>801516 自車維修 NZD 500；803286 純第三方 NZD 0。兩案仍分案處理，不是合併成同一事故。</div>
         <details>
@@ -471,7 +473,7 @@ Insurer: MAS</div>
               <li><a href="https://www.police.govt.nz/use-105/traffic-crash-report" target="_blank" rel="noopener">NZ Police 交通事故說明</a>與<a href="https://105.police.govt.nz/" target="_blank" rel="noopener">105 線上入口</a>。</li>
               <li><a href="https://www.mas.co.nz/help-centre/" target="_blank" rel="noopener">MAS Help Centre</a>與<a href="https://www.mas.co.nz/make-a-claim/" target="_blank" rel="noopener">線上理賠入口</a>。</li>
             </ul>
-            <p class="privacy">2026/10/22 更新。依 Shan 的 Assessment Outcome、Dylan 的維修授權詢問及其引述信件核對。803286 純第三方免自負額已確認；801516 同意維修及車廠預約兩封信仍是草稿，未確認寄出、授權或預約完成。</p>
+            <p class="privacy">2026/10/23 更新。依 Shan 的 Assessment Outcome、Dylan 的維修授權信及 Repair Authority 核對。803286 純第三方免自負額已確認；801516 已正式授權，尚未完成車廠預約。</p>
           </div>
         </details>
       </section>
@@ -507,8 +509,8 @@ The other vehicle was unoccupied. No one was injured. I took photographs and lef
     <div id="incident-mazda" class="incident-panel" role="tabpanel" aria-labelledby="tab-mazda" tabindex="0">
     <header class="hero">
       <small>CHIA-JUNG · 理賠案件 801516 · 可全程用文字處理</small>
-      <h2 class="case-heading">801516｜已回覆 MAS，確認車廠安排</h2>
-      <p><strong>目前狀態：</strong>10/22 佳蓉已回覆 MAS 同意維修，等待 Dylan 發出授權。現在先寄車廠詢問安排，10/24（六）確認下週可配合時間後再告知；尚未完成預約。</p>
+      <h2 class="case-heading">801516｜MAS 已正式授權，待向 Rosiez 預約</h2>
+      <p><strong>目前狀態：</strong>10/23 Dylan 已把維修授權寄給 Rosiez。授權金額與 10/2 評估相同；10/24（六）確認下週排班後，再告知希望時段。</p>
       <nav class="nav" aria-label="頁面導覽">
         <a href="#old-current">目前進度</a>
         <a href="#shop-repair-booking">車廠草稿</a>
@@ -521,30 +523,31 @@ The other vehicle was unoccupied. No one was injured. I took photographs and lef
 
     <section class="card" id="old-current">
       <span class="priority">一眼確認進度</span>
-      <h2>先寄車廠確認，週六再報時段</h2>
+      <h2>授權完成；週六確認時段後預約</h2>
       <div class="summary-grid">
-        <div class="summary-box do-later"><h3>已確認</h3><p>同意維修信已寄 MAS。維修範圍含前保險桿、左前葉子板及左前車門，自負額 NZD 500；新案自負額已免除。</p></div>
-        <div class="summary-box do-now"><h3>現在處理</h3><p>寄 Frikkie 問維修天數、付款、免費代步車到府換車及取送費用。10/24（六）再告知時段；若無到府服務，可自行到廠。</p></div>
-        <div class="summary-box do-not"><h3>仍待確認</h3><p>MAS 是否已發出施工授權、車廠服務與費用、實際預約時段。車廠信仍是待寄草稿。</p></div>
+        <div class="summary-box do-later"><h3>已確認</h3><p>MAS 已正式授權 Rosiez 維修。範圍含前保險桿、左前葉子板及左前車門；801516 自負額 NZD 500，新案自負額 0。</p></div>
+        <div class="summary-box do-now"><h3>現在處理</h3><p>10/24（六）確認排班後，寄 Frikkie 告知希望時段，並確認維修天數、自負額付款、免費代步車及取送費用。</p></div>
+        <div class="summary-box do-not"><h3>仍待確認</h3><p>實際進廠日期、維修天數、付款方式，以及代步車／取送服務是否有額外費用。</p></div>
       </div>
-      <div class="status"><strong>自負額合計 NZD 500</strong>801516 維修自負額 500；803286 純第三方自負額 0。付款時間與方式、到府取還車服務及是否另收費，均向 Rosiez 確認。承保範圍內追加工程由車廠向 MAS 申請核准。</div>
+      <div class="status"><strong>已授權總額不變；自負額合計 NZD 500</strong>授權總額 NZD 2,650.69（含 GST），扣除 801516 自負額 500 後，MAS 應付 NZD 2,150.69；Client Contribution 為 0。803286 純第三方自負額 0。</div>
       <details id="deductible-options">
-        <summary>目前已確認的費用與維修範圍</summary>
+        <summary>10/23 授權估價單：變更與未變更項目</summary>
         <div class="detail">
-          <p>依 10/2 MAS 明細，本案評估 NZD 2,650.69（含 GST），自負額 500，另列分攤款 0，MAS 目前維修負擔額 2,150.69；金額可能隨核准工程調整，並非現金給付。完整範圍包括前保險桿、左前葉子板及左前車門。</p>
-          <p>MAS 10/22 已確認新案 803286 改為純第三方責任並免自負額，不需再問一次、另做估價或取消案件。現金結算於 10/2 已被拒絕。</p>
+          <p><strong>有變：</strong>文件由 AWP（尚未授權）改為 Repair Authority；Claim Approval Status 由 Assessed Without Prejudice 改為 Assessed &amp; Authorised。MAS 已把授權直接寄給 Rosiez。</p>
+          <p><strong>沒變：</strong>所有金額、工時與維修項目都與 10/2 版本相同。總額 NZD 2,650.69（含 GST）、自負額 500、Client Contribution 0、MAS 應付 2,150.69；範圍仍是前保險桿、左前葉子板及左前車門。</p>
+          <p><strong>追加工程：</strong>左後車門拆裝／調色仍列 Report On，未計入目前授權總額。任何變更都必須由車廠在施工前取得 MAS assessor 核准。</p>
         </div>
       </details>
       <details open id="shop-repair-booking">
         <summary>寄 Frikkie｜精簡草稿待寄</summary>
         <div class="detail">
           <p><strong>怎麼寄：</strong>佳蓉信箱另開新信給 <strong>Frikkie Erasmus</strong>：<strong>sockburn@rosiez.co.nz</strong>。主旨用 801516；不必副本 MAS 或重附照片。</p>
-          <p class="note">MAS 同意信已寄；不代表 MAS 已發出施工授權。本信先確認安排，10/24（六）再告知時段。</p>
+          <p class="note">MAS 已直接把維修授權寄給 Rosiez；不必副本 MAS、重附照片或附件。本信只確認車廠安排，10/24（六）再告知希望時段。</p>
           <div class="script">Subject: Repair arrangements – MAS claim 801516 / MFY228
 
 Hi Frikkie,
 
-Thank you for your help. I have emailed MAS to confirm I wish to proceed and request repair authorisation for claim 801516 (MFY228).
+Thank you for your help. MAS has now authorised the repairs for claim 801516 (MFY228) and sent the repair authority to Rosiez.
 
 I will email you my preferred booking time on Saturday, 24 October, once next week's schedule is confirmed.
 
@@ -560,14 +563,33 @@ Thank you very much for your help.
 
 Kind regards,
 Chia-Jung Chen</div>
-          <details><summary>完整中文翻譯</summary><div class="detail translation"><p>主旨：維修安排——MAS 理賠案 801516／MFY228</p><p>Frikkie 您好：</p><p>謝謝您的協助。我已寄信告知 MAS 希望繼續維修，並請他們為案件 801516（MFY228）發出維修授權。</p><p>我會在 10 月 24 日星期六確認下週排班後，再寄信告知希望預約的時段。</p><p>能否請您告知維修需要幾個工作天，以及 NZD 500 自負額何時支付、有哪些付款方式？</p><p>我的 MAS 保單未加購租車費用補助。如果維修超過一天，請問是否有免費代步車可以借用？如有，能否到以下地址收取我的車、送來代步車，修好後再送回我的車並取回代步車？也請告知取送是否收費及金額。</p><p>2/32A Peer Street, Upper Riccarton, Christchurch 8041</p><p>如果無法安排到府取送，我可以自行到 Sockburn。若沒有免費代步車，請告知每日租金。</p><p>非常感謝您的協助。</p><p>敬上，<br />Chia-Jung Chen</p></div></details>
+          <details><summary>完整中文翻譯</summary><div class="detail translation"><p>主旨：維修安排——MAS 理賠案 801516／MFY228</p><p>Frikkie 您好：</p><p>謝謝您的協助。MAS 現已授權案件 801516（MFY228）的維修，並將維修授權寄給 Rosiez。</p><p>我會在 10 月 24 日星期六確認下週排班後，再寄信告知希望預約的時段。</p><p>能否請您告知維修需要幾個工作天，以及 NZD 500 自負額何時支付、有哪些付款方式？</p><p>我的 MAS 保單未加購租車費用補助。如果維修超過一天，請問是否有免費代步車可以借用？如有，能否到以下地址收取我的車、送來代步車，修好後再送回我的車並取回代步車？也請告知取送是否收費及金額。</p><p>2/32A Peer Street, Upper Riccarton, Christchurch 8041</p><p>如果無法安排到府取送，我可以自行到 Sockburn。若沒有免費代步車，請告知每日租金。</p><p>非常感謝您的協助。</p><p>敬上，<br />Chia-Jung Chen</p></div></details>
           <details><summary>代步車與付款提醒</summary><div class="detail"><p>7/30 保單未加購 Hire Car Cover，沒有這項租車補助。<a href="https://www.rosiez.co.nz/insurance-private" target="_blank" rel="noopener">Rosiez 官網</a>列有免費代步車，並可收車、送來代步車及修好後還車；空車與取送是否收費仍待確認。借用或租用前，再核對押金、保險條件及另發生事故的自負額。</p><p>官網說明交車時結清自負額；本案付款時間與方式仍由車廠確認。</p></div></details>
+        </div>
+      </details>
+      <details open id="old-latest-authority">
+        <summary>10/23 MAS 正式維修授權｜不必回覆</summary>
+        <div class="detail">
+          <p>Dylan 已確認收到佳蓉的維修同意，並把下列授權直接寄給 Rosiez Sockburn。佳蓉不必再回覆 MAS；下一步是與車廠完成預約。</p>
+          <div class="script">Hi Chia-Jung,
+
+Thank you for confirming you would like to proceed with the repairs.
+
+Please see attached the authorisation email sent to Rosiez Collision Repairs - Sockburn, which includes the repair cost breakdown.
+
+Thanks, Dylan
+
+Repairs have been authorised (incl freight and materials) for the following claim; up to a maximum of (excluding Tax): $2,304.95 less the excess applicable to this claim of $500.00.
+
+Any variation to this acceptance must be approved by our assessor prior to undertaking the additional work.</div>
+          <p class="translation"><strong>完整中文翻譯：</strong>佳蓉您好，謝謝您確認希望進行維修。請參閱附件；這是寄給 Rosiez Collision Repairs - Sockburn 的授權信，內含維修費用明細。謝謝，Dylan。<br /><br />本理賠案的維修已獲授權（包含運費及材料），授權上限為未稅 NZD 2,304.95，並扣除本案適用的 NZD 500 自負額。任何超出本次核准內容的變更，都必須在追加工程進行前取得 MAS 評估人員核准。</p>
+          <p class="note">附件同時列明含 GST 總額 2,650.69、自負額 500、Client Contribution 0、MAS 應付 2,150.69；不是另增加一筆費用。</p>
         </div>
       </details>
       <details id="old-message">
         <summary>MAS 同意維修信已寄｜原草稿留存，不必重寄</summary>
         <div class="detail">
-          <p>使用者 10/22 確認已寄信同意維修，等待 Dylan 向 Rosiez 發出授權。以下為原草稿留存，實際寄出內容以原信為準。收件 <strong>mas_nz@clear21.app</strong>，副本 <strong>claims@mas.co.nz</strong>、<strong>assessors@mas.co.nz</strong>。</p>
+          <p>使用者 10/22 確認已寄信同意維修；Dylan 已於 10/23 向 Rosiez 發出授權。以下為原草稿留存，實際寄出內容以原信為準。收件 <strong>mas_nz@clear21.app</strong>，副本 <strong>claims@mas.co.nz</strong>、<strong>assessors@mas.co.nz</strong>。</p>
           <div class="script">Subject: Re: Motor vehicle claim 801516, please confirm repair authorisation.
 
 Hi Dylan,
@@ -603,7 +625,7 @@ Assessors@mas.co.nz</div><p class="translation"><strong>完整中文翻譯：</s
     <details id="old-archive">
       <summary>舊案估價、往返信件與流程（歷史備查；目前策略見上方）</summary>
       <div class="detail">
-    <p class="note">以下是過往估價與檢查階段紀錄，不是目前待辦。10/22 已轉入維修授權及預約，請以頁首兩封草稿為準。</p>
+    <p class="note">以下是過往估價與檢查階段紀錄，不是目前待辦。10/23 已取得正式維修授權；目前只需完成車廠預約。</p>
     <section class="card" id="action">
       <span class="priority done">前一封舊案說明已寄</span>
       <h2>估價與檢查紀錄｜10/2 已收到新版明細</h2>
@@ -614,11 +636,11 @@ Assessors@mas.co.nz</div><p class="translation"><strong>完整中文翻譯：</s
         </div>
         <div class="summary-box do-now">
           <h3>已完成</h3>
-          <p>MAS 10/2 新版 assessment 10931：NZD 2,650.69，扣 500 後 MAS 負擔 2,150.69；已說明調整項目並拒絕現金結算。</p>
+          <p>MAS 10/23 Repair Authority：NZD 2,650.69，扣 500 後 MAS 應付 2,150.69；工項與 10/2 評估相同。</p>
         </div>
         <div class="summary-box do-not">
           <h3>目前狀態</h3>
-          <p>10/2 當時僅依照片評估；10/14 已到廠檢查，10/22 MAS 已確認由本案估價涵蓋自車維修。維修授權待佳蓉回信。</p>
+          <p>10/2 當時僅依照片評估；10/14 已到廠檢查，10/22 MAS 確認由本案估價涵蓋自車維修，10/23 正式授權。</p>
         </div>
       </div>
       <div class="status">
@@ -627,20 +649,20 @@ Assessors@mas.co.nz</div><p class="translation"><strong>完整中文翻譯：</s
       </div>
       <div class="status">
         <strong>MAS 評估金額與核准狀態</strong>
-        Assessment Status 為 Assessed，但 Claim Approval Status 為 Assessed Without Prejudice；頁面並註明評估金額尚未授權且可能改變，因此不是最終核准或施工許可。
+        10/23 Repair Authority 的 Claim Approval Status 已改為 Assessed &amp; Authorised；授權金額、工時與項目均未變。
       </div>
       <div class="status">
         <strong>案件時間紀錄</strong>
-        9/29 MAS 願納入葉子板；9/30 附桌面估價；10/2 新版明細確認保險桿、葉子板及左前車門都包含在內。仍待佳蓉決定，施工未授權。
+        9/29 MAS 願納入葉子板；9/30 附桌面估價；10/2 新版明細確認保險桿、葉子板及左前車門；10/23 已依相同範圍正式授權。
       </div>
     </section>
 
     <section class="card" id="estimate">
-      <span class="priority optional">Rosiez estimate 14867｜8/12 Mazda 案</span>
-      <h2>最新 MAS 評估：NZD 2,650.69（含 GST）</h2>
-      <p>10/2 新版 assessment 10931 已確認範圍與扣款；仍是桌面評估，註明尚未授權、可能變動。</p>
+      <span class="priority done">MAS Repair Authority｜8/12 Mazda 案</span>
+      <h2>正式授權：NZD 2,650.69（含 GST）</h2>
+      <p>10/23 Repair Authority 已正式授權；金額、工時及項目均與 10/2 assessment 10931 相同。</p>
       <table class="estimate-table">
-        <thead><tr><th scope="col">目前評估項目</th><th scope="col">未稅 NZD</th></tr></thead>
+        <thead><tr><th scope="col">已授權項目</th><th scope="col">未稅 NZD</th></tr></thead>
         <tbody>
           <tr><td><strong>前保險桿周邊</strong>：拆裝、修復、烤漆；左側固定座零件 52.80。沒有列換整支保險桿。</td><td>826.80</td></tr>
           <tr><td><strong>左前葉子板</strong>：附件拆裝、修復、烤漆。</td><td>740.00</td></tr>
@@ -648,9 +670,142 @@ Assessors@mas.co.nz</div><p class="translation"><strong>完整中文翻譯：</s
           <tr><td><strong>左後車門</strong>：拆裝 110、調色 100 暫列 Report On，未計入目前總額；需視實際維修確認。</td><td>未計入</td></tr>
           <tr><td><strong>共通費用</strong>：掃描 90、材料 51.15、環境處理 8。</td><td>149.15</td></tr>
         </tbody>
-        <tfoot><tr><td>未稅合計</td><td>2,304.95</td></tr><tr><td>GST</td><td>345.74</td></tr><tr><td>評估總額</td><td>2,650.69</td></tr><tr><td>自負額</td><td>−500.00</td></tr><tr><td>另列分攤款（Client Contribution）</td><td>0.00</td></tr><tr><td>MAS 目前維修負擔額（不是現金給付）</td><td>2,150.69</td></tr></tfoot>
+        <tfoot><tr><td>未稅合計</td><td>2,304.95</td></tr><tr><td>GST</td><td>345.74</td></tr><tr><td>授權總額</td><td>2,650.69</td></tr><tr><td>自負額</td><td>−500.00</td></tr><tr><td>另列分攤款（Client Contribution）</td><td>0.00</td></tr><tr><td>MAS 應付總額（不是現金給付）</td><td>2,150.69</td></tr></tfoot>
       </table>
-      <p class="note"><strong>降價原因：</strong>相對 Rosiez 原估 NZD 3,018.98，左後門兩項暫不計入 210、前門修復減 55、雜費減 55.25，合計減 320.25 未稅／368.29 含 GST。9/30 至 10/2 又少 305.04；最新明細才是目前基準。Report On 是有需要時再報核，不代表永遠不賠。</p>
+      <details id="authorised-estimate-translation">
+        <summary>10/23 正式授權估價單｜三頁完整中文翻譯</summary>
+        <div class="detail">
+          <p class="note"><strong>文件性質</strong>以下依「Assessed Estimate For Assessment 10931 - Repair Authority」逐欄翻譯。金額均為 NZD；「估價」是車廠原報數字，「調整」是 MAS 扣減數字，「授權」是 MAS 核定數字。</p>
+
+          <h3>第 1 頁｜案件、車輛、聯絡資料及金額</h3>
+          <dl class="facts">
+            <dt>文件名稱</dt><dd>評估編號 10931 的已評估估價單——維修授權（Repair Authority）</dd>
+            <dt>地址抬頭</dt><dd>10 Waterloo Quay, Pipitea 6011, Wellington</dd>
+            <dt>工作提供者</dt><dd>MAS Insurance</dd>
+            <dt>維修廠</dt><dd>Rosiez Collision Repairs - Sockburn</dd>
+            <dt>理賠案號</dt><dd>801516</dd>
+            <dt>評估人員</dt><dd>Dylan Mcginnity</dd>
+            <dt>可否行駛</dt><dd>可行駛（Drivable）</dd>
+            <dt>要求日期</dt><dd>2026/08/14</dd>
+            <dt>評估方式</dt><dd>桌面評估（Desktop）</dd>
+            <dt>自負額</dt><dd>500.00</dd>
+            <dt>保戶分攤款</dt><dd>0.00</dd>
+            <dt>評估日期</dt><dd>2026/10/02</dd>
+            <dt>評估狀態</dt><dd>已評估（Assessed）</dd>
+            <dt>保險公司欄</dt><dd>未填；文件另列工作提供者為 MAS Insurance</dd>
+            <dt>事故日期</dt><dd>2026/08/12</dd>
+            <dt>保單號碼</dt><dd>MV971912</dd>
+            <dt>理賠核准狀態</dt><dd>已評估並已授權（Assessed &amp; Authorised）</dd>
+            <dt>車輛</dt><dd>Nissan Tiida；車牌 MFY228</dd>
+            <dt>里程</dt><dd>130,062 公里</dd>
+            <dt>VIN</dt><dd>7AT0DH78X19196869</dd>
+            <dt>製造年月</dt><dd>2008/01</dd>
+            <dt>未填欄位</dt><dd>車身型式、漆色代碼、汽缸數、內裝代碼及引擎號碼</dd>
+            <dt>車主</dt><dd>Miss Chia-Jung Chen</dd>
+            <dt>地址</dt><dd>2/32A Peer Street, Upper Riccarton, Christchurch 8041, New Zealand</dd>
+            <dt>手機</dt><dd>029 045-19919</dd>
+            <dt>Email</dt><dd>esther.chen.0730@gmail.com</dd>
+            <dt>未填聯絡欄</dt><dd>公司、住家電話、公司電話及傳真</dd>
+          </dl>
+
+          <div class="table-scroll">
+            <table class="estimate-table wide">
+              <thead><tr><th scope="col">費用類別</th><th scope="col">車廠估價</th><th scope="col">MAS 調整</th><th scope="col">MAS 授權</th></tr></thead>
+              <tbody>
+                <tr><td>拆卸與裝回工資</td><td>583.00</td><td>110.00</td><td>473.00</td></tr>
+                <tr><td>鈑金／修復工資</td><td>605.00</td><td>55.00</td><td>550.00</td></tr>
+                <tr><td>烤漆工資</td><td>1,180.00</td><td>100.00</td><td>1,080.00</td></tr>
+                <tr><td>機械工資</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+                <tr><td><strong>工資合計</strong></td><td><strong>2,368.00</strong></td><td><strong>265.00</strong></td><td><strong>2,103.00</strong></td></tr>
+                <tr><td>零件</td><td>52.80</td><td>0.00</td><td>52.80</td></tr>
+                <tr><td>外包工作</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+                <tr><td>雜項</td><td>204.40</td><td>55.25</td><td>149.15</td></tr>
+                <tr><td><strong>零件／其他合計</strong></td><td><strong>257.20</strong></td><td><strong>55.25</strong></td><td><strong>201.95</strong></td></tr>
+                <tr><td>未稅小計／未稅總額</td><td>2,625.20</td><td>320.25</td><td>2,304.95</td></tr>
+                <tr><td>GST</td><td>393.78</td><td>48.04</td><td>345.74</td></tr>
+                <tr><td><strong>含稅總額</strong></td><td><strong>3,018.98</strong></td><td><strong>368.29</strong></td><td><strong>2,650.69</strong></td></tr>
+                <tr><td>扣除自負額</td><td>—</td><td>—</td><td>−500.00</td></tr>
+                <tr><td>扣除保戶分攤款</td><td>—</td><td>—</td><td>0.00</td></tr>
+                <tr><td><strong>MAS 應付總額</strong></td><td>—</td><td>—</td><td><strong>2,150.69</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>第 2 頁｜零件、拆裝、修復、烤漆及雜項</h3>
+          <p><strong>新零件：</strong>左前保險桿固定座（Front bumper - retainer (L)）1 件；零件編號未填，車廠估價及 MAS 授權均為 52.80。</p>
+          <div class="table-scroll">
+            <table class="estimate-table wide">
+              <thead><tr><th scope="col">拆卸與裝回</th><th scope="col">估價工時</th><th scope="col">估價</th><th scope="col">授權工時／狀態</th><th scope="col">授權</th></tr></thead>
+              <tbody>
+                <tr><td>水箱護罩（Grille）<br><small>須提供全部施工中照片</small></td><td>0.31h</td><td>27.50</td><td>0.31h</td><td>27.50</td></tr>
+                <tr><td>前保險桿拆下／裝回</td><td>1.22h</td><td>110.00</td><td>1.22h</td><td>110.00</td></tr>
+                <tr><td>前保險桿下擾流／裙板</td><td>0.61h</td><td>55.00</td><td>0.61h</td><td>55.00</td></tr>
+                <tr><td>左前保險桿固定座</td><td>0.18h</td><td>16.50</td><td>0.18h</td><td>16.50</td></tr>
+                <tr><td>左大燈<br><small>拆開後回報不可見損傷</small></td><td>0.61h</td><td>55.00</td><td>0.61h</td><td>55.00</td></tr>
+                <tr><td>左前葉子板附件</td><td>0.61h</td><td>55.00</td><td>0.61h</td><td>55.00</td></tr>
+                <tr><td>左前車門附件</td><td>1.53h</td><td>137.50</td><td>1.53h</td><td>137.50</td></tr>
+                <tr><td>左前車門後視鏡</td><td>0.18h</td><td>16.50</td><td>0.18h</td><td>16.50</td></tr>
+                <tr><td>左後車門附件<br><small>備註：左前車門前緣有損傷，應不需要把烤漆銜接到後門</small></td><td>1.22h</td><td>110.00</td><td>待回報</td><td>未計入</td></tr>
+                <tr><td><strong>拆裝合計</strong></td><td><strong>6.47h</strong></td><td><strong>583.00</strong></td><td><strong>5.25h</strong></td><td><strong>473.00</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-scroll">
+            <table class="estimate-table wide">
+              <thead><tr><th scope="col">修復</th><th scope="col">估價工時</th><th scope="col">估價</th><th scope="col">授權工時</th><th scope="col">授權</th></tr></thead>
+              <tbody>
+                <tr><td>前保險桿<br><small>須提供全部施工中照片</small></td><td>1.22h</td><td>110.00</td><td>1.22h</td><td>110.00</td></tr>
+                <tr><td>左前葉子板</td><td>4.28h</td><td>385.00</td><td>4.28h</td><td>385.00</td></tr>
+                <tr><td>左前車門</td><td>1.22h</td><td>110.00</td><td>0.61h</td><td>55.00</td></tr>
+                <tr><td><strong>修復合計</strong></td><td><strong>6.72h</strong></td><td><strong>605.00</strong></td><td><strong>6.11h</strong></td><td><strong>550.00</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-scroll">
+            <table class="estimate-table wide">
+              <thead><tr><th scope="col">烤漆</th><th scope="col">估價工時</th><th scope="col">估價</th><th scope="col">授權工時／狀態</th><th scope="col">授權</th></tr></thead>
+              <tbody>
+                <tr><td>前保險桿<br><small>須提供全部施工中照片</small></td><td>1.63h</td><td>400.00</td><td>1.63h</td><td>400.00</td></tr>
+                <tr><td>左前葉子板</td><td>1.22h</td><td>300.00</td><td>1.22h</td><td>300.00</td></tr>
+                <tr><td>左前車門</td><td>1.55h</td><td>380.00</td><td>1.55h</td><td>380.00</td></tr>
+                <tr><td>左後車門調色銜接（Blend）<br><small>備註：左前車門前緣有損傷，應不需要把烤漆銜接到後門</small></td><td>0.41h</td><td>100.00</td><td>待回報</td><td>未計入</td></tr>
+                <tr><td><strong>烤漆合計</strong></td><td><strong>4.81h</strong></td><td><strong>1,180.00</strong></td><td><strong>4.40h</strong></td><td><strong>1,080.00</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-scroll">
+            <table class="estimate-table wide">
+              <thead><tr><th scope="col">雜項</th><th scope="col">估價</th><th scope="col">授權</th></tr></thead>
+              <tbody>
+                <tr><td>車輛掃描工資<br><small>須提供掃描讀值</small></td><td>135.00</td><td>90.00</td></tr>
+                <tr><td>快速清潔（免費）</td><td>待回報</td><td>待回報</td></tr>
+                <tr><td>雜項材料</td><td>59.40</td><td>51.15</td></tr>
+                <tr><td>環境處理費</td><td>10.00</td><td>8.00</td></tr>
+                <tr><td><strong>雜項合計</strong></td><td><strong>204.40</strong></td><td><strong>149.15</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>第 2 頁總計：</strong>授權工資 2,103.00；授權零件／其他 201.95；未稅小計 2,304.95。</p>
+
+          <h3>第 3 頁｜總額與 MAS 給車廠的完整備註</h3>
+          <p><strong>總額：</strong>未稅 2,304.95；GST 345.74；含稅總額 2,650.69；扣自負額 500.00；保戶分攤款 0.00；MAS 應付總額 2,150.69。</p>
+          <div class="translation">
+            <p><strong>備註完整翻譯：</strong></p>
+            <p>團隊您好：</p>
+            <p>請提供全部施工中（WIP）照片，包括拆卸與裝回、修復及烤漆。</p>
+            <p>請提供全部外包工作及零件發票副本。新零件及外包工作為 10%，二手零件為 15%。請務必在 PT 上將 MAS 標示為 SPONSOR；若使用 Partly，請將報價上傳至 Docs。</p>
+            <p>如適用，請上傳所有已執行的掃描、車輪定位及底盤測量資料，並以彩色上傳。</p>
+            <p>完成任何需要的 ADAS 重新校正，即代表您證明該流程符合製造商的 OEM 規格及標準。</p>
+            <p>如對任何變更需要討論，我很樂意協助。</p>
+            <p>敬上，<br />Dylan Mcginnity<br />0800 800 627<br />assessors@mas.co.nz</p>
+            <p><strong>評估人員簽名欄：</strong>空白。</p>
+          </div>
+        </div>
+      </details>
+      <p class="note"><strong>降價原因：</strong>相對 Rosiez 原估 NZD 3,018.98，左後門兩項暫不計入 210、前門修復減 55、雜費減 55.25，合計減 320.25 未稅／368.29 含 GST。9/30 至 10/2 又少 305.04；10/23 授權明細是目前基準。Report On 是有需要時再報核，不代表永遠不賠。</p>
       <details>
         <summary>Rosiez 原始照片估價：NZD 3,018.98（歷史比較）</summary>
         <div class="detail">
@@ -677,9 +832,9 @@ Assessors@mas.co.nz</div><p class="translation"><strong>完整中文翻譯：</s
       </details>
         </div>
       </details>
-      <div class="note"><strong>9/30 舊版已被更新</strong>assessment 10931 當時列 NZD 2,955.73，扣 500 後為 2,455.73；現以 10/2 新版為準，不能當成另一筆可領款。</div>
-      <div class="note"><strong>自負額</strong>10/2 列本案自車維修自負額 NZD 500、另列分攤款 0；10/22 MAS 已免除新案 803286 自負額。現金結算於 10/2 已被明確拒絕。</div>
-      <div class="note"><strong>評估與施工分開</strong>新版仍為 Desktop／Assessed Without Prejudice，金額尚未授權且可能變動。新增或 Report On 項目應由車廠提出、MAS 審核，不等於佳蓉已同意自費；新案重疊工作須另行區分。</div>
+      <div class="note"><strong>先前版本已被取代</strong>9/30 的 NZD 2,955.73 與 10/2 的 AWP 狀態都屬歷史。現以 10/23 Repair Authority 為準，不能當成多筆可領款。</div>
+      <div class="note"><strong>自負額</strong>本案自車維修自負額 NZD 500、另列分攤款 0；10/22 MAS 已免除新案 803286 自負額。現金結算於 10/2 已被明確拒絕。</div>
+      <div class="note"><strong>追加工程</strong>評估方式仍標示 Desktop，但核准狀態已改為 Assessed &amp; Authorised。新增或 Report On 項目必須由車廠在施工前向 MAS 申請並取得核准，不能直接併入目前授權額。</div>
     </section>
 
     <section class="card" id="email">
@@ -824,12 +979,12 @@ Assessors@mas.co.nz</div><p class="translation"><strong>完整中文翻譯：</s
         <li>✅ <strong>步驟五：</strong> Rosiez 9/17 表示照片不足以準確估價，需要現場檢查並請佳蓉提供日期與時間；因工作安排，佳蓉尚未預約。</li>
         <li>✅ <strong>步驟六：</strong> 9/21 estimate 14867 已送 MAS 審核；佳蓉已確認該估價是依照片製作，沒有現場檢查。</li>
         <li>✅ <strong>步驟七：</strong> 佳蓉已回覆 MAS 先前的葉子板問題；實際寄送時間與內容以原始 Email 為準。</li>
-        <li>📩 <strong>最新進度：</strong> MAS 9/29 願把左前葉子板納入本案；9/30 提供桌面估價 NZD 2,955.73；10/2 Dylan 另通知目前評估 NZD 2,650.69，等佳蓉同意才送車廠維修授權。</li>
-        <li>⏸️ <strong>目前待辦：</strong> 10/22 同意維修信已寄 MAS；另寄 Frikkie 確認安排，週六再告知時段。施工授權與預約仍待確認。</li>
+        <li>✅ <strong>最新進度：</strong>10/23 MAS 已把 Repair Authority 寄給 Rosiez；授權總額 NZD 2,650.69，工項與 10/2 評估相同。</li>
+        <li>📩 <strong>目前待辦：</strong>10/24（六）確認下週排班後，寄 Frikkie 告知希望時段並確認車廠服務與費用；尚未完成預約。</li>
       </ul>
       <div class="warning">
-        <strong>桌面評估不等於最終核准或可直接施工</strong>
-        葉子板是否屬於 8/12 事故仍未由當事人確認；assessment 10931 原先依照片評估，金額可能變動。10/22 已回覆同意維修，仍待 MAS 正式授權施工。
+        <strong>授權不等於已排定進廠</strong>
+        MAS 已正式授權 Rosiez 依 assessment 10931 施工，但仍需由佳蓉與車廠確認進廠日期、維修天數、付款及代步車安排。追加工程須先取得 MAS assessor 核准。
       </div>
     </section>
 
@@ -837,8 +992,8 @@ Assessors@mas.co.nz</div><p class="translation"><strong>完整中文翻譯：</s
       <span class="priority optional">已確認事項</span>
       <h2>目前已確認與仍待書面確認的費用／責任</h2>
       <div class="status">
-        <strong>10/22 新案免自負額；MAS 同意信已寄，車廠草稿待寄</strong><br>
-        自車維修依 801516 辦理，新案 803286 已改純第三方並免自負額。最近一次估價明細仍為 10/2 的 NZD 2,650.69（含 GST），含前保險桿、左前葉子板及左前車門。付款時間及方式待回覆。
+        <strong>10/23 舊案已授權；10/22 新案免自負額</strong><br>
+        自車維修依 801516 辦理，授權總額 NZD 2,650.69（含 GST），含前保險桿、左前葉子板及左前車門；新案 803286 已改純第三方並免自負額。付款時間及方式仍向車廠確認。
       </div>
       <div class="status">
         <strong>舊案照片估價；10/14 因新案到廠檢查</strong><br>
@@ -910,7 +1065,7 @@ Assessors@mas.co.nz</div><p class="translation"><strong>完整中文翻譯：</s
       <details open>
         <summary>9/24 Rosiez 寄送 estimate 14867 詳細估價單並確認尚未核准維修</summary>
         <div class="detail">
-          <p>Rosiez 書面確認：估價是依目前可取得資料製作並送保險公司審查，尚未授權、安排或開始維修；實車檢查後可能調整，若拆卸後發現隱藏損傷，追加估價仍需 MAS 審核。原 PDF 含個人及車輛識別資料，保存在私人資料夾，本公開頁只列維修項目與費用。</p>
+          <p>Rosiez 書面確認：估價是依目前可取得資料製作並送保險公司審查，尚未授權、安排或開始維修；實車檢查後可能調整，若拆卸後發現隱藏損傷，追加估價仍需 MAS 審核。原 PDF 檔本身未公開；本頁依使用者明確要求列出完整中文翻譯。</p>
         </div>
       </details>
 
@@ -993,7 +1148,8 @@ Assessors@mas.co.nz</div><p class="translation"><strong>完整中文翻譯：</s
         <summary>案件完整時間軸</summary>
         <div class="detail">
           <ul>
-            <li><strong>2026-10-22</strong>：Shan 確認新案 803286 改純第三方並免自負額，自車維修包含在 801516 估價。使用者確認佳蓉已寄信同意維修；MAS 施工授權仍待確認。車廠草稿待寄，10/24（六）再告知希望時段。</li>
+            <li><strong>2026-10-23</strong>：Dylan 確認收到維修同意，並把 Repair Authority 寄給 Rosiez Sockburn。801516 正式授權總額為 NZD 2,650.69（含 GST），自負額 500、Client Contribution 0、MAS 應付 2,150.69；金額與工項皆未改。任何追加工程須在施工前取得 MAS assessor 核准。</li>
+            <li><strong>2026-10-22</strong>：Shan 確認新案 803286 改純第三方並免自負額，自車維修包含在 801516 估價。佳蓉同日寄信同意維修；10/23 已正式授權。</li>
             <li><strong>2026-10-20</strong>：佳蓉已回覆 Shan，說明 10/14 到場及拍照，請 MAS 向 Rosiez 取得資料；10/22 回信引文可確認已寄。MAS 同日信亦確認與 AMI 的責任問題已處理。</li>
             <li><strong>2026-10-15</strong>：Frikkie 回信表示認為第一案足以涵蓋全部車損、不需要第二案，已寄信給 MAS 等待答覆；這不是 MAS 核准或取消 BMW 第三方責任的指示。未附更新估價單。</li>
             <li><strong>2026-10-14</strong>：佳蓉為 803286 到 Rosiez 現場檢查，車廠自行拍照。釐清信已寄（10/15 回信引文可確認），說明舊案只依照片評估、新案照片已於 10/9 寄出、曾手動按回保險桿；請比較完整範圍與重疊工項，自負額直接向 MAS 確認，未授權施工。</li>
@@ -1034,7 +1190,7 @@ Assessors@mas.co.nz</div><p class="translation"><strong>完整中文翻譯：</s
         <div class="detail">
           <ul class="source-list">
             <li>Rosiez Collision Repairs - Sockburn：2026-08-31、2026-09-04、2026-09-16、2026-09-17、2026-09-21、2026-09-24 電子郵件及 estimate 14867 PDF，為舊案照片估價紀錄。另依 2026-10-15 佳蓉轉寄的車廠回信及其中引述的 10/14 已寄信，確認新案現場檢查、車廠拍照與已向 MAS 提出第一案涵蓋車損；未授權施工。</li>
-            <li>MAS：2026-08-17、2026-08-18、2026-08-21、2026-09-03、2026-09-22、2026-09-25、2026-09-29、2026-09-30、2026-10-02 回信與 assessment 10931；另核對 2026-10-22 Dylan「Motor vehicle claim 801516, please confirm repair authorisation.」及 Shan「Claim 803286 | Assessment Outcome」，後者含 10/20 與 10/2 已寄件引文。</li>
+            <li>MAS：2026-08-17、2026-08-18、2026-08-21、2026-09-03、2026-09-22、2026-09-25、2026-09-29、2026-09-30、2026-10-02 回信與 assessment 10931；另核對 2026-10-22 Dylan「Motor vehicle claim 801516, please confirm repair authorisation.」、Shan「Claim 803286 | Assessment Outcome」，以及 2026-10-23「Repairs Approved」與 Repair Authority。</li>
             <li><a href="https://www.mas.co.nz/resources/claims-information/claims-guide/" target="_blank" rel="noopener">MAS 理賠流程指南</a>與<a href="https://www.mas.co.nz/resources/claims-information/claims-photo-guide/" target="_blank" rel="noopener">MAS 理賠照片指南</a>。</li>
             <li><a href="https://www.mas.co.nz/documents/1346/Motor_Vehicle_Insurance_Policy_1_July_2026.pdf" target="_blank" rel="noopener">MAS 汽車保險條款（2026 年 7 月 1 日版）</a></li>
           </ul>
