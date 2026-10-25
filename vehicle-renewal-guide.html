@@ -3,265 +3,358 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="佳蓉的 MFY228 rego 與 WoF 指南：記錄已完成的牌照延期，提供 Kuro Garage 的 WoF 預約步驟與價格評估。" />
+  <meta name="description" content="佳蓉 MFY228 的 Kuro Garage WoF 指南：預約、現場中英出示卡、不合格與複檢、維修報價、含 GST 付款與取車清單。" />
   <meta name="theme-color" content="#12355b" />
-  <title>佳蓉車輛續牌與 WoF 指南｜MFY228</title>
+  <title>佳蓉 WoF 驗車到店指南｜MFY228</title>
   <style>
-    :root {
-      color-scheme: light;
-      --navy: #12355b;
-      --blue: #1f5f99;
-      --blue-soft: #eaf3fb;
-      --green: #176b52;
-      --green-soft: #e9f6f0;
-      --amber: #8a5a00;
-      --amber-soft: #fff5d9;
-      --red: #8d2d2d;
-      --red-soft: #fff0f0;
-      --ink: #17202a;
-      --muted: #596773;
-      --paper: #f3f6f8;
-      --line: #d6dde4;
+    :root { color-scheme:light; --navy:#12355b; --blue:#1e5b91; --ink:#192c3b; --muted:#526574; --line:#d8e2e9; --paper:#f3f6f8; --green:#17664f; --green-bg:#edf7f1; --amber:#74500e; --amber-bg:#fff6df; --red:#812e32; --red-bg:#fff0f0; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif; }
+    a { color:var(--blue); text-underline-offset:.2em; overflow-wrap:anywhere; }
+    a:focus-visible,summary:focus-visible { outline:3px solid #bc7200; outline-offset:4px; }
+    .skip { position:absolute; left:12px; top:-80px; padding:10px; background:#fff; z-index:20; }
+    .skip:focus { top:10px; }
+    .page { width:min(940px,calc(100% - 28px)); margin:auto; padding:24px 0 48px; }
+    .hero { padding:28px; border-radius:20px; color:#fff; background:var(--navy); }
+    .eyebrow { color:#d1e6f4; letter-spacing:.06em; font-size:.85rem; font-weight:750; }
+    h1,h2,h3 { line-height:1.35; }
+    h1 { margin:8px 0 10px; font-size:clamp(1.8rem,5.8vw,2.6rem); }
+    h2 { margin:0 0 14px; font-size:1.4rem; color:var(--navy); }
+    h3 { margin:0 0 7px; font-size:1.07rem; }
+    p { margin:8px 0; }
+    ul,ol { margin:10px 0; padding-left:24px; }
+    li { margin:7px 0; }
+    .hero p { color:#e1eef7; }
+    .meta,.small { color:var(--muted); font-size:.88rem; }
+    .hero .meta { color:#c4dce9; margin-top:17px; }
+    .buttons { display:flex; flex-wrap:wrap; gap:9px; margin-top:15px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:9px 15px; border:1px solid var(--blue); border-radius:10px; background:var(--blue); color:#fff; font-weight:750; text-decoration:none; }
+    .button.secondary { background:#fff; color:var(--blue); }
+    .hero .button { background:#fff; border-color:#fff; color:var(--navy); }
+    .hero .button.secondary { color:#fff; background:transparent; border-color:#aecde1; }
+    .quick-nav { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; position:sticky; top:0; z-index:5; padding:10px 0; background:var(--paper); }
+    .quick-nav a { display:flex; align-items:center; justify-content:center; min-height:46px; padding:8px 4px; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--navy); font-weight:750; text-decoration:none; text-align:center; font-size:.91rem; }
+    .card { padding:25px; margin-top:14px; border:1px solid var(--line); border-radius:17px; background:#fff; }
+    section[id],details[id] { scroll-margin-top:85px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:15px; }
+    .stat,.panel { padding:16px; border:1px solid var(--line); border-radius:12px; background:#fafcfd; }
+    .stat strong,.stat span { display:block; }
+    .stat strong { color:var(--navy); font-size:1.12rem; margin:3px 0; }
+    .stat span { font-size:.86rem; color:var(--muted); }
+    .step-label { display:block; margin-bottom:5px; color:var(--blue); font-size:.82rem; font-weight:800; letter-spacing:.04em; }
+    .notice { padding:14px 17px; margin:14px 0 0; border-radius:11px; background:#edf4fa; }
+    .notice strong { color:var(--navy); }
+    .good { background:var(--green-bg); border-color:#bddcc9; }
+    .good h3 { color:var(--green); }
+    .danger { background:var(--red-bg); color:var(--red); border-left:4px solid #c56b72; }
+    .danger strong { color:var(--red); }
+    .message { padding:18px; border:1px solid #a7c8dc; border-radius:12px; background:#eff7fc; font-size:1rem; line-height:1.65; overflow-wrap:anywhere; white-space:pre-wrap; user-select:all; -webkit-user-select:all; }
+    .message p { margin:0 0 10px; }
+    .message p:last-child { margin-bottom:0; }
+    .translation { margin:12px 0 0; color:var(--muted); font-size:.92rem; }
+    .handover { border:2px solid #6e9fbe; }
+    .handover h2 { margin-bottom:7px; }
+    .handover .message { font-size:1.08rem; }
+    .checklist { list-style:none; padding-left:0; }
+    .checklist li { position:relative; padding-left:25px; }
+    .checklist li::before { content:"□"; position:absolute; left:0; top:0; color:var(--blue); font-weight:700; }
+    details { margin-top:13px; border:1px solid var(--line); border-radius:11px; }
+    summary { padding:12px 15px; color:var(--blue); cursor:pointer; font-weight:750; min-height:48px; }
+    .details-body { padding:0 16px 15px; }
+    .details-body > :first-child { margin-top:0; }
+    .sources li { font-size:.9rem; }
+    footer { padding:20px 5px 0; color:var(--muted); font-size:.85rem; }
+    @media(max-width:680px) {
+      .page { width:calc(100% - 22px); padding-top:11px; }
+      .hero,.card { padding:20px; border-radius:14px; }
+      .grid,.stats { grid-template-columns:1fr; }
+      .stat { padding:12px 14px; }
+      .stat strong { font-size:1.08rem; }
+      .stat span { display:inline; }
+      .button { flex:1 1 160px; }
+      h2 { font-size:1.27rem; }
+      .message { padding:15px; }
+      .handover .message { font-size:1rem; }
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
-      line-height: 1.65;
-    }
-    a { color: var(--blue); text-underline-offset: .16em; }
-    a:focus-visible { outline: 3px solid #d88900; outline-offset: 3px; }
-    .page { width: min(920px, calc(100% - 24px)); margin: 0 auto; padding: 16px 0 52px; }
-    .hero, .card { border-radius: 18px; }
-    .hero { padding: 25px; color: #fff; background: linear-gradient(140deg, #12355b, #1f699b); }
-    .eyebrow { color: #d8ebf9; font-weight: 800; letter-spacing: .04em; }
-    h1, h2, h3 { line-height: 1.3; }
-    h1 { margin: 5px 0 8px; font-size: clamp(1.8rem, 6vw, 2.55rem); }
-    h2 { margin: 0 0 11px; color: var(--navy); font-size: 1.4rem; }
-    h3 { margin: 0 0 5px; font-size: 1.08rem; }
-    p { margin: 7px 0; }
-    ul, ol { margin: 8px 0; padding-left: 23px; }
-    li { margin: 6px 0; }
-    .updated { margin-top: 13px; color: #d8ebf9; font-size: .88rem; }
-    .nav { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 17px; }
-    .nav a { padding: 9px 7px; border-radius: 10px; background: rgba(255,255,255,.14); color: #fff; font-size: .88rem; font-weight: 800; text-align: center; text-decoration: none; }
-    .card { margin-top: 15px; padding: 22px; background: #fff; border: 1px solid var(--line); box-shadow: 0 9px 24px rgba(17,46,78,.055); }
-    .vehicle, .deadline-grid, .steps, .shops, .two-col { display: grid; gap: 11px; }
-    .vehicle { grid-template-columns: repeat(3, 1fr); margin-top: 14px; }
-    .deadline-grid { grid-template-columns: 1fr 1fr; margin-top: 14px; }
-    .steps { grid-template-columns: 1fr; margin-top: 12px; }
-    .shops { grid-template-columns: 1fr; margin-top: 13px; }
-    .two-col { grid-template-columns: 1fr 1fr; margin-top: 12px; }
-    .tile { padding: 14px; border: 1px solid var(--line); border-radius: 13px; background: #fbfcfd; }
-    .tile strong, .tile span { display: block; }
-    .tile strong { color: var(--navy); }
-    .deadline { padding: 16px; border-radius: 14px; }
-    .deadline.rego { background: var(--amber-soft); border: 1px solid #ecd899; }
-    .deadline.wof { background: var(--green-soft); border: 1px solid #b9dfcd; }
-    .date { margin: 3px 0; font-size: clamp(1.25rem, 4.5vw, 1.7rem); font-weight: 900; line-height: 1.25; }
-    .recommend, .note, .warning, .danger { margin-top: 13px; padding: 14px 16px; border-radius: 12px; }
-    .recommend { color: #0d4e3b; background: var(--green-soft); border: 1px solid #b9dfcd; }
-    .note { color: #163f65; background: var(--blue-soft); }
-    .warning { color: #694500; background: var(--amber-soft); }
-    .danger { color: #6d2222; background: var(--red-soft); border: 1px solid #efc7c7; }
-    .recommend strong, .note strong, .warning strong, .danger strong { display: block; margin-bottom: 3px; }
-    .step { display: grid; grid-template-columns: 40px 1fr; gap: 12px; padding: 14px; border: 1px solid var(--line); border-radius: 13px; background: #fbfcfd; }
-    .number { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 50%; color: #fff; background: var(--navy); font-weight: 900; }
-    .shop { display: flex; flex-direction: column; gap: 9px; padding: 15px; border: 1px solid var(--line); border-radius: 14px; background: #fbfcfd; }
-    .shop p { margin: 0; }
-    .tag { display: inline-block; width: fit-content; padding: 3px 9px; border-radius: 999px; color: #0d4e3b; background: var(--green-soft); font-size: .83rem; font-weight: 800; }
-    .price { color: var(--navy); font-size: 1.45rem; font-weight: 900; }
-    .button-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 5px; }
-    .button { display: inline-flex; min-height: 43px; align-items: center; justify-content: center; padding: 8px 12px; border: 1px solid var(--blue); border-radius: 10px; background: var(--blue); color: #fff; font-weight: 800; text-align: center; text-decoration: none; }
-    .button.secondary { background: #fff; color: var(--blue); }
-    .script { margin-top: 10px; padding: 14px; border: 1px solid #bdc9d4; border-radius: 12px; background: #fbfcfe; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9rem; line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere; user-select: all; }
-    .small, .source-list, .muted { color: var(--muted); font-size: .9rem; }
-    .source-list { padding-left: 20px; }
-    .source-list li { margin: 5px 0; }
-    details { margin-top: 12px; }
-    summary { color: var(--blue); font-weight: 800; cursor: pointer; }
-    section[id] { scroll-margin-top: 12px; }
-    @media (max-width: 760px) {
-      .shops { grid-template-columns: 1fr; }
-      .nav { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 600px) {
-      .hero, .card { padding: 18px; border-radius: 15px; }
-      .vehicle, .deadline-grid, .two-col { grid-template-columns: 1fr; }
-      .button { width: 100%; }
-    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
     @media print {
-      body { background: #fff; font-size: 10.5pt; }
-      .page { width: 100%; padding: 0; }
-      .hero, .card { box-shadow: none; break-inside: avoid; }
-      .hero { color: #000; background: #fff; border: 2px solid #000; }
-      .eyebrow, .updated { color: #333; }
-      .nav, .button-row { display: none; }
-      .button { display: none; }
-      a { color: #000; }
-      details > *:not(summary) { display: block; }
+      @page { size:A4; margin:14mm; }
+      body { background:#fff; font-size:10pt; color:#000; }
+      .page { width:100%; padding:0; }
+      .hero { background:#fff; color:#000; border:2px solid #12355b; padding:16px; }
+      .hero p,.hero .meta,.eyebrow { color:#333; }
+      .quick-nav,.buttons,.skip { display:none; }
+      .card { padding:14px; margin-top:12px; }
+      h2,h3,summary { break-after:avoid; }
+      .panel,.stat,.message,.handover,.notice { break-inside:avoid; }
+      .grid,.stats { display:block; }
+      .panel,.stat { margin-top:8px; }
+      details::details-content { content-visibility:visible; height:auto; }
+      details > *:not(summary) { display:block; }
+      a { color:#000; }
+      footer { font-size:9pt; }
     }
   </style>
 </head>
 <body>
+  <a class="skip" href="#handover">直接前往現場出示卡</a>
   <main class="page">
     <header class="hero">
-      <div class="eyebrow">佳蓉｜紐西蘭車輛續辦｜可手機閱讀及列印</div>
-      <h1>MFY228 rego 與 WoF 指南</h1>
-      <p>rego 已延至 2027 年 6 月 30 日；目前待辦是預約 Kuro Garage 驗 WoF。</p>
-      <div class="updated">資料更新：2026 年 10 月 24 日<br />rego 期限依佳蓉提供的完成結果；WoF 費用依佳蓉向店家詢價。</div>
-      <nav class="nav" aria-label="頁面導覽">
-        <a href="#summary">期限與建議</a><a href="#steps">操作步驟</a><a href="#shops">Kuro Garage</a><a href="#location">住家與工作地</a><a href="#label">rego 標籤</a>
-      </nav>
+      <div class="eyebrow">佳蓉 · MFY228 · 2008 NISSAN TIIDA（藍色）</div>
+      <h1>WoF 驗車，到店照這頁做</h1>
+      <p>先確認預約與檢查費 → 只授權驗車 → 看書面結果 → 維修先報價 → 核對付款與取車。</p>
+      <div class="buttons">
+        <a class="button" href="https://kurogarage.co.nz/zh-hant/" target="_blank" rel="noopener">開啟 Kuro 中文預約</a>
+        <a class="button secondary" href="#handover">已到現場？出示交車卡</a>
+      </div>
+      <p class="meta">更新：2026 年 10 月 25 日（台北時間）<br />本頁的預約日期、到期日與營業時間，均以紐西蘭當地時間為準。</p>
     </header>
 
-    <section class="card" id="summary">
-      <h2>先看這裡｜目前期限與建議</h2>
-      <div class="vehicle">
-        <div class="tile"><strong>車牌</strong><span>MFY228</span></div>
-        <div class="tile"><strong>車款</strong><span>2008 NISSAN TIIDA</span></div>
-        <div class="tile"><strong>車色</strong><span>BLUE（藍色）</span></div>
-      </div>
-      <div class="deadline-grid">
-        <div class="deadline rego"><strong>rego｜車輛牌照</strong><div class="date">2027 年 6 月 30 日</div><span>已完成延期；此為目前牌照到期日。</span></div>
-        <div class="deadline wof"><strong>WoF｜驗車到期</strong><div class="date">2026 年 11 月 17 日</div><span>保留原到期週期：11 月 3 日起可驗；最遲 11 月 17 日完成。</span></div>
-      </div>
-      <div class="recommend"><strong>現在的待辦：預約 11 月 3–10 日驗 WoF</strong>
-        <ul>
-          <li><strong>現在即可安排檢查，不必等到 11 月。</strong>但若在 11 月 3 日前通過，新週期可能從檢查日計算，到期日會提前。</li>
-          <li><strong>若要保留原到期週期，最早檢查日是 2026 年 11 月 3 日。</strong>這是 11 月 17 日到期日前 14 天。</li>
-          <li><strong>最晚在到期前完成的日期：2026 年 11 月 17 日。</strong>不要排到最後一天；優先約 11 月 3–10 日，為修理或複檢留時間。</li>
-          <li>若在 11 月 3 日前通過檢查，通常會按較早的檢查日期計算新週期，WoF 到期日可能提前；如果想延續原有 11 月 17 日週期，請選 11 月 3–17 日。</li>
-        </ul>
-      </div>
-      <div class="note"><strong>rego 與 WoF 是兩個獨立期限</strong>rego 已延至 2027 年 6 月 30 日，不會改變目前 WoF 的 2026 年 11 月 17 日到期日。2008 年車輛在 2026 年 11 月新制下仍是每年驗一次 WoF。</div>
-    </section>
+    <nav class="quick-nav" aria-label="現場快速導覽">
+      <a href="#handover">交車出示卡</a>
+      <a href="#results">通過／不合格</a>
+      <a href="#repair">維修與付款</a>
+    </nav>
 
-    <section class="card" id="steps">
-      <h2>照順序操作</h2>
-      <div class="steps">
-        <article class="step">
-          <div class="number" aria-hidden="true">1</div>
-          <div>
-            <h3>確認 WoF 檢查日期｜現在可檢查；保留週期為 11 月 3–17 日</h3>
-            <ol>
-              <li>可以現在就檢查。若要保留原本 2026 年 11 月 17 日的到期週期，最早選 <strong>11 月 3 日</strong>；這是到期日前第 14 天。</li>
-              <li>11 月 3 日前通過，可能會讓新 WoF 期限從檢查日計算，下一次到期日提前。</li>
-              <li>最晚在現有 WoF 到期日 <strong>11 月 17 日當天</strong>完成並通過。為維修及複檢留時間，建議預約 11 月 3–10 日。</li>
-            </ol>
-            <div class="button-row">
-              <a class="button secondary" href="https://vehicleinspection.nzta.govt.nz/virms/in-service-wof-and-cof/introduction/inspection-and-certification-process/issuing-the-wof-or-cof-label-evidence-of-vehicle?print-friendly=1" target="_blank" rel="noopener">NZTA：WoF 標籤到期日規則</a>
-              <a class="button secondary" href="https://vehicleinspection.nzta.govt.nz/news/changes-to-light-vehicle-inspections-from-1-november-2026" target="_blank" rel="noopener">NZTA：2026 年 11 月 WoF 新規</a>
-            </div>
-          </div>
-        </article>
-        <article class="step">
-          <div class="number" aria-hidden="true">2</div>
-          <div>
-            <h3>用 Kuro Garage 中文網頁預約｜首選 11 月 3–10 日</h3>
-            <ol>
-              <li>打開 Kuro Garage 繁體中文網站，填姓名、聯絡方式、車牌 <strong>MFY228</strong>，車款填 <strong>2008 Nissan Tiida</strong>。</li>
-              <li>服務選「WOF 驗車」，日期選 <strong>11 月 3–10 日</strong>，再選網頁提供的時段。</li>
-              <li>在備註欄貼上下面的文字，送出預約。以成功畫面或店家確認訊息為準；未收到確認前，先不要把時段當成已訂妥。</li>
-              <li>費用依佳蓉詢價為 NZ$70。請書面確認這是 WoF 檢查費；若未通過，先索取缺失清單。修理需另報價，佳蓉同意前不要施工。</li>
-            </ol>
-            <div class="script" lang="zh-Hant">您好，我要為 2008 Nissan Tiida（車牌 MFY228）預約 WoF。現有 WoF 到期日為 2026 年 11 月 17 日。請確認預約日期、時間，以及 NZ$70 是否為 WoF 檢查費。若車輛未通過，請先提供書面缺失清單與逐項維修報價；未經我確認，請勿進行維修。謝謝。</div>
-            <p class="small">Kuro Garage 官網可選服務、日期和時間，無須先打電話。確認安排時可使用網頁表單及備註欄。</p>
-          </div>
-        </article>
-        <article class="step">
-          <div class="number" aria-hidden="true">3</div>
-          <div>
-            <h3>完成 WoF 並保留檢查結果｜最遲 11 月 17 日</h3>
-            <ul>
-              <li>驗車通過後，查看新 WoF 標籤的期限並拍照留存。11 月 3–17 日通過時，通常可沿用現有 11 月 17 日到期週期；以驗車站核發的新日期為準。</li>
-              <li>若未通過，先取得書面缺失清單與逐項報價；確認費用後再決定修理。政府指南指出，28 天內回同一驗車機構複檢免費；維修費另計，預約時確認 Kuro 的複檢安排。</li>
-              <li>若舊 WoF 到期後仍未取得新 WoF，不可把車當作日常交通使用；無有效 WoF 時只有在車輛安全且行程是前往修理或檢驗的條件下才可上路。</li>
-            </ul>
-            <div class="button-row">
-              <a class="button secondary" href="https://vehicleinspection.nzta.govt.nz/news/changes-to-light-vehicle-inspections-from-1-november-2026" target="_blank" rel="noopener">NZTA：2026 年 11 月 WoF 新規</a>
-              <a class="button secondary" href="https://vehicleinspection.nzta.govt.nz/virms/in-service-wof-and-cof/introduction/inspection-and-certification-process/issuing-the-wof-or-cof-label-evidence-of-vehicle?print-friendly=1" target="_blank" rel="noopener">NZTA：WoF 標籤到期日規則</a>
-            </div>
-          </div>
-        </article>
+    <section class="card" id="summary">
+      <h2>目前只要安排 WoF</h2>
+      <div class="stats">
+        <div class="stat"><span>建議預約檢查</span><strong>2026 / 11 / 3–10</strong><span>保留維修、複檢時間</span></div>
+        <div class="stat"><span>目前 WoF 到期</span><strong>2026 / 11 / 17</strong><span>最遲這天通過，別排最後一天</span></div>
+        <div class="stat"><span>rego 延期已完成</span><strong>2027 / 6 / 30</strong><span>牌照與 WoF 是獨立期限</span></div>
       </div>
-      <div class="warning"><strong>2 月中至 3 月中不在紐西蘭，不需要暫停 rego</strong>rego 目前有效至 2027 年 6 月 30 日。NZTA rego 暫停（exemption）至少要申請 3 個月，且暫停期間不能把車開上道路；這段約一個月的離境期間不適用暫停方案。</div>
+      <p class="notice"><strong>下一步：</strong>向 Kuro Garage 提出預約，收到<strong>店家的確認 Email</strong>後才算訂妥。此頁目前記錄：預約待確認、WoF 待完成。</p>
+      <details>
+        <summary>何時驗車，會怎樣影響新到期日？</summary>
+        <div class="details-body">
+          <ul>
+            <li><strong>現在也可以驗。</strong>建議 11 月 3–10 日，是為了保留原到期週期並預留處理時間。</li>
+            <li><strong>11 月 3–17 日通過：</strong>依本車預期一年週期，新到期日應為 <strong>2027 年 11 月 17 日</strong>。</li>
+            <li><strong>11 月 3 日以前通過：</strong>以「通過日加 14 天」作起算基準，再加適用有效期間。例如 11 月 2 日通過，一年週期的新到期日為 2027 年 11 月 16 日。</li>
+            <li><strong>舊 WoF 過期才通過：</strong>以通過日作起算基準；過期期間有行車限制。</li>
+          </ul>
+          <p class="small">2008 年車輛在 2026 年 11 月新制下預期仍為一年一次；正式週期按 NZTA 全球首次登記日期及車輛類別核定。取車時以新標籤與檢查紀錄核對。</p>
+        </div>
+      </details>
     </section>
 
     <section class="card" id="shops">
-      <h2>本次選定驗車廠：Kuro Garage</h2>
-      <p>預約與店址資料於 2026 年 10 月 24 日核對。NZ$70 是佳蓉向店家詢得的價格；官網沒有列出 WoF 價目。</p>
-      <div class="shops">
-        <article class="shop">
-          <span class="tag">本次選定｜支援繁體中文線上預約</span>
-          <h3>Kuro Garage｜Sydenham</h3>
-          <div class="price">NZ$70 <span class="muted">佳蓉詢價</span></div>
-          <p><strong>地址：</strong>201 Wordsworth Street, Sydenham, Christchurch 8023</p>
-          <p><strong>預約方式：</strong>官網表單可選 WoF、日期和時段，填車牌及聯絡資料後送出。營業時間：週一至週五 8:00–17:00；週六 8:00–16:00。</p>
-          <p><strong>評價與店家資訊：</strong>官網自述自 2026 年開始營運，並標示 MTA 認可；本次未找到可獨立核對的 MTA 會員頁、數字評分或評論數。</p>
-          <p><strong>價格判斷：</strong>NZ 政府列出的基本輕型車 WoF 通常為 NZ$50–90，NZ$70 在一般範圍中間，屬合理價；不是最低價。維修費另計。</p>
-          <div class="button-row">
-            <a class="button" href="https://kurogarage.co.nz/zh-hant/" target="_blank" rel="noopener">Kuro Garage 中文預約</a>
-            <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Kuro+Garage+201+Wordsworth+Street+Sydenham+Christchurch" target="_blank" rel="noopener">查看地圖與路線</a>
-          </div>
-        </article>
+      <h2>本次店家：Kuro Garage</h2>
+      <div class="grid">
+        <div>
+          <p><strong>201 Wordsworth Street<br />Sydenham, Christchurch 8023</strong></p>
+          <p>週一至週五 08:00–17:00<br />週六 08:00–16:00</p>
+          <p class="small">臨時找不到店家可用公開電話：<a href="tel:+6432421666">03 242 1666</a>。平時優先用表單及確認 Email 聯絡。</p>
+        </div>
+        <div class="panel">
+          <h3>WoF 詢得價格：NZ$70</h3>
+          <p>這是佳蓉向店家問到的價格，官網未列價目。<strong>含 GST 的總價、付款附加費及檢查範圍，仍要在開始前確認。</strong></p>
+          <p class="small">維修與額外付費診斷另報價；本頁沒有預先授權任何維修。</p>
+        </div>
       </div>
-      <div class="note"><strong>值不值得選</strong>NZ$70 符合政府提供的基本 WoF 通常價格範圍，並可用中文網頁選日期和時段；如果佳蓉重視線上操作和不需口頭溝通，價格合理。若只看最低價，市場上仍有較便宜選項；Kuro 網站新、且沒有可核實的公開評分數字，因此不要只依 MTA 標示推定服務品質。</div>
+      <div class="buttons">
+        <a class="button" href="https://kurogarage.co.nz/zh-hant/" target="_blank" rel="noopener">預約表單</a>
+        <a class="button secondary" href="https://www.google.com/maps/dir/?api=1&amp;destination=201+Wordsworth+Street+Sydenham+Christchurch+8023" target="_blank" rel="noopener">導航到店家</a>
+      </div>
+      <details id="location">
+        <summary>從住家／工作地出發，先安排交通</summary>
+        <div class="details-body">
+          <p><strong>住家區域：</strong>Upper Riccarton／Peer Street 一帶；Kuro 在 Sydenham，出發前用地圖查看實際路線與時間。本頁不放完整住址。</p>
+          <p><strong>工作區域：</strong>Papanui／Main North Road 一帶仍為暫定，請用自己的實際工作地址核對。</p>
+          <p>預約時確認能否現場等候、交車與取車時間、停車安排。若要留車，先安排回家／上班交通；借用車、接送及下班後取車均未確認，不能預設有提供。</p>
+        </div>
+      </details>
     </section>
 
-    <section class="card" id="location">
-      <h2>依住家與工作地安排交通</h2>
-      <div class="two-col">
-        <div class="tile">
-          <strong>住家區域：Upper Riccarton／Peer Street 一帶</strong>
-          <p>Kuro Garage 位於 Sydenham，與 Upper Riccarton 住家區不同區；是否方便要依實際出發時間及交通方式確認。用地圖按住家附近起點查看路線；此頁不放完整住址。</p>
-          <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Kuro+Garage+201+Wordsworth+Street+Sydenham+Christchurch" target="_blank" rel="noopener">查看 Kuro Garage 地圖與路線</a>
+    <section class="card" id="steps">
+      <span class="step-label">01 · 預約</span>
+      <h2>填表後，等確認 Email</h2>
+      <ol>
+        <li>填姓名、手機、Email、車牌 <strong>MFY228</strong>；車款填 <strong>2008 Nissan Tiida</strong>。</li>
+        <li>服務選 <strong>WOF 驗車</strong>；優先提出 <strong>11 月 3–10 日</strong>的可配合日期與時段，備註可貼下方訊息。額滿可改約 11 月 11–17 日，但留給維修、複檢的時間較少。</li>
+        <li>收到店家<strong>確認 Email</strong>後，核對日期、時間、地址、含 GST 檢查總價、預計多久及取車安排，保存截圖。</li>
+        <li>只有送出成功畫面仍屬申請。沒收到確認信，先查垃圾郵件，再透過官網確認；不要直接當作已訂位。改期或可能遲到時，回覆確認信聯絡店家。</li>
+      </ol>
+      <details>
+        <summary>展開：可貼入表單的中文預約訊息</summary>
+        <div class="details-body">
+          <p class="small">先替換括號內容；長按訊息可複製。官網提供繁中介面，現場是否有中文人員仍需確認。</p>
+          <div class="message" lang="zh-Hant">您好，我想為 2008 Nissan Tiida（藍色，車牌 MFY228）預約 WoF；目前到期日為 2026 年 11 月 17 日。
+
+希望日期／時段：（填可配合的紐西蘭當地日期與時間）。我詢得檢查費 NZ$70，請確認這次只做 WoF 的含 GST 總價、任何付款附加費、預計所需時間，以及交車／取車安排。也請說明未通過時如何預約複檢。
+
+請先只安排 WoF 檢查；維修、保養或額外付費診斷，請先提供書面報價並等我書面同意。請用 Email 或簡訊聯絡，並寄 Email 確認預約，謝謝。</div>
         </div>
-        <div class="tile">
-          <strong>工作區域：Papanui／Main North Road 一帶（暫定）</strong>
-          <p>佳蓉目前工作店址尚未從紀錄確認。先在自己的地圖 app 輸入實際工作地址，再查看到 Kuro Garage 的路線與班次；不要只依暫定區域決定。</p>
-          <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Papanui%2C+Christchurch" target="_blank" rel="noopener">查看 Papanui 區域地圖</a>
+      </details>
+      <details>
+        <summary>展開：出發前帶什麼、先檢查什麼？</summary>
+        <div class="details-body">
+          <ul class="checklist">
+            <li>車鑰匙、預約確認信、NZ$70 詢價／費用確認紀錄；若是複檢，再帶上次檢查表。</li>
+            <li>清出座椅、安全帶與行李廂的檢查空間；移除會妨礙檢查的雜物。</li>
+            <li>簡單確認車燈、方向燈、喇叭、雨刷及玻璃清洗液；已知警示燈、異音或車身固定問題，寫下並如實告知。</li>
+            <li>先截圖下方交車卡，或用瀏覽器列印／另存 PDF，現場可直接出示。</li>
+          </ul>
+          <p class="small">這些只是事前準備，不代表車輛一定會通過；有安全疑慮時先向店家確認交通安排。</p>
         </div>
+      </details>
+    </section>
+
+    <section class="card handover" id="handover">
+      <span class="step-label">02 · 到店交車</span>
+      <h2>把這張卡給店員看</h2>
+      <p class="small">依確認時段到店，建議預留約 10 分鐘找停車與核對工作單。先確認費用，再交鑰匙；英文可長按複製或直接出示。</p>
+      <div class="message" lang="en"><p><strong>MFY228 · 2008 Nissan Tiida · WoF inspection only</strong></p><p>I was quoted NZ$70. Please confirm the total, including GST and payment fees, before starting.</p><p>No repairs, servicing or extra paid diagnostics without my written approval, please.</p><p>If it fails, please give me the fail report and an itemised GST-inclusive quote. Separate required WoF repairs from optional work.</p><p>Please contact me by text or email. Thank you.</p></div>
+      <p class="translation"><strong>中文意思：</strong>只做 WoF；開始前確認 NZ$70 是否為含 GST 與付款附加費的總價。維修、保養及額外付費診斷，先等我書面同意。未通過時，請提供缺失清單與含 GST 分項報價，分清必修和建議項目；用 Email／簡訊聯絡。</p>
+      <p class="notice"><strong>若要簽工作單：</strong>確認寫的是「WoF inspection only」。若含「直接修理全部缺失」或未議定費用的廣泛授權，請先改清楚再簽。留下已同意範圍與金額的照片／副本。</p>
+      <p class="small">現場價格若與確認信不同，先請店家列明差額及原因，再決定是否接受檢查；額外服務也先確認範圍與總價。</p>
+    </section>
+
+    <section class="card" id="results">
+      <span class="step-label">03 · 看檢查結果</span>
+      <h2>先拿書面結果，再決定下一步</h2>
+      <div class="grid">
+        <article class="panel good">
+          <h3>PASS · 通過</h3>
+          <ul>
+            <li>索取檢查紀錄，確認車牌與結果。</li>
+            <li>若 11 月 3–17 日通過，依本車預期一年週期，核對新到期日為 <strong>2027 年 11 月 17 日</strong>；有差異就當場請店家說明。</li>
+            <li>確認 WoF 標籤已貼妥，拍照留存，接著看<a href="#collect">付款取車清單</a>。</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h3>FAIL · 不合格</h3>
+          <ul>
+            <li>拿到完整<strong>不合格檢查表</strong>，請店家指出缺失位置、理由；需要時請提供照片或量測結果。</li>
+            <li>分開列「通過 WoF 必須修」與「建議保養／外觀處理」。有疑問先請店家說明對應檢查標準。</li>
+            <li>確認安全移動方式、免費複檢的最後日期與可預約時段，再看<a href="#repair">維修報價步驟</a>。</li>
+          </ul>
+        </article>
       </div>
-      <div class="warning"><strong>預約前確認交車與取車時間</strong>詢問能否在上班前交車、下班後取車，以及車輛停放安排。若時間不合，改約休假日並預先安排交通；工作區域仍須按實際店址核對。</div>
+      <div class="notice danger"><strong>一旦不合格，就不能繼續照常通勤、買菜。</strong>即使舊 WoF 標籤還沒到期，也須先恢復合規。只有<strong>車輛安全可行駛，而且行程純為前往維修或驗車</strong>時才可上路；不安全就安排拖吊。<strong>28 天是複檢期限，不是行車寬限期。</strong></div>
+      <details>
+        <summary>展開：28 天免費複檢與換店規則</summary>
+        <div class="details-body">
+          <ul>
+            <li>初次失敗後 <strong>28 天內回同一驗車機構</strong>，為同一次 WoF 的後續檢查免檢驗費；維修費另計。請店家直接寫下本次複檢截止日期。</li>
+            <li>可在別處修理，再依期限回原驗車機構複檢。移動車輛仍須符合上方安全及用途條件。</li>
+            <li>超過 28 天，須重新完整驗車並付費；改去另一驗車機構也不會自動繼承免費資格。</li>
+            <li>先確認複檢是否要預約、需多久，以及維修單據要帶哪些；不要等截止日才回店。</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section class="card" id="repair">
+      <span class="step-label">04 · 需要修理時</span>
+      <h2>先看含 GST 報價，再書面同意</h2>
+      <p>先處理通過 WoF 的必要項目。店家建議的保養、升級及外觀處理可分開考慮；沒有義務把所有維修交給原驗車廠。</p>
+      <ul class="checklist">
+        <li><strong>項目：</strong>每個缺失的部位、處理方式，以及哪些是通過 WoF 的必要工作。</li>
+        <li><strong>費用：</strong>零件、工資／工時、額外診斷、耗材及其他費用，連同 <strong>GST 和付款附加費的最後總額</strong>。若報價或檢查本身收費，先確認。</li>
+        <li><strong>零件與保固：</strong>品牌、規格、新品／二手或替代品，以及零件和施工保固條件。</li>
+        <li><strong>時間：</strong>零件何時到、何時完工、何時複檢；如需留車，確認停放及取車安排和費用。</li>
+      </ul>
+      <p class="notice"><strong>優先索取書面 quote（約定範圍的固定報價）。</strong>Estimate 只是估價；若只有估價，先約定最高可接受總額，超出前必須暫停並取得同意。接受 quote 後要改項目或加費，也請先確認。</p>
+      <details>
+        <summary>展開：報價太高／還沒決定，出示這段</summary>
+        <div class="details-body">
+          <div class="message" lang="en">Please send me the fail report and an itemised GST-inclusive quote for the work required to pass the WoF. Please list optional work separately. I have not authorised repairs or additional paid diagnostics yet. Please confirm any fee for preparing the quote or storing the vehicle before I agree.</div>
+          <p class="translation">請提供不合格報告及 WoF 必修項目的含 GST 分項報價；選做工作另列。我尚未同意維修或額外付費診斷。報價或留車如收費，請先說明並等我同意。</p>
+          <p>可拿同一份缺失清單比較別家的<strong>相同範圍、零件規格與含 GST 總價</strong>。先確認車輛能否安全、合法移動；拖吊及交通費也要算入總成本。</p>
+          <p class="small">若維修涉及既有理賠處理中的部位，先保存照片及報價，按原案件的安排確認後再授權；WoF 檢查不等於保險維修已核准。</p>
+        </div>
+      </details>
+      <details>
+        <summary>展開：確定接受報價後，再填這段授權</summary>
+        <div class="details-body">
+          <p class="small">先填好真實報價編號、項目、總額和日期，再傳送。空白範本不代表已同意維修。</p>
+          <div class="message" lang="en">I approve only the work listed in quote [number/date and items], for a fixed total of NZ$[amount] including GST and all agreed fees, to be completed by [date]. Please stop and obtain my written approval before any extra work or price increase. Please confirm the recheck and collection arrangements.</div>
+          <p class="translation">我只同意指定報價所列工作，總價含 GST 與約定費用，按填寫日期完工。額外工作或加價前，先暫停並取得我的書面同意；請確認複檢與取車安排。</p>
+          <p class="small">Kuro 官網表示檢查前價格可能是 estimate；額外工作會先書面報價。若收到檢查影片／建議項目連結，逐項看清再同意或拒絕，避免一次勾選全部。</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="card" id="collect">
+      <span class="step-label">05 · 付款與取車</span>
+      <h2>離店前，核對這五件事</h2>
+      <ol>
+        <li><strong>確認 WoF 狀態：</strong>恢復日常用車前，須已通過；如曾失敗，確認維修後完成複檢，取得通過紀錄。</li>
+        <li><strong>核對紀錄與標籤：</strong>車牌須為 MFY228；通過後核對新到期日及標籤，拍照保存。</li>
+        <li><strong>帳單符合授權：</strong>車牌、日期、工作、零件、工資、GST、任何附加費及總額，都與已同意內容核對。</li>
+        <li><strong>保存付款與保固：</strong>索取明細帳單、已付款收據和適用保固條件；付款可用店家接受的方式。詢問現金優惠時，確認折扣後含 GST 的正式總價，仍保留收據。</li>
+        <li><strong>拿齊再離開：</strong>鑰匙、檢查表、維修單、收據都存好。若有未完成或爭議事項，先請店家書面說明並處理取車安排。</li>
+      </ol>
+      <p class="notice"><strong>未通過也可以安排取車另修：</strong>先拿不合格檢查表、記下複檢截止日期，確認安全且純為維修／複檢的行程才開車；不能安全行駛時安排拖吊。取車不代表已可恢復日常駕駛。</p>
+      <details>
+        <summary>展開：帳單不符、對驗車或修理有疑問</summary>
+        <div class="details-body">
+          <p><strong>帳單／維修問題：</strong>先要求分項明細與加做工作的授權紀錄，向店家書面提出。維修品質有問題，先給原店合理機會補救；仍無法解決，可依 Consumer Protection 指引處理，必要時向 Disputes Tribunal 申請。</p>
+          <p><strong>WoF 判定問題：</strong>先向驗車機構確認缺失和標準；仍有爭議可向 NZTA 提出車輛認證申訴。若 NZTA 要安排檢查，先依指示保存車況。</p>
+          <p class="small">Kuro 官網列施工品質保固 90 天，零件依供應商條件；Consumer Guarantees Act 的法定權利不因店家保固到期就自動消失。現金付款也不會免除已註冊店家就折後交易申報 GST 的義務。</p>
+          <div class="buttons">
+            <a class="button secondary" href="https://www.consumerprotection.govt.nz/help-product-service/cars/fixing-your-car" target="_blank" rel="noopener">維修與帳單問題</a>
+            <a class="button secondary" href="https://www.nzta.govt.nz/contact-us/complaints/complaint-about-a-specific-matter" target="_blank" rel="noopener">WoF 判定申訴</a>
+          </div>
+        </div>
+      </details>
     </section>
 
     <section class="card" id="label">
-      <h2>rego 標籤：寄送與展示</h2>
-      <ul>
-        <li><strong>續牌已完成：</strong>請確認收據或 NZTA 車輛查詢顯示到期日為 2027 年 6 月 30 日。</li>
-        <li><strong>網路續牌沒有可下載自印的普通 rego 標籤：</strong>NZTA 會把紙本標籤寄到登記地址；通常在 14 天內送達。若想即時拿標籤，可到 NZTA 授權代理辦理。</li>
-        <li><strong>若尚未收到：</strong>完成付款後等候郵寄；若 14 天仍未收到，使用 NZTA 的補發流程。保留付款收據及車牌資料。</li>
-        <li><strong>展示規則：</strong>NZTA 已公布自 2027 年 3 月起改為選擇性展示；在此之前仍須按規定展示實體標籤。若規則日期有更新，以 NZTA 最新公告為準。</li>
-      </ul>
-      <div class="button-row">
-        <a class="button secondary" href="https://www.nzta.govt.nz/vehicles/licensing-rego/getting-your-vehicle-licence-rego" target="_blank" rel="noopener">NZTA：續牌、標籤寄送及代理辦理</a>
-        <a class="button secondary" href="https://www.nzta.govt.nz/contact-us/email-us/i-havent-received-my-ruc-or-rego-label" target="_blank" rel="noopener">NZTA：未收到 rego 標籤</a>
-      </div>
+      <span class="step-label">06 · 已完成的 rego</span>
+      <h2>rego 已延至 2027 年 6 月 30 日</h2>
+      <p>目前不用為這次 WoF 再續一次 rego。保留付款結果；牌照延期不會延長 WoF。</p>
+      <details>
+        <summary>展開：rego 標籤、離境一個月與之後離開紐西蘭</summary>
+        <div class="details-body">
+          <ul>
+            <li>網路續牌的標籤通常在 14 天內郵寄送達；普通 rego 標籤沒有下載自印版本。收到後按現行規定展示在前擋風玻璃左側。</li>
+            <li>14 天仍未收到，先核對 NZTA 登記地址，再走補發標籤流程。已完成續牌者不必為拿標籤再買一次 rego。</li>
+            <li>NZTA 公告 rego 標籤自 2027 年 3 月起可選擇展示；生效前照現行規定展示，屆時再核對最新公告。</li>
+            <li>預計 2027 年 2 月中至 3 月中不在紐西蘭：約一個月，未達 rego 暫停至少 3 個月的條件，現有有效期照常繼續。</li>
+            <li>預計 2027 年 6 月中離開：目前 rego 到 6 月 30 日可涵蓋這段期間；出售或交車時另核對當時 WoF、過戶及保險安排。</li>
+          </ul>
+          <div class="buttons">
+            <a class="button secondary" href="https://www.nzta.govt.nz/vehicles/licensing-rego/getting-your-vehicle-licence-rego" target="_blank" rel="noopener">rego 與標籤說明</a>
+            <a class="button secondary" href="https://transact.nzta.govt.nz/v2/replacement-labels" target="_blank" rel="noopener">補發 rego 標籤</a>
+          </div>
+        </div>
+      </details>
     </section>
 
     <section class="card" id="sources">
-      <h2>來源與資訊範圍</h2>
-      <p class="small">本頁只列佳蓉車輛續辦所需資料。完整私人住址不公開；工作地仍標為暫定。</p>
+      <h2>價格、資訊範圍與來源</h2>
+      <p class="small">車輛期限以佳蓉提供的結果為準；店家資料及下列官方規則於 2026 年 10 月 25 日查核。實際預約、費用和車況，以店家書面確認及正式檢查結果核對。</p>
       <details>
-        <summary>展開查看 NZTA、政府、MTA 及店家來源</summary>
-        <ul class="source-list">
-          <li><a href="https://transact.nzta.govt.nz/transactions/CheckExpiry/entry" target="_blank" rel="noopener">NZTA 車輛期限查詢</a>：重新核對 MFY228 的 rego 與 WoF 日期。</li>
-          <li><a href="https://www.nzta.govt.nz/vehicles/licensing-rego/getting-your-vehicle-licence-rego" target="_blank" rel="noopener">NZTA vehicle licence（rego）續辦與標籤說明</a>。</li>
-          <li><a href="https://www.nzta.govt.nz/projects-and-consultations/have-your-say/past-consultations/proposed-changes-to-modernise-nzta-services" target="_blank" rel="noopener">NZTA 服務現代化公告</a>：rego 標籤展示要求的預定調整。</li>
-          <li><a href="https://vehicleinspection.nzta.govt.nz/news/changes-to-light-vehicle-inspections-from-1-november-2026" target="_blank" rel="noopener">NZTA：2026 年 11 月 1 日起輕型車 WoF 檢驗週期變更</a>。</li>
-          <li><a href="https://vehicleinspection.nzta.govt.nz/virms/in-service-wof-and-cof/introduction/inspection-and-certification-process/issuing-the-wof-or-cof-label-evidence-of-vehicle?print-friendly=1" target="_blank" rel="noopener">NZTA VIRM：WoF 標籤到期日計算</a>。</li>
-          <li><a href="https://vehicleinspection.nzta.govt.nz/virms/in-service-wof-and-cof/introduction/inspection-and-certification-process/operating-a-vehicle-without-a-current-wof-or-cof?print-friendly=1" target="_blank" rel="noopener">NZTA VIRM：沒有有效 WoF 時的行車規定</a>。</li>
-          <li><a href="https://www.nzta.govt.nz/vehicles/licensing-rego/exemptions/put-your-licence-rego-on-hold" target="_blank" rel="noopener">NZTA：申請 rego 暫停（exemption）</a>。</li>
-          <li><a href="https://www.govt.nz/browse/transport/keeping-a-vehicle-on-the-road/get-a-warrant-of-fitness-or-certificate-of-fitness/" target="_blank" rel="noopener">紐西蘭政府：WoF 費用及複檢規則</a>：基本輕型車 WoF 通常 NZ$50–90；合資格的 28 天內同一驗車機構複檢免費（查詢日：2026 年 10 月 24 日）。</li>
-          <li><a href="https://kurogarage.co.nz/zh-hant/" target="_blank" rel="noopener">Kuro Garage 繁體中文官網</a>：Sydenham 地址、WoF 服務、線上選日期／時段、營業時間及 MTA 標示（查詢日：2026 年 10 月 24 日）。</li>
-          <li><a href="https://mta.org.nz/find-members" target="_blank" rel="noopener">MTA 會員查詢</a>：可按店名或地址查詢會員資料；本次未核實到 Kuro Garage 的獨立評分或評論數。</li>
-        </ul>
+        <summary>NZ$70 合理嗎？還有哪些費用未知？</summary>
+        <div class="details-body">
+          <p>紐西蘭政府列基本輕型車 WoF 通常 NZ$50–90，佳蓉詢得的 NZ$70 在此範圍內。維修價、GST 是否已含在詢價中、等候時間、停車與借用車安排，均未由本頁取得書面確認。</p>
+          <p>沒有可核對的 Kuro WoF 通過率或維修工資公開表，不能靠「寬鬆」傳聞估算總成本。官網標示 MTA 認可及自 2026 年營運；本次未獨立核實會員頁或數字評分。</p>
+          <p>預約及交車時先只同意 WoF 檢查，把必修與選做項目分開，再比較相同範圍的含 GST 書面報價，能讓費用更可掌握。</p>
+        </div>
+      </details>
+      <details>
+        <summary>展開：店家、NZTA、GST 與消費權益來源</summary>
+        <div class="details-body">
+          <ul class="sources">
+            <li><a href="https://kurogarage.co.nz/zh-hant/" target="_blank" rel="noopener">Kuro Garage 繁中官網</a>：服務、地址、營業時間及表單。</li>
+            <li><a href="https://kurogarage.co.nz/terms/" target="_blank" rel="noopener">Kuro 服務條款</a>：預約申請需確認 Email、估價、額外工作報價及授權；<a href="https://kurogarage.co.nz/warranty/" target="_blank" rel="noopener">店家保固條款</a>。</li>
+            <li><a href="https://www.govt.nz/browse/transport/keeping-a-vehicle-on-the-road/get-a-warrant-of-fitness-or-certificate-of-fitness/" target="_blank" rel="noopener">紐西蘭政府：WoF 費用與複檢</a>。</li>
+            <li><a href="https://www.nzta.govt.nz/vehicles/warrants-and-certificates/warrant-of-fitness/" target="_blank" rel="noopener">NZTA：WoF 及不合格後行車規定</a>；<a href="https://vehicleinspection.nzta.govt.nz/virms/in-service-wof-and-cof/introduction/inspection-and-certification-process/operating-a-vehicle-without-a-current-wof-or-cof" target="_blank" rel="noopener">VIRM 3-10 詳細規則</a>。</li>
+            <li><a href="https://vehicleinspection.nzta.govt.nz/virms/in-service-wof-and-cof/introduction/inspection-and-certification-process/issuing-the-wof-or-cof-label-evidence-of-vehicle" target="_blank" rel="noopener">NZTA VIRM：到期日計算</a>；<a href="https://vehicleinspection.nzta.govt.nz/news/changes-to-light-vehicle-inspections-from-1-november-2026" target="_blank" rel="noopener">2026 年 11 月檢驗週期新制</a>。</li>
+            <li><a href="https://vehicleinspection.nzta.govt.nz/virms/in-service-wof-and-cof/introduction/inspection-and-certification-process/rechecks" target="_blank" rel="noopener">NZTA VIRM：28 天複檢</a>；<a href="https://vehicleinspection.nzta.govt.nz/virms/in-service-wof-and-cof/introduction/inspection-and-certification-process/check-sheets" target="_blank" rel="noopener">檢查表與副本</a>。</li>
+            <li><a href="https://www.consumerprotection.govt.nz/help-product-service/cars/fixing-your-car" target="_blank" rel="noopener">Consumer Protection：汽車維修權益</a>；<a href="https://www.consumerprotection.govt.nz/general-help/guide-to-buying-smart/quotes-and-estimates" target="_blank" rel="noopener">Quote 與 estimate</a>。</li>
+            <li><a href="https://www.ird.govt.nz/gst/charging-gst" target="_blank" rel="noopener">IRD：GST 與含稅價格</a>。</li>
+            <li><a href="https://transact.nzta.govt.nz/transactions/CheckExpiry/entry" target="_blank" rel="noopener">NZTA 車輛期限查詢</a>；<a href="https://www.nzta.govt.nz/vehicles/licensing-rego/getting-your-vehicle-licence-rego" target="_blank" rel="noopener">rego 與郵寄標籤</a>。</li>
+            <li><a href="https://www.nzta.govt.nz/vehicles/licensing-rego/exemptions/put-your-licence-rego-on-hold" target="_blank" rel="noopener">NZTA：rego 暫停條件</a>；<a href="https://www.nzta.govt.nz/projects-and-consultations/have-your-say/past-consultations/proposed-changes-to-modernise-nzta-services" target="_blank" rel="noopener">2027 年標籤展示調整公告</a>。</li>
+          </ul>
+        </div>
       </details>
     </section>
+    <footer>可用同一網址在手機或電腦閱讀；需要離線使用時，請先截圖交車卡，或列印／另存 PDF。公開頁不記錄私人聯絡資料或個人的預約授權。</footer>
   </main>
 </body>
 </html>
