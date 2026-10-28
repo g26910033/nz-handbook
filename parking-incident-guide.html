@@ -101,8 +101,8 @@
       .payment { gap:18px; padding:15px; align-items:flex-start; }
       .payment .amount { font-size:27px; }
       .payment p { font-size:.95em; }
-      .nav { gap:6px; flex-wrap:nowrap; overflow-x:auto; padding-bottom:4px; }
-      .nav a { padding:6px 11px; flex:0 0 auto; }
+      .nav { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px; }
+      .nav a { display:flex; min-height:40px; align-items:center; justify-content:center; padding:5px 7px; text-align:center; }
       .facts { grid-template-columns:5.7em minmax(0,1fr); gap:8px 10px; font-size:.95em; }
       .deadline-grid { gap:8px; }
       .deadline { padding:10px 12px; }
@@ -131,36 +131,31 @@
 <header class="masthead">
 <span class="eyebrow">佳蓉 · MFY228</span>
 <h1>車險處理卡</h1>
-<div class="updated">資料更新：2026/10/29</div>
+<div class="updated">更新時間｜紐西蘭：2026/10/29 12:54 NZDT　·　台北：2026/10/29 07:54 CST<br />版本：102912541</div>
 </header>
 <div aria-label="選擇事故" class="incident-tabs" hidden="" role="tablist">
-<button aria-controls="incident-mazda" aria-selected="true" class="incident-tab" id="tab-mazda" role="tab" type="button"><strong>8/12 · Mazda</strong><span>801516 · 修自車</span></button>
-<button aria-controls="incident-bmw" aria-selected="false" class="incident-tab" id="tab-bmw" role="tab" tabindex="-1" type="button"><strong>9/22 · BMW</strong><span>803286 · 第三方</span></button>
+<button aria-controls="incident-mazda" aria-selected="true" class="incident-tab" id="tab-mazda" role="tab" type="button"><strong>8/12 · Mazda</strong><span>801516 · 已授權｜10/30 入廠</span></button>
+<button aria-controls="incident-bmw" aria-selected="false" class="incident-tab" id="tab-bmw" role="tab" tabindex="-1" type="button"><strong>9/22 · BMW</strong><span>803286 · 純第三方｜免自負額</span></button>
 </div>
 <noscript><p class="note">未啟用 JavaScript 時，兩案會依序顯示。</p></noscript>
 <div aria-labelledby="tab-mazda" class="incident-panel" id="incident-mazda" role="tabpanel" tabindex="0">
 <header class="case-header">
 <span class="priority done">801516 · 維修已授權</span>
-<h2>預約已確認｜10/30（五）11:00 入廠</h2>
-<nav aria-label="維修案導覽" class="nav"><a href="#old-current">下一步</a><a href="#shop-repair-reply">預約安排</a><a href="#shop-contact">聯絡車廠</a><a href="#estimate">修什麼／估價</a><a href="#vehicle-deadlines">WOF 期限</a><a href="#old-correspondence">最新信件</a><a href="#old-archive">歷史紀錄</a></nav>
+<h2>10/30（五）11:00 送車｜預約已確認</h2>
+<nav aria-label="維修案導覽" class="nav"><a href="#old-current">目前安排</a><a href="#estimate">核准工項</a><a href="#vehicle-deadlines">WOF</a><a href="#shop-contact">車廠聯絡</a><a href="#old-correspondence">信件紀錄</a></nav>
 </header>
 <section class="card" id="old-current">
-<h2>下一步</h2>
-<div class="payment"><div><small>本案自負額</small><strong class="amount">NZD 500</strong></div><p><strong>完工取車時付給 Rosiez</strong><br />借代步車另收一次性 NZD 50 行政費＋補油；付款方式待確認。授權單保戶分攤款為 0。</p></div>
-<ol class="steps">
-<li><strong>10/30（五）上午 11 點入廠已確認</strong>Rosiez 回覆可送車，並可從週五開始施工。時間均為紐西蘭當地時間。</li>
-<li><strong>維修估計 5～7 個工作天</strong>週末不施工；目前沒有確切完工／取車日期，依車廠後續通知為準。</li>
-<li><strong>代步車有車可用</strong>Rosiez 表示有車可提供；一次性 NZD 50 行政費＋補油。回信未明確寫出已正式預留；車輛仍須自行送到及取回。</li>
-</ol>
-<div class="button-row"><a class="button" href="#shop-repair-reply">看預約安排</a><a class="button secondary" href="#shop-confirmed-fri">看 10/29 確認信</a></div>
-<p class="muted">MAS 已完成授權，現階段無須再寄同意維修信；兩案仍各自留存，並未合併成一次事故。</p>
+<h2>目前安排</h2>
+<div class="payment"><div><small>自負額｜完工取車時付給 Rosiez</small><strong class="amount">NZD 500</strong></div><p>授權估價另列保戶分攤款 <strong>NZD 0</strong>。代步車另收一次性 <strong>NZD 50</strong> 行政費＋補油；付款方式尚未確認。</p></div>
+<ul class="steps">
+<li><strong>送車與開工</strong>10/30（五）11:00 已確認；車廠可於當天開始施工。需自行送車及取車。</li>
+<li><strong>工期與代步車</strong>估 5～7 個工作天，週末不施工；確切取車日未定。Rosiez 表示有代步車可用，但未明確確認已預留。</li>
+<li><strong>送車時確認</strong>代步車是否已保留、NZD 500 自負額及 NZD 50 行政費的付款方式。</li>
+<li><strong>追加工項</strong>若拆檢後需增加工程，須由車廠先向 MAS 取得核准；目前授權範圍外的工作不要先同意自費施工。</li>
+</ul>
+<p class="muted">WOF 不在本次維修授權內；期限與檢驗提醒見下方。</p>
 </section>
-<section class="card" id="shop-repair-reply">
-<span class="priority done">已寄出 · Rosiez 已確認預約</span>
-<h2>送車安排｜10/30（五）11:00</h2>
-<p>佳蓉已回覆車廠原信提出週五上午 11 點送車；Rosiez 於 10/29 確認可以，並表示可於週五開始施工。時間為紐西蘭當地時間。</p>
-<p>車廠仍估計需 <strong>5～7 個工作天</strong>，週末不施工；尚未提供確切完工／取車日期。代步車回覆有車可用，費用為一次性 NZD 50 行政費＋補油；信中未明確寫出已正式預留。</p>
-<details><summary>10/28 已寄出的回信</summary><div class="detail"><p>收件人：<strong>sockburn@rosiez.co.nz</strong>；沿用原主旨。</p>
+<details class="record" id="shop-repair-reply"><summary>10/28 已寄出的改約信｜原文與完整中文翻譯</summary><div class="detail"><p>收件人：<strong>sockburn@rosiez.co.nz</strong>；沿用原主旨。</p>
 <div class="script">Subject: Re: Repair arrangements – MAS claim 801516 / MFY228
 
 Hi Phillisha,
@@ -176,13 +171,6 @@ Thank you very much for your help.
 Kind regards,
 Chia-Jung Chen</div>
 <details><summary>完整中文翻譯</summary><div class="detail translation"><p>主旨：回覆：維修安排－MAS 理賠案號 801516／MFY228</p><p>Phillisha 您好：</p><p>謝謝您的通知。</p><p>請問我能否改在這週五 10 月 30 日上午 11 點送車，而不是 11 月 2 日星期一？如果可以，我希望能早一點完成維修。週五送車是否能讓維修提早開始？您預計車輛何時可以修好、讓我取回？</p><p>如果週五可以安排，也想麻煩您替我預留從送車當下到維修期間使用的代步車。我了解需要支付一次性 NZD 50 行政費，並補回使用的油量。</p><p>非常感謝您的協助。</p><p>敬上，<br />Chia-Jung Chen</p></div></details></div></details>
-</section>
-<section class="card" id="shop-contact">
-<h2>Rosiez Sockburn｜預約與聯絡</h2>
-<dl class="facts"><dt>最新回信人</dt><dd>Frikkie Erasmus，Sockburn Branch Manager</dd><dt>Email</dt><dd><a href="mailto:sockburn@rosiez.co.nz">sockburn@rosiez.co.nz</a></dd><dt>電話</dt><dd><a href="tel:+6439621717">03 962 1717</a>，分機 2</dd><dt>車廠地址</dt><dd>25 Lunns Road, Middleton, Christchurch 8024</dd><dt>營業時間</dt><dd>週一至週五 07:30～16:30；週六僅限預約。<a href="https://www.rosiez.co.nz/contact-us" rel="noopener" target="_blank">官網（10/28 核對）</a></dd></dl>
-<div class="button-row"><a class="button" href="mailto:sockburn@rosiez.co.nz">聯絡 Rosiez</a><a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Rosiez+Collision+Repairs+Sockburn+25+Lunns+Road+Middleton+Christchurch+8024" rel="noopener" target="_blank">查看車廠位置</a></div>
-<details id="loan-car"><summary>代步車：一次性 50＋補油｜不提供取送</summary><div class="detail"><p>依 10/29 車廠回覆：10/30 入廠時有代步車可用；收一次性 <strong>NZD 50 行政費</strong>，另須補油；不是免費租車。回信未明確說已正式預留。不提供取送車，須自行送車及取車。</p><p>佳蓉的 MAS 保單未加購 Hire Car Cover，不預設 MAS 會補助代步車費。自車維修的 NZD 500 自負額於完工取車時付給 Rosiez；付款方式仍待確認。</p></div></details>
-</section>
 <section class="card" id="estimate">
 <span class="priority done">10/23 Repair Authority · assessment 10931</span>
 <h2>已核准的維修範圍</h2>
@@ -335,10 +323,16 @@ Chia-Jung Chen</div>
 <h2>車籍與 WOF 期限</h2>
 <p class="muted">MFY228 · 2008 NISSAN TIIDA · BLUE（依佳蓉提供資料）</p>
 <div class="deadline-grid"><div class="deadline"><span>WOF 到期</span><strong>2026/11/17</strong></div><div class="deadline"><span>Licence（rego）到期</span><strong>2027/6/30</strong></div></div>
-<p>Rosiez 已確認 10/30（五）11:00 入廠並可開始施工，估計需 5～7 個工作天（週末不施工）；確切完工／取車日期未提供。本次授權未含 WOF，仍須另行安排到期前檢驗。</p>
-<details><summary>這次修車對 WOF 有什麼幫助？</summary><div class="detail"><p>保險桿修復與固定座更換能處理固定不牢等可能影響檢查的問題，實際狀況須由車廠確認。單純漆面刮傷不屬 WOF 檢查項目；葉子板及車門烤漆主要改善外觀。</p><p>維修完成後仍需另做 WOF 檢驗，通過與否以檢驗結果為準；修車不會自動延長 WOF。</p><p class="source-list"><a href="https://vehicleinspection.nzta.govt.nz/virms/in-service-wof-and-cof/general/vehicle-exterior?print-friendly=1" rel="noopener" target="_blank">NZTA 車輛外部檢查規定</a> · <a href="https://www.nzta.govt.nz/vehicles/warrants-and-certificates/warrant-of-fitness" rel="noopener" target="_blank">NZTA WOF 說明</a></p></div></details>
+<p>本次 MAS 授權未含 WOF；修車完成後仍須另行預約並通過檢驗，維修不會自動延長 WOF。</p>
+<details><summary>這次修車哪些項目可能影響 WOF？</summary><div class="detail"><p>保險桿修復及固定座更換可能改善固定不牢的狀況；是否符合外部檢查要求，仍以修後實況及檢驗為準。單純漆面刮傷與葉子板、車門烤漆主要屬外觀處理。</p><p class="source-list"><a href="https://vehicleinspection.nzta.govt.nz/virms/in-service-wof-and-cof/general/vehicle-exterior?print-friendly=1" rel="noopener" target="_blank">NZTA 車輛外部檢查規定</a> · <a href="https://www.nzta.govt.nz/vehicles/warrants-and-certificates/warrant-of-fitness" rel="noopener" target="_blank">NZTA WOF 說明</a></p></div></details>
 </section>
-<section class="card" id="old-correspondence"><h2>最新來信與已寄紀錄</h2><p class="muted">已寄信件無須重寄。最新預約狀態見<a href="#shop-repair-reply">送車安排</a>；原始往來與完整中文翻譯收合於下方。</p>
+<section class="card" id="shop-contact">
+<h2>Rosiez Sockburn｜聯絡與送車</h2>
+<dl class="facts"><dt>Email</dt><dd><a href="mailto:sockburn@rosiez.co.nz">sockburn@rosiez.co.nz</a></dd><dt>電話</dt><dd><a href="tel:+6439621717">03 962 1717</a>，分機 2</dd><dt>地址</dt><dd>25 Lunns Road, Middleton, Christchurch 8024</dd><dt>營業時間</dt><dd>週一至週五 07:30～16:30；週六僅限預約。<a href="https://www.rosiez.co.nz/contact-us" rel="noopener" target="_blank">官網（10/28 核對）</a></dd></dl>
+<div class="button-row"><a class="button" href="mailto:sockburn@rosiez.co.nz">聯絡 Rosiez</a><a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Rosiez+Collision+Repairs+Sockburn+25+Lunns+Road+Middleton+Christchurch+8024" rel="noopener" target="_blank">查看車廠位置</a></div>
+<details id="loan-car"><summary>代步車與取車安排</summary><div class="detail"><p>10/29 Rosiez 回覆入廠日有代步車可用；一次性 <strong>NZD 50 行政費</strong>＋補油，不是免費租車。回信未明確說已正式預留；車廠不提供取送，須自行送車及取車。</p><p>佳蓉的 MAS 保單未加購 Hire Car Cover，不預設 MAS 會補助代步車費。NZD 500 自負額於完工取車時付給 Rosiez；付款方式尚待確認。</p></div></details>
+</section>
+<section class="card" id="old-correspondence"><h2>信件紀錄</h2><p class="muted">預約已確認；已寄信件、車廠原信與完整中文翻譯收合於下方，已寄內容無須重寄。</p>
 <details class="record" id="shop-confirmed-fri">
 <summary>10/29 Rosiez 最新回信｜確認 10/30 11:00、代步車可用、5～7 工作天</summary>
 <div class="detail">
@@ -707,8 +701,8 @@ Assessors@mas.co.nz</div><p class="translation"><strong>完整中文翻譯：</s
 </details></div></details></div></details>
 </div>
 <div aria-labelledby="tab-bmw" class="incident-panel" id="incident-bmw" role="tabpanel" tabindex="0">
-<header class="case-header"><span class="priority done">803286 · 純第三方責任理賠</span><h2>新案免自負額，目前無新待辦</h2><nav aria-label="BMW 案導覽" class="nav"><a href="#bmw-action">目前結果</a><a href="#bmw-mas">MAS 確認信</a><a href="#bmw-records">事故資料</a><a href="#bmw-archive">歷史紀錄</a></nav></header>
-<section class="card" id="bmw-action"><h2>MAS 10/22 書面確認</h2><div class="payment"><div><small>本案自負額</small><strong class="amount">NZD 0</strong></div><p>保留 803286 處理 BMW 第三方責任；自車修復由 801516 的已核准估價涵蓋。</p></div><p>MAS 已對接 AMI。佳蓉無須重做本案估價或取消本案；後續自車維修請看 801516 分頁。</p><div class="button-row"><a class="button" href="#old-current">查看維修下一步</a></div></section>
+<header class="case-header"><span class="priority done">803286 · 純第三方責任｜自負額 NZD 0</span><h2>理賠端無待辦｜資料交換另核對</h2><nav aria-label="BMW 案導覽" class="nav"><a href="#bmw-action">目前結果</a><a href="#bmw-records">事故資料</a><a href="#bmw-owner">資料交換</a><a href="#bmw-archive">歷史紀錄</a></nav></header>
+<section class="card" id="bmw-action"><h2>目前結果</h2><div class="payment"><div><small>本案自負額</small><strong class="amount">NZD 0</strong></div><p>MAS 10/22 確認改為純第三方責任理賠，已免除本案自負額。</p></div><p>MAS 已處理與 AMI 的責任問題；本案無須另做估價或再回覆 MAS。Tiida 自車維修依 801516 已核准範圍辦理。</p><div class="note"><strong>另核對一件事</strong>目前留存紀錄不能確認是否已向 BMW 車主補齊住址、Email（如有）及事故地點。若已提供，不必重做；若仍缺，請盡快補齊並保存訊息（48 小時期限已過）。<a href="#bmw-owner">查看核對方式</a></div></section>
 <section class="card" id="bmw-mas"><h2>MAS 評估結果原信</h2><details id="bmw-mas-outcome">
 <summary>10/22 MAS 評估結果｜原文與完整中文翻譯</summary>
 <div class="detail">
@@ -770,7 +764,7 @@ Insurer: MAS</div>
 <div class="detail">
 <p><strong>Tiida：</strong>左前保險桿有擦痕、輪拱旁接縫脫開，另有塑膠件。需檢查固定處；照片無法確認塑膠件功能、卡扣是否斷裂或是否須換整支。</p>
 <p><strong>BMW：</strong>車牌下方後保險桿有擦痕；照片無法判斷深度、漆面或隱藏損傷。</p>
-<p><strong>目前處理：</strong>MAS 10/22 已確認自車修復包含在 801516 估價中，無須另做新案估價；原始照片與日期留存備查，不自行推斷塑膠件功能或損傷成因。若保險桿鬆垂、碰胎或有脫落風險，先停駛檢查。</p>
+<p>原始照片與日期留存備查；照片無法確認塑膠件功能、固定點損傷時間或成因。若保險桿鬆垂、碰胎或有脫落風險，先停駛檢查。</p>
 </div>
 </details><details id="bmw-mas-progress-followup">
 <summary>10/20 新案追蹤信｜已寄出（10/22 引文確認）</summary>
@@ -945,13 +939,9 @@ I spoke with the BMW owner in person. We agreed that each of us would notify our
 <p>MAS 條款排除既有損傷，也可能要求保戶負擔修後改善價值。因此，整支換新費用不保證全由新案承擔；沒有官方依據可說「通常全額」或「只分攤 NZD 50–100」。先等 MAS 依現有送件資料評估；若其詢問重疊損傷或提出分攤，再以日期清楚的前後照片回覆，要求書面分列本次損傷、舊損傷、必要工項及任何 betterment 計算。此類分攤可能與新案的一筆自負額並存，但不等於第二筆自負額。詳見<a href="https://www.mas.co.nz/documents/1346/Motor_Vehicle_Insurance_Policy_1_July_2026.pdf" rel="noopener" target="_blank">MAS 2026/07/01 車險條款</a>。</p>
 </div>
 </details>
-<p class="note"><strong>目前處理：</strong>兩案各留紀錄；MAS 已確認 801516 估價涵蓋自車維修，803286 僅處理第三方且免自負額。801516 維修已授權，10/30（五）11:00 入廠已由 Rosiez 確認，估 5～7 個工作天，不需重做新案估價。</p>
 </div>
-</details><details id="bmw-owner"><summary>對方資料與訊息備查｜AMI 案號已回報</summary><div class="detail">
-<section class="card">
-<span class="priority">先確認 · 法定資料交換</span>
-<h2>先確認是否已補齊事故資料</h2>
-<p>先確認是否已補給車主：佳蓉姓名、住址、Email（如有）、MFY228 與事故地點。原紙條未列住址、Email、地點；若仍缺，立即補送並留存（48 小時期限已過）。</p>
+</details><details id="bmw-owner"><summary>對方資料交換｜完成狀態待核對（僅有缺漏才補送）</summary><div class="detail">
+<p class="warning"><strong>先核對已寄出的訊息</strong>目前留存無法確認住址、Email（如有）及事故地點是否已提供給車主。若已補齊，不必重做；如仍缺，請盡快補送並保留訊息。48 小時期限已過。</p>
 <details>
 <summary>建議中文訊息｜補齊姓名、住址、Email、車牌與事故地點</summary>
 <div class="detail">
@@ -961,7 +951,7 @@ I spoke with the BMW owner in person. We agreed that each of us would notify our
 
 我的車險是 MAS，我已向 MAS 提交這次事故的理賠申請。方便的話，也請告訴我你的保險公司及理賠案號（如已申請）。後續我們用中文文字聯絡就可以，謝謝。</div>
 <p class="translation"><strong>這則訊息的用途：</strong>提供《Land Transport Act 1998》第 22(4) 條所列資料。傳送前要把方括號換成真實現住址與 Email；勿把範本留著方括號直接送出。送出後截圖或保留訊息記錄。未經佳蓉同意，不要替她直接傳送。</p>
-<p>法定 48 小時已於紐西蘭時間 2026/09/24 16:10 屆滿；如仍缺資料，現在補送並保存紀錄。</p>
+<p>法定 48 小時已於紐西蘭時間 2026/09/24 16:10 屆滿；此為補齊已缺資料的歷史備用訊息，不是確認已寄出的內容。</p>
 </div>
 </details>
 <div class="status"><strong>若對方或其保險公司詢問：</strong>提供案號 803286，請直接聯絡 MAS；不承諾責任比例、私人付款或維修金額。</div>
@@ -970,7 +960,6 @@ I spoke with the BMW owner in person. We agreed that each of us would notify our
 <div class="script">My English is limited. Please text or WhatsApp me. Thank you.</div>
 <p class="translation"><strong>若接到電話，簡短照念：</strong>我的英文有限，請傳文字訊息或 WhatsApp 給我，謝謝。</p>
 <p>對方肯定留下紙條，不代表已放棄求償；若提出估價或付款要求，留存原文並請 MAS 核對。</p>
-</section>
 </div></details><details class="record" id="bmw-police"><summary>Police 105 備用流程｜目前非待辦</summary><div class="detail"><p>車主已回覆紙條並提供聯絡方式，雙方可用中文文字聯絡；MAS 新案也已送出。依現有情況，<strong>105 不是目前待辦</strong>。只有車主後續失聯、始終無法確認事故另一方資料，或警方／MAS 要求警方紀錄時，再重新評估是否通報。</p><details>
 <summary>只有符合上方情況時，才展開 Police 105 線上通報方式</summary>
 <div class="detail">
