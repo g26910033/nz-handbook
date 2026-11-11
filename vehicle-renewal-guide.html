@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="佳蓉 MFY228 的 Kuro Garage WoF 指南：預約、現場中英出示卡、不合格與複檢、維修報價、含 GST 付款與取車清單。" />
+  <meta name="description" content="MFY228 於 2026 年 11 月 11 日 WoF 通過；已付款 NZ$94.64，記錄補機油、保養逾期、前下控制臂襯套與電瓶追蹤。" />
   <meta name="theme-color" content="#12355b" />
-  <title>佳蓉 WoF 驗車到店指南｜MFY228</title>
+  <title>佳蓉 WoF 已通過・保養追蹤｜MFY228</title>
   <style>
     :root { color-scheme:light; --navy:#12355b; --blue:#1e5b91; --ink:#192c3b; --muted:#526574; --line:#d8e2e9; --paper:#f3f6f8; --green:#17664f; --green-bg:#edf7f1; --amber:#74500e; --amber-bg:#fff6df; --red:#812e32; --red-bg:#fff0f0; }
     * { box-sizing:border-box; }
@@ -66,6 +66,17 @@
     .details-body > :first-child { margin-top:0; }
     .sources li { font-size:.9rem; }
     footer { padding:20px 5px 0; color:var(--muted); font-size:.85rem; }
+    table { width:100%; border-collapse:collapse; margin:12px 0; font-size:.95rem; }
+    th,td { text-align:left; padding:10px 7px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { color:var(--navy); background:#f2f7fa; }
+    .money { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+    .archive .card { margin-top:10px; padding:17px; }
+    .archive > summary { font-size:1.05rem; }
+    @media print {
+      details.archive:not([open])::details-content { content-visibility:hidden; height:0; }
+      details.archive:not([open]) > .details-body { display:none; }
+      tr { break-inside:avoid; }
+    }
     @media(max-width:680px) {
       .page { width:calc(100% - 22px); padding-top:11px; }
       .hero,.card { padding:20px; border-radius:14px; }
@@ -99,63 +110,121 @@
   </style>
 </head>
 <body>
-  <a class="skip" href="#handover">直接前往現場出示卡</a>
+  <a class="skip" href="#followup">直接前往後續待辦</a>
   <main class="page">
     <header class="hero">
       <div class="eyebrow">佳蓉 · MFY228 · 2008 NISSAN TIIDA（藍色）</div>
-      <h1>WoF 驗車，到店照這頁做</h1>
-      <p>先確認預約與檢查費 → 只授權驗車 → 看書面結果 → 維修先報價 → 核對付款與取車。</p>
+      <h1>WoF 已通過，接著處理保養提醒</h1>
+      <p>2026 年 11 月 11 日在 Kuro Garage 完成，帳單註記 PASS。先核對新標籤，再安排逾期保養與襯套磨損評估。</p>
       <div class="buttons">
-        <a class="button" href="https://kurogarage.co.nz/zh-hant/" target="_blank" rel="noopener">開啟 Kuro 中文預約</a>
-        <a class="button secondary" href="#handover">已到現場？出示交車卡</a>
+        <a class="button" href="#followup">現在要做什麼</a>
+        <a class="button secondary" href="#message">給車廠的中英訊息</a>
       </div>
-      <p class="meta">更新：2026 年 10 月 25 日（台北時間）<br />本頁的預約日期、到期日與營業時間，均以紐西蘭當地時間為準。</p>
+      <p class="meta">紀錄更新：2026 年 11 月 11 日<br />驗車日期、車輛期限與店家時段以紐西蘭當地時間為準。</p>
     </header>
-
-    <nav class="quick-nav" aria-label="現場快速導覽">
-      <a href="#handover">交車出示卡</a>
-      <a href="#results">通過／不合格</a>
-      <a href="#repair">維修與付款</a>
+    <nav class="quick-nav" aria-label="驗後快速導覽">
+      <a href="#followup">後續待辦</a><a href="#fees">已付費用</a><a href="#advisories">保養提醒</a>
     </nav>
-
     <section class="card" id="summary">
-      <h2>目前只要安排 WoF</h2>
+      <h2>WoF 完成，rego 也仍有效</h2>
       <div class="stats">
-        <div class="stat"><span>建議預約檢查</span><strong>2026 / 11 / 3–10</strong><span>保留維修、複檢時間</span></div>
-        <div class="stat"><span>目前 WoF 到期</span><strong>2026 / 11 / 17</strong><span>最遲這天通過，別排最後一天</span></div>
-        <div class="stat"><span>rego 延期已完成</span><strong>2027 / 6 / 30</strong><span>牌照與 WoF 是獨立期限</span></div>
+        <div class="stat good"><span>本次 WoF 結果</span><strong>PASS · 2026 / 11 / 11</strong><span>Kuro 帳單明列通過</span></div>
+        <div class="stat"><span>新 WoF 期限</span><strong>待核對新標籤</strong><span>依一年週期預期 2027 / 11 / 17</span></div>
+        <div class="stat"><span>rego 已延期</span><strong>2027 / 6 / 30</strong><span>這是牌照期限，不是新 WoF 日期</span></div>
       </div>
-      <p class="notice"><strong>下一步：</strong>向 Kuro Garage 提出預約，收到<strong>店家的確認 Email</strong>後才算訂妥。此頁目前記錄：預約待確認、WoF 待完成。</p>
+      <p class="notice"><strong>照片的界線：</strong>檢查表右上方的新 WoF 到期欄被電瓶單遮住；表內「30.6.27」與已知 rego 期限相符，不能拿來當新 WoF 到期日。</p>
       <details>
-        <summary>何時驗車，會怎樣影響新到期日？</summary>
-        <div class="details-body">
-          <ul>
-            <li><strong>現在也可以驗。</strong>建議 11 月 3–10 日，是為了保留原到期週期並預留處理時間。</li>
-            <li><strong>11 月 3–17 日通過：</strong>依本車預期一年週期，新到期日應為 <strong>2027 年 11 月 17 日</strong>。</li>
-            <li><strong>11 月 3 日以前通過：</strong>以「通過日加 14 天」作起算基準，再加適用有效期間。例如 11 月 2 日通過，一年週期的新到期日為 2027 年 11 月 16 日。</li>
-            <li><strong>舊 WoF 過期才通過：</strong>以通過日作起算基準；過期期間有行車限制。</li>
-          </ul>
-          <p class="small">2008 年車輛在 2026 年 11 月新制下預期仍為一年一次；正式週期按 NZTA 全球首次登記日期及車輛類別核定。取車時以新標籤與檢查紀錄核對。</p>
-        </div>
+        <summary>為什麼新 WoF 預期是 2027 / 11 / 17？</summary>
+        <div class="details-body"><p>原期限是 2026 年 11 月 17 日，本次 11 月 11 日通過，落在到期前 14 天內。按本車預期一年週期，應沿用原日期到 2027 年 11 月 17 日；正式期限仍須查看新 WoF 標籤或 NZTA 記錄確認。</p></div>
       </details>
     </section>
+    <section class="card" id="followup">
+      <span class="step-label">現在要做 · 三件事</span>
+      <h2>不必再預約這次 WoF，改做驗後追蹤</h2>
+      <ol>
+        <li><strong>核對新標籤並保存付款資料。</strong>查看前擋風玻璃的新 WoF 到期日，拍照留存。本次 NZ$94.64 已依佳蓉確認付款，明細與付款證明一起保存。</li>
+        <li><strong>安排逾期保養，一併評估襯套。</strong>把下方提醒傳給 Kuro，請依實際里程與上次保養紀錄列出建議項目、處理時間及含 GST 報價，再決定是否同意。</li>
+        <li><strong>確認電瓶是否需充電後複測。</strong>測試顯示 GOOD，電量 55% 與健康度 100% 是不同指標；不要只因 55% 就更換電瓶。</li>
+      </ol>
+      <p class="notice"><strong>本次沒有列出襯套更換或完整保養。</strong>帳單只有 WoF 和補機油；後續評估、保養、維修與額外付費診斷，都要另外先報價、再同意。</p>
+      <div class="buttons"><a class="button" href="#message">展開中英詢問範本</a><a class="button secondary" href="https://transact.nzta.govt.nz/transactions/CheckExpiry/entry" target="_blank" rel="noopener">NZTA 核對車輛期限</a></div>
+    </section>
+    <section class="card" id="fees">
+      <h2>本次已付 NZ$94.64</h2>
+      <p class="small">付款依佳蓉確認；下列為 2026 年 11 月 11 日帳單金額。原始發票本身未標示已付款。</p>
+      <table>
+        <caption class="small">幣別：NZD；含稅分項依本次帳單總額拆算。</caption>
+        <thead><tr><th scope="col">項目</th><th class="money" scope="col">未稅</th><th class="money" scope="col">含 GST</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">WoF 檢查</th><td class="money">$60.87</td><td class="money">約 $70.00</td></tr>
+          <tr><th scope="row">Liqui Moly 5W-30 補機油</th><td class="money">$21.43</td><td class="money">約 $24.64</td></tr>
+          <tr><th scope="row">合計</th><td class="money"><strong>$82.30</strong></td><td class="money"><strong>$94.64</strong></td></tr>
+        </tbody>
+      </table>
+      <p>帳單列 GST 為 <strong>$12.34</strong>。WoF 的含稅金額與先前詢價 $70 一致，總額增加的部分是補機油。</p>
+      <p class="small">帳單未寫補油公升數；「數量 1」只表示一個收費項目，不能推定補了 1 公升，也不足以判斷每公升價格或是否完成換油。</p>
+    </section>
+    <section class="card" id="advisories">
+      <h2>三項提醒，分開處理</h2>
+      <article class="panel">
+        <h3>1 · Service overdue：定期保養逾期</h3>
+        <p>店家本次寫的是 <strong>topped up engine oil（補加機油）</strong>。這不等於換機油、換濾芯或完成整套保養，逾期保養仍須安排。</p>
+        <p class="small">請店家依實際里程、上次保養日期與工作紀錄列出需要做的項目，先取含 GST 總報價。未提供資料前，不自行指定換油量或假定哪些項目已做。</p>
+      </article>
+      <article class="panel" style="margin-top:12px">
+        <h3>2 · 前下控制臂「後端襯套」磨損</h3>
+        <p>原文為 <strong lang="en">front lower control arm rear bushes wear</strong>，指前懸吊控制臂的後端橡膠襯套，並非後輪控制臂。</p>
+        <p>本次是 PASS，文件未把它列成不合格項目；仍需問清<strong>左右哪側、磨損／間隙程度、是否影響安全，以及建議處理或複查時間</strong>，不能直接推定必須立刻換，也不能保證可撐到明年離境。</p>
+        <p class="small">若要修，請報價分列襯套／整支控制臂方案、零件、工資、定位（若需要）與 GST。如有方向不穩、明顯異音或轉向／煞車異常，先聯絡車廠確認安全移動方式。</p>
+      </article>
+      <article class="panel" style="margin-top:12px">
+        <h3>3 · 電瓶 GOOD；電量約 55%、健康度 100%</h3>
+        <p><strong>55% 是測試器估計的電量指標，並非只剩 55% 壽命。</strong>報告顯示 GOOD，不能只據此要求更換；也不能由單張報告保證電瓶或發電機一直正常。</p>
+        <p class="small">先請店家確認是否建議適當充電後複測。若反覆低電或啟動遲緩，再檢查充電系統、接點或漏電情形；不保證開固定幾分鐘就能充滿。</p>
+        <details><summary>查看電瓶測試數字</summary><div class="details-body"><p>電壓 12.33 V；健康度 100%；電量 55%；實測 377 CCA，輸入額定 255 CCA。數字受測試條件與設定影響；若有疑問，先核對電瓶標籤及輸入規格。</p></div></details>
+      </article>
+    </section>
+    <section class="card" id="message">
+      <h2>給 Kuro 的書面詢問範本</h2>
+      <p>可回覆原信，或寄至帳單所列 <a href="mailto:info@kurogarage.co.nz">info@kurogarage.co.nz</a>。下方是尚未寄出的建議稿，只詢問資料與報價，不授權施工。</p>
+      <details>
+        <summary>展開：中文訊息</summary>
+        <div class="details-body"><div class="message" lang="zh-Hant">您好，MFY228（2008 Nissan Tiida）已於 2026 年 11 月 11 日通過 WoF，本次 NZ$94.64 已付款。請協助確認：
+1. 新 WoF 到期日，並提供完整檢查紀錄及已付款收據。
+2. 本次補加的機油量；針對帳單的「service overdue」，請依車況與保養紀錄說明建議項目、時間及含 GST 總報價。
+3. 前下控制臂後端襯套是左右哪側磨損？程度如何、是否影響安全、建議何時處理或複查？如需更換，請分列零件、工資、定位（若需要）與 GST。
+4. 電瓶報告顯示 GOOD、健康度 100%、電量約 55%，是否建議充電後複測？如需付費，請先報價。
+請先用 Email 回覆，任何保養、維修或額外付費診斷都先等我書面同意，謝謝。</div></div>
+      </details>
+      <details>
+        <summary>展開：英文訊息與中文核對</summary>
+        <div class="details-body"><div class="message" lang="en">Subject: MFY228 – follow-up after WoF on 11 November 2026
 
+Hello, my 2008 Nissan Tiida, MFY228, passed its WoF on 11 November 2026. I have paid the NZ$94.64 invoice. Could you please confirm:
+1. The new WoF expiry date, and provide the full inspection record and paid receipt.
+2. How much engine oil was added. For the “service overdue” note, please recommend the service items and timing based on the vehicle and service history, with an itemised GST-inclusive quote.
+3. Which front lower control arm rear bushes are worn, the severity, any safety implications and when repair or reassessment is recommended. If replacement is needed, please quote parts, labour, alignment if required and GST separately.
+4. The battery report shows GOOD, 100% health and about 55% charge. Is charging and retesting recommended? Please quote any fee first.
+
+Please reply by email. No servicing, repairs or additional paid diagnostics without my written approval. Thank you.</div><p class="translation">中文核對：確認新 WoF 期限、完整報告與付款收據；詢問補油量、逾期保養內容；釐清襯套位置、嚴重程度、處理時間及分項報價；確認電瓶充電／複測與費用。只同意書面詢問，不先授權維修。</p></div>
+      </details>
+    </section>
     <section class="card" id="shops">
-      <h2>本次店家：Kuro Garage</h2>
+      <h2>本次驗車與後續聯絡：Kuro Garage</h2>
       <div class="grid">
         <div>
           <p><strong>201 Wordsworth Street<br />Sydenham, Christchurch 8023</strong></p>
           <p>週一至週五 08:00–17:00<br />週六 08:00–16:00</p>
-          <p class="small">臨時找不到店家可用公開電話：<a href="tel:+6432421666">03 242 1666</a>。平時優先用表單及確認 Email 聯絡。</p>
+          <p><strong>Email：</strong><a href="mailto:info@kurogarage.co.nz">info@kurogarage.co.nz</a>（本次帳單所列）<br /><strong>電話：</strong><a href="tel:+6432421666">03 242 1666</a></p><p class="small">優先回覆原確認信，或用上方 Email 傳送書面問題；本頁沒有代寄訊息或預約保養。</p>
         </div>
         <div class="panel">
-          <h3>WoF 詢得價格：NZ$70</h3>
-          <p>這是佳蓉向店家問到的價格，官網未列價目。<strong>含 GST 的總價、付款附加費及檢查範圍，仍要在開始前確認。</strong></p>
-          <p class="small">維修與額外付費診斷另報價；本頁沒有預先授權任何維修。</p>
+          <h3>本次 WoF：含 GST 約 NZ$70</h3>
+          <p>已與 11 月 11 日帳單核對；連同補機油，本次合計 <strong>NZ$94.64，依佳蓉確認已付款</strong>。</p>
+          <p class="small">下一次保養、襯套評估或電瓶處理須另取書面報價，尚未由本頁預約或授權。</p>
         </div>
       </div>
       <div class="buttons">
-        <a class="button" href="https://kurogarage.co.nz/zh-hant/" target="_blank" rel="noopener">預約表單</a>
+        <a class="button" href="https://kurogarage.co.nz/zh-hant/" target="_blank" rel="noopener">保養／詢價表單</a>
         <a class="button secondary" href="https://www.google.com/maps/dir/?api=1&amp;destination=201+Wordsworth+Street+Sydenham+Christchurch+8023" target="_blank" rel="noopener">導航到店家</a>
       </div>
       <details id="location">
@@ -168,6 +237,32 @@
       </details>
     </section>
 
+    <section class="card" id="label">
+      <span class="step-label">已完成 · rego</span>
+      <h2>rego 已延至 2027 年 6 月 30 日</h2>
+      <p>目前不用為這次 WoF 再續一次 rego。保留付款結果；牌照延期不會延長 WoF。</p>
+      <details>
+        <summary>展開：rego 標籤、離境一個月與之後離開紐西蘭</summary>
+        <div class="details-body">
+          <ul>
+            <li>網路續牌的標籤通常在 14 天內郵寄送達；普通 rego 標籤沒有下載自印版本。收到後按現行規定展示在前擋風玻璃左側。</li>
+            <li>14 天仍未收到，先核對 NZTA 登記地址，再走補發標籤流程。已完成續牌者不必為拿標籤再買一次 rego。</li>
+            <li>NZTA 公告 rego 標籤自 2027 年 3 月起可選擇展示；生效前照現行規定展示，屆時再核對最新公告。</li>
+            <li>預計 2027 年 2 月中至 3 月中不在紐西蘭：約一個月，未達 rego 暫停至少 3 個月的條件，現有有效期照常繼續。</li>
+            <li>預計 2027 年 6 月中離開：目前 rego 到 6 月 30 日可涵蓋這段期間；出售或交車時另核對當時 WoF、過戶及保險安排。</li>
+          </ul>
+          <div class="buttons">
+            <a class="button secondary" href="https://www.nzta.govt.nz/vehicles/licensing-rego/getting-your-vehicle-licence-rego" target="_blank" rel="noopener">rego 與標籤說明</a>
+            <a class="button secondary" href="https://transact.nzta.govt.nz/v2/replacement-labels" target="_blank" rel="noopener">補發 rego 標籤</a>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <details class="card archive" id="before-visit">
+      <summary>驗前流程備查：本次已通過，不需重做預約</summary>
+      <div class="details-body">
+        <p class="notice">以下是 2026 年 10 月 25 日整理的驗前參考，保留交車、報價、複檢及權益說明；本次結果與待辦以上方 11 月 11 日紀錄為準。列印預設省略這段，需列印時請先展開。</p>
     <section class="card" id="steps">
       <span class="step-label">01 · 預約</span>
       <h2>填表後，等確認 Email</h2>
@@ -303,37 +398,17 @@
       </details>
     </section>
 
-    <section class="card" id="label">
-      <span class="step-label">06 · 已完成的 rego</span>
-      <h2>rego 已延至 2027 年 6 月 30 日</h2>
-      <p>目前不用為這次 WoF 再續一次 rego。保留付款結果；牌照延期不會延長 WoF。</p>
-      <details>
-        <summary>展開：rego 標籤、離境一個月與之後離開紐西蘭</summary>
-        <div class="details-body">
-          <ul>
-            <li>網路續牌的標籤通常在 14 天內郵寄送達；普通 rego 標籤沒有下載自印版本。收到後按現行規定展示在前擋風玻璃左側。</li>
-            <li>14 天仍未收到，先核對 NZTA 登記地址，再走補發標籤流程。已完成續牌者不必為拿標籤再買一次 rego。</li>
-            <li>NZTA 公告 rego 標籤自 2027 年 3 月起可選擇展示；生效前照現行規定展示，屆時再核對最新公告。</li>
-            <li>預計 2027 年 2 月中至 3 月中不在紐西蘭：約一個月，未達 rego 暫停至少 3 個月的條件，現有有效期照常繼續。</li>
-            <li>預計 2027 年 6 月中離開：目前 rego 到 6 月 30 日可涵蓋這段期間；出售或交車時另核對當時 WoF、過戶及保險安排。</li>
-          </ul>
-          <div class="buttons">
-            <a class="button secondary" href="https://www.nzta.govt.nz/vehicles/licensing-rego/getting-your-vehicle-licence-rego" target="_blank" rel="noopener">rego 與標籤說明</a>
-            <a class="button secondary" href="https://transact.nzta.govt.nz/v2/replacement-labels" target="_blank" rel="noopener">補發 rego 標籤</a>
-          </div>
-        </div>
-      </details>
-    </section>
-
+      </div>
+    </details>
     <section class="card" id="sources">
       <h2>價格、資訊範圍與來源</h2>
-      <p class="small">車輛期限以佳蓉提供的結果為準；店家資料及下列官方規則於 2026 年 10 月 25 日查核。實際預約、費用和車況，以店家書面確認及正式檢查結果核對。</p>
+      <p class="small">本次結果依佳蓉提供的 2026 年 11 月 11 日 Kuro 帳單、WoF 檢查表與電瓶測試照片；付款依佳蓉確認。僅摘要必要資訊，原圖不公開。官方規則與官網條款沿用 2026 年 10 月 25 日查核資料；新 WoF 期限仍待新標籤或 NZTA 記錄確認。</p>
       <details>
-        <summary>NZ$70 合理嗎？還有哪些費用未知？</summary>
+        <summary>這次費用與車況，可以判斷到哪裡？</summary>
         <div class="details-body">
-          <p>紐西蘭政府列基本輕型車 WoF 通常 NZ$50–90，佳蓉詢得的 NZ$70 在此範圍內。維修價、GST 是否已含在詢價中、等候時間、停車與借用車安排，均未由本頁取得書面確認。</p>
-          <p>沒有可核對的 Kuro WoF 通過率或維修工資公開表，不能靠「寬鬆」傳聞估算總成本。官網標示 MTA 認可及自 2026 年營運；本次未獨立核實會員頁或數字評分。</p>
-          <p>預約及交車時先只同意 WoF 檢查，把必修與選做項目分開，再比較相同範圍的含 GST 書面報價，能讓費用更可掌握。</p>
+          <p>本次 WoF 含 GST 約 NZ$70，與先前詢價一致；另補機油 NZ$24.64，合計 NZ$94.64。帳單沒有補油公升數，無法用單價比較機油 CP 值；也沒有任何襯套更換或完整保養費用。</p>
+          <p>本次 PASS 只能證明這次檢驗結果，不足以計算店家的「寬鬆比例」、判定每次維修都便宜，或保證零件能撐到某日。保養和襯套處理仍以實際檢查及含 GST 分項報價決定。</p>
+          <p>官網的 MTA 標示、營運年份及評價不作為本次車況依據；本次未另核實會員資格或數字評分。</p>
         </div>
       </details>
       <details>
@@ -354,7 +429,7 @@
         </div>
       </details>
     </section>
-    <footer>可用同一網址在手機或電腦閱讀；需要離線使用時，請先截圖交車卡，或列印／另存 PDF。公開頁不記錄私人聯絡資料或個人的預約授權。</footer>
+    <footer>同一網址可跨裝置閱讀；離線使用可列印／另存 PDF。公開頁只摘要驗車、費用及後續提醒，不放原始單據影像、VIN、私人聯絡與銀行資料。</footer>
   </main>
 </body>
 </html>
