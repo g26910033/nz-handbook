@@ -29,6 +29,23 @@ jobs:
       - name: Build index.html
         run: python3 build.py
 
+      - name: Retire old handbook root
+        run: |
+          cat > index.html <<'EOF'
+          <!doctype html>
+          <html lang="zh-Hant">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="robots" content="noindex">
+            <meta http-equiv="refresh" content="0; url=https://lute.tw/nz/">
+            <title>頁面已搬移</title>
+            <script>window.location.replace("https://lute.tw/nz/" + window.location.search + window.location.hash);</script>
+          </head>
+          <body><p>此頁面已搬移，正在前往 <a href="https://lute.tw/nz/">lute.tw/nz/</a>。</p></body>
+          </html>
+          EOF
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
